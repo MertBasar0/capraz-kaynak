@@ -45,6 +45,12 @@ const ogImageUrl = new URL(
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <title>{title}</title>
     <ClientRouter />
+    <script
+      is:inline
+      data-astro-transition-persist="goatcounter"
+      data-goatcounter="https://mert.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -138,6 +144,12 @@ const ogImageUrl = new URL(
       }
 
       document.addEventListener('astro:page-load', initGlobalInteractions);
+      document.addEventListener('astro:after-swap', () => {
+        const gc = (window as any).goatcounter;
+        if (gc && typeof gc.count === 'function') {
+          gc.count();
+        }
+      });
     </script>
   </body>
 </html>
