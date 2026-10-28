@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
+---
+
+<BaseLayout title="Kaynak Kritiği İlkeleri ve Metodoloji — Çapraz Kaynak">
+  <section class="section-shell" style="border-top: none; padding-top: 4.5rem;">
+    <div class="container method-wrap">
+      <span class="eyebrow reveal">YAYIN İLKELERİ VE TARİHSEL YÖNTEM</span>
+      <h1 class="section-title reveal" style="--delay: 70ms">
+        Tarihsel Bilinç Nasıl İnşa Edilir?
+      </h1>
+      <p class="section-lead reveal" style="--delay: 140ms">
+        Popüler tarih anlatıları genellikle geçmişi bugünün duygularıyla yargılar; kendi tarafını kusursuzlaştırırken
+        karşı tarafı şeytanlaştırır. <strong>Çapraz Kaynak</strong>, akademik tarihçiliğin dört temel denetim aracını
+        herkesin deneyimleyebileceği görsel bir dile çevirir.
+      </p>
+
+      <div class="method-cards">
+        <article class="method-card reveal">
+          <span class="pill pill--east">İLKE 01</span>
+          <h2>Tek Kaynak Tanık Değildir</h2>
+          <p>
+            Bir muharebeyi yalnızca kazananın ya da yalnızca kaybedenin vekâyinâmesinden okumak resmin yarısını
+            gizler. Örneğin 28 Haziran 1098 Antakya Muharebesi’ni yalnızca <em>Gesta Francorum</em>’dan okuyan biri
+            mucizevi bir süvari hücumu görür; yalnızca <em>İbnü’l-Esîr</em>’den okuyan biri ise emîrlerin iç ihanetini
+            görür. İkisi yan yana konduğunda tarihsel hakikat bütünleşir.
+          </p>
+        </article>
+
+        <article class="method-card reveal" style="--delay: 80ms">
+          <span class="pill pill--west">İLKE 02</span>
+          <h2>Mekân ve Zaman Mesafesi Denetimi</h2>
+          <p>
+            Bir kaydın olay anında orada bulunan bir görgü tanığı tarafından mı (ör. 1095 Clermont’ta bulunan
+            <em>Chartreslı Fulcherius</em>), yoksa olaydan 12 yıl sonra Fransa’daki manastırından hiç çıkmamış bir
+            rahip tarafından mı (ör. <em>Nogentlı Guibert</em>) yazıldığı her şeyi değiştirir. Olaydan uzaklaştıkça
+            ideolojik kurgu ve propaganda katmanı kalınlaşır.
+          </p>
+        </article>
+
+        <article class="method-card reveal" style="--delay: 140ms">
+          <span class="pill pill--witness">İLKE 03</span>
+          <h2>Üçüncü Taraf Tanıklığı ve Günlük Arşivler</h2>
+          <p>
+            İki savaşan tarafın iddialarını test etmenin en güvenilir yolu, çatışmanın ortasında yaşayan üçüncü
+            grupların kayıtlarına bakmaktır. Doğu Hristiyan vekâyinâmeleri (<em>Urfalı Mateos</em>,
+            <em>Süryani Mihail</em>) ve eski Kahire’deki <em>Geniza</em> tüccar mektupları, resmi saray ya da kilise
+            propagandasının ötesindeki gerçek hayatı belgeler.
+          </p>
+        </article>
+
+        <article class="method-card reveal" style="--delay: 200ms">
+          <span class="pill pill--turquoise">İLKE 04</span>
+          <h2>Görünürdeki Söylem ile Yapısal Sonucu Ayırmak</h2>
+          <p>
+            Tarihte orduları harekete geçiren ilan edilmiş sloganlar ile savaş bittiğinde ortaya çıkan ekonomik,
+            demografik ve siyasi sonuçlar nadiren aynıdır. Her dosyamızın sonunda hem "görünürdeki davayı" hem de
+            "arka plandaki uzun vadeli dönüşümü" ayrı sütunlarda teraziye koyarız.
+          </p>
+        </article>
+      </div>
+
+      <div class="method-cta reveal">
+        <a href={withBase('/dosyalar/antakya-1098/')} class="method-btn">Bu Yöntemi Dosya 01’de Canlı Deneyimleyin →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .method-wrap {
+    max-width: 960px;
+  }
+
+  .method-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
+    margin: 2.8rem 0;
+  }
+
+  .method-card {
+    padding: 1.8rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .method-card h2 {
+    font-size: 1.55rem;
+    margin: 0.85rem 0 0.65rem;
+  }
+
+  .method-card p {
+    margin: 0;
+    font-size: 0.93rem;
+    line-height: 1.72;
+  }
+
+  .method-btn {
+    display: inline-flex;
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: var(--accent-gold-soft);
+    border: 1px solid var(--border-gold);
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+
+  .method-btn:hover {
+    background: var(--accent-gold);
+    color: #090a0d;
+  }
+
+  @media (max-width: 780px) {
+    .method-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

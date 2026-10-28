@@ -1,0 +1,561 @@
+---
+import { actorFates, sceneHeroVisuals } from '../data/antakya1098';
+
+const battleVisual = sceneHeroVisuals.battleBridgeGate;
+---
+
+<!-- SAHNE 04: 28 HAZİRAN 1098 BÖLÜNMÜŞ VEKÂYİNÂME SAHNESİ -->
+<section id="sahne-kopru-kapisi" class="section-shell split-battle-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">SAHNE 04 · İKİ CEPHE, TEK SABAH (28 HAZİRAN 1098)</span>
+      <h2 class="section-title">Köprü Kapısı’nda Ne Oldu? Yan Yana İki Kayıt</h2>
+      <p class="section-lead">
+        Aynı savaş sabahına ait iki birincil metni yan yana okuduğunuzda tarihin en sarsıcı yapbozlarından biri
+        tamamlanır: Bir tarafın <strong>"mucize"</strong> gördüğü yerde, diğer taraf <strong>"siyasi boykot ve taktik
+        iflası"</strong> kaydetmiştir.
+      </p>
+
+      <button type="button" class="orig-toggle-btn" id="toggle-original-scripts">
+        Arapça ve Latince Orijinal Metin Satırlarını Göster / Gizle
+      </button>
+    </div>
+
+    {
+      battleVisual && (
+        <figure class="battle-banner reveal">
+          <div class="battle-banner__frame">
+            <img
+              src={battleVisual.src}
+              alt={battleVisual.caption}
+              class:list={['battle-banner__img', { 'is-engraving': battleVisual.isEngraving }]}
+              style={`object-position: ${battleVisual.objectPosition || 'center'}`}
+              loading="lazy"
+            />
+            <span class="battle-banner__badge">{battleVisual.badge}</span>
+          </div>
+          <figcaption class="battle-banner__cap">
+            <strong>{battleVisual.caption}</strong>
+            <span>{battleVisual.credit}</span>
+          </figcaption>
+        </figure>
+      )
+    }
+
+    <div class="split-chronicles" id="chronicle-stage">
+      <!-- SOL SÜTUN: İBNÜ'L-ESÎR -->
+      <article class="chronicle-col chronicle-col--east reveal">
+        <div class="chronicle-col__head">
+          <span class="pill pill--east">İSLAM CEPHESİ KAYDI</span>
+          <span class="chronicle-date">Hicrî 491 / Haziran 1098</span>
+        </div>
+
+        <h3>İbnü’l-Esîr · <em>el-Kâmil fi’t-Târîh</em></h3>
+        <p class="chronicle-author">Musul-Cezîre tarihçisi; erken dönem Halep ve Musul askeri kayıtlarına dayanır.</p>
+
+        <div class="orig-script orig-script--arabic" lang="ar" dir="rtl">
+          «...فخرجوا في اليوم الخامس من الباب من خمسة وستة ونحو ذلك؛ فقال المسلمون لكربوقا: ينبغي أن نقف على الباب فنقتل
+          كل من يخرج فإن أمرهم الآن سهل. فقال: أمهلوهم حتى يتكاملوا... فقتل قوم من المسلمين جماعة من الخارجين، فجاء
+          إليهم بنفسه ومنعهم. فلمّا تكامل خروج الفرنج... ولّى المسلمون منهزمين... ولم يضرب أحد منهم بسيف، ولا طعن برمح،
+          ولا رمى بسهم...»
+        </div>
+
+        <div class="chronicle-translation">
+          <p>
+            «Franklar kapıdan beşer altışar kişilik gruplar halinde çıkmaya başladılar. Müslüman komutanlar Kürboğa’ya:
+            <mark class="hl-east">"Kapının önünde duralım ve çıkan herkesi tek tek öldürelim; şu an onların işini bitirmek çok kolaydır"</mark>
+            dediler. Kürboğa ise: <em>"Bırakın hepsi dışarı çıkıp tamamlansın"</em> dedi. Hatta Müslümanlardan bir grup
+            ileri atılıp dışarı çıkanlardan bazılarını öldürdü; fakat
+            <mark class="hl-east">Kürboğa bizzat yanlarına at sürerek kendi askerlerini engelledi.</mark>»
+          </p>
+          <p>
+            «Frankların çıkışı tamamlanıp büyük bir savaş safı kurduklarında Müslümanlar; Kürboğa’nın evvela kendilerini
+            küçümsemesi, ikinci olarak da Frankları kapıda öldürmelerine engel olması yüzünden arkalarını dönüp kaçtılar.
+            Öyle ki <mark class="hl-east">hiç kimse ne bir kılıç vurdu, ne bir mızrak sapladı, ne de bir ok attı.</mark>
+            En son çekilenler pusuda bekledikleri için Sökmen bin Artuk ile Cenâhüddevle oldu. Franklar bu manzarayı
+            gördüklerinde, böylesi bir bozgunu gerektirecek hiçbir çarpışma yaşanmadığından
+            <strong>bunun bir tuzak olduğunu zannettiler ve takip etmekten korktular...</strong>»
+          </p>
+        </div>
+      </article>
+
+      <!-- SAĞ SÜTUN: GESTA FRANCORUM -->
+      <article class="chronicle-col chronicle-col--west reveal" style="--delay: 120ms">
+        <div class="chronicle-col__head">
+          <span class="pill pill--west">HAÇLI CEPHESİ GÖRGÜ TANIĞI</span>
+          <span class="chronicle-date">Kitap IX, Bölüm 29 · Haziran 1098</span>
+        </div>
+
+        <h3>Anonim Şövalye · <em>Gesta Francorum</em></h3>
+        <p class="chronicle-author">Bohemund’un birliğinde Köprü Kapısı’ndan bizzat çıkan Frank savaşçının günlüğü.</p>
+
+        <div class="orig-script orig-script--latin" lang="la">
+          «...Exierunt quoque de montibus innumerabiles exercitus, habentes equos albos, quorum uexilla omnia erant
+          alba... cognouerunt esse adiutorium Christi, cuius ductores fuerunt sanctus Georgius, Mercurius et Demetrius...
+          Turci igitur qui erant ex parte maris, uidentes se nullatenus posse subsistere, miserunt ignem in herbam, ut
+          uidentes illi qui erant in tentoriis fugerent...»
+        </div>
+
+        <div class="chronicle-translation">
+          <p>
+            «Sancakları taşıyan Bohemund ile diğer komutanlarımız nehrin üzerindeki köprüden geçerek ilerlediler...
+            Deniz tarafında mevzilenmiş olan Türkler artık tutunamayacaklarını anlayınca, çadırlarda bulunanlar görüp
+            kaçsın diye <mark class="hl-west">yerdeki kuru otları ateşe verdiler</mark> (hem duman perdesi hem çekilme
+            işareti).»
+          </p>
+          <p>
+            «Tam bu sırada <mark class="hl-west">dağlardan, atları da sancakları da bembeyaz olan sayısız ordular çıktı.</mark>
+            Liderlerimiz bu orduyu gördüklerinde bunun ne olduğunu ve kim olduklarını hiç anlayamadılar; ta ki bunların
+            <mark class="hl-west">Aziz Georgios, Mercurius ve Demetrius önderliğindeki Mesih’in yardımı</mark> olduğunu
+            kavrayana dek. Buna inanılmalıdır, zira adamlarımızdan pek çoğu bunu gözleriyle gördü... Düşman Fırat’a
+            doğru kaçarken altın, gümüş ve erzak dolu çadırlarını geride bıraktı.»
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- SENTEZ KÖPRÜSÜ -->
+    <div class="synthesis-bridge reveal">
+      <div class="synthesis-bridge__icon" aria-hidden="true">⇄</div>
+      <div>
+        <h4>Çapraz Okuma Sentezi: Aynı Olayın İki Yüzü</h4>
+        <p>
+          Kürboğa’nın İçkale’ye kendi adamı <strong>Ahmed bin Mervân</strong>’ı atayarak Antakya’yı sahipleneceğini
+          göstermesi üzerine <strong>Şam Meliki Dukak</strong> ve müttefik emîrler muharebe anında ordularını çekti.
+          Günlerdir açlık sınırında yaşayan Haçlı askerleri ise koca koalisyonun neredeyse çarpışmadan bir anda eriyip
+          dağılmasını, dağlardan inen beyaz atlı azizlerin ilahî müdahalesi olarak algılayıp kaydetti.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAHNE 05: İHANETİN BEDELİ (AKTÖR KADER KARTLARI) -->
+<section id="sahne-ihanet" class="section-shell">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow">SAHNE 05 · TARİHİN İRONİSİ VE AKIBETLER</span>
+      <h2 class="section-title">Meydandan Çekilen Aktörlere Sonra Ne Oldu?</h2>
+      <p class="section-lead">
+        <em>"Kürboğa güçlenmesin, elimizdeki şehirleri almasın"</em> hesabı yaparak koalisyonu sabote edenlerin tamamı,
+        kaçındıkları felaketin çok daha ağırını bizzat Haçlıların ve birbirlerinin elinden yaşadı. Kartlara tıklayarak
+        <strong>1098’deki hesaplarını</strong> ve <strong>tarihin kestiği faturayı</strong> karşılaştırın.
+      </p>
+    </div>
+
+    <div class="fates-grid">
+      {
+        actorFates.map((actor, idx) => (
+          <article
+            class:list={['fate-card', 'reveal', `fate-card--${actor.stance}`]}
+            style={`--delay: ${idx * 65}ms`}
+            data-fate-card
+            data-flipped="false"
+            tabindex="0"
+            role="button"
+            aria-label={`${actor.name} kartını çevir`}
+          >
+            <div class="fate-card__head">
+              <span class:list={['pill', actor.stance === 'loyal' ? 'pill--turquoise' : 'pill--west']}>
+                {actor.stance === 'loyal' ? 'SON ANA KADAR DİRENEN' : 'SABOTAJ / ÇEKİLME AKTÖRÜ'}
+              </span>
+              <span class="fate-card__end">{actor.endDate}</span>
+            </div>
+
+            <h3 class="fate-card__name">{actor.name}</h3>
+            <p class="fate-card__role">{actor.role}</p>
+
+            <div class="fate-card__body">
+              <div class="fate-face fate-face--calc">
+                <span class="fate-face__label">28 HAZİRAN 1098’DEKİ HESABI</span>
+                <p>{actor.calculation1098}</p>
+              </div>
+
+              <div class="fate-face fate-face--payback">
+                <span class="fate-face__label fate-face__label--after">SONRASINDA YAŞADIĞI AKIBET</span>
+                <p>{actor.historicalPayback}</p>
+              </div>
+            </div>
+
+            <div class="fate-card__footer">
+              <span data-fate-cta>Akıbetini Görmek İçin Tıklayın ↻</span>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function initSplitAndFates() {
+    const origBtn = document.getElementById('toggle-original-scripts');
+    const stage = document.getElementById('chronicle-stage');
+
+    origBtn?.addEventListener('click', () => {
+      stage?.classList.toggle('show-originals');
+    });
+
+    const fateCards = Array.from(document.querySelectorAll<HTMLElement>('[data-fate-card]'));
+    const toggleFate = (card: HTMLElement) => {
+      const next = card.dataset.flipped !== 'true';
+      card.dataset.flipped = String(next);
+      const cta = card.querySelector('[data-fate-cta]');
+      if (cta) {
+        cta.textContent = next ? '← 1098’deki Hesabına Dön' : 'Akıbetini Görmek İçin Tıklayın ↻';
+      }
+    };
+
+    fateCards.forEach((card) => {
+      card.addEventListener('click', () => toggleFate(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleFate(card);
+        }
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initSplitAndFates);
+</script>
+
+<style>
+  .battle-banner {
+    margin: 0 0 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-crimson);
+    box-shadow: var(--shadow-deep);
+  }
+
+  .battle-banner__frame {
+    position: relative;
+    height: clamp(240px, 36vw, 410px);
+    overflow: hidden;
+    background: #090b10;
+  }
+
+  .battle-banner__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .battle-banner__img.is-engraving {
+    filter: sepia(0.28) contrast(1.08) brightness(0.88);
+  }
+
+  .battle-banner__badge {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.95rem;
+    padding: 0.3rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(8, 10, 15, 0.86);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-crimson);
+    color: #ff8a9e;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .battle-banner__cap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.2rem;
+    padding: 0.82rem 1.2rem;
+    background: rgba(14, 18, 27, 0.96);
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.8rem;
+  }
+
+  .battle-banner__cap strong {
+    color: var(--text-primary);
+  }
+
+  .battle-banner__cap span {
+    color: var(--text-muted);
+    font-size: 0.74rem;
+  }
+
+  .orig-toggle-btn {
+    margin-top: 1.2rem;
+    padding: 0.65rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .orig-toggle-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  .split-chronicles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .chronicle-col {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-deep);
+  }
+
+  .chronicle-col--east {
+    border-top: 3px solid var(--accent-gold);
+  }
+
+  .chronicle-col--west {
+    border-top: 3px solid var(--accent-crimson);
+  }
+
+  .chronicle-col__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .chronicle-date {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .chronicle-col h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .chronicle-author {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .orig-script {
+    display: none;
+    margin-bottom: 1.2rem;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    background: rgba(5, 6, 10, 0.72);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+  }
+
+  .split-chronicles.show-originals .orig-script {
+    display: block;
+  }
+
+  .orig-script--arabic {
+    font-family: var(--font-arabic);
+    font-size: 1.16rem;
+    line-height: 1.95;
+    color: #edd7b4;
+  }
+
+  .orig-script--latin {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.04rem;
+    line-height: 1.65;
+    color: #e4cad0;
+  }
+
+  .chronicle-translation p {
+    font-family: var(--font-serif);
+    font-size: 1.16rem;
+    line-height: 1.68;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .hl-east {
+    background: rgba(217, 155, 78, 0.22);
+    color: #fff5e4;
+    padding: 0.05rem 0.28rem;
+    border-radius: 4px;
+  }
+
+  .hl-west {
+    background: rgba(217, 72, 95, 0.24);
+    color: #ffe8ec;
+    padding: 0.05rem 0.28rem;
+    border-radius: 4px;
+  }
+
+  .synthesis-bridge {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 1.15rem;
+    align-items: center;
+    padding: 1.6rem 1.8rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(90deg, rgba(217, 155, 78, 0.11), rgba(217, 72, 95, 0.11));
+    border: 1px solid rgba(243, 237, 226, 0.15);
+  }
+
+  .synthesis-bridge__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    background: rgba(8, 9, 13, 0.65);
+    color: var(--accent-gold);
+    border: 1px solid var(--border-gold);
+  }
+
+  .synthesis-bridge h4 {
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .synthesis-bridge p {
+    margin: 0;
+    font-size: 0.94rem;
+    color: var(--text-primary);
+    opacity: 0.92;
+  }
+
+  /* Fate Cards */
+  .fates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.35rem;
+  }
+
+  .fate-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.55rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all 0.28s ease;
+    user-select: none;
+  }
+
+  .fate-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(217, 155, 78, 0.45);
+  }
+
+  .fate-card[data-flipped='true'] {
+    background: linear-gradient(160deg, rgba(31, 17, 24, 0.92), rgba(16, 19, 28, 0.95));
+    border-color: var(--border-crimson);
+  }
+
+  .fate-card--loyal[data-flipped='true'] {
+    background: linear-gradient(160deg, rgba(14, 33, 33, 0.92), rgba(16, 19, 28, 0.95));
+    border-color: rgba(44, 197, 179, 0.48);
+  }
+
+  .fate-card__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .fate-card__end {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .fate-card__name {
+    font-size: 1.42rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .fate-card__role {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+  }
+
+  .fate-card__body {
+    flex: 1;
+    min-height: 155px;
+  }
+
+  .fate-card[data-flipped='false'] .fate-face--payback {
+    display: none;
+  }
+
+  .fate-card[data-flipped='true'] .fate-face--calc {
+    display: none;
+  }
+
+  .fate-face__label {
+    display: block;
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    color: var(--text-muted);
+    margin-bottom: 0.45rem;
+  }
+
+  .fate-face__label--after {
+    color: #ff8599;
+  }
+
+  .fate-card--loyal .fate-face__label--after {
+    color: var(--accent-turquoise);
+  }
+
+  .fate-face p {
+    margin: 0;
+    font-size: 0.89rem;
+    line-height: 1.65;
+    color: var(--text-primary);
+  }
+
+  .fate-card__footer {
+    margin-top: 1.1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.79rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+  }
+
+  @media (max-width: 980px) {
+    .split-chronicles {
+      grid-template-columns: 1fr;
+    }
+    .fates-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .fates-grid,
+    .synthesis-bridge {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

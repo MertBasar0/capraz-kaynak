@@ -1,0 +1,723 @@
+---
+import { mapSteps, historicalCities, historicalRoutes } from '../data/antakya1098';
+
+const mapPayload = JSON.stringify({
+  steps: mapSteps,
+  cities: historicalCities,
+  routes: historicalRoutes,
+});
+---
+
+<section id="sahne-harita" class="scrolly-wrapper" aria-label="Etkileşimli Harita ve Sefer Sahneleri">
+  <!-- Sticky Full-Screen 3D Map Canvas -->
+  <div class="scrolly-stage">
+    <div id="antakya-map-canvas" class="scrolly-map"></div>
+    <div class="scrolly-vignette" aria-hidden="true"></div>
+
+    <!-- Top HUD Status Bar -->
+    <div class="map-hud">
+      <div class="map-hud__meta">
+        <span class="map-hud__date" id="hud-date">{mapSteps[0].dateBadge}</span>
+        <span class="map-hud__sep">·</span>
+        <span class="map-hud__loc" id="hud-loc">{mapSteps[0].locationBadge}</span>
+      </div>
+      <div class="map-hud__steps" role="tablist" aria-label="Harita Adımları">
+        {
+          mapSteps.map((s, idx) => (
+            <button
+              type="button"
+              class:list={['hud-step-dot', { 'is-active': idx === 0 }]}
+              data-jump-step={idx}
+              title={s.title}
+              aria-label={`Adım ${idx + 1}: ${s.title}`}
+            >
+              {idx + 1}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Bottom Legend -->
+    <div class="map-legend" aria-hidden="true">
+      <span><i style="background:#2cc5b3"></i> Selçuklu İlerleyişi</span>
+      <span><i style="background:#d9485f"></i> Haçlı Yürüyüşü</span>
+      <span><i style="background:#d99b4e"></i> Kürboğa & Müttefikler</span>
+      <span><i style="background:#a78bfa"></i> Adana Üzerinden Firar</span>
+    </div>
+  </div>
+
+  <!-- Scrolling Story Cards -->
+  <div class="scrolly-steps-track" id="scrolly-steps-container">
+    {
+      mapSteps.map((step, index) => (
+        <article
+          class:list={['scrolly-card-wrap', { 'is-active': index === 0 }]}
+          data-map-step-index={index}
+          id={step.id}
+        >
+          <div class="scrolly-card">
+            <figure class="scrolly-card__media">
+              <div class="scrolly-card__media-frame">
+                <img
+                  src={step.visual.src}
+                  alt={step.visual.caption}
+                  class:list={['scrolly-card__img', { 'is-engraving': step.visual.isEngraving }]}
+                  style={`object-position: ${step.visual.objectPosition || 'center'}`}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+                <span class="scrolly-card__media-badge">{step.visual.badge}</span>
+              </div>
+              <figcaption class="scrolly-card__media-cap">
+                <span>{step.visual.caption}</span>
+                <em>{step.visual.credit}</em>
+              </figcaption>
+            </figure>
+
+            <div class="scrolly-card__header">
+              <span class="scrolly-card__eyebrow">{step.stepLabel}</span>
+              <span class="scrolly-card__date">{step.dateBadge}</span>
+            </div>
+
+            <h2 class="scrolly-card__title">{step.title}</h2>
+
+            {step.narrative.map((para) => (
+              <p class="scrolly-card__para">{para}</p>
+            ))}
+
+            <div class={`scrolly-card__note scrolly-card__note--${step.highlightNote.tone}`}>
+              <strong>{step.highlightNote.source}</strong>
+              <p>{step.highlightNote.text}</p>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <script type="application/json" id="scrolly-map-data" set:html={mapPayload} />
+</section>
+
+<script>
+  import 'maplibre-gl/dist/maplibre-gl.css';
+
+  let cleanupFn: (() => void) | null = null;
+
+  async function initScrollyMap() {
+    if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+
+    const mapEl = document.getElementById('antakya-map-canvas');
+    const dataEl = document.getElementById('scrolly-map-data');
+    if (!mapEl || !dataEl) return;
+
+    const [{ default: maplibregl }, { default: scrollama }] = await Promise.all([
+      import('maplibre-gl'),
+      import('scrollama'),
+    ]);
+
+    const payload = JSON.parse(dataEl.textContent || '{}');
+    const { steps, cities, routes } = payload;
+    if (!steps?.length) return;
+
+    const hudDate = document.getElementById('hud-date');
+    const hudLoc = document.getElementById('hud-loc');
+    const stepDots = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-jump-step]'));
+    const stepArticles = Array.from(document.querySelectorAll<HTMLElement>('[data-map-step-index]'));
+
+    let map: InstanceType<typeof maplibregl.Map> | null = null;
+    const cityMarkerEls = new Map<string, HTMLElement>();
+
+    try {
+      map = new maplibregl.Map({
+        container: mapEl,
+        style: {
+          version: 8,
+          sources: {
+            'dark-relief': {
+              type: 'raster',
+              tiles: [
+                'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+              ],
+              tileSize: 256,
+              attribution: '© Esri, HERE, Garmin, OpenStreetMap',
+            },
+          },
+          layers: [
+            {
+              id: 'bg-abyss',
+              type: 'background',
+              paint: { 'background-color': '#090b10' },
+            },
+            {
+              id: 'dark-relief-layer',
+              type: 'raster',
+              source: 'dark-relief',
+              paint: {
+                'raster-opacity': 0.92,
+                'raster-contrast': 0.24,
+                'raster-brightness-max': 0.78,
+              },
+            },
+          ],
+        },
+        center: steps[0].camera.center,
+        zoom: steps[0].camera.zoom,
+        pitch: steps[0].camera.pitch,
+        bearing: steps[0].camera.bearing,
+        interactive: false,
+        attributionControl: false,
+      });
+
+      map.on('load', () => {
+        if (!map) return;
+
+        // Add each historical route layer
+        routes.forEach((route: any) => {
+          const sourceId = `route-src-${route.id}`;
+          map!.addSource(sourceId, {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              properties: {},
+              geometry: {
+                type: 'LineString',
+                coordinates: route.coordinates,
+              },
+            },
+          });
+
+          // Soft outer glow
+          map!.addLayer({
+            id: `route-glow-${route.id}`,
+            type: 'line',
+            source: sourceId,
+            layout: { 'line-cap': 'round', 'line-join': 'round' },
+            paint: {
+              'line-color': route.color,
+              'line-width': 9,
+              'line-blur': 6,
+              'line-opacity': steps[0].activeRouteIds.includes(route.id) ? 0.35 : 0.04,
+            },
+          });
+
+          // Crisp core line
+          const paintObj: Record<string, any> = {
+            'line-color': route.color,
+            'line-width': 3,
+            'line-opacity': steps[0].activeRouteIds.includes(route.id) ? 0.95 : 0.12,
+          };
+          if (route.dashed) {
+            paintObj['line-dasharray'] = [2, 2];
+          }
+
+          map!.addLayer({
+            id: `route-line-${route.id}`,
+            type: 'line',
+            source: sourceId,
+            layout: { 'line-cap': 'round', 'line-join': 'round' },
+            paint: paintObj,
+          });
+        });
+
+        // Add Antioch Siege Ring highlight for zoomed-in steps
+        map.addSource('antioch-siege-ring', {
+          type: 'geojson',
+          data: {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'Point',
+              coordinates: [36.16, 36.202],
+            },
+          },
+        });
+
+        map.addLayer({
+          id: 'antioch-siege-circle',
+          type: 'circle',
+          source: 'antioch-siege-ring',
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 6, 11, 44],
+            'circle-color': 'rgba(217, 155, 78, 0.12)',
+            'circle-stroke-color': '#d99b4e',
+            'circle-stroke-width': 2,
+            'circle-opacity': 0.85,
+          },
+        });
+
+        // Add Historical City HTML Markers
+        cities.forEach((city: any) => {
+          const el = document.createElement('div');
+          el.className = `hist-marker hist-marker--${city.faction}`;
+          if (steps[0].focusCityIds.includes(city.id)) {
+            el.classList.add('is-focused');
+          }
+          el.innerHTML = `
+            <span class="hist-marker__dot"></span>
+            <span class="hist-marker__label">
+              <strong>${city.name}</strong>
+              <small>${city.historicalName}</small>
+            </span>
+          `;
+          cityMarkerEls.set(city.id, el);
+          new maplibregl.Marker({ element: el, anchor: 'left' }).setLngLat(city.coords).addTo(map!);
+        });
+      });
+    } catch {
+      mapEl.innerHTML =
+        '<div style="display:grid;place-items:center;height:100%;color:#bfb6a6;padding:2rem;text-align:center;">Harita görünümü yükleniyor...</div>';
+    }
+
+    const activateStep = (index: number) => {
+      const step = steps[index];
+      if (!step) return;
+
+      stepArticles.forEach((art, idx) => art.classList.toggle('is-active', idx === index));
+      stepDots.forEach((dot, idx) => dot.classList.toggle('is-active', idx === index));
+
+      if (hudDate) hudDate.textContent = step.dateBadge;
+      if (hudLoc) hudLoc.textContent = step.locationBadge;
+
+      cityMarkerEls.forEach((el, cityId) => {
+        el.classList.toggle('is-focused', step.focusCityIds.includes(cityId));
+      });
+
+      if (map && map.isStyleLoaded()) {
+        routes.forEach((route: any) => {
+          const isActive = step.activeRouteIds.includes(route.id);
+          if (map!.getLayer(`route-line-${route.id}`)) {
+            map!.setPaintProperty(`route-line-${route.id}`, 'line-opacity', isActive ? 0.95 : 0.1);
+          }
+          if (map!.getLayer(`route-glow-${route.id}`)) {
+            map!.setPaintProperty(`route-glow-${route.id}`, 'line-opacity', isActive ? 0.38 : 0.03);
+          }
+        });
+
+        map.flyTo({
+          center: step.camera.center,
+          zoom: step.camera.zoom,
+          pitch: step.camera.pitch,
+          bearing: step.camera.bearing,
+          duration: 1700,
+          essential: true,
+        });
+      }
+    };
+
+    const scroller = scrollama();
+    scroller
+      .setup({
+        step: '#scrolly-steps-container .scrolly-card-wrap',
+        offset: 0.56,
+      })
+      .onStepEnter((res) => {
+        activateStep(res.index);
+      });
+
+    const onResize = () => scroller.resize();
+    window.addEventListener('resize', onResize);
+
+    stepDots.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.jumpStep || 0);
+        const targetEl = stepArticles[idx];
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+
+    cleanupFn = () => {
+      window.removeEventListener('resize', onResize);
+      scroller.destroy();
+      if (map) {
+        map.remove();
+        map = null;
+      }
+    };
+  }
+
+  document.addEventListener('astro:page-load', initScrollyMap);
+  document.addEventListener('astro:before-swap', () => {
+    if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+  });
+</script>
+
+<style>
+  .scrolly-wrapper {
+    position: relative;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .scrolly-stage {
+    position: sticky;
+    top: 68px;
+    width: 100%;
+    height: calc(100vh - 68px);
+    z-index: 1;
+    overflow: hidden;
+    background: #080a0f;
+  }
+
+  .scrolly-map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .scrolly-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(8, 9, 13, 0.82) 0%, rgba(8, 9, 13, 0.34) 46%, rgba(8, 9, 13, 0.25) 100%),
+      linear-gradient(180deg, rgba(8, 9, 13, 0.65) 0%, transparent 18%, transparent 82%, rgba(8, 9, 13, 0.85) 100%);
+  }
+
+  .map-hud {
+    position: absolute;
+    top: 1.15rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .map-hud__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(12, 15, 22, 0.84);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-gold);
+    font-size: 0.78rem;
+  }
+
+  .map-hud__date {
+    font-weight: 700;
+    color: var(--accent-gold);
+  }
+
+  .map-hud__sep {
+    color: var(--text-muted);
+  }
+
+  .map-hud__loc {
+    color: var(--text-primary);
+  }
+
+  .map-hud__steps {
+    display: inline-flex;
+    gap: 0.38rem;
+    pointer-events: auto;
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: rgba(12, 15, 22, 0.82);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .hud-step-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .hud-step-dot:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .hud-step-dot.is-active {
+    background: var(--accent-gold);
+    color: #090a0d;
+  }
+
+  .map-legend {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.5rem;
+    z-index: 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: 10px;
+    background: rgba(10, 12, 18, 0.82);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.73rem;
+    color: var(--text-secondary);
+  }
+
+  .map-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .map-legend i {
+    display: inline-block;
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .scrolly-steps-track {
+    position: relative;
+    z-index: 3;
+    margin-top: -72vh;
+    padding-bottom: 18vh;
+    pointer-events: none;
+  }
+
+  .scrolly-card-wrap {
+    width: min(100% - 2rem, var(--max-width));
+    margin: 0 auto 66vh auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .scrolly-card {
+    pointer-events: auto;
+    width: min(100%, 510px);
+    padding: 1.75rem 1.85rem;
+    border-radius: var(--radius-lg);
+    background: rgba(14, 17, 25, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(243, 237, 226, 0.12);
+    box-shadow: var(--shadow-deep);
+    opacity: 0.42;
+    transform: translateY(14px) scale(0.985);
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .scrolly-card-wrap.is-active .scrolly-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    border-color: var(--border-gold);
+  }
+
+  .scrolly-card__media {
+    margin: -1.75rem -1.85rem 1.15rem -1.85rem;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(217, 155, 78, 0.28);
+    background: #090b10;
+  }
+
+  .scrolly-card__media-frame {
+    position: relative;
+    height: 176px;
+    overflow: hidden;
+  }
+
+  .scrolly-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .scrolly-card-wrap.is-active .scrolly-card__img {
+    transform: scale(1.03);
+  }
+
+  .scrolly-card__img.is-engraving {
+    filter: sepia(0.28) contrast(1.08) brightness(0.88);
+  }
+
+  .scrolly-card__media-badge {
+    position: absolute;
+    top: 0.65rem;
+    left: 0.75rem;
+    padding: 0.22rem 0.58rem;
+    border-radius: 999px;
+    background: rgba(8, 10, 15, 0.86);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-gold);
+    color: var(--accent-gold);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+
+  .scrolly-card__media-cap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.14rem;
+    padding: 0.55rem 1rem;
+    background: rgba(11, 14, 21, 0.96);
+    font-size: 0.74rem;
+    line-height: 1.35;
+  }
+
+  .scrolly-card__media-cap span {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .scrolly-card__media-cap em {
+    color: var(--text-muted);
+    font-style: normal;
+    font-size: 0.68rem;
+  }
+
+  .scrolly-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .scrolly-card__eyebrow {
+    font-size: 0.71rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--accent-gold);
+  }
+
+  .scrolly-card__date {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .scrolly-card__title {
+    font-size: clamp(1.55rem, 2.3vw, 2rem);
+    margin-bottom: 0.95rem;
+  }
+
+  .scrolly-card__para {
+    font-size: 0.94rem;
+    line-height: 1.72;
+    color: var(--text-secondary);
+    margin-bottom: 0.85rem;
+  }
+
+  .scrolly-card__note {
+    margin-top: 1.05rem;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--accent-gold);
+    background: rgba(217, 155, 78, 0.08);
+  }
+
+  .scrolly-card__note--west {
+    border-left-color: var(--accent-crimson);
+    background: rgba(217, 72, 95, 0.08);
+  }
+
+  .scrolly-card__note--witness {
+    border-left-color: var(--accent-witness);
+    background: rgba(167, 139, 250, 0.09);
+  }
+
+  .scrolly-card__note strong {
+    display: block;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    color: var(--text-primary);
+    margin-bottom: 0.28rem;
+  }
+
+  .scrolly-card__note p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.58;
+    color: var(--text-primary);
+    opacity: 0.92;
+  }
+
+  /* Global styles for dynamically injected MapLibre HTML Markers */
+  :global(.hist-marker) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    opacity: 0.42;
+    transform: scale(0.9);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+  }
+
+  :global(.hist-marker.is-focused) {
+    opacity: 1;
+    transform: scale(1.04);
+    z-index: 10;
+  }
+
+  :global(.hist-marker__dot) {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d99b4e;
+    border: 2px solid #f3ede2;
+    box-shadow: 0 0 0 rgba(217, 155, 78, 0.6);
+  }
+
+  :global(.hist-marker--crusader .hist-marker__dot) {
+    background: #d9485f;
+  }
+
+  :global(.hist-marker--seljuk .hist-marker__dot) {
+    background: #2cc5b3;
+  }
+
+  :global(.hist-marker.is-focused .hist-marker__dot) {
+    box-shadow: 0 0 16px 4px rgba(217, 155, 78, 0.75);
+  }
+
+  :global(.hist-marker__label) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.22rem 0.52rem;
+    border-radius: 6px;
+    background: rgba(9, 11, 16, 0.84);
+    border: 1px solid rgba(243, 237, 226, 0.16);
+    line-height: 1.18;
+    white-space: nowrap;
+  }
+
+  :global(.hist-marker__label strong) {
+    font-size: 0.74rem;
+    color: #f3ede2;
+  }
+
+  :global(.hist-marker__label small) {
+    font-size: 0.63rem;
+    color: #bfb6a6;
+  }
+
+  @media (max-width: 760px) {
+    .map-legend {
+      display: none;
+    }
+    .scrolly-card {
+      padding: 1.35rem;
+    }
+    .scrolly-card__media {
+      margin: -1.35rem -1.35rem 1rem -1.35rem;
+    }
+  }
+</style>

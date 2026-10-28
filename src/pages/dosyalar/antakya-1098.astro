@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SceneCompass from '../../components/SceneCompass.astro';
+import CinematicPrologue from '../../components/CinematicPrologue.astro';
+import ScrollyMapEngine from '../../components/ScrollyMapEngine.astro';
+import PropagandaLens from '../../components/PropagandaLens.astro';
+import ArmyAndKerbogha from '../../components/ArmyAndKerbogha.astro';
+import SplitBattleAndFates from '../../components/SplitBattleAndFates.astro';
+import TwoCenturyBalance from '../../components/TwoCenturyBalance.astro';
+import { withBase } from '../../utils/paths';
+---
+
+<BaseLayout
+  title="Dosya 01: Antakya 1098, Kürboğa ve Haçlı Seferleri — Çapraz Kaynak"
+  description="1098 Antakya Kuşatması, Musul Atabeyi Kürboğa ve Haçlı Seferlerinin 200 yıllık bilançosunu birincil İslam, Haçlı ve Doğu Hristiyan vekâyinâmeleri ve dönem el yazması/gravür arşiviyle keşfedin."
+>
+  <SceneCompass />
+  <CinematicPrologue />
+  <ScrollyMapEngine />
+  <PropagandaLens />
+  <ArmyAndKerbogha />
+  <SplitBattleAndFates />
+  <TwoCenturyBalance />
+
+  <section class="next-dossier-banner">
+    <div class="container next-dossier-banner__inner reveal">
+      <div>
+        <span class="eyebrow">DOSYA 01 TAMAMLANDI · SIRADAKİ YOLCULUKLAR</span>
+        <h2>Dosya 02: 1187 Hıttîn ve Kudüs · Dosya 03: 1071 Malazgirt</h2>
+        <p>
+          1187’de Selahaddin Eyyûbî’nin Kudüs’ü teslim alışı ve 1071 Malazgirt Meydan Muharebesi’ni karşı cephelerin
+          birincil görgü tanıkları ve dönem arşivleriyle inceleyeceğimiz sıradaki etkileşimli dosyalar hazırlanıyor.
+        </p>
+      </div>
+      <a href={withBase('/')} class="back-catalog-btn">← Tüm Dosyalar Kataloğuna Dön</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .next-dossier-banner {
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border-subtle);
+    background: linear-gradient(90deg, rgba(217, 155, 78, 0.08), rgba(44, 197, 179, 0.06));
+  }
+
+  .next-dossier-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .next-dossier-banner h2 {
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+    margin: 0.6rem 0 0.6rem;
+  }
+
+  .next-dossier-banner p {
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .back-catalog-btn {
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-gold);
+    background: var(--accent-gold-soft);
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.86rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .back-catalog-btn:hover {
+    background: var(--accent-gold);
+    color: #090a0d;
+  }
+</style>

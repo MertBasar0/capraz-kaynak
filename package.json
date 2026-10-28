@@ -1,0 +1,21 @@
+{
+  "name": "capraz-kaynak-karsilastirmali-tarih",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Birincil kayıtlarla karşılaştırmalı, etkileşimli (scrollytelling) tarih platformu",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.7.0",
+    "maplibre-gl": "^5.3.0",
+    "scrollama": "^3.2.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}

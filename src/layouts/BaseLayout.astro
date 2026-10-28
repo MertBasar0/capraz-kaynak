@@ -1,0 +1,280 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { withBase } from '../utils/paths';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Birincil vekâyinâmeler, etkileşimli 3B haritalar ve çapraz kaynak kritiği ile karşılaştırmalı tarih platformu.',
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const homeHref = withBase('/');
+const dossier01Href = withBase('/dosyalar/antakya-1098/');
+const methodologyHref = withBase('/metodoloji/');
+const isHome = currentPath === homeHref || currentPath === homeHref.replace(/\/$/, '');
+const canonicalUrl = new URL(currentPath, Astro.site || 'https://mertbasar0.github.io').toString();
+const ogImageUrl = new URL(
+  withBase('/images/arsiv/prologue-antioch-bartlett.png'),
+  Astro.site || 'https://mertbasar0.github.io'
+).toString();
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href={homeHref} class="brand" aria-label="Çapraz Kaynak Ana Sayfa">
+          <span class="brand__mark" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="26" stroke="#d99b4e" stroke-opacity="0.55" stroke-width="2" />
+              <path d="M18 20L46 44M46 20L18 44" stroke="#d99b4e" stroke-width="3.2" stroke-linecap="round" />
+              <circle cx="32" cy="32" r="5.5" fill="#d9485f" stroke="#f3ede2" stroke-width="2" />
+            </svg>
+          </span>
+          <span class="brand__text">
+            <strong>ÇAPRAZ KAYNAK</strong>
+            <small>Karşılaştırmalı Tarih Atlası</small>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Ana Gezinme">
+          <a href={homeHref} class:list={['site-nav__link', { active: isHome }]}>
+            Dosyalar
+          </a>
+          <a
+            href={dossier01Href}
+            class:list={['site-nav__link', { active: currentPath.includes('antakya-1098') }]}
+          >
+            Dosya 01: Antakya 1098
+          </a>
+          <a
+            href={methodologyHref}
+            class:list={['site-nav__link', { active: currentPath.includes('metodoloji') }]}
+          >
+            Metodoloji
+          </a>
+        </nav>
+      </div>
+      <div class="reading-progress" id="global-reading-progress" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>
+          <div class="brand__footer-title">ÇAPRAZ KAYNAK</div>
+          <p class="site-footer__desc">
+            Toplumsal tarih bilinci için açık erişimli, çok cepheli birincil kaynak okumaları. Propaganda ile doğrulanabilir
+            olguyu yan yana koyar; okura ne düşüneceğini değil, nasıl sorgulayacağını gösterir.
+          </p>
+        </div>
+        <div class="site-footer__links">
+          <a href={homeHref}>Tüm Dosyalar</a>
+          <a href={dossier01Href}>Dosya 01: Antakya 1098</a>
+          <a href={methodologyHref}>Kaynak Kritiği İlkeleri</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function initGlobalInteractions() {
+        const progressEl = document.getElementById('global-reading-progress');
+        const updateProgress = () => {
+          if (!progressEl) return;
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const ratio = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+          progressEl.style.width = `${ratio}%`;
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+          );
+          reveals.forEach((el) => io.observe(el));
+        } else {
+          reveals.forEach((el) => el.classList.add('is-visible'));
+        }
+      }
+
+      document.addEventListener('astro:page-load', initGlobalInteractions);
+    </script>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(8, 9, 13, 0.78);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 1rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .brand__mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(217, 155, 78, 0.08);
+    border: 1px solid rgba(217, 155, 78, 0.25);
+  }
+
+  .brand__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .brand__text strong {
+    font-size: 0.88rem;
+    letter-spacing: 0.14em;
+    color: var(--text-primary);
+  }
+
+  .brand__text small {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .site-nav__link {
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+
+  .site-nav__link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .site-nav__link.active {
+    color: var(--accent-gold);
+    background: var(--accent-gold-soft);
+    border: 1px solid var(--border-gold);
+  }
+
+  .reading-progress {
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-crimson));
+    transition: width 0.08s linear;
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 3.5rem 0 4rem;
+    background: rgba(6, 7, 11, 0.9);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .brand__footer-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--accent-gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .site-footer__desc {
+    max-width: 560px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+  }
+
+  .site-footer__links a:hover {
+    color: var(--accent-gold);
+  }
+
+  @media (max-width: 680px) {
+    .brand__text small {
+      display: none;
+    }
+    .site-nav__link {
+      padding: 0.4rem 0.62rem;
+      font-size: 0.76rem;
+    }
+  }
+</style>
