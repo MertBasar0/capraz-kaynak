@@ -77,7 +77,7 @@ const ogImageUrl = new URL(
             href={dossier01Href}
             class:list={['site-nav__link', { active: currentPath.includes('antakya-1098') }]}
           >
-            Dosya 01: Antakya 1098
+            Dosya 01<span class="nav-sublabel">: Antakya 1098</span>
           </a>
           <a
             href={methodologyHref}
@@ -281,12 +281,45 @@ const ogImageUrl = new URL(
   }
 
   @media (max-width: 680px) {
+    .site-header__inner {
+      gap: 0.5rem;
+    }
+    .brand {
+      gap: 0.5rem;
+    }
+    .brand__text strong {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
     .brand__text small {
       display: none;
     }
+    .site-nav {
+      gap: 0.2rem;
+    }
     .site-nav__link {
-      padding: 0.4rem 0.62rem;
-      font-size: 0.76rem;
+      padding: 0.36rem 0.56rem;
+      font-size: 0.74rem;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .brand__mark {
+      width: 30px;
+      height: 30px;
+    }
+    .brand__text strong {
+      font-size: 0.71rem;
+      letter-spacing: 0.06em;
+    }
+    .site-nav__link {
+      padding: 0.32rem 0.44rem;
+      font-size: 0.69rem;
+    }
+    .nav-sublabel {
+      display: none;
     }
   }
 </style>
