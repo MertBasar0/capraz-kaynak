@@ -1,7 +1,81 @@
 ---
 import { withBase } from '../utils/paths';
 
-const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
+interface ArchiveSlide {
+  id: string;
+  src: string;
+  width: number;
+  height: number;
+  mode: 'cover' | 'portrait';
+  badge: string;
+  shortLabel: string;
+  title: string;
+  meta: string;
+  alt: string;
+}
+
+const slides: ArchiveSlide[] = [
+  {
+    id: 'kocatepe-1922',
+    src: withBase('/images/arsiv/ataturk-kocatepe-1922.jpg'),
+    width: 1200,
+    height: 799,
+    mode: 'cover',
+    badge: '01 / 05 · KOCATEPE · 26 AĞUSTOS 1922',
+    shortLabel: '1922 Kocatepe',
+    title: 'Afyonkarahisar · Kocatepe Gözetleme Yeri (26 Ağustos 1922 Sabahı)',
+    meta: 'Başkomutan Gazi Mustafa Kemal Paşa Büyük Taarruz’un başladığı saatlerde kalpaklı cephe üniformasıyla · Fotoğraf: Etem Hamdi Tem (Kamu Malı Arşiv Kaydı)',
+    alt: 'Başkomutan Gazi Mustafa Kemal Paşa, 26 Ağustos 1922 Büyük Taarruz sabahı Afyonkarahisar Kocatepe gözetleme yerinde kalpaklı cephe üniformasıyla',
+  },
+  {
+    id: 'canakkale-1915',
+    src: withBase('/images/arsiv/ataturk-canakkale-1915.jpg'),
+    width: 1200,
+    height: 801,
+    mode: 'cover',
+    badge: '02 / 05 · ÇANAKKALE SİPERİ · 1915',
+    shortLabel: '1915 Çanakkale',
+    title: 'Gelibolu · Çanakkale Cephesi Siper Hattı (1915)',
+    meta: 'Anafartalar ve Arıburnu muharebeleri sırasında Albay Mustafa Kemal ön hat siperinde kurmaylarıyla gözetleme yaparken (Kamu Malı Birincil Arşiv Kaydı)',
+    alt: 'Çanakkale Cephesi siper hattında kurmaylarıyla gözetleme yapan Mustafa Kemal (1915)',
+  },
+  {
+    id: 'bati-cephesi-1921',
+    src: withBase('/images/arsiv/ataturk-bati-cephesi-1921.jpg'),
+    width: 1200,
+    height: 801,
+    mode: 'cover',
+    badge: '03 / 05 · BATI CEPHESİ KARARGÂHI · 1921',
+    shortLabel: '1921 Cephe',
+    title: 'Batı Cephesi · Karargâh Çadırı Önünde Kalpaklı Heyet (1921)',
+    meta: 'TBMM Reisi Mustafa Kemal Paşa kalpaklı cephe kaputuyla; heyette sonradan Türk Tarihi Tetkik Cemiyeti Reisliği yapacak Tevfik Bıyıklıoğlu da yer alır (Kamu Malı)',
+    alt: 'TBMM Reisi Mustafa Kemal Paşa kalpaklı ve kürklü cephe kaputuyla Batı Cephesi çadırı önünde kurmaylarıyla (1921)',
+  },
+  {
+    id: 'kalpak-portre-1923',
+    src: withBase('/images/arsiv/ataturk-kalpakli-portre-1923.jpg'),
+    width: 961,
+    height: 1375,
+    mode: 'portrait',
+    badge: '04 / 05 · CAM NEGATİF PORTRE · c. 1923',
+    shortLabel: '1923 Kalpaklı',
+    title: 'Cepheden Cumhuriyet’e · Kalpaklı Cam Negatif Portresi (c. 1923)',
+    meta: 'ABD Kongre Kütüphanesi (Library of Congress · George Grantham Bain Cam Negatif Koleksiyonu, LCCN 2014716853 · Kamu Malı Birincil Arşiv Kaydı)',
+    alt: 'Gazi Mustafa Kemal Atatürk’ün kalpaklı cam negatif portresi (Library of Congress, LCCN 2014716853, c. 1923)',
+  },
+  {
+    id: 'kayseri-karatahta-1928',
+    src: withBase('/images/arsiv/ataturk-kayseri-karatahta-1928.jpg'),
+    width: 1200,
+    height: 801,
+    mode: 'cover',
+    badge: '05 / 05 · KARATAHTA BAŞI · 20 EYLÜL 1928',
+    shortLabel: '1928 Karatahta',
+    title: 'Kayseri · Karatahta Başında Kültür ve Bilim Seferberliği (20 Eylül 1928)',
+    meta: 'Savaş meydanından kürsüye: Gazi Mustafa Kemal yeni Türk harflerini bizzat karatahta başında anlatırken (Nationaal Archief · SFA003017841 · Kamu Malı)',
+    alt: 'Gazi Mustafa Kemal Atatürk, 20 Eylül 1928 tarihinde Kayseri’de Türk bayrakları altında karatahta başında yeni harfleri anlatırken',
+  },
+];
 ---
 
 <section class="ataturk-corner" id="ataturk-kosesi" aria-labelledby="ataturk-corner-heading">
@@ -49,29 +123,260 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
         </p>
       </div>
 
-      <figure class="ataturk-card__media">
-        <div class="ataturk-card__frame">
-          <img
-            src={kocatepePhotoSrc}
-            alt="Başkomutan Gazi Mustafa Kemal Paşa, 26 Ağustos 1922 Büyük Taarruz sabahı Afyonkarahisar Kocatepe gözetleme yerinde kalpaklı cephe üniformasıyla"
-            width="1200"
-            height="799"
-            loading="eager"
-            decoding="async"
-          />
-          <span class="ataturk-card__frame-badge">CEPHE VESİKASI · KOCATEPE · 26 AĞUSTOS 1922</span>
+      <figure
+        class="ataturk-carousel"
+        data-ataturk-carousel
+        tabindex="0"
+        aria-roledescription="karusel"
+        aria-label="Gazi Mustafa Kemal Atatürk birincil arşiv fotoğrafları seçkisi"
+      >
+        <div class="ataturk-carousel__viewport">
+          {
+            slides.map((slide, idx) => (
+              <div
+                class:list={[
+                  'ataturk-carousel__slide',
+                  { 'is-active': idx === 0, 'is-portrait': slide.mode === 'portrait' },
+                ]}
+                data-slide-index={idx}
+                data-badge={slide.badge}
+                data-title={slide.title}
+                data-meta={slide.meta}
+                aria-hidden={idx === 0 ? 'false' : 'true'}
+              >
+                {slide.mode === 'portrait' && (
+                  <img
+                    src={slide.src}
+                    alt=""
+                    aria-hidden="true"
+                    class="ataturk-carousel__backdrop"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={slide.width}
+                  height={slide.height}
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  class="ataturk-carousel__img"
+                />
+              </div>
+            ))
+          }
+
+          <button
+            type="button"
+            class="ataturk-carousel__nav ataturk-carousel__nav--prev"
+            data-carousel-prev
+            aria-label="Önceki arşiv fotoğrafı"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="ataturk-carousel__nav ataturk-carousel__nav--next"
+            data-carousel-next
+            aria-label="Sonraki arşiv fotoğrafı"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <span class="ataturk-carousel__badge" data-carousel-badge>{slides[0].badge}</span>
         </div>
-        <figcaption class="ataturk-card__caption">
-          <strong>Afyonkarahisar · Kocatepe Gözetleme Yeri (26 Ağustos 1922 Sabahı)</strong>
-          <span>
-            Başkomutan Gazi Mustafa Kemal Paşa Büyük Taarruz’un başladığı saatlerde cephe hattında · Fotoğraf: Etem
-            Hamdi Tem (Kamu Malı Birincil Arşiv Kaydı)
-          </span>
+
+        <div class="ataturk-carousel__controls" role="tablist" aria-label="Arşiv kareleri">
+          {
+            slides.map((slide, idx) => (
+              <button
+                type="button"
+                role="tab"
+                class:list={['ataturk-carousel__dot', { 'is-active': idx === 0 }]}
+                data-carousel-dot={idx}
+                aria-selected={idx === 0 ? 'true' : 'false'}
+                aria-label={`${idx + 1}. kare: ${slide.shortLabel}`}
+                title={slide.shortLabel}
+              >
+                <span class="ataturk-carousel__dot-label">{slide.shortLabel}</span>
+              </button>
+            ))
+          }
+        </div>
+
+        <figcaption class="ataturk-carousel__caption" aria-live="polite">
+          <strong data-carousel-title>{slides[0].title}</strong>
+          <span data-carousel-meta>{slides[0].meta}</span>
         </figcaption>
       </figure>
     </article>
   </div>
 </section>
+
+<script>
+  let cleanupCarousel: (() => void) | null = null;
+
+  function initAtaturkCarousel() {
+    if (cleanupCarousel) {
+      cleanupCarousel();
+      cleanupCarousel = null;
+    }
+
+    const root = document.querySelector<HTMLElement>('[data-ataturk-carousel]');
+    if (!root) return;
+
+    const slideEls = Array.from(root.querySelectorAll<HTMLElement>('[data-slide-index]'));
+    const dotEls = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-carousel-dot]'));
+    const prevBtn = root.querySelector<HTMLButtonElement>('[data-carousel-prev]');
+    const nextBtn = root.querySelector<HTMLButtonElement>('[data-carousel-next]');
+    const badgeEl = root.querySelector<HTMLElement>('[data-carousel-badge]');
+    const titleEl = root.querySelector<HTMLElement>('[data-carousel-title]');
+    const metaEl = root.querySelector<HTMLElement>('[data-carousel-meta]');
+
+    if (slideEls.length < 2) return;
+
+    let current = 0;
+    let paused = false;
+    let userLocked = false;
+    let timerId: number | null = null;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const goTo = (index: number) => {
+      const total = slideEls.length;
+      current = ((index % total) + total) % total;
+
+      slideEls.forEach((el, idx) => {
+        const active = idx === current;
+        el.classList.toggle('is-active', active);
+        el.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+
+      dotEls.forEach((dot, idx) => {
+        const active = idx === current;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      const activeSlide = slideEls[current];
+      if (badgeEl && activeSlide.dataset.badge) badgeEl.textContent = activeSlide.dataset.badge;
+      if (titleEl && activeSlide.dataset.title) titleEl.textContent = activeSlide.dataset.title;
+      if (metaEl && activeSlide.dataset.meta) metaEl.textContent = activeSlide.dataset.meta;
+    };
+
+    const stopTimer = () => {
+      if (timerId !== null) {
+        window.clearInterval(timerId);
+        timerId = null;
+      }
+    };
+
+    const startTimer = () => {
+      stopTimer();
+      if (prefersReducedMotion || paused || userLocked) return;
+      timerId = window.setInterval(() => {
+        goTo(current + 1);
+      }, 6800);
+    };
+
+    const onPrev = () => {
+      userLocked = true;
+      goTo(current - 1);
+      stopTimer();
+    };
+
+    const onNext = () => {
+      userLocked = true;
+      goTo(current + 1);
+      stopTimer();
+    };
+
+    prevBtn?.addEventListener('click', onPrev);
+    nextBtn?.addEventListener('click', onNext);
+
+    const dotHandlers = dotEls.map((dot, idx) => {
+      const handler = () => {
+        userLocked = true;
+        goTo(idx);
+        stopTimer();
+      };
+      dot.addEventListener('click', handler);
+      return { dot, handler };
+    });
+
+    const onMouseEnter = () => {
+      paused = true;
+      stopTimer();
+    };
+    const onMouseLeave = () => {
+      paused = false;
+      startTimer();
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        onPrev();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        onNext();
+      }
+    };
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length !== 1) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    };
+    const onTouchEnd = (e: TouchEvent) => {
+      if (e.changedTouches.length !== 1) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 38 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+        if (dx < 0) onNext();
+        else onPrev();
+      }
+    };
+
+    root.addEventListener('mouseenter', onMouseEnter);
+    root.addEventListener('mouseleave', onMouseLeave);
+    root.addEventListener('focusin', onMouseEnter);
+    root.addEventListener('focusout', onMouseLeave);
+    root.addEventListener('keydown', onKeyDown);
+    root.addEventListener('touchstart', onTouchStart, { passive: true });
+    root.addEventListener('touchend', onTouchEnd, { passive: true });
+
+    startTimer();
+
+    cleanupCarousel = () => {
+      stopTimer();
+      prevBtn?.removeEventListener('click', onPrev);
+      nextBtn?.removeEventListener('click', onNext);
+      dotHandlers.forEach(({ dot, handler }) => dot.removeEventListener('click', handler));
+      root.removeEventListener('mouseenter', onMouseEnter);
+      root.removeEventListener('mouseleave', onMouseLeave);
+      root.removeEventListener('focusin', onMouseEnter);
+      root.removeEventListener('focusout', onMouseLeave);
+      root.removeEventListener('keydown', onKeyDown);
+      root.removeEventListener('touchstart', onTouchStart);
+      root.removeEventListener('touchend', onTouchEnd);
+    };
+  }
+
+  document.addEventListener('astro:page-load', initAtaturkCarousel);
+  document.addEventListener('astro:before-swap', () => {
+    if (cleanupCarousel) {
+      cleanupCarousel();
+      cleanupCarousel = null;
+    }
+  });
+</script>
 
 <style>
   .ataturk-corner {
@@ -109,10 +414,10 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-    gap: 2.4rem;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.98fr);
+    gap: 2.35rem;
     align-items: center;
-    padding: 2.35rem 2.5rem;
+    padding: 2.3rem 2.45rem;
     border-radius: var(--radius-lg);
     background:
       linear-gradient(145deg, rgba(26, 18, 24, 0.88) 0%, rgba(16, 19, 28, 0.95) 52%, rgba(20, 22, 31, 0.96) 100%);
@@ -175,9 +480,9 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
   }
 
   .ataturk-card__title {
-    font-size: clamp(1.72rem, 2.65vw, 2.42rem);
+    font-size: clamp(1.7rem, 2.6vw, 2.38rem);
     line-height: 1.18;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.08rem;
     color: var(--text-primary);
   }
 
@@ -190,7 +495,7 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
   }
 
   .ataturk-card__quote {
-    margin: 0 0 1.1rem;
+    margin: 0 0 1.08rem;
     padding: 0.95rem 1.2rem;
     border-left: 3px solid var(--accent-gold);
     background: rgba(9, 11, 16, 0.58);
@@ -198,18 +503,18 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
   }
 
   .ataturk-card__quote-main {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.48rem;
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: clamp(1.12rem, 1.45vw, 1.28rem);
+    font-size: clamp(1.12rem, 1.44vw, 1.27rem);
     line-height: 1.46;
     color: var(--text-primary);
   }
 
   .ataturk-card__quote-sub {
-    margin: 0 0 0.58rem;
-    font-size: 0.85rem;
-    line-height: 1.6;
+    margin: 0 0 0.56rem;
+    font-size: 0.84rem;
+    line-height: 1.58;
     color: var(--text-secondary);
   }
 
@@ -233,7 +538,7 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
 
   .ataturk-card__body {
     margin: 0;
-    font-size: 0.91rem;
+    font-size: 0.9rem;
     line-height: 1.72;
     color: var(--text-secondary);
   }
@@ -248,81 +553,206 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
     font-style: italic;
   }
 
-  .ataturk-card__media {
+  /* Carousel */
+  .ataturk-carousel {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.72rem;
+    gap: 0.65rem;
+    outline: none;
   }
 
-  .ataturk-card__frame {
+  .ataturk-carousel:focus-visible .ataturk-carousel__viewport {
+    box-shadow:
+      0 0 0 2px var(--accent-gold),
+      0 18px 42px rgba(0, 0, 0, 0.58);
+  }
+
+  .ataturk-carousel__viewport {
     position: relative;
     border-radius: 13px;
     overflow: hidden;
-    aspect-ratio: 1200 / 799;
-    background: #0b0d13;
-    border: 1px solid rgba(217, 155, 78, 0.36);
+    aspect-ratio: 3 / 2;
+    background: #0a0c12;
+    border: 1px solid rgba(217, 155, 78, 0.38);
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.58);
+    user-select: none;
   }
 
-  .ataturk-card__frame::after {
+  .ataturk-carousel__viewport::after {
     content: '';
     position: absolute;
     inset: 0;
+    z-index: 2;
     background:
-      radial-gradient(circle at 46% 48%, transparent 54%, rgba(8, 9, 13, 0.46) 100%),
-      linear-gradient(to top, rgba(8, 9, 13, 0.56) 0%, transparent 28%);
+      radial-gradient(circle at 50% 48%, transparent 56%, rgba(8, 9, 13, 0.44) 100%),
+      linear-gradient(to top, rgba(8, 9, 13, 0.62) 0%, transparent 28%);
     pointer-events: none;
   }
 
-  .ataturk-card__frame img {
+  .ataturk-carousel__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .ataturk-carousel__slide.is-active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+  }
+
+  .ataturk-carousel__img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: sepia(0.22) contrast(1.04) brightness(0.93);
-    transition: transform 0.55s ease, filter 0.4s ease;
+    filter: sepia(0.2) contrast(1.04) brightness(0.94);
+    transition: transform 0.7s ease;
   }
 
-  .ataturk-card:hover .ataturk-card__frame img {
-    transform: scale(1.018);
-    filter: sepia(0.16) contrast(1.06) brightness(0.96);
+  .ataturk-carousel__slide.is-portrait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0;
   }
 
-  .ataturk-card__frame-badge {
+  .ataturk-carousel__backdrop {
     position: absolute;
-    bottom: 0.76rem;
-    right: 0.76rem;
-    z-index: 2;
-    padding: 0.28rem 0.66rem;
+    inset: -8%;
+    width: 116%;
+    height: 116%;
+    object-fit: cover;
+    filter: blur(22px) sepia(0.32) brightness(0.28) contrast(1.1);
+    pointer-events: none;
+  }
+
+  .ataturk-carousel__slide.is-portrait .ataturk-carousel__img {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid rgba(217, 155, 78, 0.32);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.72);
+  }
+
+  .ataturk-carousel:hover .ataturk-carousel__slide.is-active:not(.is-portrait) .ataturk-carousel__img {
+    transform: scale(1.018);
+  }
+
+  .ataturk-carousel__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(217, 155, 78, 0.38);
+    background: rgba(9, 11, 17, 0.76);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .ataturk-carousel__nav--prev {
+    left: 0.68rem;
+  }
+
+  .ataturk-carousel__nav--next {
+    right: 0.68rem;
+  }
+
+  .ataturk-carousel__nav:hover {
+    background: rgba(217, 155, 78, 0.92);
+    border-color: var(--accent-gold);
+    color: #090a0e;
+    transform: translateY(-50%) scale(1.06);
+  }
+
+  .ataturk-carousel__badge {
+    position: absolute;
+    bottom: 0.68rem;
+    right: 0.72rem;
+    z-index: 3;
+    padding: 0.26rem 0.64rem;
     border-radius: 999px;
-    background: rgba(9, 10, 15, 0.85);
+    background: rgba(9, 10, 15, 0.86);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(217, 155, 78, 0.38);
     color: var(--accent-gold);
-    font-size: 0.64rem;
+    font-size: 0.62rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
   }
 
-  .ataturk-card__caption {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    padding-inline: 0.2rem;
+  .ataturk-carousel__controls {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    gap: 0.34rem;
   }
 
-  .ataturk-card__caption strong {
+  .ataturk-carousel__dot {
+    min-width: 0;
+    padding: 0.32rem 0.36rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ataturk-carousel__dot:hover {
+    border-color: rgba(217, 155, 78, 0.38);
+    color: var(--text-primary);
+  }
+
+  .ataturk-carousel__dot.is-active {
+    background: var(--accent-gold-soft);
+    border-color: var(--border-gold);
+    color: var(--accent-gold);
+  }
+
+  .ataturk-carousel__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+    min-height: 3.35rem;
+    padding-inline: 0.15rem;
+  }
+
+  .ataturk-carousel__caption strong {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--text-primary);
   }
 
-  .ataturk-card__caption span {
-    font-size: 0.74rem;
-    line-height: 1.5;
+  .ataturk-carousel__caption span {
+    font-size: 0.73rem;
+    line-height: 1.48;
     color: var(--text-muted);
   }
 
@@ -333,8 +763,12 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
 
     .ataturk-card {
       grid-template-columns: 1fr;
-      gap: 1.65rem;
+      gap: 1.6rem;
       padding: 1.65rem 1.45rem;
+    }
+
+    .ataturk-carousel__caption {
+      min-height: 0;
     }
   }
 
@@ -349,12 +783,29 @@ const kocatepePhotoSrc = withBase('/images/arsiv/ataturk-kocatepe-1922.jpg');
       padding: 0.28rem 0.6rem;
     }
 
-    .ataturk-card__frame-badge {
-      font-size: 0.55rem;
-      letter-spacing: 0.06em;
-      padding: 0.22rem 0.52rem;
-      bottom: 0.52rem;
-      right: 0.52rem;
+    .ataturk-carousel__nav {
+      width: 32px;
+      height: 32px;
+    }
+
+    .ataturk-carousel__badge {
+      font-size: 0.54rem;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      bottom: 0.48rem;
+      right: 0.48rem;
+    }
+
+    .ataturk-carousel__controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.34rem;
+    }
+
+    .ataturk-carousel__dot {
+      flex: 1 1 auto;
+      font-size: 0.62rem;
+      padding: 0.26rem 0.44rem;
     }
   }
 </style>
