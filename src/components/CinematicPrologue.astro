@@ -1,16 +1,46 @@
 ---
-import { sceneHeroVisuals } from '../data/antakya1098';
+import { sceneHeroVisuals, type VisualAsset } from '../data/antakya1098';
 
-const activeVisual = sceneHeroVisuals.prologue;
+interface Props {
+  badges?: { text: string; variant: 'east' | 'west' | 'turquoise' }[];
+  titleMain?: string;
+  titleAccent?: string;
+  leadHtml?: string;
+  visual?: VisualAsset;
+  chronometer?: { year: string; desc: string; active?: boolean }[];
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+const {
+  badges = [
+    { text: 'DOSYA 01 · ETKİLEŞİMLİ BELGESEL', variant: 'east' },
+    { text: '8 BİRİNCİL VEKÂYİNÂME ÇAPRAZ OKUMASI', variant: 'west' },
+    { text: 'DÖNEM EL YAZMASI & GRAVÜR ARŞİVİ', variant: 'turquoise' },
+  ],
+  titleMain = 'Kuşatanların Kuşatıldığı Gün:',
+  titleAccent = 'Antakya 1098, Kürboğa ve Haçlı Seferlerinin Perde Arkası',
+  leadHtml =
+    'Haziran 1098’de Adana-Hatay koridorunun kilit taşı Antakya surları önünde tarihin akışı kırıldı. Açlıktan savaş atlarını kesip yiyen bir Haçlı ordusu, Musul Atabeyi Kıvâmüddevle Kürboğa’nın devasa koalisyonunu nasıl yendi? Bir cephenin <em>"dağdan beyaz atlı azizler indi"</em> diye yazdığı sabahı, karşı cephenin kayıtları <em>"tek bir kılıç bile vurulmadan emîrler çekildi"</em> diyerek nasıl otopsi etti?',
+  visual = sceneHeroVisuals.prologue,
+  chronometer = [
+    { year: '638', desc: 'Kudüs Müslüman idaresine geçti (460 yıl sefer çıkmadı)' },
+    { year: '1071 – 1084', desc: 'Malazgirt, Kudüs, İznik ve Antakya şoku' },
+    { year: 'Kasım 1095', desc: 'Clermont Konsili: Çifte ajanda ateşlendi' },
+    { year: '28 Haziran 1098', desc: 'Antakya Köprü Kapısı: Kader sabahı', active: true },
+  ],
+  ctaHref = '#sahne-harita',
+  ctaLabel = 'Sahnelere İlerlemek İçin Kaydırın',
+} = Astro.props;
 ---
 
 <section id="prolog" class="prologue prologue--visual">
   <div class="prologue__backdrop" aria-hidden="true">
     <img
-      src={activeVisual.src}
+      src={visual.src}
       alt=""
-      class:list={['prologue__backdrop-img', { 'is-engraving': activeVisual.isEngraving }]}
-      style={`object-position: ${activeVisual.objectPosition || 'center'}`}
+      class:list={['prologue__backdrop-img', { 'is-engraving': visual.isEngraving }]}
+      style={`object-position: ${visual.objectPosition || 'center'}`}
     />
     <div class="prologue__backdrop-mask" />
   </div>
@@ -20,66 +50,51 @@ const activeVisual = sceneHeroVisuals.prologue;
 
   <div class="container prologue__inner">
     <div class="prologue__badges reveal">
-      <span class="pill pill--east">DOSYA 01 · ETKİLEŞİMLİ BELGESEL</span>
-      <span class="pill pill--west">8 BİRİNCİL VEKÂYİNÂME ÇAPRAZ OKUMASI</span>
-      <span class="pill pill--turquoise">DÖNEM EL YAZMASI &amp; GRAVÜR ARŞİVİ</span>
+      {badges.map((b) => <span class={`pill pill--${b.variant}`}>{b.text}</span>)}
     </div>
 
     <h1 class="prologue__title reveal" style="--delay: 90ms">
-      Kuşatanların Kuşatıldığı Gün:
-      <span>Antakya 1098, Kürboğa ve Haçlı Seferlerinin Perde Arkası</span>
+      {titleMain}
+      <span>{titleAccent}</span>
     </h1>
 
-    <p class="prologue__lead reveal" style="--delay: 180ms">
-      Haziran 1098’de Adana-Hatay koridorunun kilit taşı Antakya surları önünde tarihin akışı kırıldı.
-      Açlıktan savaş atlarını kesip yiyen bir Haçlı ordusu, Musul Atabeyi Kıvâmüddevle Kürboğa’nın devasa
-      koalisyonunu nasıl yendi? Bir cephenin <em>"dağdan beyaz atlı azizler indi"</em> diye yazdığı sabahı,
-      karşı cephenin kayıtları <em>"tek bir kılıç bile vurulmadan emîrler çekildi"</em> diyerek nasıl otopsi etti?
-    </p>
+    <p class="prologue__lead reveal" style="--delay: 180ms" set:html={leadHtml} />
 
     {
-      activeVisual && (
+      visual && (
         <figure class="prologue__showcase reveal" style="--delay: 220ms">
           <div class="prologue__showcase-frame">
             <img
-              src={activeVisual.src}
-              alt={activeVisual.caption}
-              class:list={['prologue__showcase-img', { 'is-engraving': activeVisual.isEngraving }]}
-              style={`object-position: ${activeVisual.objectPosition || 'center'}`}
+              src={visual.src}
+              alt={visual.caption}
+              class:list={['prologue__showcase-img', { 'is-engraving': visual.isEngraving }]}
+              style={`object-position: ${visual.objectPosition || 'center'}`}
               loading="eager"
             />
-            <span class="prologue__showcase-badge">{activeVisual.badge}</span>
+            <span class="prologue__showcase-badge">{visual.badge}</span>
           </div>
           <figcaption class="prologue__showcase-cap">
-            <strong>{activeVisual.caption}</strong>
-            <span>{activeVisual.credit}</span>
+            <strong>{visual.caption}</strong>
+            <span>{visual.credit}</span>
           </figcaption>
         </figure>
       )
     }
 
     <div class="prologue__chronometer reveal" style="--delay: 260ms" aria-label="Tarihsel Eşik Çizgisi">
-      <div class="chrono-node">
-        <span class="chrono-year">638</span>
-        <span class="chrono-desc">Kudüs Müslüman idaresine geçti (460 yıl sefer çıkmadı)</span>
-      </div>
-      <div class="chrono-node">
-        <span class="chrono-year">1071 – 1084</span>
-        <span class="chrono-desc">Malazgirt, Kudüs, İznik ve Antakya şoku</span>
-      </div>
-      <div class="chrono-node">
-        <span class="chrono-year">Kasım 1095</span>
-        <span class="chrono-desc">Clermont Konsili: Çifte ajanda ateşlendi</span>
-      </div>
-      <div class="chrono-node chrono-node--active">
-        <span class="chrono-year">28 Haziran 1098</span>
-        <span class="chrono-desc">Antakya Köprü Kapısı: Kader sabahı</span>
-      </div>
+      {
+        chronometer.map((node) => (
+          <div class:list={['chrono-node', { 'chrono-node--active': node.active }]}>
+            <span class="chrono-year">{node.year}</span>
+            <span class="chrono-desc">{node.desc}</span>
+          </div>
+        ))
+      }
     </div>
 
     <div class="prologue__cta reveal" style="--delay: 340ms">
-      <a href="#sahne-harita" class="scroll-cue">
-        <span>Sahnelere İlerlemek İçin Kaydırın</span>
+      <a href={ctaHref} class="scroll-cue">
+        <span>{ctaLabel}</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
@@ -187,7 +202,7 @@ const activeVisual = sceneHeroVisuals.prologue;
     margin-bottom: 2rem;
   }
 
-  .prologue__lead em {
+  .prologue__lead :global(em) {
     color: var(--text-primary);
     font-style: italic;
   }

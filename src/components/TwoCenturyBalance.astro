@@ -1,24 +1,101 @@
 ---
-import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya1098';
+import {
+  otherFronts as defaultFronts,
+  balanceRows as defaultBalanceRows,
+  primarySourcesGuide as defaultSources,
+  type VisualAsset,
+} from '../data/antakya1098';
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  leadHtml?: string;
+  explorerVisual?: VisualAsset;
+  tabsAriaLabel?: string;
+  fronts?: typeof defaultFronts;
+  philologySpotlight?: {
+    badge: string;
+    title: string;
+    eastLabel: string;
+    eastSource: string;
+    eastText: string;
+    westLabel: string;
+    westSource: string;
+    westText: string;
+    resolutionHtml: string;
+  };
+  balanceHeader?: {
+    pill: string;
+    title: string;
+    leadHtml: string;
+    westSideLabel?: string;
+    eastSideLabel?: string;
+  };
+  rows?: typeof defaultBalanceRows;
+  sourcesTitle?: string;
+  sources?: typeof defaultSources;
+  modernRefsHtml?: string;
+}
+
+const {
+  eyebrow = 'SAHNE 06 · 200 YILLIK PANORAMA VE TARİHSEL TERAZİ (1099 – 1291)',
+  title = 'Yalnızca Türkler mi Savaştı? Ve Gerçekte Kim Kazandı?',
+  leadHtml =
+    '<em>"Haçlılarla 200 yıl kesintisiz ve yalnızca Türkler savaştı"</em> söylemi diğer büyük aktörleri görünmez kılan bir sadeleştirmedir; ancak <em>"Türkler bu mücadelenin ana kalkanı ve tasfiye edici omurgasıydı"</em> tespiti somut bir tarihsel gerçektir.',
+  explorerVisual,
+  tabsAriaLabel = 'Haçlı Seferleri Cephe Aktörleri',
+  fronts = defaultFronts,
+  philologySpotlight,
+  balanceHeader = {
+    pill: 'GÖRÜNÜR DAVALAR ↔ ARKA PLANDAKİ SONUÇLAR',
+    title: 'Geçmişten Günümüze Büyük Bilanço',
+    leadHtml:
+      'Haçlılar uğruna yola çıktıkları <strong>görünürdeki hedeflerin tamamında yenildiler</strong>, ancak arka plandaki ekonomik ve siyasi dönüşümle <strong>Yeni Çağ Avrupa’sının temellerini attılar</strong>. Türkler ise sahadaki varlık ve coğrafya davasını kesin biçimde kazandı.',
+    westSideLabel: 'HAÇLI KOALİSYONU',
+    eastSideLabel: 'TÜRKLER (SELÇUKLU · ZENGÎ · MEMLÛK)',
+  },
+  rows = defaultBalanceRows,
+  sourcesTitle = 'Bu Dosyada Başvurulan Birincil Vekâyinâmeler ve Arşiv Belgeleri (Tıklayıp İnceleyin)',
+  sources = defaultSources,
+  modernRefsHtml =
+    '<strong>Başlıca Modern Akademik Başvuru Eserleri:</strong> Işın Demirkent (<em>Haçlı Seferleri Tarihi</em>, <em>Urfa Haçlı Kontluğu</em>), Abdülkerim Özaydın (<em>Sultan Berkyaruk Devri Selçuklu Tarihi</em>, TDV İA <em>"Kürboğa"</em>), Ali Sevim (<em>Suriye ve Filistin Selçukluları Tarihi</em>), Claude Cahen (<em>Osmanlılardan Önce Anadolu</em>), Carole Hillenbrand (<em>The Crusades: Islamic Perspectives</em>), John France (<em>Victory in the East</em>), Jonathan Riley-Smith, Thomas Asbridge ve Peter Frankopan.',
+} = Astro.props;
 ---
 
 <section id="sahne-bilanco" class="section-shell">
   <div class="container">
     <div class="section-header reveal">
-      <span class="eyebrow">SAHNE 06 · 200 YILLIK PANORAMA VE TARİHSEL TERAZİ (1099 – 1291)</span>
-      <h2 class="section-title">Yalnızca Türkler mi Savaştı? Ve Gerçekte Kim Kazandı?</h2>
-      <p class="section-lead">
-        <em>"Haçlılarla 200 yıl kesintisiz ve yalnızca Türkler savaştı"</em> söylemi diğer büyük aktörleri görünmez
-        kılan bir sadeleştirmedir; ancak <em>"Türkler bu mücadelenin ana kalkanı ve tasfiye edici omurgasıydı"</em>
-        tespiti somut bir tarihsel gerçektir.
-      </p>
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lead" set:html={leadHtml} />
     </div>
 
-    <!-- 5 CEPHE SEKMELİ KEŞİF PANOSU -->
+    {
+      explorerVisual && (
+        <figure class="explorer-banner reveal">
+          <div class="explorer-banner__frame">
+            <img
+              src={explorerVisual.src}
+              alt={explorerVisual.caption}
+              class:list={['explorer-banner__img', { 'is-engraving': explorerVisual.isEngraving }]}
+              style={`object-position: ${explorerVisual.objectPosition || 'center'}`}
+              loading="lazy"
+            />
+            <span class="explorer-banner__badge">{explorerVisual.badge}</span>
+          </div>
+          <figcaption class="explorer-banner__cap">
+            <strong>{explorerVisual.caption}</strong>
+            <span>{explorerVisual.credit}</span>
+          </figcaption>
+        </figure>
+      )
+    }
+
+    <!-- SEKMELİ KEŞİF PANOSU -->
     <div class="fronts-explorer reveal">
-      <div class="fronts-tabs" role="tablist" aria-label="Haçlı Seferleri Cephe Aktörleri">
+      <div class="fronts-tabs" role="tablist" aria-label={tabsAriaLabel}>
         {
-          otherFronts.map((front, idx) => (
+          fronts.map((front, idx) => (
             <button
               type="button"
               role="tab"
@@ -34,7 +111,7 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
 
       <div class="fronts-panels">
         {
-          otherFronts.map((front, idx) => (
+          fronts.map((front, idx) => (
             <div
               class:list={['front-panel', { 'is-active': idx === 0 }]}
               data-front-panel={front.id}
@@ -52,21 +129,43 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
       </div>
     </div>
 
+    {
+      philologySpotlight && (
+        <div class="philology-box reveal">
+          <div class="philology-box__head">
+            <span class="pill pill--witness">{philologySpotlight.badge}</span>
+            <h3>{philologySpotlight.title}</h3>
+          </div>
+
+          <div class="philology-cols">
+            <div class="philology-col philology-col--east">
+              <span class="philology-col__tag">{philologySpotlight.eastLabel}</span>
+              <strong>{philologySpotlight.eastSource}</strong>
+              <p>{philologySpotlight.eastText}</p>
+            </div>
+            <div class="philology-col philology-col--west">
+              <span class="philology-col__tag philology-col__tag--west">{philologySpotlight.westLabel}</span>
+              <strong>{philologySpotlight.westSource}</strong>
+              <p>{philologySpotlight.westText}</p>
+            </div>
+          </div>
+
+          <div class="philology-resolution" set:html={philologySpotlight.resolutionHtml} />
+        </div>
+      )
+    }
+
     <!-- GÖRÜNÜR VE GİZLİ HEDEFLER TERAZİSİ -->
     <div class="balance-wrap reveal">
       <div class="balance-wrap__head">
-        <span class="pill pill--east">GÖRÜNÜR DAVALAR ↔ ARKA PLANDAKİ SONUÇLAR</span>
-        <h3>Geçmişten Günümüze Büyük Bilanço</h3>
-        <p>
-          Haçlılar uğruna yola çıktıkları <strong>görünürdeki hedeflerin tamamında yenildiler</strong>, ancak arka
-          plandaki ekonomik ve siyasi dönüşümle <strong>Yeni Çağ Avrupa’sının temellerini attılar</strong>. Türkler ise
-          sahadaki varlık ve coğrafya davasını kesin biçimde kazandı.
-        </p>
+        <span class="pill pill--east">{balanceHeader.pill}</span>
+        <h3>{balanceHeader.title}</h3>
+        <p set:html={balanceHeader.leadHtml} />
       </div>
 
       <div class="balance-table">
         {
-          balanceRows.map((row) => (
+          rows.map((row) => (
             <div class="balance-row">
               <div class="balance-dim">
                 <span>DEĞERLENDİRME BOYUTU</span>
@@ -75,13 +174,15 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
 
               <div class="balance-cell balance-cell--west">
                 <div class="balance-verdict">{row.crusadersVerdict}</div>
-                <div class="balance-side">HAÇLI KOALİSYONU</div>
+                <div class="balance-side">{balanceHeader.westSideLabel || 'HAÇLI KOALİSYONU'}</div>
                 <p>{row.crusadersDetail}</p>
               </div>
 
               <div class="balance-cell balance-cell--east">
                 <div class="balance-verdict balance-verdict--east">{row.turksVerdict}</div>
-                <div class="balance-side">TÜRKLER (SELÇUKLU · ZENGÎ · MEMLÛK)</div>
+                <div class="balance-side">
+                  {balanceHeader.eastSideLabel || 'TÜRKLER (SELÇUKLU · ZENGÎ · MEMLÛK)'}
+                </div>
                 <p>{row.turksDetail}</p>
               </div>
             </div>
@@ -95,14 +196,14 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
       <summary>
         <div>
           <span class="pill pill--witness">ŞEFFAF KAYNAKÇA</span>
-          <strong>Bu Dosyada Başvurulan Birincil Vekâyinâmeler ve Arşiv Belgeleri (Tıklayıp İnceleyin)</strong>
+          <strong>{sourcesTitle}</strong>
         </div>
         <span class="sources-drawer__chevron">▾</span>
       </summary>
 
       <div class="sources-grid">
         {
-          primarySourcesGuide.map((src) => (
+          sources.map((src) => (
             <div class="source-item">
               <h4>{src.name}</h4>
               <span class="source-side">{src.side}</span>
@@ -112,13 +213,7 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
         }
       </div>
 
-      <p class="modern-refs">
-        <strong>Başlıca Modern Akademik Başvuru Eserleri:</strong> Işın Demirkent (<em>Haçlı Seferleri Tarihi</em>,
-        <em>Urfa Haçlı Kontluğu</em>), Abdülkerim Özaydın (<em>Sultan Berkyaruk Devri Selçuklu Tarihi</em>, TDV İA
-        <em>"Kürboğa"</em>), Ali Sevim (<em>Suriye ve Filistin Selçukluları Tarihi</em>), Claude Cahen (<em>Osmanlılardan
-        Önce Anadolu</em>), Carole Hillenbrand (<em>The Crusades: Islamic Perspectives</em>), John France (<em>Victory
-        in the East</em>), Jonathan Riley-Smith, Thomas Asbridge ve Peter Frankopan.
-      </p>
+      <p class="modern-refs" set:html={modernRefsHtml} />
     </details>
   </div>
 </section>
@@ -147,6 +242,69 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
 </script>
 
 <style>
+  .explorer-banner {
+    margin: 0 0 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-deep);
+  }
+
+  .explorer-banner__frame {
+    position: relative;
+    height: clamp(230px, 32vw, 370px);
+    overflow: hidden;
+    background: #090b10;
+  }
+
+  .explorer-banner__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .explorer-banner__img.is-engraving {
+    filter: sepia(0.26) contrast(1.08) brightness(0.9);
+  }
+
+  .explorer-banner__badge {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.95rem;
+    padding: 0.3rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(8, 10, 15, 0.86);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-gold);
+    color: var(--accent-gold);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .explorer-banner__cap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.2rem;
+    padding: 0.82rem 1.2rem;
+    background: rgba(14, 18, 27, 0.96);
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.8rem;
+  }
+
+  .explorer-banner__cap strong {
+    color: var(--text-primary);
+  }
+
+  .explorer-banner__cap span {
+    color: var(--text-muted);
+    font-size: 0.74rem;
+  }
+
   .fronts-explorer {
     margin-bottom: 3rem;
     border-radius: var(--radius-lg);
@@ -240,6 +398,80 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
     background: rgba(44, 197, 179, 0.08);
     border-left: 3px solid var(--accent-turquoise);
     font-size: 0.9rem;
+    color: var(--text-primary);
+  }
+
+  /* Philology Spotlight */
+  .philology-box {
+    margin-bottom: 3rem;
+    padding: 2rem 2.1rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, rgba(24, 21, 38, 0.9), rgba(14, 18, 28, 0.94));
+    border: 1px solid rgba(167, 139, 250, 0.34);
+    box-shadow: var(--shadow-deep);
+  }
+
+  .philology-box__head h3 {
+    font-size: clamp(1.6rem, 2.5vw, 2.05rem);
+    margin: 0.8rem 0 1.35rem;
+  }
+
+  .philology-cols {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .philology-col {
+    padding: 1.2rem 1.3rem;
+    border-radius: var(--radius-md);
+    background: rgba(8, 9, 13, 0.62);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .philology-col--east {
+    border-left: 3px solid var(--accent-gold);
+  }
+
+  .philology-col--west {
+    border-left: 3px solid var(--accent-crimson);
+  }
+
+  .philology-col__tag {
+    display: block;
+    font-size: 0.69rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--accent-gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .philology-col__tag--west {
+    color: var(--accent-crimson);
+  }
+
+  .philology-col strong {
+    display: block;
+    font-size: 0.86rem;
+    color: var(--text-primary);
+    margin-bottom: 0.45rem;
+  }
+
+  .philology-col p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.62;
+    color: var(--text-secondary);
+  }
+
+  .philology-resolution {
+    padding: 1.05rem 1.25rem;
+    border-radius: var(--radius-md);
+    background: rgba(44, 197, 179, 0.09);
+    border-left: 3px solid var(--accent-turquoise);
+    font-size: 0.93rem;
+    line-height: 1.72;
     color: var(--text-primary);
   }
 
@@ -417,6 +649,7 @@ import { otherFronts, balanceRows, primarySourcesGuide } from '../data/antakya10
 
   @media (max-width: 960px) {
     .balance-row,
+    .philology-cols,
     .sources-grid {
       grid-template-columns: 1fr;
     }

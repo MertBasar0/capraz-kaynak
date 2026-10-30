@@ -1,17 +1,48 @@
 ---
-import { propagandaCases, verifiedViolenceFacts } from '../data/antakya1098';
+import {
+  propagandaCases as defaultCases,
+  verifiedViolenceFacts as defaultFacts,
+  type PropagandaCase,
+  type VisualAsset,
+} from '../data/antakya1098';
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  leadHtml?: string;
+  cases?: PropagandaCase[];
+  spotlightVisual?: VisualAsset;
+  verifiedBox?: {
+    pill: string;
+    title: string;
+    leadHtml: string;
+    facts: { title: string; sources: string; detail: string }[];
+  };
+}
+
+const {
+  eyebrow = 'SAHNE 02 · KAYNAK KRİTİĞİ VE ÇAPRAZ SORGU',
+  title = 'Dehşet Edebiyatı mı, Tarihsel Olgu mu?',
+  leadHtml =
+    'Ortaçağ Avrupa’sında yüz binlerce insanı yola çıkarmak için güçlü bir öfke yakıtı gerekiyordu. Aşağıdaki dört ünlü anlatının her birinde <strong>"Dönemin İddiası"</strong> ile <strong>"Birincil Kaynak Kritiği"</strong> arasında geçiş yaparak metinlerin nasıl kurgulandığını inceleyin.',
+  cases = defaultCases,
+  spotlightVisual,
+  verifiedBox = {
+    pill: 'DÜRÜST TARİHÇİLİK İLKESİ · DOĞRULANABİLEN SOMUT ŞİDDET',
+    title: 'Peki Propaganda Kabuğu Soyulduğunda Gerçekte Ne Yaşandı?',
+    leadHtml:
+      'Savaş propagandasını ayıklamak, "hiç kan dökülmedi" demek değildir. Ermeni, Bizans, İslam vekâyinâmeleri ve Mısır’daki <strong>Kahire Genizası</strong> tüccar mektupları şu üç sert tarihsel olguyu kesin olarak doğrular:',
+    facts: defaultFacts,
+  },
+} = Astro.props;
 ---
 
 <section id="sahne-propaganda" class="section-shell propaganda-section">
   <div class="container">
     <div class="section-header reveal">
-      <span class="eyebrow">SAHNE 02 · KAYNAK KRİTİĞİ VE ÇAPRAZ SORGU</span>
-      <h2 class="section-title">Dehşet Edebiyatı mı, Tarihsel Olgu mu?</h2>
-      <p class="section-lead">
-        Ortaçağ Avrupa’sında yüz binlerce insanı yola çıkarmak için güçlü bir öfke yakıtı gerekiyordu. Aşağıdaki dört
-        ünlü anlatının her birinde <strong>"Dönemin İddiası"</strong> ile <strong>"Birincil Kaynak Kritiği"</strong>
-        arasında geçiş yaparak metinlerin nasıl kurgulandığını inceleyin.
-      </p>
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lead" set:html={leadHtml} />
 
       <div class="lens-master-bar">
         <button type="button" class="lens-master-btn" id="toggle-all-lenses" data-all-open="false">
@@ -21,9 +52,30 @@ import { propagandaCases, verifiedViolenceFacts } from '../data/antakya1098';
       </div>
     </div>
 
+    {
+      spotlightVisual && (
+        <figure class="lens-spotlight reveal">
+          <div class="lens-spotlight__frame">
+            <img
+              src={spotlightVisual.src}
+              alt={spotlightVisual.caption}
+              class:list={['lens-spotlight__img', { 'is-engraving': spotlightVisual.isEngraving }]}
+              style={`object-position: ${spotlightVisual.objectPosition || 'center'}`}
+              loading="lazy"
+            />
+            <span class="lens-spotlight__badge">{spotlightVisual.badge}</span>
+          </div>
+          <figcaption class="lens-spotlight__cap">
+            <strong>{spotlightVisual.caption}</strong>
+            <span>{spotlightVisual.credit}</span>
+          </figcaption>
+        </figure>
+      )
+    }
+
     <div class="propaganda-grid">
       {
-        propagandaCases.map((item, idx) => (
+        cases.map((item, idx) => (
           <article
             class="lens-card reveal"
             style={`--delay: ${idx * 70}ms`}
@@ -39,7 +91,7 @@ import { propagandaCases, verifiedViolenceFacts } from '../data/antakya1098';
 
             <div class="lens-stage">
               <div class="lens-pane lens-pane--claim">
-                <div class="lens-pane__tag">BATI METNİNDEKİ İDDİA / KURGU KATMANI</div>
+                <div class="lens-pane__tag">{item.claimTag || 'BATI METNİNDEKİ İDDİA / KURGU KATMANI'}</div>
                 <div class="lens-pane__source">{item.claimSource}</div>
                 <blockquote class="lens-pane__quote">{item.claimQuote}</blockquote>
               </div>
@@ -61,17 +113,14 @@ import { propagandaCases, verifiedViolenceFacts } from '../data/antakya1098';
 
     <div class="verified-box reveal">
       <div class="verified-box__header">
-        <span class="pill pill--witness">DÜRÜST TARİHÇİLİK İLKESİ · DOĞRULANABİLEN SOMUT ŞİDDET</span>
-        <h3>Peki Propaganda Kabuğu Soyulduğunda Gerçekte Ne Yaşandı?</h3>
-        <p>
-          Savaş propagandasını ayıklamak, "hiç kan dökülmedi" demek değildir. Ermeni, Bizans, İslam vekâyinâmeleri ve
-          Mısır’daki <strong>Kahire Genizası</strong> tüccar mektupları şu üç sert tarihsel olguyu kesin olarak doğrular:
-        </p>
+        <span class="pill pill--witness">{verifiedBox.pill}</span>
+        <h3>{verifiedBox.title}</h3>
+        <p set:html={verifiedBox.leadHtml} />
       </div>
 
       <div class="verified-grid">
         {
-          verifiedViolenceFacts.map((fact) => (
+          verifiedBox.facts.map((fact) => (
             <div class="verified-item">
               <h4>{fact.title}</h4>
               <div class="verified-item__src">Kanıt: {fact.sources}</div>
@@ -149,6 +198,69 @@ import { propagandaCases, verifiedViolenceFacts } from '../data/antakya1098';
   .lens-master-btn:hover {
     background: rgba(217, 155, 78, 0.25);
     transform: translateY(-1px);
+  }
+
+  .lens-spotlight {
+    margin: 0 0 2.2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-deep);
+  }
+
+  .lens-spotlight__frame {
+    position: relative;
+    height: clamp(200px, 28vw, 310px);
+    overflow: hidden;
+    background: #141210;
+  }
+
+  .lens-spotlight__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .lens-spotlight__img.is-engraving {
+    filter: sepia(0.26) contrast(1.08) brightness(0.9);
+  }
+
+  .lens-spotlight__badge {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.95rem;
+    padding: 0.3rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(8, 10, 15, 0.86);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-gold);
+    color: var(--accent-gold);
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+  }
+
+  .lens-spotlight__cap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.2rem;
+    padding: 0.82rem 1.2rem;
+    background: rgba(14, 18, 27, 0.96);
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.8rem;
+  }
+
+  .lens-spotlight__cap strong {
+    color: var(--text-primary);
+  }
+
+  .lens-spotlight__cap span {
+    color: var(--text-muted);
+    font-size: 0.74rem;
   }
 
   .propaganda-grid {

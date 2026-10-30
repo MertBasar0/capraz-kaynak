@@ -1,10 +1,14 @@
 ---
-interface SceneItem {
+export interface SceneItem {
   id: string;
   shortLabel: string;
 }
 
-const scenes: SceneItem[] = [
+interface Props {
+  scenes?: SceneItem[];
+}
+
+const defaultScenes: SceneItem[] = [
   { id: 'prolog', shortLabel: 'Giriş' },
   { id: 'sahne-harita', shortLabel: '01 · Rota & Kuşatma' },
   { id: 'sahne-propaganda', shortLabel: '02 · Propaganda & Olgu' },
@@ -13,6 +17,8 @@ const scenes: SceneItem[] = [
   { id: 'sahne-ihanet', shortLabel: '05 · İhanetin Bedeli' },
   { id: 'sahne-bilanco', shortLabel: '06 · 200 Yıllık Terazi' },
 ];
+
+const { scenes = defaultScenes } = Astro.props;
 ---
 
 <aside class="scene-compass" aria-label="Sahne Gezinme Pusulası">
@@ -31,7 +37,14 @@ const scenes: SceneItem[] = [
 </aside>
 
 <script>
+  let compassCleanup: (() => void) | null = null;
+
   function initCompass() {
+    if (compassCleanup) {
+      compassCleanup();
+      compassCleanup = null;
+    }
+
     const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-compass-link]'));
     if (!links.length) return;
 
@@ -57,9 +70,19 @@ const scenes: SceneItem[] = [
 
     window.addEventListener('scroll', updateActive, { passive: true });
     updateActive();
+
+    compassCleanup = () => {
+      window.removeEventListener('scroll', updateActive);
+    };
   }
 
   document.addEventListener('astro:page-load', initCompass);
+  document.addEventListener('astro:before-swap', () => {
+    if (compassCleanup) {
+      compassCleanup();
+      compassCleanup = null;
+    }
+  });
 </script>
 
 <style>

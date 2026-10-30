@@ -1,19 +1,88 @@
 ---
-import { armySegments, berkyarukReasons, sceneHeroVisuals } from '../data/antakya1098';
+import {
+  armySegments as defaultSegments,
+  berkyarukReasons as defaultReasons,
+  sceneHeroVisuals,
+  type VisualAsset,
+} from '../data/antakya1098';
 
-const campVisual = sceneHeroVisuals.coalitionCamp;
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  lead?: string;
+  campVisual?: VisualAsset;
+  commander?: {
+    pill: string;
+    name: string;
+    subtitle: string;
+    highlightBox: {
+      leftTitle: string;
+      leftHtml: string;
+      operator?: string;
+      rightTitle: string;
+      rightHtml: string;
+    };
+    factsHtml: string[];
+  };
+  reasonsPanel?: {
+    pill: string;
+    title: string;
+    items: { num: string; title: string; text: string }[];
+  };
+  coalition?: {
+    pill: string;
+    title: string;
+    verdictHtml: string;
+    barAriaLabel?: string;
+    segments: typeof defaultSegments;
+  };
+}
+
+const {
+  eyebrow = 'SAHNE 03 · KOMUTAN VE KOALİSYON ANATOMİSİ',
+  title = 'Kürboğa Kimdi, Ordunun Yüzde Kaçı Türktü?',
+  lead =
+    'Antakya önüne gelen devasa ordu homojen bir ulus ordusu muydu, yoksa kırılgan bir feodal koalisyon mu? Başkomutan Kıvâmüddevle Kürboğa’nın kökenini, Sultan Berkyaruk’un tercihini ve ordudaki etnik dağılımı inceleyelim.',
+  campVisual = sceneHeroVisuals.coalitionCamp,
+  commander = {
+    pill: 'KİMLİK VE ETİMOLOJİ DOSYASI',
+    name: 'Kıvâmüddevle Kürboğa',
+    subtitle: 'Musul Atabeyi / Emîri (Ölümü: Ağustos 1102, Hoy)',
+    highlightBox: {
+      leftTitle: 'KÜR',
+      leftHtml: 'Dîvânu Lugâti’t-Türk’te: <em>"Pek yürekli, sarsılmaz, yiğit, dikbaşlı/mağrur"</em>',
+      operator: '+',
+      rightTitle: 'BOĞA',
+      rightHtml: 'Eski Türk askeri unvanlarında güç ve hâkimiyet sembolü (kardeşi: <em>Altuntaş</em>)',
+    },
+    factsHtml: [
+      '<strong>Etnik ve Sosyal Köken:</strong> Kesin olarak <strong>Türk (Kıpçak / Türkmen kuşağı)</strong> ve <strong>gulâm (memlûk)</strong> kökenlidir. Ünlü Selçuklu Halep Valisi Kasîmüddevle Aksungur’un (İmâdüddin Zengî’nin babası) askeri hassa subayı olarak yetişmiştir.',
+      '<strong>Batı Kaynaklarındaki İmajı:</strong> Latin kroniklerinde <em>Curbaram / Corbagath</em> adıyla Doğu’nun en kudretli ve en korkulan başkomutanı olarak tasvir edilir.',
+      '<strong>Bozgun Sonrası Akıbeti:</strong> 1098 yenilgisine rağmen Musul hâkimiyetini korudu, Sultan Berkyaruk’a sadık kaldı ve 4 yıl sonra Azerbaycan seferinde Hoy yakınlarında hastalanarak öldü.',
+    ],
+  },
+  reasonsPanel = {
+    pill: 'STRATEJİK PERDE ARKASI',
+    title: 'Sultan Berkyaruk Komutayı Neden Bizzat Almadı da Kürboğa’ya Verdi?',
+    items: defaultReasons,
+  },
+  coalition = {
+    pill: 'KOALİSYON ANATOMİSİ',
+    title: 'Bu Ordu Bir "Türk Ordusu" Sayılır mıydı?',
+    verdictHtml:
+      '<strong>Tarihsel Hüküm:</strong> Komuta kademesi (%90+), dil ve atlı okçu bozkır taktiği açısından tam bir <strong>Selçuklu Türk ordusu</strong>; yapısal açıdan ise Türk omurgalı, çok uluslu ve birbirine güvenmeyen özerk beylerden kurulu bir <strong>feodal İslam koalisyonuydu</strong>.',
+    barAriaLabel: 'Koalisyon ordusu tahmini bileşim çubuğu',
+    segments: defaultSegments,
+  },
+} = Astro.props;
 ---
 
 <section id="sahne-ordu" class="section-shell">
   <div class="container">
     <div class="section-header reveal">
-      <span class="eyebrow">SAHNE 03 · KOMUTAN VE KOALİSYON ANATOMİSİ</span>
-      <h2 class="section-title">Kürboğa Kimdi, Ordunun Yüzde Kaçı Türktü?</h2>
-      <p class="section-lead">
-        Antakya önüne gelen devasa ordu homojen bir ulus ordusu muydu, yoksa kırılgan bir feodal koalisyon mu?
-        Başkomutan Kıvâmüddevle Kürboğa’nın kökenini, Sultan Berkyaruk’un tercihini ve ordudaki etnik dağılımı
-        inceleyelim.
-      </p>
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-lead">{lead}</p>
     </div>
 
     {
@@ -37,51 +106,39 @@ const campVisual = sceneHeroVisuals.coalitionCamp;
       )
     }
 
-    <!-- Top Row: Kerbogha Profile + Berkyaruk's 4 Reasons -->
+    <!-- Top Row: Commander Profile + Strategic Reasons -->
     <div class="kerbogha-grid">
       <article class="kerbogha-card reveal">
-        <span class="pill pill--turquoise">KİMLİK VE ETİMOLOJİ DOSYASI</span>
-        <h3>Kıvâmüddevle Kürboğa</h3>
-        <p class="kerbogha-card__sub">Musul Atabeyi / Emîri (Ölümü: Ağustos 1102, Hoy)</p>
+        <span class="pill pill--turquoise">{commander.pill}</span>
+        <h3>{commander.name}</h3>
+        <p class="kerbogha-card__sub">{commander.subtitle}</p>
 
         <div class="etymology-box">
           <div>
-            <strong>KÜR</strong>
-            <span>Dîvânu Lugâti’t-Türk’te: <em>"Pek yürekli, sarsılmaz, yiğit, dikbaşlı/mağrur"</em></span>
+            <strong>{commander.highlightBox.leftTitle}</strong>
+            <span set:html={commander.highlightBox.leftHtml} />
           </div>
-          <span class="etymology-plus">+</span>
+          <span class="etymology-plus">{commander.highlightBox.operator || '+'}</span>
           <div>
-            <strong>BOĞA</strong>
-            <span>Eski Türk askeri unvanlarında güç ve hâkimiyet sembolü (kardeşi: <em>Altuntaş</em>)</span>
+            <strong>{commander.highlightBox.rightTitle}</strong>
+            <span set:html={commander.highlightBox.rightHtml} />
           </div>
         </div>
 
         <ul class="kerbogha-facts">
-          <li>
-            <strong>Etnik ve Sosyal Köken:</strong> Kesin olarak <strong>Türk (Kıpçak / Türkmen kuşağı)</strong> ve
-            <strong>gulâm (memlûk)</strong> kökenlidir. Ünlü Selçuklu Halep Valisi Kasîmüddevle Aksungur’un (İmâdüddin
-            Zengî’nin babası) askeri hassa subayı olarak yetişmiştir.
-          </li>
-          <li>
-            <strong>Batı Kaynaklarındaki İmajı:</strong> Latin kroniklerinde <em>Curbaram / Corbagath</em> adıyla Doğu’nun
-            en kudretli ve en korkulan başkomutanı olarak tasvir edilir.
-          </li>
-          <li>
-            <strong>Bozgun Sonrası Akıbeti:</strong> 1098 yenilgisine rağmen Musul hâkimiyetini korudu, Sultan
-            Berkyaruk’a sadık kaldı ve 4 yıl sonra Azerbaycan seferinde Hoy yakınlarında hastalanarak öldü.
-          </li>
+          {commander.factsHtml.map((factHtml) => <li set:html={factHtml} />)}
         </ul>
       </article>
 
       <div class="reasons-panel reveal" style="--delay: 110ms">
         <div class="reasons-panel__head">
-          <span class="pill pill--east">STRATEJİK PERDE ARKASI</span>
-          <h3>Sultan Berkyaruk Komutayı Neden Bizzat Almadı da Kürboğa’ya Verdi?</h3>
+          <span class="pill pill--east">{reasonsPanel.pill}</span>
+          <h3>{reasonsPanel.title}</h3>
         </div>
 
         <div class="reasons-list">
           {
-            berkyarukReasons.map((r) => (
+            reasonsPanel.items.map((r) => (
               <div class="reason-item">
                 <span class="reason-num">{r.num}</span>
                 <div>
@@ -95,31 +152,27 @@ const campVisual = sceneHeroVisuals.coalitionCamp;
       </div>
     </div>
 
-    <!-- Bottom Row: Interactive Ethnic Composition Bar & Breakdown -->
+    <!-- Bottom Row: Interactive Ethnic & Institutional Composition Bar & Breakdown -->
     <div class="coalition-box reveal" id="coalition-meter">
       <div class="coalition-box__top">
         <div>
-          <span class="pill pill--east">KOALİSYON ANATOMİSİ</span>
-          <h3>Bu Ordu Bir "Türk Ordusu" Sayılır mıydı?</h3>
+          <span class="pill pill--east">{coalition.pill}</span>
+          <h3>{coalition.title}</h3>
         </div>
-        <p class="coalition-verdict">
-          <strong>Tarihsel Hüküm:</strong> Komuta kademesi (%90+), dil ve atlı okçu bozkır taktiği açısından tam bir
-          <strong>Selçuklu Türk ordusu</strong>; yapısal açıdan ise Türk omurgalı, çok uluslu ve birbirine güvenmeyen
-          özerk beylerden kurulu bir <strong>feodal İslam koalisyonuydu</strong>.
-        </p>
+        <p class="coalition-verdict" set:html={coalition.verdictHtml} />
       </div>
 
       <!-- Stacked Animated Bar -->
-      <div class="stacked-bar" role="img" aria-label="Koalisyon ordusu tahmini bileşim çubuğu">
+      <div class="stacked-bar" role="img" aria-label={coalition.barAriaLabel || 'Ordu bileşim çubuğu'}>
         {
-          armySegments.map((seg, idx) => (
+          coalition.segments.map((seg, idx) => (
             <button
               type="button"
               class:list={['stacked-bar__seg', { 'is-selected': idx === 0 }]}
               style={`--seg-width: ${seg.percent}%; --seg-color: ${seg.color}`}
               data-army-seg={seg.id}
             >
-              <span class="stacked-bar__pct">{seg.shareText.split(' ')[0]}</span>
+              <span class="stacked-bar__pct">~%{seg.percent}</span>
             </button>
           ))
         }
@@ -127,7 +180,7 @@ const campVisual = sceneHeroVisuals.coalitionCamp;
 
       <div class="segments-grid">
         {
-          armySegments.map((seg, idx) => (
+          coalition.segments.map((seg, idx) => (
             <div
               class:list={['seg-card', { 'is-selected': idx === 0 }]}
               data-army-card={seg.id}
@@ -255,7 +308,7 @@ const campVisual = sceneHeroVisuals.coalitionCamp;
   }
 
   .kerbogha-card h3 {
-    font-size: 2.1rem;
+    font-size: 2.05rem;
     margin-top: 0.85rem;
   }
 
@@ -277,17 +330,22 @@ const campVisual = sceneHeroVisuals.coalitionCamp;
     margin-bottom: 1.35rem;
   }
 
-  .etymology-box strong {
+  .etymology-box > div > strong {
     display: block;
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: 1.18rem;
     color: var(--accent-turquoise);
+    margin-bottom: 0.2rem;
   }
 
   .etymology-box span {
     font-size: 0.78rem;
-    line-height: 1.45;
+    line-height: 1.48;
     color: var(--text-secondary);
+  }
+
+  .etymology-box :global(strong) {
+    color: var(--text-primary);
   }
 
   .etymology-plus {
@@ -313,7 +371,7 @@ const campVisual = sceneHeroVisuals.coalitionCamp;
     border-left: 2px solid rgba(243, 237, 226, 0.16);
   }
 
-  .kerbogha-facts strong {
+  .kerbogha-facts :global(strong) {
     color: var(--text-primary);
   }
 

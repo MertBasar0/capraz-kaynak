@@ -1,10 +1,39 @@
 ---
-import { mapSteps, historicalCities, historicalRoutes } from '../data/antakya1098';
+import {
+  mapSteps as defaultSteps,
+  historicalCities as defaultCities,
+  historicalRoutes as defaultRoutes,
+  type MapStep,
+  type CityMarker,
+  type RouteLine,
+} from '../data/antakya1098';
+
+interface Props {
+  steps?: MapStep[];
+  cities?: CityMarker[];
+  routes?: RouteLine[];
+  legendItems?: { color: string; label: string }[];
+  ringHighlights?: { id: string; coords: [number, number]; color?: string }[];
+}
+
+const {
+  steps = defaultSteps,
+  cities = defaultCities,
+  routes = defaultRoutes,
+  legendItems = [
+    { color: '#2cc5b3', label: 'Selçuklu İlerleyişi' },
+    { color: '#d9485f', label: 'Haçlı Yürüyüşü' },
+    { color: '#d99b4e', label: 'Kürboğa & Müttefikler' },
+    { color: '#a78bfa', label: 'Adana Üzerinden Firar' },
+  ],
+  ringHighlights = [{ id: 'antioch-siege-ring', coords: [36.16, 36.202], color: '#d99b4e' }],
+} = Astro.props;
 
 const mapPayload = JSON.stringify({
-  steps: mapSteps,
-  cities: historicalCities,
-  routes: historicalRoutes,
+  steps,
+  cities,
+  routes,
+  ringHighlights,
 });
 ---
 
@@ -17,13 +46,13 @@ const mapPayload = JSON.stringify({
     <!-- Top HUD Status Bar -->
     <div class="map-hud">
       <div class="map-hud__meta">
-        <span class="map-hud__date" id="hud-date">{mapSteps[0].dateBadge}</span>
+        <span class="map-hud__date" id="hud-date">{steps[0].dateBadge}</span>
         <span class="map-hud__sep">·</span>
-        <span class="map-hud__loc" id="hud-loc">{mapSteps[0].locationBadge}</span>
+        <span class="map-hud__loc" id="hud-loc">{steps[0].locationBadge}</span>
       </div>
       <div class="map-hud__steps" role="tablist" aria-label="Harita Adımları">
         {
-          mapSteps.map((s, idx) => (
+          steps.map((s, idx) => (
             <button
               type="button"
               class:list={['hud-step-dot', { 'is-active': idx === 0 }]}
@@ -40,17 +69,20 @@ const mapPayload = JSON.stringify({
 
     <!-- Bottom Legend -->
     <div class="map-legend" aria-hidden="true">
-      <span><i style="background:#2cc5b3"></i> Selçuklu İlerleyişi</span>
-      <span><i style="background:#d9485f"></i> Haçlı Yürüyüşü</span>
-      <span><i style="background:#d99b4e"></i> Kürboğa & Müttefikler</span>
-      <span><i style="background:#a78bfa"></i> Adana Üzerinden Firar</span>
+      {
+        legendItems.map((item) => (
+          <span>
+            <i style={`background:${item.color}`} /> {item.label}
+          </span>
+        ))
+      }
     </div>
   </div>
 
   <!-- Scrolling Story Cards -->
   <div class="scrolly-steps-track" id="scrolly-steps-container">
     {
-      mapSteps.map((step, index) => (
+      steps.map((step, index) => (
         <article
           class:list={['scrolly-card-wrap', { 'is-active': index === 0 }]}
           data-map-step-index={index}
@@ -119,7 +151,7 @@ const mapPayload = JSON.stringify({
     ]);
 
     const payload = JSON.parse(dataEl.textContent || '{}');
-    const { steps, cities, routes } = payload;
+    const { steps, cities, routes, ringHighlights = [] } = payload;
     if (!steps?.length) return;
 
     const hudDate = document.getElementById('hud-date');
@@ -222,30 +254,34 @@ const mapPayload = JSON.stringify({
           });
         });
 
-        // Add Antioch Siege Ring highlight for zoomed-in steps
-        map.addSource('antioch-siege-ring', {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Point',
-              coordinates: [36.16, 36.202],
+        // Add focal siege/battle ring highlights for zoomed-in steps
+        ringHighlights.forEach((ring: any) => {
+          const ringSrc = `ring-src-${ring.id}`;
+          const stroke = ring.color || '#d99b4e';
+          map!.addSource(ringSrc, {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              properties: {},
+              geometry: {
+                type: 'Point',
+                coordinates: ring.coords,
+              },
             },
-          },
-        });
+          });
 
-        map.addLayer({
-          id: 'antioch-siege-circle',
-          type: 'circle',
-          source: 'antioch-siege-ring',
-          paint: {
-            'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 6, 11, 44],
-            'circle-color': 'rgba(217, 155, 78, 0.12)',
-            'circle-stroke-color': '#d99b4e',
-            'circle-stroke-width': 2,
-            'circle-opacity': 0.85,
-          },
+          map!.addLayer({
+            id: `ring-circle-${ring.id}`,
+            type: 'circle',
+            source: ringSrc,
+            paint: {
+              'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 6, 11, 44],
+              'circle-color': 'rgba(217, 155, 78, 0.12)',
+              'circle-stroke-color': stroke,
+              'circle-stroke-width': 2,
+              'circle-opacity': 0.85,
+            },
+          });
         });
 
         // Add Historical City HTML Markers
@@ -680,12 +716,25 @@ const mapPayload = JSON.stringify({
     background: #d9485f;
   }
 
-  :global(.hist-marker--seljuk .hist-marker__dot) {
+  :global(.hist-marker--seljuk .hist-marker__dot),
+  :global(.hist-marker--zengid .hist-marker__dot) {
     background: #2cc5b3;
+  }
+
+  :global(.hist-marker--ayyubid .hist-marker__dot) {
+    background: #d99b4e;
+  }
+
+  :global(.hist-marker--hydrology .hist-marker__dot) {
+    background: #38bdf8;
   }
 
   :global(.hist-marker.is-focused .hist-marker__dot) {
     box-shadow: 0 0 16px 4px rgba(217, 155, 78, 0.75);
+  }
+
+  :global(.hist-marker--hydrology.is-focused .hist-marker__dot) {
+    box-shadow: 0 0 16px 4px rgba(56, 189, 248, 0.75);
   }
 
   :global(.hist-marker__label) {

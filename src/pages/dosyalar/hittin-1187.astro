@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SceneCompass from '../../components/SceneCompass.astro';
+import CinematicPrologue from '../../components/CinematicPrologue.astro';
+import ScrollyMapEngine from '../../components/ScrollyMapEngine.astro';
+import PropagandaLens from '../../components/PropagandaLens.astro';
+import ArmyAndKerbogha from '../../components/ArmyAndKerbogha.astro';
+import SplitBattleAndFates from '../../components/SplitBattleAndFates.astro';
+import TwoCenturyBalance from '../../components/TwoCenturyBalance.astro';
+import {
+  hittinCompassScenes,
+  hittinPrologueConfig,
+  hittinMapSteps,
+  hittinCities,
+  hittinRoutes,
+  hittinLegendItems,
+  hittinRingHighlights,
+  hittinHeroVisuals,
+  hittinPropagandaCases,
+  hittinVerifiedFacts,
+  saladinCommanderProfile,
+  saladinUnificationReasons,
+  hittinArmySegments,
+  hittinChronicleStages,
+  hittinActorFates,
+  thirdCrusadeFronts,
+  jaffaPhilologySpotlight,
+  hittinBalanceRows,
+  hittinPrimarySources,
+  hittinModernRefsHtml,
+} from '../../data/hittin1187';
+import { withBase } from '../../utils/paths';
+---
+
+<BaseLayout
+  title="Dosya 02: 1187 Hıttîn, Kudüs’ün Geri Alınışı ve III. Haçlı Seferi — Çapraz Kaynak"
+  description="4 Temmuz 1187 Hıttîn Muharebesi, 2 Ekim 1187 Kudüs emân teslimi, Selahaddin Eyyûbî’nin çok uluslu ordusu ve III. Haçlı Seferi bilançosunu 8 birincil Arap, Latin ve Eski Fransızca vekâyinâme ile keşfedin."
+  ogImage="/images/arsiv/hittin-1187/prologue-tiberias-bartlett.jpg"
+>
+  <SceneCompass scenes={hittinCompassScenes} />
+
+  <CinematicPrologue
+    badges={hittinPrologueConfig.badges}
+    titleMain={hittinPrologueConfig.titleMain}
+    titleAccent={hittinPrologueConfig.titleAccent}
+    leadHtml={hittinPrologueConfig.leadHtml}
+    visual={hittinPrologueConfig.visual}
+    chronometer={hittinPrologueConfig.chronometer}
+  />
+
+  <ScrollyMapEngine
+    steps={hittinMapSteps}
+    cities={hittinCities}
+    routes={hittinRoutes}
+    legendItems={hittinLegendItems}
+    ringHighlights={hittinRingHighlights}
+  />
+
+  <PropagandaLens
+    eyebrow="SAHNE 02 · EFSANE, KARA PROPAGANDA VE ÇAPRAZ KAYNAK DENETİMİ"
+    title="Sinema Efsaneleri mi, Birincil Kayıtlar mı?"
+    leadHtml='1187 Hıttîn ve Kudüs’ün geri alınışı hem Batı’da hem Doğu’da kalın efsane kabuklarıyla kaplandı. Aşağıdaki dört yaygın iddianın her birinde <strong>"Popüler Anlatı / İddia"</strong> ile <strong>"Birincil Kaynak Kritiği"</strong> arasında geçiş yaparak tarihsel kaydı inceleyin.'
+    cases={hittinPropagandaCases}
+    spotlightVisual={hittinHeroVisuals.propagandaLuttrell}
+    verifiedBox={{
+      pill: 'DÜRÜST TARİHÇİLİK İLKESİ · DOĞRULANABİLEN SAVAŞ ŞİDDETİ VE HUKUKU',
+      title: 'Romantik Mitler Soyulduğunda İki Cephede Hangi Sert Olgular Yaşandı?',
+      leadHtml:
+        'Ne "modern pasifist şövalyeler" ne de "sebepsiz vahşet" anlatısı gerçeği yansıtır. İbn Şeddâd, İmâdüddin, İbn Cübeyr ve Anglo-Norman <strong>Itinerarium Peregrinorum</strong> kroniklerinin ittifakla doğruladığı üç sert tarihsel olgu şunlardır:',
+      facts: hittinVerifiedFacts,
+    }}
+  />
+
+  <ArmyAndKerbogha
+    eyebrow="SAHNE 03 · KOMUTAN KİMLİĞİ, TEREKE VE ÇOK ULUSLU ORDU ANATOMİSİ"
+    title="Selahaddin Eyyûbî Kimdi, 1187 Ordusu Hangi Unsurlardan Oluşuyordu?"
+    lead="12. yüzyıl Zengî–Eyyûbî yönetici elitini bugünkü dışlayıcı ulus-devlet kalıplarına hapsetmeden; birincil vakıf kayıtları, kardeş adları, mali iktâ terimleri (tavâşî, karagulâm, halka) ve 4 Mart 1193 Şam terekesi üzerinden inceleyelim."
+    campVisual={hittinHeroVisuals.coalitionCamp}
+    commander={saladinCommanderProfile}
+    reasonsPanel={saladinUnificationReasons}
+    coalition={{
+      pill: 'HITTÎN SAVAŞ NİZAMI (~30.000 ASKER · 12.000 DÜZENLİ İKTÂ SÜVARİSİ)',
+      title: 'Türk–Kürt–Arap Sentezi: 1187 Eyyûbî Ordusunun Bileşimi',
+      verdictHtml:
+        '<strong>Savaş Nizamı:</strong> Merkezde (<em>Kalb</em>) bizzat Selahaddin ve sarı üniformalı <strong>Halka</strong> muhafızları; sağ kanatta (<em>Meymene</em>) yeğeni <strong>Takıyyüddin Ömer</strong>; sol kanatta (<em>Meysere</em>) eniştesi Erbil Türkmen Beyi <strong>Muzafferüddin Gökböri</strong>.',
+      barAriaLabel: '1187 Hıttîn ordusu etnik ve kurumsal bileşim çubuğu',
+      segments: hittinArmySegments,
+    }}
+  />
+
+  <SplitBattleAndFates
+    battleHeader={{
+      eyebrow: 'SAHNE 04 · İKİ CEPHE, İKİ KIRILMA ANI (4 TEMMUZ & 2 EKİM 1187)',
+      title: 'Hıttîn Boynuzları ve Kudüs Teslimi: Yan Yana Özgün Kayıtlar',
+      leadHtml:
+        'Önce <strong>4 Temmuz 1187 Hıttîn</strong>’de kırmızı kraliyet çadırının çöküşünü, ardından <strong>2 Ekim 1187 Kudüs emân teslimi</strong> ile <strong>1099 Haçlı katliamı</strong> arasındaki farkı hem Arapça hem Latince/Frank görgü tanıklarından yan yana okuyun.',
+      toggleBtnLabel: 'Arapça ve Latince Orijinal Metin Satırlarını Göster / Gizle',
+    }}
+    chronicleStages={hittinChronicleStages}
+    fatesHeader={{
+      eyebrow: 'SAHNE 05 · KARARLAR, BEDELLER VE AKIBETLER',
+      title: '1187 Kırılmasının Altı Kilit Aktörüne Sonra Ne Oldu?',
+      leadHtml:
+        'Ateşkesi bozanlardan su başında kalmayı savunanlara, Kudüs’ü müzakereyle kurtaranlardan Erbil’de kimsesiz bebekler yuvası kuran komutanlara kadar altı tarihsel şahsiyetin <strong>1187’deki rolünü</strong> ve <strong>sonraki akıbetini</strong> kartları çevirerek karşılaştırın.',
+      frontLabel: '1187 KRİZİNDEKİ KARARI VE ROLÜ',
+      backLabel: '1187 SONRASINDAKİ TARİHSEL AKIBETİ',
+      flipBackText: '← 1187’deki Rolüne Geri Dön',
+    }}
+    actors={hittinActorFates}
+  />
+
+  <TwoCenturyBalance
+    eyebrow="SAHNE 06 · III. HAÇLI SEFERİ (1189–1192), TAKVİM ÇÖZÜMÜ VE STRATEJİK TERAZİ"
+    title="Avrupa’nın Üç Hükümdarı Geldiğinde Kudüs Neden Düşmedi?"
+    leadHtml='Hıttîn ve Kudüs şoku üzerine Kutsal Roma İmparatoru <strong>I. Friedrich Barbarossa</strong>, Fransa Kralı <strong>II. Philippe Auguste</strong> ve İngiltere Kralı <strong>Aslan Yürekli I. Richard</strong> harekete geçti. Üç yıllık topyekûn karşı-seferin dört kırılma noktasını, Yafa Antlaşması’nın takvim sırrını ve stratejik bilançoyu inceleyin.'
+    explorerVisual={hittinHeroVisuals.thirdCrusadeArsuf}
+    tabsAriaLabel="Üçüncü Haçlı Seferi Dört Kırılma Noktası"
+    fronts={thirdCrusadeFronts}
+    philologySpotlight={jaffaPhilologySpotlight}
+    balanceHeader={{
+      pill: '1187 – 1192 VE YÜZYILLIK MİRAS TERAZİSİ',
+      title: 'Hıttîn ve III. Haçlı Seferi Sonunda Gerçekte Kim Ne Kazandı?',
+      leadHtml:
+        'III. Haçlı Seferi kıyı şeridinde dar bir Latin tutunma hattı kurtarsa da <strong>ana hedefi olan Kudüs’ü geri alamadı</strong>; Selahaddin’in kurduğu Mısır–Suriye birliği ise Yakındoğu’nun sonraki yüzyılını belirledi.',
+      westSideLabel: 'HAÇLI / BATI CEPHESİ BİLANÇOSU',
+      eastSideLabel: 'EYYÛBÎ / İSLAM CEPHESİ BİLANÇOSU',
+    }}
+    rows={hittinBalanceRows}
+    sourcesTitle="Dosya 02’de Başvurulan 8 Birincil Vekâyinâme ve Modern Akademik Kaynakça (Tıklayıp İnceleyin)"
+    sources={hittinPrimarySources}
+    modernRefsHtml={hittinModernRefsHtml}
+  />
+
+  <section class="next-dossier-banner">
+    <div class="container next-dossier-banner__inner reveal">
+      <div>
+        <span class="eyebrow">DOSYA 02 TAMAMLANDI · SIRADAKİ HAZIRLIK: DOSYA 03</span>
+        <h2>Sıradaki Dosya: 1071 Malazgirt · İki İmparatorluk Rahve Ovası’nda</h2>
+        <p>
+          Bizans yüksek yargıcı Mihail Attaleiates’in görgü tanıklığı ile İslam ve Doğu Hristiyan vekâyinâmelerini yan
+          yana koyacağımız <strong>Dosya 03 (1071 Malazgirt)</strong> hazırlanıyor. Bu esnada 1187’nin öncülü olan
+          <strong>Dosya 01 (Antakya 1098)</strong> belgeselini de inceleyebilirsiniz.
+        </p>
+      </div>
+      <div class="next-dossier-banner__actions">
+        <a href={withBase('/dosyalar/antakya-1098/')} class="back-catalog-btn">
+          ← Dosya 01: Antakya 1098
+        </a>
+        <a href={withBase('/')} class="back-catalog-btn">Tüm Dosyalar Kataloğu</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .next-dossier-banner {
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border-subtle);
+    background: linear-gradient(90deg, rgba(217, 155, 78, 0.08), rgba(44, 197, 179, 0.06));
+  }
+
+  .next-dossier-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .next-dossier-banner h2 {
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+    margin: 0.6rem 0 0.6rem;
+  }
+
+  .next-dossier-banner p {
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .next-dossier-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .back-catalog-btn {
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-gold);
+    background: var(--accent-gold-soft);
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.86rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .back-catalog-btn:hover {
+    background: var(--accent-gold);
+    color: #090a0d;
+  }
+</style>

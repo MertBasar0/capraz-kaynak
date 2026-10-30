@@ -25,14 +25,20 @@ import { withBase } from '../../utils/paths';
   <section class="next-dossier-banner">
     <div class="container next-dossier-banner__inner reveal">
       <div>
-        <span class="eyebrow">DOSYA 01 TAMAMLANDI · SIRADAKİ YOLCULUKLAR</span>
-        <h2>Dosya 02: 1187 Hıttîn ve Kudüs · Dosya 03: 1071 Malazgirt</h2>
+        <span class="eyebrow">DOSYA 01 TAMAMLANDI · 89 YIL SONRA KARŞI KISKAÇ YAYINDA</span>
+        <h2>Dosya 02: Susuzluk, Ateş ve Diplomasi — 1187 Hıttîn ve Kudüs’ün Geri Alınışı</h2>
         <p>
-          1187’de Selahaddin Eyyûbî’nin Kudüs’ü teslim alışı ve 1071 Malazgirt Meydan Muharebesi’ni karşı cephelerin
-          birincil görgü tanıkları ve dönem arşivleriyle inceleyeceğimiz sıradaki etkileşimli dosyalar hazırlanıyor.
+          1098’de Antakya önünde emîrlerin dağılmasıyla açılan Kudüs yolu, 89 yıl sonra Nil’den Dicle’ye kurulan tek
+          komuta kıskacıyla nasıl kapandı? Dosya 02’de Hıttîn’in saha hidrolojisini ve 2 Ekim 1187 emân teslimini iki
+          cephenin görgü tanıklarıyla inceleyin.
         </p>
       </div>
-      <a href={withBase('/')} class="back-catalog-btn">← Tüm Dosyalar Kataloğuna Dön</a>
+      <div class="next-dossier-banner__actions">
+        <a href={withBase('/dosyalar/hittin-1187/')} class="next-dossier-primary-btn">
+          Dosya 02’ye Geç: Hıttîn 1187 →
+        </a>
+        <a href={withBase('/')} class="back-catalog-btn">← Tüm Dosyalar Kataloğu</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -60,6 +66,30 @@ import { withBase } from '../../utils/paths';
   .next-dossier-banner p {
     max-width: 680px;
     margin: 0;
+  }
+
+  .next-dossier-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .next-dossier-primary-btn {
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #e0a354, #c57e2c);
+    color: #090a0e;
+    font-weight: 700;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    box-shadow: 0 12px 28px rgba(217, 155, 78, 0.25);
+    transition: all 0.2s ease;
+  }
+
+  .next-dossier-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(217, 155, 78, 0.38);
   }
 
   .back-catalog-btn {

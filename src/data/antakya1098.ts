@@ -67,7 +67,7 @@ export interface CityMarker {
   name: string;
   historicalName: string;
   coords: [number, number]; // [lng, lat]
-  faction: 'seljuk' | 'crusader' | 'byzantine' | 'contested' | 'fatimid';
+  faction: 'seljuk' | 'crusader' | 'byzantine' | 'contested' | 'fatimid' | 'ayyubid' | 'zengid' | 'hydrology';
 }
 
 export interface RouteLine {
@@ -408,7 +408,8 @@ export interface PropagandaCase {
   id: string;
   badge: string;
   title: string;
-  verdict: 'Savaş Propagandası / Kurgu' | 'Tersyüz Edilmiş Projeksiyon' | 'Tahrif Edilmiş Tahrik Metni';
+  verdict: string;
+  claimTag?: string;
   claimSource: string;
   claimQuote: string;
   critiqueSource: string;
@@ -557,6 +558,7 @@ export interface ActorFate {
   name: string;
   role: string;
   stance: 'betrayer' | 'loyal';
+  badgeText?: string;
   calculation1098: string;
   historicalPayback: string;
   endDate: string;
