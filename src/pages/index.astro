@@ -6,6 +6,8 @@ import { withBase } from '../utils/paths';
 ---
 
 <BaseLayout title="Çapraz Kaynak — Birincil Kayıtlarla Karşılaştırmalı Tarih Atlası">
+  <AtaturkCorner />
+
   <section class="home-hero">
     <div class="home-hero__ambient" aria-hidden="true"></div>
     <div class="container home-hero__inner">
@@ -30,7 +32,6 @@ import { withBase } from '../utils/paths';
         <a href={withBase('/dosyalar/antakya-1098/')} class="btn-ghost">
           Dosya 01: Antakya 1098 &amp; Kürboğa →
         </a>
-        <a href="#ataturk-kosesi" class="btn-ghost">Atatürk Köşesi ↓</a>
         <a href={withBase('/metodoloji/')} class="btn-ghost">Kaynak Kritiği Yöntemimiz</a>
       </div>
 
@@ -54,9 +55,6 @@ import { withBase } from '../utils/paths';
       </div>
     </div>
   </section>
-
-  <!-- ATATURK CORNER -->
-  <AtaturkCorner />
 
   <!-- DOSSIERS CATALOG -->
   <section class="section-shell" id="dosyalar">
