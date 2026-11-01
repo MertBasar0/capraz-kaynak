@@ -83,6 +83,9 @@ import { withBase } from '../utils/paths';
                   ) : (
                     <span class="pill">HAZIRLANIYOR</span>
                   )}
+                  {d.academicAdvisor && (
+                    <span class="pill pill--advisor">✦ {d.academicAdvisor.badge}</span>
+                  )}
                 </div>
                 <span class="dossier-period">{d.period}</span>
               </div>
@@ -90,6 +93,29 @@ import { withBase } from '../utils/paths';
               <h3 class="dossier-card__title">
                 {d.status === 'yayinda' ? <a href={d.slug}>{d.title}</a> : d.title}
               </h3>
+
+              {d.academicAdvisor && (
+                <div class="dossier-card__advisor">
+                  <span class="dossier-card__advisor-seal" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76ZM16 8 2 22M17.5 15H9"
+                        stroke="currentColor"
+                        stroke-width="1.9"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <div class="dossier-card__advisor-body">
+                    <span class="dossier-card__advisor-role">{d.academicAdvisor.roleLabel}</span>
+                    <div class="dossier-card__advisor-person">
+                      <strong>{d.academicAdvisor.name}</strong>
+                      <span>{d.academicAdvisor.affiliation}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <p class="dossier-card__sub">{d.subtitle}</p>
 
@@ -271,8 +297,15 @@ import { withBase } from '../utils/paths';
 
   .dossier-card__badges {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.65rem;
+  }
+
+  .pill--advisor {
+    background: rgba(217, 155, 78, 0.14);
+    border: 1px solid rgba(217, 155, 78, 0.45);
+    color: var(--accent-gold);
   }
 
   .dossier-num {
@@ -295,6 +328,67 @@ import { withBase } from '../utils/paths';
 
   .dossier-card__title a:hover {
     color: var(--accent-gold);
+  }
+
+  .dossier-card__advisor {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin: 0.15rem 0 1.05rem;
+    padding: 0.72rem 1.05rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(217, 155, 78, 0.12), rgba(44, 197, 179, 0.06));
+    border: 1px solid rgba(217, 155, 78, 0.36);
+    max-width: 100%;
+  }
+
+  .dossier-card__advisor-seal {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: rgba(217, 155, 78, 0.16);
+    border: 1px solid rgba(217, 155, 78, 0.42);
+    color: var(--accent-gold);
+    font-size: 1rem;
+  }
+
+  .dossier-card__advisor-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+    min-width: 0;
+  }
+
+  .dossier-card__advisor-role {
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+  }
+
+  .dossier-card__advisor-person {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.6rem;
+    font-size: 0.88rem;
+  }
+
+  .dossier-card__advisor-person strong {
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    font-size: 1.04rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .dossier-card__advisor-person span {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
   }
 
   .dossier-card__sub {

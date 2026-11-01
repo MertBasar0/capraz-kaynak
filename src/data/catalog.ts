@@ -13,6 +13,12 @@ export interface DossierMeta {
   hookQuestion: string;
   witnessSources: string[];
   sceneCount: number;
+  academicAdvisor?: {
+    badge: string;
+    roleLabel: string;
+    name: string;
+    affiliation: string;
+  };
 }
 
 export const dossiers: DossierMeta[] = [
@@ -71,20 +77,23 @@ export const dossiers: DossierMeta[] = [
     number: 'DOSYA 03',
     slug: '#hazirlaniyor',
     status: 'hazirlaniyor',
-    period: '1040 – 1081 (Merkez: 26 Ağustos 1071)',
-    geography: 'Konstantinopolis · Erzurum · Ahlat · Malazgirt (Rahve Ovası)',
+    period: '1048 – 1081 (Merkez: 26 Ağustos 1071)',
+    geography: 'Ahılkelek · Ani · Halep · Konstantinopolis · Erzurum · Ahlat · Malazgirt (Rahve Ovası) · İznik',
     readingTime: 'Planlanan 3. Dosya',
     title: 'Anadolu Kapısında İki İmparatorluk: 1071 Malazgirt Meydan Muharebesi',
     subtitle:
-      'Sultan Alp Arslan ile İmparator Romanos Diogenes’in Rahve Ovası’ndaki karşılaşması, Bizans ordusundaki Uz–Peçenek ve Frank paralı askerlerinin tutumu, esaret protokolü ve Anadolu’nun siyasi dönüşümü.',
+      '1064 Ani’den 1071 Rahve Ovası’na uzanan stratejik satranç: Sultan Alp Arslan ile İmparator IV. Romanos Diogenes’in karşılaşması, Bizans ordusundaki Uz–Peçenek ve Frank paralı askerlerinin tutumu, çadırdaki esaret protokolü ve Anadolu’nun siyasi dönüşümü.',
     hookQuestion:
-      'Savaş meydanında bizzat bulunan Bizans yargıcı Mihail Attaleiates’in gözlemleriyle İslam vekâyinâmelerinin esaret anlatıları nerede örtüşüyor, nerede ayrılıyor?',
+      'Savaş meydanında bizzat bulunan Bizans yüksek yargıcı Mihail Attaleiates’in gözlemleriyle İslam vekâyinâmelerinin esaret anlatıları nerede örtüşüyor, nerede ayrılıyor?',
     witnessSources: [
       'Mihail Attaleiates (Historia)',
       'Nikephoros Bryennios',
       "Sıbt İbnü'l-Cevzî (Mir'âtü'z-Zamân)",
-      "İbnü'l-Esîr",
+      "İbnü'l-Esîr (el-Kâmil)",
+      "İbnü'l-Ezrak",
       'Urfalı Mateos',
+      'Aristakes Lastivertsi',
+      'Kartlis Tskhovreba',
     ],
     sceneCount: 6,
   },
@@ -107,5 +116,34 @@ export const dossiers: DossierMeta[] = [
       "Clari'li Robert",
     ],
     sceneCount: 5,
+  },
+  {
+    id: 'didgori-1121',
+    number: 'DOSYA 05',
+    slug: '#hazirlaniyor',
+    status: 'hazirlaniyor',
+    period: '1089 – 1125 (Merkez: 12 Ağustos 1121 Didgori & 1122 Tiflis)',
+    geography: 'Kutaisi (Gelati) · Daryal Geçidi · Manglisi · Didgori (Nişi) · Digomi · Tiflis · Gence',
+    readingTime: 'Planlanan 5. Dosya · Akademik İş Birliği',
+    title: 'Dar Boğazda Koalisyon ve Kıpçak Hamlesi: IV. David, 1121 Didgori ve 1122 Tiflis',
+    subtitle:
+      'Gürcistan Kralı Kurucu IV. David’in Kuzey Kafkasya’dan 40.000 Kıpçak ailesini indirerek kurduğu askeri denge, Mardin Artuklu Beyi Necmeddin İlgazi’nin müttefikleriyle birleşmeden girdiği 3,5×6 km’lik Didgori boğazı ve 1122 Tiflis kent nizamı.',
+    hookQuestion:
+      'Hristiyan kroniklerinin «deniz kıyısındaki kumlar kadar kalabalık orduyu Aziz Giorgi dağıttı» diye yazdığı, İbnü’l-Esîr’in ise «eman diler gibi yaklaşan 200 Kıpçak süvarisi safları bozdu» diye kaydettiği 12 Ağustos 1121 sabahını Klasik Gürcüce, Arapça, Ermenice ve Latince kaynaklar nasıl anlatıyor?',
+    witnessSources: [
+      'Kartlis Tskhovreba (Daviti’nin Tarihçisi)',
+      "İbnü'l-Esîr (el-Kâmil)",
+      "İbnü'l-Ezrak (Târîhu Meyyâfârikîn)",
+      'Urfalı Mateos',
+      'Şansölye Walter (Bella Antiochena)',
+      'Müverrih Vardan',
+    ],
+    sceneCount: 6,
+    academicAdvisor: {
+      badge: 'AKADEMİK İŞ BİRLİĞİ',
+      roleLabel: 'Akademik Danışmanlık & Özgün Gürcüce Kaynak Çevirisi',
+      name: 'Doç. Dr. Ayşe Beyza Ercan',
+      affiliation: 'Ardahan Üniversitesi · Orta Çağ Tarihi Anabilim Dalı',
+    },
   },
 ];
