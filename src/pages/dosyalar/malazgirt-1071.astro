@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SceneCompass from '../../components/SceneCompass.astro';
+import CinematicPrologue from '../../components/CinematicPrologue.astro';
+import ScrollyMapEngine from '../../components/ScrollyMapEngine.astro';
+import PropagandaLens from '../../components/PropagandaLens.astro';
+import ArmyAndKerbogha from '../../components/ArmyAndKerbogha.astro';
+import SplitBattleAndFates from '../../components/SplitBattleAndFates.astro';
+import TwoCenturyBalance from '../../components/TwoCenturyBalance.astro';
+import {
+  malazgirtCompassScenes,
+  malazgirtPrologueConfig,
+  malazgirtMapSteps,
+  malazgirtCities,
+  malazgirtRoutes,
+  malazgirtLegendItems,
+  malazgirtRingHighlights,
+  malazgirtHeroVisuals,
+  malazgirtPropagandaCases,
+  malazgirtVerifiedFacts,
+  alpArslanCommanderProfile,
+  malazgirtStrategicReasons,
+  malazgirtArmySegments,
+  malazgirtChronicleStages,
+  malazgirtActorFates,
+  post1071Fronts,
+  malazgirtPhilologySpotlight,
+  malazgirtBalanceRows,
+  malazgirtPrimarySources,
+  malazgirtModernRefsHtml,
+} from '../../data/malazgirt1071';
+import { withBase } from '../../utils/paths';
+---
+
+<BaseLayout
+  title="Dosya 03: 1071 Malazgirt Meydan Muharebesi, Esaret Protokolü ve Anadolu’nun Dönüşümü — Çapraz Kaynak"
+  description="1064 Ani’den 26 Ağustos 1071 Malazgirt (Rahve Ovası) Meydan Muharebesi’ne: Mihail Attaleiates’in Bizans görgü tanıklığı, İslam vekâyinâmeleri, esaret antlaşması ve Anadolu’nun siyasi dönüşümü."
+  ogImage="/images/arsiv/malazgirt-1071/prologue-van-sipan-lynch.jpg"
+>
+  <SceneCompass scenes={malazgirtCompassScenes} />
+
+  <CinematicPrologue
+    badges={malazgirtPrologueConfig.badges}
+    titleMain={malazgirtPrologueConfig.titleMain}
+    titleAccent={malazgirtPrologueConfig.titleAccent}
+    leadHtml={malazgirtPrologueConfig.leadHtml}
+    visual={malazgirtPrologueConfig.visual}
+    chronometer={malazgirtPrologueConfig.chronometer}
+  />
+
+  <ScrollyMapEngine
+    steps={malazgirtMapSteps}
+    cities={malazgirtCities}
+    routes={malazgirtRoutes}
+    legendItems={malazgirtLegendItems}
+    ringHighlights={malazgirtRingHighlights}
+  />
+
+  <PropagandaLens
+    eyebrow="SAHNE 02 · ABARTILI RAKAMLAR, SONRADAN ÜRETİLEN EFSANELER VE ÇAPRAZ SORGU"
+    title="600 Bin Kişilik Ordu ve «Binek Taşı» Efsanesi Gerçek mi?"
+    leadHtml='1071 Malazgirt, hem Ortaçağ saray edebiyatında hem de Rönesans Avrupa’sında dramatik kurgularla süslendi. Aşağıdaki dört yaygın iddianın her birinde <strong>"Popüler Söylem / Kurgu Katmanı"</strong> ile <strong>"Birincil Kaynak Kritiği"</strong> arasında geçiş yaparak görgü tanıklarının ne yazdığını inceleyin.'
+    cases={malazgirtPropagandaCases}
+    spotlightVisual={malazgirtHeroVisuals.propagandaBoccaccio}
+    verifiedBox={{
+      pill: 'DÜRÜST TARİHÇİLİK İLKESİ · DOĞRULANABİLEN ÜÇ SERT TARİHSEL OLGU',
+      title: 'Efsane Kabuğu Soyulduğunda Kaynakların İttifakla Doğruladığı Sert Gerçekler Nelerdi?',
+      leadHtml:
+        'Abartılı rakamları ve Rönesans kurgularını ayıklamak, sahadaki askeri ve siyasi yıkımı hafifletmez. Bizans yüksek yargıcı <strong>Mihail Attaleiates</strong>, <strong>Aristakes Lastivertsi</strong>, <strong>Sıbt İbnü’l-Cevzî</strong> ve <strong>Kartlis Tskhovreba</strong> şu üç sert olguda tam mutabakat halindedir:',
+      facts: malazgirtVerifiedFacts,
+    }}
+  />
+
+  <ArmyAndKerbogha
+    eyebrow="SAHNE 03 · SULTAN PROFİLİ, STRATEJİK SATRANÇ VE İKİ ORDUNUN ANATOMİSİ"
+    title="Alp Arslan Neden Mısır Yolundan Döndü, İki Ordu Kimlerden Oluşuyordu?"
+    lead="1071 baharında Sultan Alp Arslan’ın asıl hedefi Anadolu’yu baştan başa fethetmek değil, Şiî Fâtımî Kahire’sine yürümekti. İmparator IV. Romanos Diogenes’in doğu seferi bu planı nasıl bozdu ve Rahve Ovası’nda karşı karşıya gelen iki çok uluslu ordu hangi unsurlardan kuruldu?"
+    campVisual={malazgirtHeroVisuals.coalitionCamp}
+    commander={alpArslanCommanderProfile}
+    reasonsPanel={malazgirtStrategicReasons}
+    coalition={{
+      pill: '26 AĞUSTOS 1071 SAHRA KUVVETLERİ (~20.000–25.000 SELÇUKLU KARŞISINDA AHLAT SONRASI ~20.000–25.000 BİZANS)',
+      title: 'Bozkır Atlı Okçusu, Saray Gulâmı ve Mervânî Desteği: Selçuklu Savaş Nizamı',
+      verdictHtml:
+        '<strong>Saha Dengesi:</strong> Romanos Diogenes sefere toplam <strong>~40.000–50.000</strong> kişilik çok uluslu bir orduyla çıktı; ancak <strong>Ahlat önünde ordusunun en seçkin yarısını (Tarkhaniotes ve Roussel kolunu) ayırıp kaybettiği</strong> için 26 Ağustos sabahı Rahve Ovası’nda iki taraf <strong>yaklaşık denk sayılarla</strong> (~20.000–25.000’er muharip) çarpıştı.',
+      barAriaLabel: '1071 Malazgirt Selçuklu sahra ordusu bileşim çubuğu',
+      segments: malazgirtArmySegments,
+    }}
+  />
+
+  <SplitBattleAndFates
+    battleHeader={{
+      eyebrow: 'SAHNE 04 · İKİ CEPHE, İKİ KIRILMA ANI (26 AĞUSTOS CUMA & SULTAN ÇADIRI)',
+      title: 'Rahve Ovası’nda Bozgun ve Sultan Çadırında Esaret Protokolü: Yan Yana Özgün Kayıtlar',
+      leadHtml:
+        'Önce <strong>26 Ağustos 1071 Cuma</strong> akşamüstü Bizans sancağının geriye çevrilmesiyle başlayan çöküşü, ardından <strong>Sultan Alp Arslan’ın çadırındaki tarihi esaret diyaloğunu</strong> ve <strong>1072 Kütahya kör edilişini</strong> hem Klasik Arapça hem Ortaçağ Yunancası görgü tanıklarından yan yana okuyun.',
+      toggleBtnLabel: 'Arapça ve Ortaçağ Yunancası Orijinal Metin Satırlarını Göster / Gizle',
+    }}
+    chronicleStages={malazgirtChronicleStages}
+    fatesHeader={{
+      eyebrow: 'SAHNE 05 · KARARLAR, İHANETLER VE TARİHİN İRONİSİ',
+      title: '1071 Kırılmasının Altı Kilit Aktörüne Sonra Ne Oldu?',
+      leadHtml:
+        'Aynı yıl içinde hem esir imparatorun kendi dindaşlarınca kör edilerek ölümüne, hem de galip sultanın Ceyhun kıyısında beklenmedik hançerlenişine tanık olan 1071–1072 döneminin altı kilit isminin <strong>kararlarını</strong> ve <strong>sonraki akıbetlerini</strong> kartları çevirerek karşılaştırın.',
+      frontLabel: '1071 KRİZİNDEKİ KARARI VE ROLÜ',
+      backLabel: '1071 SONRASINDAKİ TARİHSEL AKIBETİ',
+      flipBackText: '← 1071’deki Rolüne Geri Dön',
+    }}
+    actors={malazgirtActorFates}
+  />
+
+  <TwoCenturyBalance
+    eyebrow="SAHNE 06 · 1071–1095 ANADOLU’NUN DÖNÜŞÜMÜ, TAKVİM FİLOLOJİSİ VE TARİHSEL TERAZİ"
+    title="Tek Bir Muharebe On Yılda Bütün Anadolu’yu Nasıl Dönüştürdü?"
+    leadHtml='Malazgirt tek başına Bizans surlarını yıkmadı; asıl kırılma, <strong>1072’de Konstantinopolis’in kendi imzaladığı barışı çöpe atıp 10 yıl sürecek bir iç savaşa tutuşması</strong> ve her taht adayının Türkmen beylerini bizzat Batı Anadolu şehirlerine davet etmesiyle yaşandı.'
+    explorerVisual={malazgirtHeroVisuals.post1071Anatolia}
+    tabsAriaLabel="1071 Sonrası Anadolu ve Kafkasya Dönüşümünün Dört Halkası"
+    fronts={post1071Fronts}
+    philologySpotlight={malazgirtPhilologySpotlight}
+    balanceHeader={{
+      pill: '1071 – 1095 STRATEJİK MİRAS TERAZİSİ',
+      title: 'Görünürdeki Savaş Hedefleri ile Uzun Vadeli Tarihsel Sonuçlar',
+      leadHtml:
+        'Alp Arslan Mısır’a gitmek isterken Anadolu’nun kapısını açtı; Romanos Diogenes doğu sınırını kurtarmak isterken imparatorluğun Anadolu omurgasını kaybetti. Yirmi dört yıl sonra bu sarsıntı doğrudan <strong>1095 Clermont Haçlı Çağrısı</strong>’nı doğuracaktı.',
+      westSideLabel: 'BİZANS İMPARATORLUĞU BİLANÇOSU',
+      eastSideLabel: 'BÜYÜK SELÇUKLU & ANADOLU TÜRKLERİ BİLANÇOSU',
+    }}
+    rows={malazgirtBalanceRows}
+    sourcesTitle="Dosya 03’te Başvurulan 8 Birincil Vekâyinâme ve Modern Akademik Kaynakça (Tıklayıp İnceleyin)"
+    sources={malazgirtPrimarySources}
+    modernRefsHtml={malazgirtModernRefsHtml}
+  />
+
+  <section class="next-dossier-banner">
+    <div class="container next-dossier-banner__inner reveal">
+      <div>
+        <span class="eyebrow">DOSYA 03 TAMAMLANDI · KRONOLOJİK DEVAM HALKASI YAYINDA</span>
+        <h2>24 Yıl Sonra Karşı Dalga: 1095 Clermont Çağrısı ve 1098 Antakya Kuşatması</h2>
+        <p>
+          1071 Malazgirt’ten yalnızca dört yıl sonra Kutalmışoğlu Süleyman Şah’ın <strong>İznik</strong>’i başkent
+          yapması üzerine İmparator I. Aleksios Komnenos Batı’dan paralı asker istedi ve 200 yıllık Haçlı Seferleri
+          tetiklendi. Bu sürecin doğrudan devamını <strong>Dosya 01 (1098 Antakya)</strong> ve
+          <strong>Dosya 02 (1187 Hıttîn)</strong> belgesellerinde inceleyin.
+        </p>
+      </div>
+      <div class="next-dossier-banner__actions">
+        <a href={withBase('/dosyalar/antakya-1098/')} class="next-dossier-primary-btn">
+          Kronolojik Devam · Dosya 01: Antakya 1098 →
+        </a>
+        <a href={withBase('/dosyalar/hittin-1187/')} class="back-catalog-btn">
+          Dosya 02: Hıttîn 1187 →
+        </a>
+        <a href={withBase('/')} class="back-catalog-btn">Tüm Dosyalar Kataloğu</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .next-dossier-banner {
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border-subtle);
+    background: linear-gradient(90deg, rgba(217, 155, 78, 0.08), rgba(44, 197, 179, 0.06));
+  }
+
+  .next-dossier-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .next-dossier-banner h2 {
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+    margin: 0.6rem 0 0.6rem;
+  }
+
+  .next-dossier-banner p {
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .next-dossier-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .next-dossier-primary-btn {
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #e0a354, #c57e2c);
+    color: #090a0e;
+    font-weight: 700;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    box-shadow: 0 12px 28px rgba(217, 155, 78, 0.25);
+    transition: all 0.2s ease;
+  }
+
+  .next-dossier-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(217, 155, 78, 0.38);
+  }
+
+  .back-catalog-btn {
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-gold);
+    background: var(--accent-gold-soft);
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.86rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .back-catalog-btn:hover {
+    background: var(--accent-gold);
+    color: #090a0d;
+  }
+</style>

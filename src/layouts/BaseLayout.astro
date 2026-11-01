@@ -19,6 +19,7 @@ const currentPath = Astro.url.pathname;
 const homeHref = withBase('/');
 const dossier01Href = withBase('/dosyalar/antakya-1098/');
 const dossier02Href = withBase('/dosyalar/hittin-1187/');
+const dossier03Href = withBase('/dosyalar/malazgirt-1071/');
 const methodologyHref = withBase('/metodoloji/');
 const isHome = currentPath === homeHref || currentPath === homeHref.replace(/\/$/, '');
 const canonicalUrl = new URL(currentPath, Astro.site || 'https://mertbasar0.github.io').toString();
@@ -80,13 +81,19 @@ const ogImageUrl = new URL(
             href={dossier01Href}
             class:list={['site-nav__link', { active: currentPath.includes('antakya-1098') }]}
           >
-            Dosya 01<span class="nav-sublabel">: Antakya 1098</span>
+            <span class="nav-dosya-short">#</span><span class="nav-dosya-prefix">Dosya </span>01<span class="nav-sublabel">: Antakya 1098</span>
           </a>
           <a
             href={dossier02Href}
             class:list={['site-nav__link', { active: currentPath.includes('hittin-1187') }]}
           >
-            Dosya 02<span class="nav-sublabel">: Hıttîn 1187</span>
+            <span class="nav-dosya-short">#</span><span class="nav-dosya-prefix">Dosya </span>02<span class="nav-sublabel">: Hıttîn 1187</span>
+          </a>
+          <a
+            href={dossier03Href}
+            class:list={['site-nav__link', { active: currentPath.includes('malazgirt-1071') }]}
+          >
+            <span class="nav-dosya-short">#</span><span class="nav-dosya-prefix">Dosya </span>03<span class="nav-sublabel">: Malazgirt 1071</span>
           </a>
           <a
             href={methodologyHref}
@@ -116,6 +123,7 @@ const ogImageUrl = new URL(
           <a href={homeHref}>Tüm Dosyalar</a>
           <a href={dossier01Href}>Dosya 01: Antakya 1098</a>
           <a href={dossier02Href}>Dosya 02: Hıttîn 1187</a>
+          <a href={dossier03Href}>Dosya 03: Malazgirt 1071</a>
           <a href={`${homeHref}#ataturk-kosesi`}>Atatürk Köşesi</a>
           <a href={methodologyHref}>Kaynak Kritiği İlkeleri</a>
         </div>
@@ -307,7 +315,11 @@ const ogImageUrl = new URL(
     color: var(--accent-gold);
   }
 
-  @media (max-width: 820px) {
+  .nav-dosya-short {
+    display: none;
+  }
+
+  @media (max-width: 1020px) {
     .nav-sublabel {
       display: none;
     }
@@ -326,7 +338,13 @@ const ogImageUrl = new URL(
     }
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 620px) {
+    .nav-dosya-prefix {
+      display: none;
+    }
+    .nav-dosya-short {
+      display: inline;
+    }
     .site-header__inner {
       width: min(100% - 1.25rem, var(--max-width));
       gap: 0.35rem;

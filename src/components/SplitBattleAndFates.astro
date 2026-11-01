@@ -134,7 +134,7 @@ const {
                 <h3 set:html={stage.east.titleHtml} />
                 <p class="chronicle-author">{stage.east.authorDesc}</p>
 
-                <div class="orig-script orig-script--arabic" lang="ar" dir="rtl">
+                <div class="orig-script orig-script--arabic" lang={stage.east.origLang} dir="rtl">
                   {stage.east.origScript}
                 </div>
 
@@ -155,7 +155,13 @@ const {
                 <h3 set:html={stage.west.titleHtml} />
                 <p class="chronicle-author">{stage.west.authorDesc}</p>
 
-                <div class="orig-script orig-script--latin" lang="la">
+                <div
+                  class:list={[
+                    'orig-script',
+                    stage.west.origLang === 'el' ? 'orig-script--greek' : 'orig-script--latin',
+                  ]}
+                  lang={stage.west.origLang}
+                >
                   {stage.west.origScript}
                 </div>
 
@@ -477,6 +483,14 @@ const {
     font-size: 1.04rem;
     line-height: 1.65;
     color: #e4cad0;
+  }
+
+  .orig-script--greek {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, var(--font-serif);
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #e6ced5;
+    letter-spacing: 0.01em;
   }
 
   .chronicle-translation :global(p) {

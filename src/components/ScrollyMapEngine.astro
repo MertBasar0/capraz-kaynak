@@ -712,8 +712,13 @@ const mapPayload = JSON.stringify({
     box-shadow: 0 0 0 rgba(217, 155, 78, 0.6);
   }
 
-  :global(.hist-marker--crusader .hist-marker__dot) {
+  :global(.hist-marker--crusader .hist-marker__dot),
+  :global(.hist-marker--imperial .hist-marker__dot) {
     background: #d9485f;
+  }
+
+  :global(.hist-marker--georgian .hist-marker__dot) {
+    background: #a78bfa;
   }
 
   :global(.hist-marker--seljuk .hist-marker__dot),

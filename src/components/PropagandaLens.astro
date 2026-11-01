@@ -55,11 +55,22 @@ const {
     {
       spotlightVisual && (
         <figure class="lens-spotlight reveal">
-          <div class="lens-spotlight__frame">
+          <div
+            class:list={[
+              'lens-spotlight__frame',
+              { 'lens-spotlight__frame--contain': spotlightVisual.objectFit === 'contain' },
+            ]}
+          >
             <img
               src={spotlightVisual.src}
               alt={spotlightVisual.caption}
-              class:list={['lens-spotlight__img', { 'is-engraving': spotlightVisual.isEngraving }]}
+              class:list={[
+                'lens-spotlight__img',
+                {
+                  'is-engraving': spotlightVisual.isEngraving,
+                  'lens-spotlight__img--contain': spotlightVisual.objectFit === 'contain',
+                },
+              ]}
               style={`object-position: ${spotlightVisual.objectPosition || 'center'}`}
               loading="lazy"
             />
@@ -216,11 +227,27 @@ const {
     background: #141210;
   }
 
+  .lens-spotlight__frame--contain {
+    height: clamp(300px, 38vw, 410px);
+    background: radial-gradient(ellipse at center, #231d16 0%, #0f0d0a 100%);
+  }
+
   .lens-spotlight__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  .lens-spotlight__img--contain {
+    object-fit: contain;
+    padding: 0.95rem 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .lens-spotlight__img--contain {
+      padding: 2.45rem 0.75rem 0.8rem;
+    }
   }
 
   .lens-spotlight__img.is-engraving {

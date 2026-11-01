@@ -7,6 +7,7 @@ export interface VisualAsset {
   credit: string;
   isEngraving?: boolean;
   objectPosition?: string;
+  objectFit?: 'cover' | 'contain';
 }
 
 export interface MapStep {
@@ -67,7 +68,17 @@ export interface CityMarker {
   name: string;
   historicalName: string;
   coords: [number, number]; // [lng, lat]
-  faction: 'seljuk' | 'crusader' | 'byzantine' | 'contested' | 'fatimid' | 'ayyubid' | 'zengid' | 'hydrology';
+  faction:
+    | 'seljuk'
+    | 'crusader'
+    | 'byzantine'
+    | 'imperial'
+    | 'georgian'
+    | 'contested'
+    | 'fatimid'
+    | 'ayyubid'
+    | 'zengid'
+    | 'hydrology';
 }
 
 export interface RouteLine {

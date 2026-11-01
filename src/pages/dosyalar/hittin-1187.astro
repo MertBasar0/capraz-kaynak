@@ -134,15 +134,18 @@ import { withBase } from '../../utils/paths';
   <section class="next-dossier-banner">
     <div class="container next-dossier-banner__inner reveal">
       <div>
-        <span class="eyebrow">DOSYA 02 TAMAMLANDI · SIRADAKİ HAZIRLIK: DOSYA 03</span>
-        <h2>Sıradaki Dosya: 1071 Malazgirt · İki İmparatorluk Rahve Ovası’nda</h2>
+        <span class="eyebrow">DOSYA 02 TAMAMLANDI · DOSYA 03 TAM ETKİLEŞİMLİ YAYINDA</span>
+        <h2>Dosya 03: Anadolu Kapısında İki İmparatorluk — 1071 Malazgirt</h2>
         <p>
-          Bizans yüksek yargıcı Mihail Attaleiates’in görgü tanıklığı ile İslam ve Doğu Hristiyan vekâyinâmelerini yan
-          yana koyacağımız <strong>Dosya 03 (1071 Malazgirt)</strong> hazırlanıyor. Bu esnada 1187’nin öncülü olan
-          <strong>Dosya 01 (Antakya 1098)</strong> belgeselini de inceleyebilirsiniz.
+          Haçlı Seferleri dizisinin başlangıç kırılması olan <strong>26 Ağustos 1071 Malazgirt (er-Rahve)</strong>
+          meydan muharebesini, Bizans yüksek yargıcı Mihail Attaleiates’in görgü tanıklığı ve Bağdat divan arşivindeki
+          esaret protokolüyle <strong>Dosya 03</strong>’te inceleyin.
         </p>
       </div>
       <div class="next-dossier-banner__actions">
+        <a href={withBase('/dosyalar/malazgirt-1071/')} class="next-dossier-primary-btn">
+          Dosya 03’e Geç: 1071 Malazgirt →
+        </a>
         <a href={withBase('/dosyalar/antakya-1098/')} class="back-catalog-btn">
           ← Dosya 01: Antakya 1098
         </a>
@@ -182,6 +185,23 @@ import { withBase } from '../../utils/paths';
     flex-wrap: wrap;
     gap: 0.85rem;
     align-items: center;
+  }
+
+  .next-dossier-primary-btn {
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #e0a354, #c57e2c);
+    color: #090a0e;
+    font-weight: 700;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    box-shadow: 0 12px 28px rgba(217, 155, 78, 0.25);
+    transition: all 0.2s ease;
+  }
+
+  .next-dossier-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(217, 155, 78, 0.38);
   }
 
   .back-catalog-btn {

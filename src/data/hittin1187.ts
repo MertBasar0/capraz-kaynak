@@ -20,7 +20,7 @@ export interface ChronicleStage {
     titleHtml: string;
     authorDesc: string;
     origScript: string;
-    origLang: 'ar';
+    origLang: 'ar' | 'fa';
     translationParagraphsHtml: string[];
   };
   west: {
@@ -29,7 +29,7 @@ export interface ChronicleStage {
     titleHtml: string;
     authorDesc: string;
     origScript: string;
-    origLang: 'la';
+    origLang: 'la' | 'el' | 'hy' | 'ka' | 'fr';
     translationParagraphsHtml: string[];
   };
   ransomTariffBox?: {

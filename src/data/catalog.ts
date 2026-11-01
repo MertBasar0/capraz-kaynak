@@ -75,11 +75,11 @@ export const dossiers: DossierMeta[] = [
   {
     id: 'malazgirt-1071',
     number: 'DOSYA 03',
-    slug: '#hazirlaniyor',
-    status: 'hazirlaniyor',
+    slug: withBase('/dosyalar/malazgirt-1071/'),
+    status: 'yayinda',
     period: '1048 – 1081 (Merkez: 26 Ağustos 1071)',
     geography: 'Ahılkelek · Ani · Halep · Konstantinopolis · Erzurum · Ahlat · Malazgirt (Rahve Ovası) · İznik',
-    readingTime: 'Planlanan 3. Dosya',
+    readingTime: '17 dk etkileşimli deneyim',
     title: 'Anadolu Kapısında İki İmparatorluk: 1071 Malazgirt Meydan Muharebesi',
     subtitle:
       '1064 Ani’den 1071 Rahve Ovası’na uzanan stratejik satranç: Sultan Alp Arslan ile İmparator IV. Romanos Diogenes’in karşılaşması, Bizans ordusundaki Uz–Peçenek ve Frank paralı askerlerinin tutumu, çadırdaki esaret protokolü ve Anadolu’nun siyasi dönüşümü.',
