@@ -81,7 +81,7 @@ export const malazgirtHeroVisuals: {
 
 export const malazgirtPrologueConfig = {
   badges: [
-    { text: 'DOSYA 03 · ETKİLEŞİMLİ BELGESEL', variant: 'east' as const },
+    { text: 'DOSYA 03 · AKADEMİK ÖN İNCELEME TASLAĞI', variant: 'east' as const },
     { text: '8 BİRİNCİL VEKÂYİNÂME ÇAPRAZ OKUMASI', variant: 'west' as const },
     { text: 'GÖRGÜ TANIĞI ATTALEİATES & BAĞDAT DİVAN KAYITLARI', variant: 'turquoise' as const },
   ],
