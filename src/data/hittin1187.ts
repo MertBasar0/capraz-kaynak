@@ -535,7 +535,7 @@ export const hittinPropagandaCases: PropagandaCase[] = [
     claimSource: 'Modern Popüler Anlatılardaki "Çatışmasız Tek Cephe" Kurgusu',
     claimQuote:
       '«1144 Urfa fethinden 1187 Kudüs zaferine kadar Nûreddin Zengî, Selahaddin ve tüm Müslüman hanedanlar hiçbir iktidar gerilimi yaşamadan tam bir kardeşlik uyumu içinde hareket etti...»',
-    critiqueSource: 'İbnü’l-Esîr (el-Kâmil & et-Târîhu’l-Bâhir) — "Şeker Kamışı" Meclisi Kaydı',
+    critiqueSource: 'İbnü’l-Esîr (el-Kâmil fi’t-Târîh & et-Târîhu’l-Bâhir) — "Şeker Kamışı" Meclisi Kaydı',
     critiqueAnalysis:
       '1171’de Fâtımîlik kaldırılınca Nûreddin ile Selahaddin arasında derin bir güvensizlik (el-vahşe) doğdu; Selahaddin azledilmemek için 1171 Şevbek ve 1173 Kerek kuşatmalarını Nûreddin yaklaştığında yarıda bırakıp Mısır’a çekildi. Babası Necmeddin Eyyûb, Kahire divanında açık itaat gösterdikten sonra yalnız kaldıklarında oğluna: «Vallahi Nûreddin bizim şeker kamışlarımızdan tek bir kamış istese ölünceye dek savaşırdım; ama şimdi mektupla alttan al ki zaman kazanalım!» dedi. Nûreddin Mayıs 1174’te Mısır’a ordu hazırlarken öldü; Selahaddin de Hıttîn öncesi tam 12 yılını (1174–1186) Şam, Halep ve Musul Zengîleriyle savaşarak birliği zorla ve diplomasiyle kurmaya harcadı.',
   },
@@ -667,7 +667,7 @@ export const hittinChronicleStages: ChronicleStage[] = [
     east: {
       pill: 'İSLAM CEPHESİ GÖRGÜ TANIKLIĞI',
       date: '24/25 Rebîülâhir 583 · 4 Temmuz 1187',
-      titleHtml: 'İbnü’l-Esîr (<em>el-Kâmil</em>) &amp; İbn Şeddâd',
+      titleHtml: 'İbnü’l-Esîr (<em>el-Kâmil fi’t-Târîh</em>) &amp; İbn Şeddâd',
       authorDesc: 'el-Melikü’l-Efdal’in meydan tanıklığı ve aynı akşam çadırdaki şerbet hukuku.',
       origLang: 'ar',
       origScript:
@@ -954,4 +954,4 @@ export const hittinPrimarySources = [
 ];
 
 export const hittinModernRefsHtml =
-  '<strong>Başlıca Modern Akademik Başvuru Eserleri:</strong> Benjamin Z. Kedar (<em>"The Battle of Hattin Revisited"</em>, 1992; <em>"The Jerusalem Massacre of July 1099"</em>, 2004), Malcolm C. Lyons &amp; D. E. P. Jackson (<em>Saladin: The Politics of the Holy War</em>), Ramazan Şeşen (<em>Salâhaddîn Devrinde Eyyûbîler Devleti</em>, TDV İA <em>"Selâhaddîn-i Eyyûbî"</em>), Vladimir Minorsky (<em>Studies in Caucasian History: Prehistory of Saladin</em>, 1953), H. A. R. Gibb (<em>The Life of Saladin</em>), Yaacov Lev (<em>Saladin in Egypt</em>), Anne-Marie Eddé (<em>Saladin</em>), Bernard Hamilton (<em>The Leper King and His Heirs</em>), Peter W. Edbury (<em>The Conquest of Jerusalem and the Third Crusade</em>) ve Işın Demirkent.';
+  '<strong>Çağdaş Araştırmalar:</strong> Benjamin Z. Kedar (<em>"The Battle of Hattin Revisited"</em>, 1992; <em>"The Jerusalem Massacre of July 1099"</em>, 2004), Malcolm C. Lyons &amp; D. E. P. Jackson (<em>Saladin: The Politics of the Holy War</em>), Ramazan Şeşen (<em>Salâhaddîn Devrinde Eyyûbîler Devleti</em>, TDV İA <em>"Selâhaddîn-i Eyyûbî"</em>), Vladimir Minorsky (<em>Studies in Caucasian History: Prehistory of Saladin</em>, 1953), H. A. R. Gibb (<em>The Life of Saladin</em>), Yaacov Lev (<em>Saladin in Egypt</em>), Anne-Marie Eddé (<em>Saladin</em>), Bernard Hamilton (<em>The Leper King and His Heirs</em>), Peter W. Edbury (<em>The Conquest of Jerusalem and the Third Crusade</em>) ve Işın Demirkent.';

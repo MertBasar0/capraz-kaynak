@@ -37,7 +37,7 @@ export const dossiers: DossierMeta[] = [
       'Açlıktan kırılan bir Haçlı ordusunun "dağdan beyaz atlı azizler indi" diye yazdığı sabahı, karşı cephedeki İslam vekâyinâmeleri nasıl kaydetti?',
     witnessSources: [
       'Gesta Francorum',
-      "İbnü'l-Esîr (el-Kâmil)",
+      "İbnü'l-Esîr (el-Kâmil fi't-Târîh)",
       "İbnü'l-Adîm (Zübdetü'l-Haleb)",
       "İbnü'l-Kalânisî",
       'Chartreslı Fulcherius',
@@ -63,7 +63,7 @@ export const dossiers: DossierMeta[] = [
     witnessSources: [
       'Bahâeddin İbn Şeddâd',
       'İmâdüddin el-İsfahânî',
-      "İbnü'l-Esîr (el-Kâmil)",
+      "İbnü'l-Esîr (el-Kâmil fi't-Târîh)",
       'Kâdî el-Fâzıl Divanı',
       'Libellus (Görgü Tanığı)',
       'Epistola Terrici',
@@ -89,7 +89,7 @@ export const dossiers: DossierMeta[] = [
       'Mihail Attaleiates (Historia)',
       'Nikephoros Bryennios',
       "Sıbt İbnü'l-Cevzî (Mir'âtü'z-Zamân)",
-      "İbnü'l-Esîr (el-Kâmil)",
+      "İbnü'l-Esîr (el-Kâmil fi't-Târîh)",
       "İbnü'l-Ezrak",
       'Urfalı Mateos',
       'Aristakes Lastivertsi',
@@ -132,7 +132,7 @@ export const dossiers: DossierMeta[] = [
       'Hristiyan kroniklerinin «deniz kıyısındaki kumlar kadar kalabalık orduyu Aziz Giorgi dağıttı» diye yazdığı, İbnü’l-Esîr’in ise «eman diler gibi yaklaşan 200 Kıpçak süvarisi safları bozdu» diye kaydettiği 12 Ağustos 1121 sabahını Klasik Gürcüce, Arapça, Ermenice ve Latince kaynaklar nasıl anlatıyor?',
     witnessSources: [
       'Kartlis Tskhovreba (Daviti’nin Tarihçisi)',
-      "İbnü'l-Esîr (el-Kâmil)",
+      "İbnü'l-Esîr (el-Kâmil fi't-Târîh)",
       "İbnü'l-Ezrak (Târîhu Meyyâfârikîn)",
       'Urfalı Mateos',
       'Şansölye Walter (Bella Antiochena)',
