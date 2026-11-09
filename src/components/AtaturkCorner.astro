@@ -84,6 +84,35 @@ const slides: ArchiveSlide[] = [
 
   <div class="container">
     <article class="ataturk-card reveal">
+      <div class="ataturk-mourning-head">
+        <div class="ataturk-mourning-head__left">
+          <span class="ataturk-mourning-ribbon" aria-hidden="true">
+            <svg width="20" height="24" viewBox="0 0 24 28" fill="none">
+              <path
+                d="M7.2 24.2L12 15.6L16.8 24.2M12 15.6L8 9.2C6.5 6.8 8.1 3.6 11 3.3C11.7 3.2 12.3 3.2 13 3.3C15.9 3.6 17.5 6.8 16 9.2L12 15.6Z"
+                stroke="#f1f5f9"
+                stroke-width="2.1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.7 8.6C7.6 6.7 8.9 4.3 11.2 4.1C11.7 4 12.3 4 12.8 4.1C15.1 4.3 16.4 6.7 15.3 8.6L12 14.1L8.7 8.6Z"
+                fill="#07090e"
+              />
+            </svg>
+          </span>
+          <div class="ataturk-mourning-head__titles">
+            <span class="ataturk-mourning-head__eyebrow">10 KASIM 1938 · DOLMABAHÇE · SAAT 09.05</span>
+            <strong class="ataturk-mourning-head__dates">
+              Gazi Mustafa Kemal Atatürk <span class="mourning-nowrap">(1881 – 1938 · ∞)</span>
+            </strong>
+          </div>
+        </div>
+        <span class="ataturk-mourning-head__commemoration">
+          VEFATININ <span data-mourning-years-text>88</span>. YILINDA SAYGI, ÖZLEM VE MİNNETLE
+        </span>
+      </div>
+
       <div class="ataturk-card__content">
         <div class="ataturk-card__badges">
           <span class="ataturk-pill ataturk-pill--crimson">
@@ -215,6 +244,58 @@ const slides: ArchiveSlide[] = [
           <span data-carousel-meta>{slides[0].meta}</span>
         </figcaption>
       </figure>
+
+      <div class="ataturk-mourning-docs" aria-label="10 Kasım 1938 Çapraz Birincil Vesikalar">
+        <div class="ataturk-mourning-docs__head">
+          <span class="ataturk-mourning-docs__pill">10 KASIM 1938 · ÇAPRAZ BİRİNCİL VESİKALAR</span>
+          <h3>Aynı Tarihsel An, İki Cephenin Kaydı: Ankara Resmî Tebliği ve Dünya Tanıklığı</h3>
+        </div>
+
+        <div class="ataturk-mourning-docs__grid">
+          <div class="mourning-doc-card">
+            <span class="mourning-doc-card__tag">
+              ANKARA &amp; DOLMABAHÇE · RESMÎ DEVLET VESİKASI · DOĞRUDAN ALINTI
+            </span>
+            <h4>Son Tabip Raporu ve Türkiye Cumhuriyeti Hükûmetinin Resmî Tebliği</h4>
+            <span class="mourning-doc-card__source">
+              T.C. Resmî Gazete, 10 İkinciteşrin [Kasım] 1938, Sayı: 4059
+            </span>
+            <p class="mourning-doc-card__quote">
+              «[...] bugün, 10 İkinciteşrin 1938 Perşembe sabahı saat dokuzu beş geçe Büyük Şefimiz derin koma içinde
+              terki hayat etmişlerdir.»
+            </p>
+            <p class="mourning-doc-card__quote">
+              «Müdavi ve müşavir tabiplerin neşredilen son raporu Atatürk’ün dünyaya gözlerini kapadığını
+              bildirmektedir. Bu acı hadise ile Türk vatanı büyük yapıcısını, Türk milleti Ulu Şefi’ni, insanlık büyük
+              evladını kaybetti. [...] Şurasını da her şeyden evvel beyan etmeliyiz ki ölmez olan, onun büyük eseri
+              Cumhuriyet Türkiyesi’dir.»
+            </p>
+          </div>
+
+          <div class="mourning-doc-card mourning-doc-card--world">
+            <span class="mourning-doc-card__tag">
+              LONDRA &amp; ATİNA · ESKİ KARŞI CEPHELERİN ÇAĞDAŞ KAYDI · DOĞRUDAN ALINTI (ÇEVİRİ) &amp; KAYNAK ÖZETİ
+            </span>
+            <h4>Winston S. Churchill (1915 Çanakkale Bahriye Birinci Lordu) ve Başbakan İoannis Metaksas</h4>
+            <span class="mourning-doc-card__source">
+              Daily Telegraph and Morning Post, 15 Aralık 1938 (Step by Step, 1939 · İngilizce aslından çeviri) &amp;
+              Kasım 1938 Diplomatik Taziye Kaydı
+            </span>
+            <p class="mourning-doc-card__quote">
+              «Her sınıftan kadın ve erkeğin onun tabutu başında döktüğü gözyaşları; aynı anda hem modern Türkiye’nin
+              kahramanı, hem savunucusu hem de babası olan bir devlet adamının hayat eserine yakışan en haklı saygı
+              duruşuydu. [...] Hayranlık uyandıran bir itidal ve iyi niyet politikasıyla, tarihte ilk kez Yunanistan
+              ile en dostane ilişkileri kurdu.»
+            </p>
+            <p class="mourning-doc-card__summary">
+              <em>Kaynak Özeti (Atina–Ankara, Kasım 1938):</em> Yunanistan Başbakanı İoannis Metaksas da Başbakan Celâl
+              Bayar’a çektiği resmî taziye telgrafında Atatürk’ü ortak idealler ve barışçıl iş birliğine dayalı
+              Türk–Yunan dostluğunun gerçek kurucusu olarak selamlamış; bizzat Ankara’ya gelerek 21 Kasım 1938’deki
+              devlet cenaze töreninde saf tutmuştur.
+            </p>
+          </div>
+        </div>
+      </div>
     </article>
   </div>
 </section>
@@ -351,6 +432,10 @@ const slides: ArchiveSlide[] = [
     root.addEventListener('keydown', onKeyDown);
     root.addEventListener('touchstart', onTouchStart, { passive: true });
     root.addEventListener('touchend', onTouchEnd, { passive: true });
+
+    if (document.documentElement.getAttribute('data-mourning') === '10-kasim' && slideEls.length > 3) {
+      goTo(3);
+    }
 
     startTimer();
 
@@ -806,6 +891,273 @@ const slides: ArchiveSlide[] = [
       flex: 1 1 auto;
       font-size: 0.62rem;
       padding: 0.26rem 0.44rem;
+    }
+  }
+
+  /* 10 Kasım Gümüş–Obsidyen Yas Çerçevesi & Çapraz Birincil Vesikalar */
+  .ataturk-mourning-head,
+  .ataturk-mourning-docs {
+    display: none;
+    grid-column: 1 / -1;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-mourning-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: -0.5rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.16);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-mourning-docs {
+    display: block;
+    padding-top: 1.55rem;
+    margin-top: 0.2rem;
+    border-top: 1px solid rgba(226, 232, 240, 0.16);
+  }
+
+  .ataturk-mourning-head__left {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .ataturk-mourning-ribbon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: linear-gradient(145deg, rgba(226, 232, 240, 0.12), rgba(15, 19, 28, 0.92));
+    border: 1px solid rgba(226, 232, 240, 0.34);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.48);
+    flex-shrink: 0;
+  }
+
+  .ataturk-mourning-head__titles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.14rem;
+  }
+
+  .ataturk-mourning-head__eyebrow {
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #cbd5e1;
+    text-transform: uppercase;
+  }
+
+  .ataturk-mourning-head__dates {
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 1.8vw, 1.42rem);
+    font-weight: 600;
+    color: #f8fafc;
+    letter-spacing: 0.01em;
+  }
+
+  .mourning-nowrap {
+    white-space: nowrap;
+  }
+
+  .ataturk-mourning-head__commemoration {
+    display: inline-block;
+    padding: 0.36rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(226, 232, 240, 0.08);
+    border: 1px solid rgba(226, 232, 240, 0.28);
+    color: #e2e8f0;
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .ataturk-mourning-docs__head {
+    margin-bottom: 1.1rem;
+  }
+
+  .ataturk-mourning-docs__pill {
+    display: inline-block;
+    padding: 0.26rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(226, 232, 240, 0.08);
+    border: 1px solid rgba(226, 232, 240, 0.26);
+    color: #e2e8f0;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.55rem;
+  }
+
+  .ataturk-mourning-docs__head h3 {
+    font-size: clamp(1.28rem, 2vw, 1.62rem);
+    color: #f8fafc;
+    line-height: 1.25;
+  }
+
+  .ataturk-mourning-docs__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .mourning-doc-card {
+    padding: 1.25rem 1.35rem;
+    border-radius: 14px;
+    background: rgba(7, 9, 14, 0.72);
+    border: 1px solid rgba(203, 213, 225, 0.18);
+    border-left: 3px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.52rem;
+  }
+
+  .mourning-doc-card--world {
+    border-left-color: #94a3b8;
+  }
+
+  .mourning-doc-card__tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #cbd5e1;
+    text-transform: uppercase;
+  }
+
+  .mourning-doc-card h4 {
+    font-size: 1.14rem;
+    color: #f8fafc;
+    line-height: 1.26;
+  }
+
+  .mourning-doc-card__source {
+    font-size: 0.74rem;
+    color: #94a3b8;
+    font-weight: 500;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(203, 213, 225, 0.1);
+  }
+
+  .mourning-doc-card__quote {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.99rem;
+    line-height: 1.54;
+    color: #f1f5f9;
+  }
+
+  .mourning-doc-card__summary {
+    margin: 0.15rem 0 0;
+    padding-top: 0.45rem;
+    border-top: 1px dashed rgba(203, 213, 225, 0.14);
+    font-size: 0.81rem;
+    line-height: 1.58;
+    color: #cbd5e1;
+  }
+
+  .mourning-doc-card__summary em {
+    color: #f1f5f9;
+    font-weight: 600;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-corner__glow--crimson {
+    background: rgba(226, 232, 240, 0.11);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-corner__glow--gold {
+    background: rgba(148, 163, 184, 0.1);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-card {
+    background: linear-gradient(145deg, rgba(12, 14, 20, 0.95) 0%, rgba(8, 10, 15, 0.97) 55%, rgba(13, 16, 23, 0.97) 100%);
+    border-color: rgba(226, 232, 240, 0.3);
+    box-shadow:
+      0 28px 72px rgba(0, 0, 0, 0.72),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-card::before {
+    background: linear-gradient(125deg, rgba(241, 245, 249, 0.42), rgba(148, 163, 184, 0.28), rgba(255, 255, 255, 0.04));
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-pill--crimson {
+    background: rgba(226, 232, 240, 0.11);
+    border-color: rgba(226, 232, 240, 0.35);
+    color: #f8fafc;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-pill__star {
+    color: #e2e8f0;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-pill--archive {
+    background: rgba(148, 163, 184, 0.09);
+    border-color: rgba(203, 213, 225, 0.26);
+    color: #cbd5e1;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-card__title span,
+  :global(html[data-mourning='10-kasim']) .ataturk-card__quote strong {
+    color: #e2e8f0;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-card__quote {
+    border-left-color: #cbd5e1;
+    background: rgba(6, 8, 12, 0.72);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-carousel__viewport {
+    border-color: rgba(226, 232, 240, 0.28);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-carousel__img {
+    filter: grayscale(100%) contrast(1.06) brightness(0.96);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-carousel__backdrop {
+    filter: grayscale(100%) blur(22px) brightness(0.38);
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-carousel__badge {
+    border-color: rgba(226, 232, 240, 0.32);
+    color: #f1f5f9;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-carousel__nav {
+    border-color: rgba(226, 232, 240, 0.32);
+    color: #f1f5f9;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-carousel__nav:hover {
+    background: #e2e8f0;
+    border-color: #f8fafc;
+    color: #07090e;
+  }
+
+  :global(html[data-mourning='10-kasim']) .ataturk-carousel__dot.is-active {
+    background: rgba(226, 232, 240, 0.14);
+    border-color: rgba(226, 232, 240, 0.44);
+    color: #f8fafc;
+  }
+
+  @media (max-width: 900px) {
+    .ataturk-mourning-docs__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ataturk-mourning-head__commemoration {
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      padding: 0.28rem 0.65rem;
+    }
+    .mourning-doc-card {
+      padding: 1rem 1.05rem;
     }
   }
 </style>

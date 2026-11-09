@@ -484,4 +484,51 @@ import { withBase } from '../utils/paths';
       padding: 1.5rem;
     }
   }
+
+  /* 10 Kasım Gümüş–Obsidyen Ana Sayfa Atmosferi */
+  :global(html[data-mourning='10-kasim']) .home-hero__ambient {
+    background: radial-gradient(ellipse at center, rgba(203, 213, 225, 0.085), transparent 68%);
+  }
+
+  :global(html[data-mourning='10-kasim']) .eyebrow,
+  :global(html[data-mourning='10-kasim']) .home-hero__title span,
+  :global(html[data-mourning='10-kasim']) .pillar-num,
+  :global(html[data-mourning='10-kasim']) .dossier-num {
+    color: #e2e8f0;
+  }
+
+  :global(html[data-mourning='10-kasim']) .btn-primary {
+    background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+    color: #07080c;
+    box-shadow: 0 14px 34px rgba(203, 213, 225, 0.18);
+  }
+
+  :global(html[data-mourning='10-kasim']) .btn-primary:hover {
+    box-shadow: 0 18px 40px rgba(226, 232, 240, 0.28);
+  }
+
+  :global(html[data-mourning='10-kasim']) .btn-ghost:hover {
+    border-color: rgba(226, 232, 240, 0.36);
+    color: #f1f5f9;
+  }
+
+  :global(html[data-mourning='10-kasim']) .dossier-card--live {
+    border-color: rgba(203, 213, 225, 0.26);
+    background: linear-gradient(155deg, rgba(16, 19, 27, 0.95), rgba(10, 12, 18, 0.96));
+  }
+
+  :global(html[data-mourning='10-kasim']) .dossier-card--live:hover {
+    border-color: rgba(226, 232, 240, 0.52);
+  }
+
+  :global(html[data-mourning='10-kasim']) .dossier-open-btn {
+    background: rgba(226, 232, 240, 0.09);
+    border-color: rgba(226, 232, 240, 0.32);
+    color: #f1f5f9;
+  }
+
+  :global(html[data-mourning='10-kasim']) .dossier-open-btn:hover {
+    background: #e2e8f0;
+    color: #07080c;
+  }
 </style>

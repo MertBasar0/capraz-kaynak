@@ -58,6 +58,31 @@ body {
   overflow-x: hidden;
 }
 
+/* 10 Kasım Gümüş–Obsidyen Yas Atmosferi (Dosya içi harita ve Doğu/Batı renklerini bozmaz) */
+html[data-mourning='10-kasim'] {
+  background-color: #050609;
+}
+
+html[data-mourning='10-kasim'] body {
+  background:
+    radial-gradient(circle at 18% 6%, rgba(226, 232, 240, 0.065), transparent 38%),
+    radial-gradient(circle at 84% 16%, rgba(148, 163, 184, 0.045), transparent 40%),
+    #050609;
+}
+
+html[data-mourning='10-kasim'] ::selection {
+  background: rgba(203, 213, 225, 0.3);
+  color: #fff;
+}
+
+html[data-mourning='10-kasim'] ::-webkit-scrollbar-thumb {
+  background: rgba(203, 213, 225, 0.28);
+}
+
+html[data-mourning='10-kasim'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(226, 232, 240, 0.5);
+}
+
 ::selection {
   background: rgba(217, 155, 78, 0.32);
   color: #fff;

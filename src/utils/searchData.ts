@@ -511,7 +511,8 @@ export function buildSearchIndex(): SearchEntry[] {
     title: 'Mustafa Kemal Atatürk — «Tarih yazmak, tarih yapmak kadar mühimdir» (1931)',
     snippet:
       'Yazan yapana sadık kalmazsa değişmeyen hakikat insanlığı şaşırtacak bir mahiyet alır: Belgeye, kanıta ve kaynak kritiğine dayalı tarih bilinci.',
-    keywords: 'Mustafa Kemal Atatürk Köşesi 1931 Türk Tarih Tetkik Cemiyeti Kocatepe Kayseri harf inkılabı',
+    keywords:
+      'Mustafa Kemal Atatürk Köşesi 1931 Türk Tarih Tetkik Cemiyeti Kocatepe Kayseri harf inkılabı 10 Kasım 1938 Dolmabahçe 09.05 Resmî Gazete 4059 Winston Churchill İoannis Metaksas',
     href: `${homeHref}#ataturk-kosesi`,
     targetId: 'ataturk-kosesi',
   });

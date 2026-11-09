@@ -52,6 +52,32 @@ const ogImageUrl = new URL(
     <meta name="twitter:image" content={ogImageUrl} />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var forced = params.get('10kasim');
+          var parts = new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'Europe/Istanbul',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          }).formatToParts(new Date());
+          var map = {};
+          for (var i = 0; i < parts.length; i++) map[parts[i].type] = parts[i].value;
+          var isNov10 =
+            forced === '1' ? true : forced === '0' ? false : map.month === '11' && map.day === '10';
+          var years = Math.max(88, (parseInt(map.year || '2026', 10) || 2026) - 1938);
+          var root = document.documentElement;
+          root.dataset.mourningYears = String(years);
+          if (isNov10) {
+            root.setAttribute('data-mourning', '10-kasim');
+          } else {
+            root.removeAttribute('data-mourning');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <ClientRouter />
     <script
       is:inline
@@ -62,6 +88,38 @@ const ogImageUrl = new URL(
   </head>
   <body>
     <header class="site-header">
+      <div class="mourning-ribbon-bar" role="region" aria-label="10 Kasım Atatürk’ü Anma Günü">
+        <div class="container mourning-ribbon-bar__inner">
+          <div class="mourning-ribbon-bar__left">
+            <span class="mourning-ribbon-icon" aria-hidden="true">
+              <svg width="14" height="17" viewBox="0 0 24 28" fill="none">
+                <path
+                  d="M7.5 23.5L12 15.5L16.5 23.5M12 15.5L8.2 9.4C6.8 7.1 8.3 4 11.1 3.7C11.7 3.6 12.3 3.6 12.9 3.7C15.7 4 17.2 7.1 15.8 9.4L12 15.5Z"
+                  stroke="#e2e8f0"
+                  stroke-width="2.1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.8 8.7C7.8 6.8 9 4.5 11.3 4.3C11.8 4.2 12.2 4.2 12.7 4.3C15 4.5 16.2 6.8 15.2 8.7L12 14.1L8.8 8.7Z"
+                  fill="#0b0d13"
+                />
+              </svg>
+            </span>
+            <span class="mourning-ribbon-bar__dates">1881 – 1938<span class="mourning-inf"> · 09.05</span></span>
+            <span class="mourning-ribbon-bar__sep" aria-hidden="true">|</span>
+            <span class="mourning-ribbon-bar__text">
+              Cumhuriyetimizin kurucusu <strong>Gazi Mustafa Kemal Atatürk</strong>’ü vefatının{' '}
+              <span data-mourning-years-text>88</span>. yılında saygı, özlem ve minnetle anıyoruz.
+            </span>
+          </div>
+          <a href={`${homeHref}#ataturk-kosesi`} class="mourning-ribbon-bar__link">
+            <span>10 Kasım Vesikaları</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
       <div class="container site-header__inner">
         <a href={homeHref} class="brand" aria-label="Çapraz Kaynak Ana Sayfa">
           <span class="brand__mark" aria-hidden="true">
@@ -156,7 +214,40 @@ const ogImageUrl = new URL(
     <script>
       let globalScrollCleanup: (() => void) | null = null;
 
+      function syncMourningTheme(docRoot: HTMLElement = document.documentElement) {
+        try {
+          const params = new URLSearchParams(window.location.search);
+          const forced = params.get('10kasim');
+          const parts = new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'Europe/Istanbul',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          }).formatToParts(new Date());
+          const map: Record<string, string> = {};
+          for (const p of parts) map[p.type] = p.value;
+          const isNov10 =
+            forced === '1' ? true : forced === '0' ? false : map.month === '11' && map.day === '10';
+          const years = Math.max(88, (parseInt(map.year || '2026', 10) || 2026) - 1938);
+          docRoot.dataset.mourningYears = String(years);
+          if (isNov10) {
+            docRoot.setAttribute('data-mourning', '10-kasim');
+          } else {
+            docRoot.removeAttribute('data-mourning');
+          }
+          if (docRoot === document.documentElement) {
+            document.querySelectorAll<HTMLElement>('[data-mourning-years-text]').forEach((el) => {
+              el.textContent = String(years);
+            });
+          }
+        } catch {
+          // ignore
+        }
+      }
+
       function initGlobalInteractions() {
+        syncMourningTheme(document.documentElement);
+
         if (globalScrollCleanup) {
           globalScrollCleanup();
           globalScrollCleanup = null;
@@ -194,10 +285,13 @@ const ogImageUrl = new URL(
       }
 
       document.addEventListener('astro:page-load', initGlobalInteractions);
-      document.addEventListener('astro:before-swap', () => {
+      document.addEventListener('astro:before-swap', (ev: any) => {
         if (globalScrollCleanup) {
           globalScrollCleanup();
           globalScrollCleanup = null;
+        }
+        if (ev?.newDocument?.documentElement) {
+          syncMourningTheme(ev.newDocument.documentElement);
         }
       });
       document.addEventListener('astro:after-swap', () => {
@@ -459,6 +553,162 @@ const ogImageUrl = new URL(
       padding: 0;
       margin-left: 0.06rem;
       justify-content: center;
+    }
+  }
+
+  /* 10 Kasım Anma Şeridi & Gümüş–Obsidyen Üst Menü Atmosferi */
+  .mourning-ribbon-bar {
+    display: none;
+    background: linear-gradient(90deg, rgba(6, 7, 11, 0.97) 0%, rgba(15, 18, 26, 0.97) 50%, rgba(6, 7, 11, 0.97) 100%);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.16);
+    padding: 0.42rem 0;
+    font-size: 0.76rem;
+    color: #cbd5e1;
+  }
+
+  :global(html[data-mourning='10-kasim']) .mourning-ribbon-bar {
+    display: block;
+  }
+
+  .mourning-ribbon-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+  }
+
+  .mourning-ribbon-bar__left {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+  }
+
+  .mourning-ribbon-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(226, 232, 240, 0.07);
+    border: 1px solid rgba(226, 232, 240, 0.24);
+    flex-shrink: 0;
+  }
+
+  .mourning-ribbon-bar__dates {
+    font-family: var(--font-serif);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #f1f5f9;
+    white-space: nowrap;
+  }
+
+  .mourning-inf {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .mourning-ribbon-bar__sep {
+    color: rgba(203, 213, 225, 0.28);
+  }
+
+  .mourning-ribbon-bar__text {
+    color: #cbd5e1;
+    line-height: 1.35;
+  }
+
+  .mourning-ribbon-bar__text strong {
+    color: #f8fafc;
+    font-weight: 600;
+  }
+
+  .mourning-ribbon-bar__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(226, 232, 240, 0.26);
+    background: rgba(226, 232, 240, 0.07);
+    color: #f1f5f9;
+    font-size: 0.71rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .mourning-ribbon-bar__link:hover {
+    background: rgba(226, 232, 240, 0.16);
+    border-color: rgba(241, 245, 249, 0.48);
+  }
+
+  :global(html[data-mourning='10-kasim']) .site-header {
+    background: rgba(5, 6, 10, 0.86);
+    border-bottom-color: rgba(203, 213, 225, 0.14);
+  }
+
+  :global(html[data-mourning='10-kasim']) .brand__mark {
+    background: rgba(226, 232, 240, 0.06);
+    border-color: rgba(226, 232, 240, 0.26);
+    filter: grayscale(100%) brightness(1.18);
+  }
+
+  :global(html[data-mourning='10-kasim']) .site-nav__link.active {
+    color: #f1f5f9;
+    background: rgba(226, 232, 240, 0.11);
+    border-color: rgba(226, 232, 240, 0.34);
+  }
+
+  :global(html[data-mourning='10-kasim']) .site-search-btn,
+  :global(html[data-mourning='10-kasim']) .footer-search-btn {
+    color: #e2e8f0;
+    background: rgba(226, 232, 240, 0.07);
+    border-color: rgba(226, 232, 240, 0.3);
+  }
+
+  :global(html[data-mourning='10-kasim']) .site-search-btn:hover,
+  :global(html[data-mourning='10-kasim']) .footer-search-btn:hover {
+    color: #ffffff;
+    background: rgba(226, 232, 240, 0.15);
+    border-color: rgba(241, 245, 249, 0.52);
+  }
+
+  :global(html[data-mourning='10-kasim']) .reading-progress {
+    background: linear-gradient(90deg, #94a3b8, #f8fafc);
+  }
+
+  :global(html[data-mourning='10-kasim']) .brand__footer-title,
+  :global(html[data-mourning='10-kasim']) .site-footer__links a:hover {
+    color: #e2e8f0;
+  }
+
+  @media (max-width: 920px) {
+    .mourning-ribbon-bar__link {
+      display: none;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .mourning-ribbon-bar {
+      padding: 0.36rem 0;
+      font-size: 0.67rem;
+    }
+    .mourning-ribbon-bar__inner {
+      width: min(100% - 1.15rem, var(--max-width));
+    }
+    .mourning-ribbon-bar__left {
+      gap: 0.4rem;
+    }
+    .mourning-ribbon-bar__sep {
+      display: none;
+    }
+    .mourning-ribbon-bar__dates {
+      font-size: 0.72rem;
+      padding-right: 0.35rem;
+      border-right: 1px solid rgba(203, 213, 225, 0.22);
     }
   }
 </style>
