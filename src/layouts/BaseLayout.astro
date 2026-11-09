@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import SiteSearchModal from '../components/SiteSearchModal.astro';
 import { withBase } from '../utils/paths';
 import '../styles/global.css';
 
@@ -21,6 +22,7 @@ const currentPath = Astro.url.pathname;
 const homeHref = withBase('/');
 const dossier01Href = withBase('/dosyalar/antakya-1098/');
 const dossier02Href = withBase('/dosyalar/hittin-1187/');
+const dossier03Href = withBase('/dosyalar/malazgirt-1071/');
 const methodologyHref = withBase('/metodoloji/');
 const isHome = currentPath === homeHref || currentPath === homeHref.replace(/\/$/, '');
 const canonicalUrl = new URL(currentPath, Astro.site || 'https://mertbasar0.github.io').toString();
@@ -92,11 +94,31 @@ const ogImageUrl = new URL(
             <span class="nav-dosya-short">#</span><span class="nav-dosya-prefix">Dosya </span>02<span class="nav-sublabel">: Hıttîn 1187</span>
           </a>
           <a
+            href={dossier03Href}
+            class:list={['site-nav__link', { active: currentPath.includes('malazgirt-1071') }]}
+          >
+            <span class="nav-dosya-short">#</span><span class="nav-dosya-prefix">Dosya </span>03<span class="nav-sublabel">: Malazgirt 1071</span>
+          </a>
+          <a
             href={methodologyHref}
             class:list={['site-nav__link', { active: currentPath.includes('metodoloji') }]}
           >
             Metodoloji
           </a>
+          <button
+            type="button"
+            class="site-search-btn"
+            data-open-site-search
+            aria-label="Site içi arama (Ctrl+K)"
+            title="Tüm dosyalarda ve kaynakçada ara (Ctrl+K veya /)"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7.2" stroke="currentColor" stroke-width="2.1" />
+              <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" />
+            </svg>
+            <span class="site-search-btn__text">Ara</span>
+            <kbd class="site-search-btn__kbd">Ctrl K</kbd>
+          </button>
         </nav>
       </div>
       <div class="reading-progress" id="global-reading-progress" aria-hidden="true"></div>
@@ -119,11 +141,17 @@ const ogImageUrl = new URL(
           <a href={homeHref}>Tüm Dosyalar</a>
           <a href={dossier01Href}>Dosya 01: Antakya 1098</a>
           <a href={dossier02Href}>Dosya 02: Hıttîn 1187</a>
+          <a href={dossier03Href}>Dosya 03: Malazgirt 1071</a>
           <a href={`${homeHref}#ataturk-kosesi`}>Atatürk Köşesi</a>
           <a href={methodologyHref}>Kaynak Kritiği İlkeleri</a>
+          <button type="button" class="footer-search-btn" data-open-site-search>
+            Site İçi Arama (Ctrl+K)
+          </button>
         </div>
       </div>
     </footer>
+
+    <SiteSearchModal />
 
     <script>
       let globalScrollCleanup: (() => void) | null = null;
@@ -157,7 +185,7 @@ const ogImageUrl = new URL(
                 }
               });
             },
-            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+            { threshold: 0.02, rootMargin: '0px 0px -24px 0px' }
           );
           reveals.forEach((el) => io.observe(el));
         } else {
@@ -301,6 +329,7 @@ const ogImageUrl = new URL(
   .site-footer__links {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 1.4rem;
     font-size: 0.86rem;
     color: var(--text-secondary);
@@ -310,12 +339,68 @@ const ogImageUrl = new URL(
     color: var(--accent-gold);
   }
 
+  .footer-search-btn {
+    padding: 0.34rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 155, 78, 0.35);
+    background: rgba(217, 155, 78, 0.08);
+    color: var(--accent-gold);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .footer-search-btn:hover {
+    background: rgba(217, 155, 78, 0.16);
+    border-color: rgba(217, 155, 78, 0.58);
+  }
+
+  .site-search-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0.38rem 0.68rem 0.38rem 0.64rem;
+    margin-left: 0.18rem;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 155, 78, 0.34);
+    background: rgba(217, 155, 78, 0.08);
+    color: var(--accent-gold);
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .site-search-btn:hover {
+    background: rgba(217, 155, 78, 0.16);
+    border-color: rgba(217, 155, 78, 0.62);
+    color: #f6ddb6;
+  }
+
+  .site-search-btn__kbd {
+    padding: 0.1rem 0.34rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
   .nav-dosya-short {
     display: none;
   }
 
-  @media (max-width: 1020px) {
-    .nav-sublabel {
+  @media (max-width: 1180px) {
+    .nav-sublabel,
+    .site-search-btn__kbd {
       display: none;
     }
     .brand__text small {
@@ -325,42 +410,55 @@ const ogImageUrl = new URL(
       gap: 0.5rem;
     }
     .site-nav {
-      gap: 0.2rem;
+      gap: 0.18rem;
     }
     .site-nav__link {
-      padding: 0.36rem 0.56rem;
+      padding: 0.34rem 0.52rem;
       font-size: 0.74rem;
+    }
+    .site-search-btn {
+      padding: 0.34rem 0.54rem;
+      font-size: 0.73rem;
+      margin-left: 0.08rem;
     }
   }
 
-  @media (max-width: 620px) {
-    .nav-dosya-prefix {
+  @media (max-width: 680px) {
+    .nav-dosya-prefix,
+    .site-search-btn__text {
       display: none;
     }
     .nav-dosya-short {
       display: inline;
     }
     .site-header__inner {
-      width: min(100% - 1.25rem, var(--max-width));
-      gap: 0.35rem;
+      width: min(100% - 1.15rem, var(--max-width));
+      gap: 0.3rem;
     }
     .brand {
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
     .brand__mark {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
     }
     .brand__text strong {
-      font-size: 0.64rem;
-      letter-spacing: 0.04em;
+      font-size: 0.61rem;
+      letter-spacing: 0.03em;
     }
     .site-nav {
-      gap: 0.12rem;
+      gap: 0.1rem;
     }
     .site-nav__link {
-      padding: 0.28rem 0.38rem;
-      font-size: 0.65rem;
+      padding: 0.26rem 0.33rem;
+      font-size: 0.63rem;
+    }
+    .site-search-btn {
+      width: 27px;
+      height: 27px;
+      padding: 0;
+      margin-left: 0.06rem;
+      justify-content: center;
     }
   }
 </style>

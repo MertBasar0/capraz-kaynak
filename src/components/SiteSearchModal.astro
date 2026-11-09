@@ -1,0 +1,944 @@
+---
+import { withBase } from '../utils/paths';
+
+const indexUrl = withBase('/search-index.json');
+const quickChips = [
+  { label: '1074 Partskhisi', query: 'Partskhisi' },
+  { label: 'Didi Turkoba', query: 'Didi Turkoba' },
+  { label: 'Sıbt İbnü’l-Cevzî', query: 'Sıbt İbnü’l-Cevzî' },
+  { label: 'Dorylaeum & Krya Pege', query: 'Krya Pege' },
+  { label: 'Kürboğa', query: 'Kürboğa' },
+  { label: 'Hıttîn & Su Tuzağı', query: 'Birket Meskene' },
+];
+---
+
+<div
+  class="search-modal"
+  id="site-search-modal"
+  data-index-url={indexUrl}
+  hidden
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="site-search-title"
+>
+  <div class="search-modal__backdrop" data-close-site-search></div>
+
+  <div class="search-modal__panel" role="document">
+    <div class="search-modal__head">
+      <div class="search-modal__input-wrap">
+        <svg class="search-modal__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7.2" stroke="currentColor" stroke-width="2" />
+          <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <input
+          type="search"
+          id="site-search-input"
+          class="search-modal__input"
+          placeholder="Savaş, şahsiyet, yer adı, vekâyinâme veya tarihçi ara… (örn. Partskhisi, Melikşah, el-Kâmil)"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Tüm dosyalarda ve kaynakçada ara"
+        />
+        <button
+          type="button"
+          class="search-modal__clear"
+          id="site-search-clear"
+          hidden
+          aria-label="Aramayı temizle"
+        >
+          Temizle
+        </button>
+      </div>
+
+      <button type="button" class="search-modal__close" data-close-site-search aria-label="Arama penceresini kapat">
+        <span>Kapat</span>
+        <kbd>Esc</kbd>
+      </button>
+    </div>
+
+    <div class="search-modal__chips" id="site-search-chips-bar">
+      <span class="search-modal__chips-label" id="site-search-title">Hızlı Keşif:</span>
+      {
+        quickChips.map((chip) => (
+          <button type="button" class="search-chip" data-search-chip={chip.query}>
+            {chip.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="search-modal__meta" id="site-search-status" aria-live="polite">
+      Tüm dosyalar, harita sahneleri, birincil vekâyinâmeler ve kaynakça içinde anında arama yapabilirsiniz.
+    </div>
+
+    <div class="search-modal__results" id="site-search-results" role="listbox" aria-label="Arama sonuçları"></div>
+
+    <div class="search-modal__foot">
+      <span><kbd>↑</kbd> <kbd>↓</kbd> Gezin</span>
+      <span><kbd>Enter</kbd> İlgili Sahneye Git</span>
+      <span><kbd>Ctrl</kbd> + <kbd>K</kbd> veya <kbd>/</kbd> Hızlı Aç</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  interface SearchActivateAction {
+    frontTabId?: string;
+    openSources?: boolean;
+    lensId?: string;
+    lensMode?: 'claim' | 'critique';
+    fateIndex?: number;
+    flipFate?: boolean;
+  }
+
+  interface SearchEntry {
+    id: string;
+    dossierBadge: string;
+    dossierTitle: string;
+    category: string;
+    title: string;
+    snippet: string;
+    keywords: string;
+    href: string;
+    targetId?: string;
+    activate?: SearchActivateAction;
+  }
+
+  interface PreparedEntry extends SearchEntry {
+    normTitle: string;
+    normCategory: string;
+    normSnippet: string;
+    normAll: string;
+  }
+
+  let cachedEntries: PreparedEntry[] | null = null;
+  let fetchPromise: Promise<PreparedEntry[]> | null = null;
+  let keydownBound = false;
+
+  function normalizeTr(str: string): string {
+    return (str || '')
+      .replace(/[İIıiîī]/g, 'i')
+      .replace(/[Ââā]/g, 'a')
+      .replace(/[Ûûū]/g, 'u')
+      .replace(/[Ôôō]/g, 'o')
+      .replace(/[Êêē]/g, 'e')
+      .replace(/[Ğğ]/g, 'g')
+      .replace(/[Şş]/g, 's')
+      .replace(/[Çç]/g, 'c')
+      .replace(/[Öö]/g, 'o')
+      .replace(/[Üü]/g, 'u')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[’'‘`ʿʾ"«»„“”]/g, '')
+      .replace(/[-–—/·.,;:!?()[\]]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function escapeHtml(str: string): string {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function highlightDisplayText(text: string, rawTokens: string[]): string {
+    if (!rawTokens.length || !text) return escapeHtml(text);
+    const normTokens = rawTokens.map(normalizeTr).filter((t) => t.length >= 2);
+    if (!normTokens.length) return escapeHtml(text);
+
+    // Kelime bazlı güvenli eşleşme vurgusu (Türkçe şapkalı/noktalı harfleri bozmadan)
+    return text
+      .split(/(\s+)/)
+      .map((part) => {
+        if (/^\s+$/.test(part)) return part;
+        const normPart = normalizeTr(part);
+        if (normPart && normTokens.some((tok) => normPart.includes(tok))) {
+          return `<mark class="search-hl">${escapeHtml(part)}</mark>`;
+        }
+        return escapeHtml(part);
+      })
+      .join('');
+  }
+
+  function buildContextualSnippet(item: PreparedEntry, rawTokens: string[], normTokens: string[]): string {
+    const snippetMatch = normTokens.some((tok) => item.normSnippet.includes(tok));
+    if (snippetMatch || !normTokens.length) {
+      return highlightDisplayText(item.snippet, rawTokens);
+    }
+
+    // Eşleşme keywords içindeyse (ör. kaynakçadaki bir yazar adı veya Gürcüce/Arapça terim), o bölgeden pencere kes
+    const words = item.keywords.split(/\s+/);
+    let matchIdx = -1;
+    for (let i = 0; i < words.length; i++) {
+      const nw = normalizeTr(words[i]);
+      if (nw && normTokens.some((tok) => nw.includes(tok))) {
+        matchIdx = i;
+        break;
+      }
+    }
+
+    if (matchIdx === -1) {
+      return highlightDisplayText(item.snippet, rawTokens);
+    }
+
+    const start = Math.max(0, matchIdx - 10);
+    const end = Math.min(words.length, matchIdx + 18);
+    const windowText = `${start > 0 ? '…' : ''}${words.slice(start, end).join(' ')}${end < words.length ? '…' : ''}`;
+    return highlightDisplayText(windowText, rawTokens);
+  }
+
+  async function loadIndex(indexUrl: string): Promise<PreparedEntry[]> {
+    if (cachedEntries) return cachedEntries;
+    if (!fetchPromise) {
+      fetchPromise = fetch(indexUrl)
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json() as Promise<SearchEntry[]>;
+        })
+        .then((raw) => {
+          cachedEntries = raw.map((entry) => {
+            const normTitle = normalizeTr(entry.title);
+            const normCategory = normalizeTr(`${entry.dossierBadge} ${entry.dossierTitle} ${entry.category}`);
+            const normSnippet = normalizeTr(entry.snippet);
+            const normKeywords = normalizeTr(entry.keywords);
+            return {
+              ...entry,
+              normTitle,
+              normCategory,
+              normSnippet,
+              normAll: `${normTitle} ${normCategory} ${normSnippet} ${normKeywords}`,
+            };
+          });
+          return cachedEntries;
+        })
+        .catch((err) => {
+          fetchPromise = null;
+          throw err;
+        });
+    }
+    return fetchPromise;
+  }
+
+  function applyJumpPayload(payload: { targetId?: string; activate?: SearchActivateAction; instant?: boolean }) {
+    const { targetId, activate, instant } = payload;
+
+    if (activate?.frontTabId) {
+      const tabBtn = document.querySelector<HTMLButtonElement>(`[data-front-tab="${activate.frontTabId}"]`);
+      if (tabBtn) {
+        tabBtn.click();
+      }
+    }
+
+    if (activate?.openSources) {
+      const details = document.getElementById('kaynakca-cekmece') as HTMLDetailsElement | null;
+      if (details) {
+        details.open = true;
+      }
+    }
+
+    if (activate?.lensId) {
+      const lensCard = document.getElementById(`vaka-${activate.lensId}`);
+      if (lensCard && activate.lensMode && lensCard.dataset.mode !== activate.lensMode) {
+        const trigger = lensCard.querySelector<HTMLButtonElement>('[data-lens-trigger]');
+        trigger?.click();
+      }
+    }
+
+    if (typeof activate?.fateIndex === 'number') {
+      const fateCard = document.getElementById(`fate-card-${activate.fateIndex}`);
+      if (fateCard && activate.flipFate && fateCard.dataset.flipped !== 'true') {
+        fateCard.click();
+      }
+    }
+
+    if (targetId) {
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        let anc: HTMLElement | null = targetEl;
+        while (anc) {
+          if (anc.classList.contains('reveal')) {
+            anc.classList.add('is-visible');
+          }
+          anc = anc.parentElement;
+        }
+        const hostSection = targetEl.closest('section') || targetEl;
+        hostSection.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+
+        const scrollToTarget = (forceInstant: boolean) => {
+          const headerOffset = 94;
+          const rect = targetEl.getBoundingClientRect();
+          const top = Math.max(0, window.scrollY + rect.top - headerOffset);
+          if (forceInstant) {
+            const root = document.documentElement;
+            const prevBehavior = root.style.scrollBehavior;
+            root.style.scrollBehavior = 'auto';
+            window.scrollTo(0, top);
+            window.requestAnimationFrame(() => {
+              root.style.scrollBehavior = prevBehavior;
+            });
+          } else {
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        };
+
+        const rectNow = targetEl.getBoundingClientRect();
+        const useInstant = Boolean(instant) || Math.abs(rectNow.top) > 2000;
+        scrollToTarget(useInstant);
+        if (instant) {
+          window.setTimeout(() => scrollToTarget(true), 220);
+        }
+
+        targetEl.classList.remove('search-arrival-pulse');
+        void targetEl.offsetWidth;
+        targetEl.classList.add('search-arrival-pulse');
+        window.setTimeout(() => {
+          targetEl.classList.remove('search-arrival-pulse');
+        }, 2600);
+      }
+    }
+  }
+
+  function consumePendingSearchJump() {
+    try {
+      const raw = sessionStorage.getItem('ck_search_jump');
+      if (!raw) return;
+      sessionStorage.removeItem('ck_search_jump');
+      const parsed = JSON.parse(raw) as { targetId?: string; activate?: SearchActivateAction; ts?: number };
+      if (parsed.ts && Date.now() - parsed.ts > 15000) return;
+      window.setTimeout(() => applyJumpPayload({ ...parsed, instant: true }), 90);
+    } catch {
+      // sessionStorage kapalıysa sessizce geç
+    }
+  }
+
+  function initSiteSearch() {
+    consumePendingSearchJump();
+
+    const modal = document.getElementById('site-search-modal');
+    const input = document.getElementById('site-search-input') as HTMLInputElement | null;
+    const clearBtn = document.getElementById('site-search-clear') as HTMLButtonElement | null;
+    const statusEl = document.getElementById('site-search-status');
+    const resultsEl = document.getElementById('site-search-results');
+    if (!modal || !input || !resultsEl || !statusEl) return;
+
+    const indexUrl = modal.dataset.indexUrl || '/search-index.json';
+    let activeIndex = 0;
+    let currentItems: PreparedEntry[] = [];
+
+    const openModal = async (prefill?: string) => {
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (typeof prefill === 'string') {
+        input.value = prefill;
+      }
+      if (clearBtn) clearBtn.hidden = input.value.trim().length === 0;
+
+      window.requestAnimationFrame(() => {
+        input.focus();
+        input.select();
+      });
+
+      try {
+        await loadIndex(indexUrl);
+        renderResults(input.value);
+      } catch {
+        statusEl.textContent = 'Arama dizini yüklenirken bir bağlantı hatası oluştu.';
+      }
+    };
+
+    const closeModal = () => {
+      if (modal.hidden) return;
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    const updateActiveHighlight = () => {
+      const links = Array.from(resultsEl.querySelectorAll<HTMLAnchorElement>('.search-hit'));
+      links.forEach((el, idx) => {
+        const isCurrent = idx === activeIndex;
+        el.classList.toggle('is-active', isCurrent);
+        el.setAttribute('aria-selected', String(isCurrent));
+        if (isCurrent) {
+          el.scrollIntoView({ block: 'nearest' });
+        }
+      });
+    };
+
+    const navigateToItem = (item: PreparedEntry, e?: MouseEvent | KeyboardEvent) => {
+      const targetUrl = new URL(item.href, window.location.origin);
+      const normCurrentPath = window.location.pathname.replace(/\/$/, '') || '/';
+      const normTargetPath = targetUrl.pathname.replace(/\/$/, '') || '/';
+      const isSamePage = normCurrentPath === normTargetPath;
+
+      closeModal();
+
+      if (isSamePage) {
+        e?.preventDefault();
+        if (targetUrl.hash) {
+          history.replaceState(null, '', `${targetUrl.pathname}${targetUrl.hash}`);
+        }
+        applyJumpPayload({ targetId: item.targetId, activate: item.activate });
+        return;
+      }
+
+      try {
+        sessionStorage.setItem(
+          'ck_search_jump',
+          JSON.stringify({
+            targetId: item.targetId,
+            activate: item.activate,
+            ts: Date.now(),
+          })
+        );
+      } catch {
+        // ignore
+      }
+
+      if (!e || e instanceof KeyboardEvent) {
+        window.location.href = item.href;
+      }
+    };
+
+    const renderResults = (rawQuery: string) => {
+      if (!cachedEntries) return;
+      const trimmed = rawQuery.trim();
+      if (clearBtn) clearBtn.hidden = trimmed.length === 0;
+
+      const rawTokens = trimmed ? trimmed.split(/\s+/).filter(Boolean) : [];
+      const normFull = normalizeTr(trimmed);
+      const normTokens = normFull ? normFull.split(/\s+/).filter(Boolean) : [];
+
+      if (!normTokens.length) {
+        // Varsayılan önerilen kayıtlar: 3 canlı dosya + Partskhisi + Didgori + Metodoloji
+        const featuredIds = [
+          'dossier-malazgirt-1071',
+          'malazgirt-1074-partskhisi-battle',
+          'dossier-hittin-1187',
+          'dossier-antakya-1098',
+          'dossier-didgori-1121',
+          'page-metodoloji',
+        ];
+        currentItems = featuredIds
+          .map((fid) => cachedEntries!.find((x) => x.id === fid))
+          .filter((x): x is PreparedEntry => Boolean(x));
+        statusEl.textContent = `Toplam ${cachedEntries.length} sahne, birincil metin ve kaynakça kaydı dizinlendi — Öne çıkan başlıklar:`;
+      } else {
+        const scored: { item: PreparedEntry; score: number }[] = [];
+        for (const item of cachedEntries) {
+          if (!normTokens.every((tok) => item.normAll.includes(tok))) continue;
+
+          let score = 0;
+          if (item.normTitle.includes(normFull)) score += 95;
+          if (item.normCategory.includes(normFull)) score += 35;
+          if (item.normSnippet.includes(normFull)) score += 28;
+
+          for (const tok of normTokens) {
+            if (item.normTitle.startsWith(tok)) score += 45;
+            else if (item.normTitle.includes(tok)) score += 30;
+            if (item.normCategory.includes(tok)) score += 16;
+            if (item.normSnippet.includes(tok)) score += 12;
+            else score += 6;
+          }
+
+          scored.push({ item, score });
+        }
+
+        scored.sort((a, b) => b.score - a.score);
+        currentItems = scored.slice(0, 18).map((s) => s.item);
+        statusEl.textContent =
+          scored.length > 0
+            ? `"${trimmed}" için ${scored.length} eşleşme bulundu:`
+            : `"${trimmed}" için eşleşme bulunamadı. Farklı bir yazım (ör. Malazgirt, Partskhisi, Hıttîn, Kürboğa, Attaleiates) deneyin.`;
+      }
+
+      activeIndex = 0;
+      if (!currentItems.length) {
+        resultsEl.innerHTML = `
+          <div class="search-empty">
+            <p>Aradığınız terimle eşleşen bir kayıt bulunamadı.</p>
+            <small>İpucu: Şahsiyet adlarını (Alp Arslan, Romanos, Selahaddin, Kürboğa), yer adlarını (Ani, Ahlat, Partskhisi, Dorylaeum) veya müellifleri (İbnü’l-Esîr, Sıbt, Attaleiates, Fulcherius) deneyebilirsiniz.</small>
+          </div>
+        `;
+        return;
+      }
+
+      resultsEl.innerHTML = currentItems
+        .map((item, idx) => {
+          const titleHtml = highlightDisplayText(item.title, rawTokens);
+          const snippetHtml = buildContextualSnippet(item, rawTokens, normTokens);
+          return `
+            <a
+              href="${escapeHtml(item.href)}"
+              class="search-hit${idx === 0 ? ' is-active' : ''}"
+              role="option"
+              aria-selected="${idx === 0 ? 'true' : 'false'}"
+              data-hit-idx="${idx}"
+            >
+              <div class="search-hit__top">
+                <span class="search-hit__badge">${escapeHtml(item.dossierBadge)}</span>
+                <span class="search-hit__cat">${escapeHtml(item.category)}</span>
+                <span class="search-hit__arrow" aria-hidden="true">→</span>
+              </div>
+              <div class="search-hit__title">${titleHtml}</div>
+              <p class="search-hit__snippet">${snippetHtml}</p>
+            </a>
+          `;
+        })
+        .join('');
+
+      const hitLinks = Array.from(resultsEl.querySelectorAll<HTMLAnchorElement>('.search-hit'));
+      hitLinks.forEach((linkEl) => {
+        const idx = Number(linkEl.dataset.hitIdx || '0');
+        linkEl.addEventListener('mouseenter', () => {
+          activeIndex = idx;
+          updateActiveHighlight();
+        });
+        linkEl.addEventListener('click', (ev) => {
+          if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) return;
+          const chosen = currentItems[idx];
+          if (chosen) navigateToItem(chosen, ev);
+        });
+      });
+    };
+
+    document.querySelectorAll<HTMLElement>('[data-open-site-search]').forEach((btn) => {
+      btn.addEventListener('click', () => openModal());
+    });
+
+    modal.querySelectorAll<HTMLElement>('[data-close-site-search]').forEach((el) => {
+      el.addEventListener('click', closeModal);
+    });
+
+    modal.querySelectorAll<HTMLButtonElement>('[data-search-chip]').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const q = chip.dataset.searchChip || '';
+        input.value = q;
+        input.focus();
+        renderResults(q);
+      });
+    });
+
+    clearBtn?.addEventListener('click', () => {
+      input.value = '';
+      input.focus();
+      renderResults('');
+    });
+
+    input.addEventListener('input', () => {
+      renderResults(input.value);
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (currentItems.length > 0) {
+          activeIndex = (activeIndex + 1) % currentItems.length;
+          updateActiveHighlight();
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (currentItems.length > 0) {
+          activeIndex = (activeIndex - 1 + currentItems.length) % currentItems.length;
+          updateActiveHighlight();
+        }
+      } else if (e.key === 'Enter') {
+        const chosen = currentItems[activeIndex];
+        if (chosen) {
+          e.preventDefault();
+          navigateToItem(chosen, e);
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+
+    if (!keydownBound) {
+      keydownBound = true;
+      window.addEventListener('keydown', (e) => {
+        const activeModal = document.getElementById('site-search-modal');
+        if (!activeModal) return;
+
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          if (activeModal.hidden) {
+            document.querySelector<HTMLElement>('[data-open-site-search]')?.click();
+          } else {
+            activeModal.querySelector<HTMLElement>('[data-close-site-search]')?.click();
+          }
+          return;
+        }
+
+        if (e.key === 'Escape' && !activeModal.hidden) {
+          e.preventDefault();
+          activeModal.querySelector<HTMLElement>('[data-close-site-search]')?.click();
+          return;
+        }
+
+        const tag = (e.target as HTMLElement | null)?.tagName;
+        const isTypingField =
+          tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement | null)?.isContentEditable;
+        if (e.key === '/' && !isTypingField && activeModal.hidden && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          document.querySelector<HTMLElement>('[data-open-site-search]')?.click();
+        }
+      });
+    }
+  }
+
+  document.addEventListener('astro:page-load', initSiteSearch);
+</script>
+
+<style is:global>
+  .search-arrival-pulse {
+    animation: ckSearchPulse 2.4s ease-out;
+  }
+
+  @keyframes ckSearchPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(217, 155, 78, 0.72), 0 0 28px rgba(217, 155, 78, 0.35);
+    }
+    45% {
+      box-shadow: 0 0 0 4px rgba(217, 155, 78, 0.42), 0 0 34px rgba(217, 155, 78, 0.25);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(217, 155, 78, 0);
+    }
+  }
+
+  .search-modal[hidden] {
+    display: none !important;
+  }
+
+  .search-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 260;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(0.8rem, 5vh, 3.6rem) 0.9rem 1.2rem;
+  }
+
+  .search-modal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 7, 11, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .search-modal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 760px);
+    max-height: min(84vh, 720px);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(18, 22, 33, 0.98), rgba(11, 14, 22, 0.99));
+    border: 1px solid rgba(217, 155, 78, 0.42);
+    border-radius: 18px;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.72);
+    overflow: hidden;
+  }
+
+  .search-modal__head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(8, 10, 16, 0.65);
+  }
+
+  .search-modal__input-wrap {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(217, 155, 78, 0.28);
+  }
+
+  .search-modal__input-wrap:focus-within {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(217, 155, 78, 0.16);
+  }
+
+  .search-modal__icon {
+    color: var(--accent-gold);
+    flex-shrink: 0;
+  }
+
+  .search-modal__input {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .search-modal__input::-webkit-search-cancel-button,
+  .search-modal__input::-webkit-search-decoration {
+    -webkit-appearance: none;
+    display: none;
+  }
+
+  .search-modal__input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .search-modal__clear {
+    padding: 0.22rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .search-modal__clear:hover {
+    color: var(--text-primary);
+    border-color: var(--border-gold);
+  }
+
+  .search-modal__close {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0.48rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .search-modal__close:hover {
+    color: var(--accent-gold);
+    border-color: var(--border-gold);
+  }
+
+  .search-modal__close kbd,
+  .search-modal__foot kbd {
+    display: inline-block;
+    padding: 0.1rem 0.38rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+  }
+
+  .search-modal__chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.015);
+  }
+
+  .search-modal__chips-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-right: 0.2rem;
+  }
+
+  .search-chip {
+    padding: 0.24rem 0.64rem;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 155, 78, 0.28);
+    background: rgba(217, 155, 78, 0.08);
+    color: var(--accent-gold);
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.16s ease;
+  }
+
+  .search-chip:hover {
+    background: var(--accent-gold);
+    color: #090a0e;
+  }
+
+  .search-modal__meta {
+    padding: 0.52rem 1.05rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .search-modal__results {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.42rem;
+  }
+
+  .search-hit {
+    display: block;
+    padding: 0.78rem 0.92rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .search-hit:hover,
+  .search-hit.is-active {
+    background: rgba(217, 155, 78, 0.1);
+    border-color: rgba(217, 155, 78, 0.45);
+  }
+
+  .search-hit__top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.28rem;
+    font-size: 0.7rem;
+  }
+
+  .search-hit__badge {
+    padding: 0.12rem 0.48rem;
+    border-radius: 999px;
+    background: rgba(44, 197, 179, 0.13);
+    border: 1px solid rgba(44, 197, 179, 0.35);
+    color: #5eead4;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .search-hit__cat {
+    color: var(--text-muted);
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .search-hit__arrow {
+    margin-left: auto;
+    color: var(--accent-gold);
+    font-weight: 700;
+  }
+
+  .search-hit__title {
+    font-family: var(--font-serif);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.24rem;
+    line-height: 1.35;
+  }
+
+  .search-hit__snippet {
+    margin: 0;
+    font-size: 0.81rem;
+    line-height: 1.52;
+    color: var(--text-secondary);
+  }
+
+  mark.search-hl {
+    background: rgba(217, 155, 78, 0.28);
+    color: #fde68a;
+    padding: 0 0.16rem;
+    border-radius: 3px;
+  }
+
+  .search-empty {
+    padding: 2rem 1.2rem;
+    text-align: center;
+    color: var(--text-secondary);
+  }
+
+  .search-empty p {
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .search-empty small {
+    display: block;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.55;
+    color: var(--text-muted);
+  }
+
+  .search-modal__foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.6rem 1.2rem;
+    padding: 0.58rem 1rem;
+    border-top: 1px solid var(--border-subtle);
+    background: rgba(7, 9, 14, 0.85);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .search-modal {
+      padding: 0.55rem;
+    }
+
+    .search-modal__panel {
+      max-height: 90vh;
+      border-radius: 14px;
+    }
+
+    .search-modal__head {
+      padding: 0.65rem 0.7rem;
+      gap: 0.42rem;
+    }
+
+    .search-modal__input-wrap {
+      padding: 0.46rem 0.62rem;
+      gap: 0.45rem;
+    }
+
+    .search-modal__input {
+      font-size: 16px; /* iOS otomatik yakınlaştırmayı önler */
+    }
+
+    .search-modal__close {
+      padding: 0.44rem 0.6rem;
+      font-size: 0.75rem;
+    }
+
+    .search-modal__close kbd,
+    .search-modal__foot {
+      display: none;
+    }
+  }
+</style>

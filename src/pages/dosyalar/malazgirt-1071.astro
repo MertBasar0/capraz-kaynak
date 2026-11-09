@@ -33,32 +33,10 @@ import { withBase } from '../../utils/paths';
 ---
 
 <BaseLayout
-  title="Dosya 03 (Akademik Ön İnceleme Taslağı): 1071 Malazgirt Meydan Muharebesi ve Anadolu’nun Dönüşümü — Çapraz Kaynak"
-  description="Akademik ön inceleme sürümü: 1064 Ani ve Kafkasya dengesinden 26 Ağustos 1071 Malazgirt (Rahve Ovası) Meydan Muharebesi’ne birincil kaynak okuması."
+  title="Dosya 03: 1071 Malazgirt Meydan Muharebesi ve Anadolu’nun Dönüşümü — Çapraz Kaynak"
+  description="1064 Ahılkelek–Ani ve Kafkasya dengesinden 26 Ağustos 1071 Malazgirt (er-Rahve) Meydan Muharebesi’ne, Sultan Alp Arslan ile İmparator IV. Romanos Diogenes’in çadır antlaşmasından 1075 İznik’e uzanan birincil kaynak okuması."
   ogImage="/images/arsiv/malazgirt-1071/prologue-van-sipan-lynch.jpg"
-  noindex={true}
 >
-  <section class="academic-preview-banner" aria-label="Akademik Ön İnceleme Bilgilendirmesi">
-    <div class="container academic-preview-banner__inner">
-      <div class="academic-preview-banner__copy">
-        <div class="academic-preview-banner__badges">
-          <span class="preview-pill preview-pill--gold">✦ AKADEMİK ÖN İNCELEME SÜRÜMÜ</span>
-          <span class="preview-pill">GENEL KATALOG ÖNCESİ ÖZEL BAĞLANTI</span>
-        </div>
-        <p>
-          Bu çalışma henüz genel yayın kataloğuna açılmamıştır; uzman değerlendirmesi ve birincil kaynak kontrolü amacıyla
-          özel bağlantı üzerinden paylaşılmaktadır. Özellikle <strong>1064 Ahılkelek–Ani seferi, Gürcistan Krallığı
-          (IV. Bagrat) dengesi</strong> ve <strong>1064–1080 Kafkasya / <em>Didi Turkoba</em></strong> bölümlerine ilişkin
-          görüş, tashih ve katkılara açıktır.
-        </p>
-      </div>
-      <div class="academic-preview-banner__jumps">
-        <a href="#sahne-harita" class="preview-jump-btn">Sahne 01 · 1064 Ani &amp; Kafkasya Haritası ↓</a>
-        <a href="#sahne-bilanco" class="preview-jump-btn">Sahne 06 · Kafkasya &amp; Didi Turkoba ↓</a>
-      </div>
-    </div>
-  </section>
-
   <SceneCompass scenes={malazgirtCompassScenes} />
 
   <CinematicPrologue
@@ -156,7 +134,7 @@ import { withBase } from '../../utils/paths';
   <section class="next-dossier-banner">
     <div class="container next-dossier-banner__inner reveal">
       <div>
-        <span class="eyebrow">DOSYA 03 ÖN İNCELEME TASLAĞI · KRONOLOJİK DEVAM HALKALARI</span>
+        <span class="eyebrow">DOSYA 03 TAMAMLANDI · KRONOLOJİK DEVAM HALKALARI</span>
         <h2>24 Yıl Sonra Karşı Dalga: 1095 Clermont Çağrısı ve 1098 Antakya Kuşatması</h2>
         <p>
           1071 Malazgirt’ten yalnızca dört yıl sonra Kutalmışoğlu Süleyman Şah’ın <strong>İznik</strong>’i başkent
@@ -179,98 +157,6 @@ import { withBase } from '../../utils/paths';
 </BaseLayout>
 
 <style>
-  .academic-preview-banner {
-    background: linear-gradient(135deg, rgba(217, 155, 78, 0.13), rgba(20, 26, 38, 0.96));
-    border-bottom: 1px solid rgba(217, 155, 78, 0.38);
-    padding: 1.15rem 0;
-  }
-
-  .academic-preview-banner__inner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.1rem 1.8rem;
-  }
-
-  .academic-preview-banner__copy {
-    flex: 1 1 540px;
-  }
-
-  .academic-preview-banner__badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.45rem;
-  }
-
-  .preview-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.22rem 0.68rem;
-    border-radius: 999px;
-    font-size: 0.69rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-subtle);
-  }
-
-  .preview-pill--gold {
-    color: var(--accent-gold);
-    background: rgba(217, 155, 78, 0.15);
-    border-color: rgba(217, 155, 78, 0.48);
-  }
-
-  .academic-preview-banner__copy p {
-    margin: 0;
-    font-size: 0.87rem;
-    line-height: 1.62;
-    color: var(--text-primary);
-  }
-
-  .academic-preview-banner__jumps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-  }
-
-  .preview-jump-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.52rem 0.95rem;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--accent-gold);
-    background: rgba(217, 155, 78, 0.1);
-    border: 1px solid rgba(217, 155, 78, 0.36);
-    white-space: nowrap;
-    transition: all 0.2s ease;
-  }
-
-  .preview-jump-btn:hover {
-    background: var(--accent-gold);
-    color: #090a0e;
-  }
-
-  @media (max-width: 640px) {
-    .academic-preview-banner {
-      padding: 0.95rem 0;
-    }
-
-    .academic-preview-banner__copy p {
-      font-size: 0.81rem;
-    }
-
-    .preview-jump-btn {
-      font-size: 0.74rem;
-      padding: 0.45rem 0.8rem;
-      white-space: normal;
-    }
-  }
-
   .next-dossier-banner {
     padding: 4.5rem 0;
     border-top: 1px solid var(--border-subtle);

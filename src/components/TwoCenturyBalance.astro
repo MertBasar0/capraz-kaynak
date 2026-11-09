@@ -58,7 +58,7 @@ const {
   sourcesTitle = 'Birincil Kaynaklar ve Çağdaş Araştırmalar (Tıklayıp İnceleyin)',
   sources = defaultSources,
   modernRefsHtml =
-    '<strong>Çağdaş Araştırmalar:</strong> Işın Demirkent (<em>Haçlı Seferleri Tarihi</em>, <em>Urfa Haçlı Kontluğu</em>), Abdülkerim Özaydın (<em>Sultan Berkyaruk Devri Selçuklu Tarihi</em>, TDV İA <em>"Kürboğa"</em>), Ali Sevim (<em>Suriye ve Filistin Selçukluları Tarihi</em>), Claude Cahen (<em>Osmanlılardan Önce Anadolu</em>), Carole Hillenbrand (<em>The Crusades: Islamic Perspectives</em>), John France (<em>Victory in the East</em>), Jonathan Riley-Smith, Thomas Asbridge ve Peter Frankopan.',
+    '<strong>Çağdaş Araştırmalar:</strong> Işın Demirkent (<em>Haçlı Seferleri</em>, Dünya Yay., 1997; <em>Urfa Haçlı Kontluğu Tarihi</em>, c. I–II, TTK, 1990–1994), Abdülkerim Özaydın (<em>Sultan Berkyaruk Devri Selçuklu Tarihi (485–498 / 1092–1104)</em>, TTK; TDV İA <em>“Kürboğa”</em>), Ali Sevim (<em>Suriye ve Filistin Selçukluları Tarihi</em>, TTK, 1983), Claude Cahen (<em>La Syrie du Nord à l’époque des Croisades</em>, 1940; <em>Pre-Ottoman Turkey / Osmanlılardan Önce Anadolu</em>), Carole Hillenbrand (<em>The Crusades: Islamic Perspectives</em>, Edinburgh University Press, 1999), John France (<em>Victory in the East: A Military History of the First Crusade</em>, Cambridge University Press, 1994), Jonathan Riley-Smith (<em>The First Crusade and the Idea of Crusading</em>, 1986), Thomas Asbridge (<em>The First Crusade: A New History</em>, 2004) ve Peter Frankopan (<em>The First Crusade: The Call from the East</em>, 2012).',
 } = Astro.props;
 ---
 
@@ -113,6 +113,7 @@ const {
         {
           fronts.map((front, idx) => (
             <div
+              id={`front-panel-${front.id}`}
               class:list={['front-panel', { 'is-active': idx === 0 }]}
               data-front-panel={front.id}
               role="tabpanel"
@@ -131,7 +132,7 @@ const {
 
     {
       philologySpotlight && (
-        <div class="philology-box reveal">
+        <div class="philology-box reveal" id="filoloji-mercegi">
           <div class="philology-box__head">
             <span class="pill pill--witness">{philologySpotlight.badge}</span>
             <h3>{philologySpotlight.title}</h3>
@@ -192,7 +193,7 @@ const {
     </div>
 
     <!-- AÇIK BİRİNCİL KAYNAKÇA KÜTÜPHANESİ -->
-    <details class="sources-drawer reveal">
+    <details class="sources-drawer reveal" id="kaynakca-cekmece">
       <summary>
         <div>
           <span class="pill pill--witness">ŞEFFAF KAYNAKÇA</span>
@@ -213,7 +214,7 @@ const {
         }
       </div>
 
-      <p class="modern-refs" set:html={modernRefsHtml} />
+      <p class="modern-refs" id="cagdas-arastirmalar" set:html={modernRefsHtml} />
     </details>
   </div>
 </section>

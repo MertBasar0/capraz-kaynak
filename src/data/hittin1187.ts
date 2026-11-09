@@ -277,7 +277,7 @@ export const hittinMapSteps: MapStep[] = [
       'Denklem üç aşamada tersine döndü: İmâdüddin Zengî 24 Aralık 1144’te Urfa Kontluğu’nu yıktı, oğlu Nûreddin Mahmud 1154’te Şam’ı birleştirdi. Ardından Esedüddin Şîrkûh ve yeğeni Selahaddin 1169’da Kahire vezirliğini devralıp Eylül 1171’de 262 yıllık Fâtımî Halifeliği’ne son verdi; Selahaddin 12 yıllık çetin mücadelelerle Şam (1174), Halep (Haziran 1183) ve nihayet 3–4 Mart 1186 Musul Antlaşması ile Cezîre’yi tek üst komutada birleştirdi.',
     ],
     highlightNote: {
-      source: 'Dosya 01 → Dosya 02 Stratejik Köprüsü',
+      source: 'Stratejik Değerlendirme · Dosya 01 → Dosya 02 Köprüsü',
       text: 'Kudüs Krallığı kuruluşundan beri ilk kez Nil vadisinin mali hazinesi ile Suriye ve el-Cezîre’nin atlı okçu insan kaynağını birleştiren tek bir askeri çemberin ortasında kaldı.',
       tone: 'east',
     },
@@ -308,7 +308,7 @@ export const hittinMapSteps: MapStep[] = [
       '1 Mayıs 1187’de Muzafferüddin Gökböri, Bedreddin Dildirim ve Sârimüddin Kaymaz komutasındaki ~7.000 kişilik Eyyûbî keşif süvarisi, Raymond’dan tek günlük geçiş izniyle Celile’ye girdi. Aynı gün Raymond ile uzlaşmaya giden Haçlı elçi heyetindeki Gérard de Ridefort, Hospitalier Üstadı Roger de Moulins’i korkaklıkla suçlayarak ~140 şövalye ve ~350 piyadeyle Cresson Pınarları’nda 7.000 atlıya saldırdı: Haçlı birliği tamamen imha edildi, Roger de Moulins öldürüldü; sarsılan III. Raymond anlaşmasını bozup Kral Guy’a biat etti.',
     ],
     highlightNote: {
-      source: 'Ernoul Kroniği & İbnü’l-Esîr (20 Safer 583 / 1 Mayıs 1187)',
+      source: 'Kaynak Özeti · Ernoul Kroniği & İbnü’l-Esîr (el-Kâmil fi’t-Târîh, 20 Safer 583 / 1 Mayıs 1187)',
       text: 'Cresson’dan yaralı halde yalnızca 3 şövalyeyle kaçabilen Tapınak Üstadı Gérard de Ridefort’un bu küçük düşürücü yenilgiden duyduğu öfke ve III. Raymond’a beslediği kin, iki ay sonra Hıttîn kararını zehirleyecektir.',
       tone: 'west',
     },
@@ -339,7 +339,7 @@ export const hittinMapSteps: MapStep[] = [
       'Bütün kale garnizonlarını boşaltarak (İngiltere Kralı II. Henry’nin Thomas Becket kefaret altınlarıyla finanse edilen arrière-ban seferberliği) ~20.000 kişilik ordusunu bol sulu Saffûriye pınarlarına yığan Haçlılar yerinden kıpırdamayınca, Selahaddin ana ordusunu Kefr Sebt platosunda pusuya yatırdı ve 2 Temmuz sabahı Taberiye’ye inip aşağı şehri bir saatte düşürdü. III. Raymond’un eşi Kontes Eschiva göl kıyısındaki iç kaleye sığınıp yardım habercileri uçurdu: Yem atılmıştı.',
     ],
     highlightNote: {
-      source: 'Malcolm C. Lyons & D. E. P. Jackson (Saladin: The Politics of the Holy War)',
+      source: 'Tarihsel Analiz · Malcolm C. Lyons & D. E. P. Jackson (Saladin: The Politics of the Holy War, 1982)',
       text: 'Selahaddin’in hedefi Taberiye Kalesi değil, Haçlı şövalyelerinin "kuşatılan bir Hristiyan leydiyi terk etmeme" feodal onur kodunu tetikleyerek onları Saffûriye sularından açık ve susuz platoya çekmekti.',
       tone: 'witness',
     },
@@ -366,12 +366,12 @@ export const hittinMapSteps: MapStep[] = [
     locationBadge: 'Saffûriye Pınarları Ordugâhı',
     title: 'Kendi Kentini Feda Eden Kont ve Gece Yarısı Çadır Müdahalesi',
     narrative: [
-      '2 Temmuz akşamı Saffûriye’de toplanan savaş meclisinde, saldırıya uğrayan yer bizzat kendi mülkü olmasına rağmen Trablus Kontu III. Raymond ayağa kalkıp tarihin en soğukkanlı askeri analizlerinden birini yaptı: «Taberiye benimdir, eşim içeridedir; kimse benden çok zarar görmez. Ama yemin ederim ki oraya yürümeyin! Saffûriye ile Taberiye arasında bu koca orduya yetecek su yoktur; sıcak ve susuzluk bizi kılıçtan önce kırar. Bu ordu yok olursa bütün krallığı kaybedersiniz!»',
-      'Bütün baronlar Raymond’a hak verip su başında kalma kararıyla dağıldı. Ancak gece yarısı Tapınak Üstadı Gérard de Ridefort tek başına Kral Guy’ın çadırına girdi, Raymond’u "hainlikle" suçladı ve «Tapınaklılar beyaz pelerinlerini çıkarıp burayı terk eder!» tehdidini savurdu. İradesi zayıf Kral Guy meclisi yeniden toplamadan kararı bozdu ve şafakta yürüyüş borularını çaldırdı.',
+      '2 Temmuz akşamı Saffûriye’de toplanan savaş meclisinde, saldırıya uğrayan yer bizzat kendi mülkü olmasına rağmen Trablus Kontu III. Raymond ayağa kalkıp —Ernoul Kroniği’nin aktardığı mealde— tarihin en soğukkanlı askeri analizlerinden birini yaptı: <em>"Taberiye benimdir, eşim içeridedir; kimse benden çok zarar görmez. Ama yemin ederim ki oraya yürümeyin! Saffûriye ile Taberiye arasında bu koca orduya yetecek su yoktur; sıcak ve susuzluk bizi kılıçtan önce kırar."</em>',
+      'Bütün baronlar Raymond’a hak verip su başında kalma kararıyla dağıldı. Ancak gece yarısı Tapınak Üstadı Gérard de Ridefort tek başına Kral Guy’ın çadırına girdi, Raymond’u "hainlikle" suçladı ve Tapınaklıların pelerinlerini çıkarıp ordugâhı terk edeceği tehdidini savurdu. İradesi zayıf Kral Guy meclisi yeniden toplamadan kararı bozdu ve şafakta yürüyüş borularını çaldırdı.',
     ],
     highlightNote: {
-      source: 'Ernoul Kroniği & İbnü’l-Esîr Çapraz Doğrulaması',
-      text: 'Selahaddin ertesi sabah Frankların Saffûriye pınarlarından ayrılıp doğuya yürüdüğü haberini aldığında atının üzerinde ellerini kaldırarak «Tam istediğimiz yere çıktılar!» demiştir.',
+      source: 'Kaynak Özeti · Bahâeddin İbn Şeddâd (en-Nevâdirü’s-Sultâniyye) & Ernoul Kroniği',
+      text: 'İbn Şeddâd’ın kaydına göre Selahaddin, ertesi sabah Frankların Saffûriye pınarlarından ayrılıp susuz platoya yürüdüğü haberini aldığında "İstediğimiz oldu!" diyerek sevincini dile getirmiş ve derhal kuşatma emri vermiştir.',
       tone: 'east',
     },
     camera: {
@@ -398,11 +398,11 @@ export const hittinMapSteps: MapStep[] = [
     title: 'Susuz Bazalt Platosu ve Kurumuş "Birket Meskene" Yanılgısı',
     narrative: [
       'Şafakta ~20.000 kişilik Haçlı kolu (Öncü: III. Raymond; Merkez: Kral Guy ve Gerçek Haç; Artçı: İbelinli Balian ve Tapınaklılar) kavurucu Temmuz sıcağında doğuya girdi. Tarihçi Benjamin Z. Kedar’ın (1992) saha ve debi ölçümleriyle kanıtladığı üzere, öğleyin geçilen Ayn Tur‘ân pınarının yaz debisi saatte birkaç metreküptü; 20.000 askeri ve binlerce atı sulaması fiziksel olarak imkânsızdı. Ordu burayı geçince geri dönüş kapısı kapandı.',
-      'Öğleden sonra Gökböri’nin Türkmen atlı okçuları artçıyı mıhlayınca Kral Guy —Raymond’un «Durursak öldük, yararak göle inmeliyiz!» feryadına rağmen— Hirbet Meskene’de konaklama emri verdi. Guy rastgele bir çölde durmamıştı: Meskene’de 40×40 metrelik antik yağmur havuzu (Birket Meskene) ve sarnıçlar vardı; fakat Temmuz başında tamamı kurumuş veya çamurla dolmuştu! O gece Selahaddin 70+ deveyle Taberiye Gölü’nden kendi hatlarına kesintisiz su taşıttı.',
+      'Öğleden sonra Gökböri’nin Türkmen atlı okçuları artçıyı mıhlayınca Kral Guy —Raymond’un dururlarsa mahvolacakları ve çemberi yararak göle inmeleri gerektiği yönündeki uyarısına rağmen— Hirbet Meskene’de konaklama emri verdi. Guy rastgele bir çölde durmamıştı: Meskene’de 40×40 metrelik antik yağmur havuzu (Birket Meskene) ve sarnıçlar vardı; fakat Temmuz başında tamamı kurumuş veya çamurla dolmuştu! O gece Selahaddin 70+ deveyle Taberiye Gölü’nden kendi hatlarına kesintisiz su taşıttı.',
     ],
     highlightNote: {
-      source: 'Benjamin Z. Kedar (The Battle of Hattin Revisited, 1992) & Ernoul',
-      text: 'Çember o gece öyle daraltıldı ki her iki cephenin görgü tanıkları aynı cümleyi kurdu: «Ordugâhın içinden dışarıya bir kedi bile çıkamazdı.»',
+      source: 'Kaynak Özeti & Çapraz Tanıklık · İmâdüddin el-İsfahânî, Ernoul Kroniği & Benjamin Z. Kedar (1992)',
+      text: 'Çember o gece öyle daraltıldı ki hem İmâdüddin el-İsfahânî (Arapça) hem de Ernoul Kroniği (Eski Fransızca) kuşatmayı neredeyse aynı deyimle betimledi: Ordugâhın içinden dışarıya "bir kedi bile" çıkamazdı.',
       tone: 'witness',
     },
     camera: {
@@ -433,8 +433,9 @@ export const hittinMapSteps: MapStep[] = [
       'Kral Guy ~150 seçkin şövalyeyle 326 metrelik volkanik krater zirvesi Hıttîn Boynuzları’na çekilip kırmızı kraliyet çadırını kurdurdu. İki umutsuz karşı-hücumun ardından Takıyyüddin’in birlikleri Gerçek Haç’ı (Lignum Crucis) ele geçirdi; kırmızı çadırın ipleri kesilip devrildiği an Haçlı sahra ordusu tarihten silindi (Takvim notu: 4 Temmuz Cumartesi cetvel hesabıyla 24, hilâl gözlemiyle 25 Rebîülâhir 583’tür).',
     ],
     highlightNote: {
-      source: 'İbn Şeddâd (Aynı Akşam Sultan Çadırında Buzlu Şerbet Hukuku)',
-      text: 'Susuzluktan titreyen Kral Guy kendisine sunulan buzlu gül şerbetinden içip kadehi Renaud’ya uzatınca Selahaddin tercümana döndü: «Krala söyle: Ona suyu sen içirdin, ben içirmedim [benim emânım altında değildir]!»',
+      source:
+        'Doğrudan Alıntı (Çeviri) · Bahâeddin İbn Şeddâd, en-Nevâdirü’s-Sultâniyye (4 Temmuz 1187 Akşamı; Arapça aslından çeviri)',
+      text: 'Susuzluktan titreyen Kral Guy kendisine sunulan buzlu sudan içip kadehi Renaud’ya uzatınca Selahaddin tercümana buyurdu: «Krala söyle: Ona suyu sen içirdin; bana gelince, ben ona su içirmedim [emân vermedim]!»',
       tone: 'east',
     },
     camera: {
@@ -461,10 +462,10 @@ export const hittinMapSteps: MapStep[] = [
     title: 'Garnizonsuz Kalelerin Çöküşü, Balian’ın Resti ve Katliamsız Teslim',
     narrative: [
       'Krallığın bütün garnizonları Hıttîn’e götürüldüğü için savunmasız kalan Taberiye (Kontes Eschiva serbestçe uğurlandı), Akka, Yafa, Beyrut ve Mısır kapısı Askalân peş peşe düştü; yalnızca denizden yetişen Montferratlı Conrad sayesinde Sûr kenti tutunabildi. 20 Eylül’de Kudüs önüne gelen Selahaddin, 25 Eylül’de karargâhını Zeytin Dağı – kuzeydoğu surları hattına taşıdı ve 29 Eylül’de lağımcılar surda büyük bir gedik açtı.',
-      'Savunma komutanı İbelinli Balian huzura çıktığında Selahaddin ilkin «Siz 1099’da Kudüs’ü nasıl kılıçla alıp Müslümanları katlettiyseniz ben de kılıçla alacağım!» dedi. Balian bunun üzerine son kozunu oynadı: Emân verilmezse içerideki 5.000 Müslüman esiri öldürecekler, Kubbetü’s-Sahra ile Mescid-i Aksâ’yı temellerine dek yıkacaklar ve son neferine kadar çarpışacaklardı. Selahaddin ulemâsıyla istişare ederek sulh ve fidye ile teslimi kabul etti; 2 Ekim 1187 Cuma (Mi‘râc Kandili) Kudüs tek bir sivil katliamı yaşanmadan devralındı.',
+      'İbnü’l-Esîr ve Ernoul’un aktardığına göre savunma komutanı İbelinli Balian huzura çıktığında Selahaddin ilkin 1099 katliamına karşılık Kudüs’ü kılıçla alacağını söyledi. Balian bunun üzerine son kozunu oynadı: Emân verilmezse içerideki 5.000 Müslüman esiri öldürecekler, Kubbetü’s-Sahra ile Mescid-i Aksâ’yı temellerine dek yıkacaklar ve son neferine kadar çarpışacaklardı. Selahaddin ulemâsıyla istişare ederek sulh ve fidye ile teslimi kabul etti; 2 Ekim 1187 Cuma (Mi‘râc Kandili) Kudüs tek bir sivil katliamı yaşanmadan devralındı.',
     ],
     highlightNote: {
-      source: '15 Temmuz 1099 ↔ 2 Ekim 1187 Tarihsel Kontrastı',
+      source: 'Tarihsel Karşılaştırma · 15 Temmuz 1099 ↔ 2 Ekim 1187',
       text: '1099’da Haçlıların Mescid-i Aksâ’da güvenlik sancağı verilmiş sığınmacıları dahi kılıçtan geçirdiği kentte, 88 yıl sonra patrikten sivil halka kadar emân sözleşmesine harfiyen uyuldu.',
       tone: 'east',
     },
@@ -492,10 +493,10 @@ export const hittinPropagandaCases: PropagandaCase[] = [
     badge: 'VAKA 01 · KERVAN VE KIZ KARDEŞ EFSANESİ',
     title: 'Renaud de Châtillon 1187 Kervanında Selahaddin’in Kız Kardeşini Esir Aldı mı?',
     verdict: 'Savaş Sonrası Söylenti / Karıştırma',
-    claimTag: '13. YY KRONİK SÖYLENTİSİ VE SİNEMA KURGUSU',
-    claimSource: 'Eski Fransızca Ernoul Kroniği & Estoire d’Eracles (ve modern popüler sinema anlatıları)',
+    claimTag: '13. YY KRONİK SÖYLENTİSİ VE SİNEMA KURGUSU ÖZETİ',
+    claimSource: 'Söylenti Özeti · Eski Fransızca Ernoul Kroniği / Estoire d’Eracles & modern sinema anlatıları',
     claimQuote:
-      '«Kerek Lordu Renaud’nun vurduğu Kahire–Şam kervanında bizzat Selahaddin’in kız kardeşi [bazı geç nüshalarda halası/annesi] esir alındı; Selahaddin bu kişisel namus intikamıyla Hıttîn seferine çıktı...»',
+      'Geç dönem Frank anlatılarındaki söylentinin özeti: Kerek Lordu Renaud’nun vurduğu Kahire–Şam kervanında bizzat Selahaddin’in kız kardeşinin (bazı geç nüshalarda halası veya annesinin) esir alındığı ve Selahaddin’in bu kişisel namus intikamıyla Hıttîn seferine çıktığı ileri sürülür.',
     critiqueSource: 'İbn Şeddâd, İmâdüddin el-İsfahânî & İbnü’l-Esîr Çapraz Denetimi',
     critiqueAnalysis:
       'Selahaddin’in en yakın halkasındaki İbn Şeddâd ve İmâdüddin ile İbnü’l-Esîr, Renaud’nun her suçunu tek tek sayarken vurulan ticaret kervanında tek bir Eyyûbî hanedan üyesinden söz etmez! Gerçekte kız kardeşi Sittü’ş-Şâm Zümürrüd Hatun birkaç ay sonra (Mart–Nisan 1187) Hicaz hac dönüşü Kerek yakınından geçecekti; Selahaddin bizzat ordusuyla Busrâ’ya inip kafileyi korudu ve Sittü’ş-Şâm burnu bile kanamadan Şam’a ulaştı (1220’de Şam’da vefat etti). Ernoul iki ayrı haberi birleştirip felaketin tüm suçunu Renaud’ya yıkmak için dramatize etmiştir.',
@@ -505,10 +506,10 @@ export const hittinPropagandaCases: PropagandaCase[] = [
     badge: 'VAKA 02 · "SÜNNETLİ HAİN KONT" İFTİRASI',
     title: 'Trablus Kontu III. Raymond Gizlice Müslüman Olup Haçlı Ordusunu Sattı mı?',
     verdict: 'Yenilgi Sonrası Kara Propaganda',
-    claimTag: 'LÜZİNYAN / TAPINAK YANLISI AVRUPA İFTİRASI',
-    claimSource: 'William of Newburgh, Itinerarium Peregrinorum & Trois-Fontaines’li Alberic',
+    claimTag: 'LÜZİNYAN / TAPINAK YANLISI AVRUPA İFTİRASI ÖZETİ',
+    claimSource: 'İftira Özeti · William of Newburgh, Itinerarium Peregrinorum & Trois-Fontaines’li Alberic',
     claimQuote:
-      '«Trablus Kontu Raymond gizlice İslam’a girip Selahaddin ile birbirlerinin kanını içti; Hıttîn’de Hristiyan ordusunu bilerek susuz tuzağa sürdü ve sefilce öldüğünde cesedinin sünnetli (circumcisus) olduğu görüldü!»',
+      'Avrupa vekâyinâmelerine yansıyan kara propagandanın özeti: Trablus Kontu Raymond’un gizlice İslam’a girip Selahaddin ile kan kardeşliği yaptığı, Hıttîn’de Hristiyan ordusunu bilerek susuz tuzağa sürdüğü ve öldüğünde cesedinin sünnetli (circumcisus) bulunduğuna dair suçlamalar yayılır.',
     critiqueSource: 'Ernoul Kroniği, İbnü’l-Esîr & Askeri Coğrafya Kanıtı',
     critiqueAnalysis:
       'Raymond 1186’da Guy’ın saray darbesine karşı geçici bir siyasi ateşkes yapmıştı; ancak Cresson’dan sonra samimiyetle Haçlı ordusuna katıldı. Hem Frank hem İslam kaynakları, 2 Temmuz gecesi Saffûriye’de krallığı kurtaracak tek rasyonel askeri tavsiyeyi (kendi kenti Taberiye’yi ve içeride kuşatılan kendi eşi Eschiva’yı feda etme pahasına su başında kalmayı) Raymond’un verdiğini doğrular. Hıttîn’de Takıyyüddin Ömer’in safları açıp kapatması gizli ihanet anlaşması değil, klasik Türk-İslâm bozkır kapan taktiğiydi.',
@@ -518,10 +519,10 @@ export const hittinPropagandaCases: PropagandaCase[] = [
     badge: 'VAKA 03 · ÇİFT YÖNLÜ ROMANTİK MİT',
     title: '"Hümanist Batı Şövalyesi Selahaddin" ve I. Richard ile Teke Tek Düello Kurgusu',
     verdict: 'Tarihdışı Romantik Kurgu',
-    claimTag: 'ORTA ÇAĞ ROMANSI (PAS SALADIN) & 19. YY EDEBİYATI',
-    claimSource: 'Luttrell Psalter (fol. 82r), Fransız Romansları & Walter Scott (The Talisman, 1825)',
+    claimTag: 'ORTA ÇAĞ ROMANSI (PAS SALADIN) & 19. YY EDEBİYATI ÖZETİ',
+    claimSource: 'Kurgu Özeti · Luttrell Psalter (fol. 82r), Fransız Romansları & Walter Scott (The Talisman, 1825)',
     claimQuote:
-      '«Selahaddin gizlice Hristiyan şövalye kuşağı takmış pasifist bir şövalye beyefendisidir ve Aslan Yürekli Kral Richard ile savaş meydanında at sırtında mızrak düellosu yapmıştır...»',
+      'Batı şövalye romanslarındaki kurgunun özeti: Selahaddin’in gizlice Hristiyan şövalye kuşağı takmış pasifist bir Batı şövalyesi olduğu ve Aslan Yürekli Kral Richard ile savaş meydanında at sırtında teke tek mızrak düellosu yaptığı anlatılır.',
     critiqueSource: 'Bahâeddin İbn Şeddâd (en-Nevâdirü’s-Sultâniyye) & İmâdüddin el-İsfahânî',
     critiqueAnalysis:
       '1) İbn Şeddâd’ın kesin kaydıyla I. Richard ile Selahaddin hayatları boyunca yüz yüze hiç görüşmemiştir! Tüm müzakereleri kardeşi el-Melikü’l-Âdil yürütmüş; Richard’ın görüşme talebini Selahaddin «Savaş halindeki iki hükümdarın buluşup sonra tekrar kılıç çekmesi yakışık almaz» diyerek reddetmiştir. 2) Selahaddin "modern pasifist" değil, emâna sadık ama gerektiğinde acımasız bir ortaçağ devlet adamıydı: Hıttîn’den iki gün sonra ateşkese uymayan daimi ideolojik ordu çekirdeği olan ~200–230 Tapınak ve Hospitalier şövalyesini tanesi 50 dinara satın alarak bizzat huzurunda idam ettirmiştir.',
@@ -531,10 +532,10 @@ export const hittinPropagandaCases: PropagandaCase[] = [
     badge: 'VAKA 04 · "KUSURSUZ UYUM" HAMASETİ',
     title: 'Nûreddin Zengî ile Selahaddin Arasında Pürüzsüz Bir Bayrak Yarışı mı Vardı?',
     verdict: 'Geriye Dönük İdeolojik Düzleştirme',
-    claimTag: 'POPÜLER HAMASİ TARİH ANLATISI',
-    claimSource: 'Modern Popüler Anlatılardaki "Çatışmasız Tek Cephe" Kurgusu',
+    claimTag: 'POPÜLER HAMASİ TARİH ANLATISI ÖZETİ',
+    claimSource: 'Söylem Özeti · Popüler Anlatılardaki "Çatışmasız Tek Cephe" Kurgusu',
     claimQuote:
-      '«1144 Urfa fethinden 1187 Kudüs zaferine kadar Nûreddin Zengî, Selahaddin ve tüm Müslüman hanedanlar hiçbir iktidar gerilimi yaşamadan tam bir kardeşlik uyumu içinde hareket etti...»',
+      'Popüler tarih söylemindeki basitleştirmenin özeti: 1144 Urfa fethinden 1187 Kudüs zaferine kadar Nûreddin Zengî, Selahaddin ve tüm Müslüman hanedanların hiçbir iktidar gerilimi yaşamadan pürüzsüz bir uyum içinde hareket ettiği varsayılır.',
     critiqueSource: 'İbnü’l-Esîr (el-Kâmil fi’t-Târîh & et-Târîhu’l-Bâhir) — "Şeker Kamışı" Meclisi Kaydı',
     critiqueAnalysis:
       '1171’de Fâtımîlik kaldırılınca Nûreddin ile Selahaddin arasında derin bir güvensizlik (el-vahşe) doğdu; Selahaddin azledilmemek için 1171 Şevbek ve 1173 Kerek kuşatmalarını Nûreddin yaklaştığında yarıda bırakıp Mısır’a çekildi. Babası Necmeddin Eyyûb, Kahire divanında açık itaat gösterdikten sonra yalnız kaldıklarında oğluna: «Vallahi Nûreddin bizim şeker kamışlarımızdan tek bir kamış istese ölünceye dek savaşırdım; ama şimdi mektupla alttan al ki zaman kazanalım!» dedi. Nûreddin Mayıs 1174’te Mısır’a ordu hazırlarken öldü; Selahaddin de Hıttîn öncesi tam 12 yılını (1174–1186) Şam, Halep ve Musul Zengîleriyle savaşarak birliği zorla ve diplomasiyle kurmaya harcadı.',
@@ -668,26 +669,28 @@ export const hittinChronicleStages: ChronicleStage[] = [
       pill: 'İSLAM CEPHESİ GÖRGÜ TANIKLIĞI',
       date: '24/25 Rebîülâhir 583 · 4 Temmuz 1187',
       titleHtml: 'İbnü’l-Esîr (<em>el-Kâmil fi’t-Târîh</em>) &amp; İbn Şeddâd',
-      authorDesc: 'el-Melikü’l-Efdal’in meydan tanıklığı ve aynı akşam çadırdaki şerbet hukuku.',
+      authorDesc:
+        'el-Melikü’l-Efdal’in meydan tanıklığı ve aynı akşam çadırdaki şerbet hukuku (Arapça aslından doğrudan çeviri; el-Kâmil fi’t-Târîh, 583 h. & en-Nevâdirü’s-Sultâniyye).',
       origLang: 'ar',
       origScript:
-        '«وَكَانَ بَعْضُ الْمُتَطَوِّعَةِ قَدْ أَلْقَى فِي تِلْكَ الْأَرْضِ نَارًا، وَكَانَ الْحَشِيشُ كَثِيرًا فَاحْتَرَقَ، وَكَانَتِ الرِّيحُ قَدْ هَبَّتْ فَحَمَلَتْ حَرَّ النَّارِ وَالدُّخَانَ إِلَيْهِمْ، فَاجْتَمَعَ عَلَيْهِمُ الْعَطَشُ، وَحَرُّ الزَّمَانِ، وَحَرُّ النَّارِ وَالدُّخَانِ، وَحَرُّ الْقِتَالِ... فَنَظَرْتُ إِلَيْهِ وَقَدْ عَلَتْهُ كَآبَةٌ وَارْبَدَّ لَوْنُهُ وَأَمْسَكَ بِلِحْيَتِهِ وَتَقَدَّمَ وَهُوَ يَصِيحُ: "كَذَبَ الشَّيْطَانُ!"... فَالْتَفَتَ وَالِدِي إِلَيَّ وَقَالَ: "اسْكُتْ! مَا نَهْزِمُهُمْ حَتَّى تَسْقُطَ تِلْكَ الْخَيْمَةُ!" قَالَ: فَهُوَ يَقُولُ لِي ذَلِكَ وَإِذَا الْخَيْمَةُ قَدْ سَقَطَتْ، فَنَزَلَ السُّلْطَانُ وَسَجَدَ شُكْرًا لِلَّهِ تَعَالَى وَبَكَى مِنْ فَرَحِهِ.» — (ابن شداد): «قُلْ لِلْمَلِكِ: أَنْتَ الَّذِي سَقَيْتَهُ، وَأَمَّا أَنَا فَمَا سَقَيْتُهُ!»',
+        '«وَكَانَ بَعْضُ الْمُتَطَوِّعَةِ قَدْ أَلْقَى فِي تِلْكَ الْأَرْضِ نَارًا، وَكَانَ الْحَشِيشُ كَثِيرًا فَاحْتَرَقَ، وَكَانَتِ الرِّيحُ قَدْ هَبَّتْ فَحَمَلَتْ حَرَّ النَّارِ وَالدُّخَانَ إِلَيْهِمْ، فَاجْتَمَعَ عَلَيْهِمُ الْعَطَشُ، وَحَرُّ الزَّمَانِ، وَحَرُّ النَّارِ وَالدُّخَانِ، وَحَرُّ الْقِتَالِ [...] فَنَظَرْتُ إِلَيْهِ وَقَدْ عَلَتْهُ كَآبَةٌ وَارْبَدَّ لَوْنُهُ وَأَمْسَكَ بِلِحْيَتِهِ وَتَقَدَّمَ وَهُوَ يَصِيحُ: "كَذَبَ الشَّيْطَانُ!" [...] فَالْتَفَتَ وَالِدِي إِلَيَّ وَقَالَ: "اسْكُتْ! مَا نَهْزِمُهُمْ حَتَّى تَسْقُطَ تِلْكَ الْخَيْمَةُ!" قَالَ: فَهُوَ يَقُولُ لِي ذَلِكَ وَإِذَا الْخَيْمَةُ قَدْ سَقَطَتْ، فَنَزَلَ السُّلْطَانُ وَسَجَدَ شُكْرًا لِلَّهِ تَعَالَى وَبَكَى مِنْ فَرَحِهِ.» — (ابن شداد): «قُلْ لِلْمَلِكِ: أَنْتَ الَّذِي سَقَيْتَهُ، وَأَمَّا أَنَا فَمَا سَقَيْتُهُ!»',
       translationParagraphsHtml: [
-        '«Gönüllülerden (<em>mutavvia</em>) biri o arazide ateş yakmıştı; kuru ot çok olduğundan tutuşup yandı. Rüzgâr da esince ateşin hararetini ve dumanı onların üzerine taşıdı; böylece üzerlerinde <mark class="hl-east">susuzluk, mevsimin sıcağı, ateşin ve dumanın harareti ile çarpışmanın harareti</mark> birleşti... [Oğlu el-Efdal anlatıyor]: Frenk kralı tepeye çıktığında üzerimize öyle korkunç bir hücum yaptılar ki bizimkileri babamın yanına kadar sürdüler. Babama baktım; yüzü kül gibi bozarmıştı. Sakalını kavradı ve <mark class="hl-east">"Şeytan yalan söyledi!" (Kezebe’ş-Şeytân!)</mark> diye haykırarak ileri atıldı.»',
-        '«Frenkler tepeye geri sürülünce sevincimden iki kez <em>"Onları yendik!"</em> diye bağırdım. Babam bana döndü ve: <mark class="hl-east">"Sus! Şu [kırmızı] çadır yıkılmadıkça onları yenmiş olmayız!"</mark> dedi. Daha sözünü bitirmeden çadır devrildi; Sultan derhal atından indi, şükür secdesine kapandı ve sevincinden ağladı.» — <em>[Aynı akşam çadırda Kral Guy buzlu gül şerbetini Renaud’ya uzatınca, İbn Şeddâd]:</em> «Selahaddin tercümana buyurdu: <strong>"Krala söyle: Ona suyu sen içirdin, ben içirmedim [benim emânım altında değildir]!"</strong>»',
+        '«Gönüllülerden [<em>mutavvia</em>] biri o arazide ateş yakmıştı; kuru ot çok olduğundan tutuşup yandı. Rüzgâr da esmişti; ateşin hararetini ve dumanı onların üzerine taşıdı. Böylece üzerlerinde <mark class="hl-east">susuzluk, mevsimin sıcağı, ateşin ve dumanın harareti ile çarpışmanın harareti</mark> birleşti. [...] [el-Melikü’l-Efdal anlatıyor:] Ona [babama] baktım; yüzünü bir keder kaplamış, rengi kül gibi bozarmıştı. Sakalını kavradı ve <mark class="hl-east">"Şeytan yalan söyledi!" [Kezebe’ş-Şeytân!]</mark> diye haykırarak ileri atıldı.»',
+        '«[...] Babam bana döndü ve: <mark class="hl-east">"Sus! Şu [kırmızı] çadır yıkılmadıkça onları yenmiş olmayız!"</mark> dedi. O bana daha bunu söylerken bir de baktık ki çadır devrilmiş! Sultan derhal [atından] indi, Yüce Allah’a şükür secdesine kapandı ve sevincinden ağladı.» — <em>(İbn Şeddâd, aynı akşam çadırda buzlu su sahnesi):</em> «[Selahaddin tercümana buyurdu:] <strong>"Krala söyle: Ona suyu sen içirdin; bana gelince, ben ona su içirmedim [emân vermedim]!"</strong>»',
       ],
     },
     west: {
       pill: 'HAÇLI CEPHESİ GÖRGÜ TANIĞI',
       date: 'Bölüm XI–XII · 3–4 Temmuz 1187',
       titleHtml: 'Anonim Tanık · <em>Libellus</em> &amp; <em>Epistola Terrici</em>',
-      authorDesc: 'De Expugnatione Terrae Sanctae per Saladinum Libellus (Bizzat kuşatmayı yaşayan Latin yazarı).',
+      authorDesc:
+        'De Expugnatione Terrae Sanctae per Saladinum Libellus (Bizzat kuşatmayı yaşayan Latin yazar; Latince aslından doğrudan çeviri, nşr. J. Stevenson, s. 222–228).',
       origLang: 'la',
       origScript:
-        '«Castra metati sunt ergo cum dolore et angustia et siti in sicca mansione, ubi magis est effusus sanguis nocte illa quam aqua... Igitur filii Esau circumdantes populum Dei, et incendentes desertum circa eum, atque tota nocte calore ignis, fumo, sagittis, vexatos fame et siti vexabant... Irruerunt autem multitudo paganorum super pedites atque per praecipitium praerupti montis, in cuius cacumine iamdudum fugerant, praecipitaverunt... Capta est crux et rex et magister militiae Templi... Heu mihi! Dicam pollutis labiis qualiter pretiosum lignum Dominicum nostrae redemptionis tactum sit damnatis manibus?»',
+        '«Castra metati sunt ergo cum dolore et angustia et siti in sicca mansione, ubi magis est effusus sanguis nocte illa quam aqua [...] Igitur filii Esau circumdantes populum Dei, et incendentes desertum circa eum, atque tota nocte calore ignis, fumo, sagittis, vexatos fame et siti vexabant [...] Irruerunt autem multitudo paganorum super pedites atque per praecipitium praerupti montis, in cuius cacumine iamdudum fugerant, praecipitaverunt [...] Capta est crux et rex et magister militiae Templi [...] Heu mihi! Dicam pollutis labiis qualiter pretiosum lignum Dominicum nostrae redemptionis tactum sit damnatis manibus?»',
       translationParagraphsHtml: [
-        '«Böylece acı, ıstırap ve susuzluk içinde kupkuru bir konak yerinde (<em>sicca mansione</em> — Meskene) ordugâh kurdular; <mark class="hl-west">o gece orada sudan çok kan döküldü.</mark> Esav’ın oğulları [Müslümanlar] Tanrı’nın halkını çepeçevre kuşatarak etraflarındaki kırları ateşe verdiler (<em>incendentes desertum</em>) ve zaten açlık ile susuzluktan bitkin düşmüş olanları <mark class="hl-west">ateşin sıcağıyla, dumanla (calore ignis, fumo) ve oklarla</mark> hırpaladılar.»',
-        '«Kalabalık, çoktan sarp dağın zirvesine kaçmış olan piyadelerin üzerine çullandı; Mesih’in tevazu Haç’ını terk edip yüksek tepelere sığınanları uçurumdan aşağı yuvarladı... <mark class="hl-west">Haç ele geçirildi; Kral ve Tapınak Üstadı da tutsak edildi.</mark> Yazıklar olsun bana! Kurtuluşumuzun paha biçilmez Rabbani Ağacı’na [Gerçek Haç’a] nasıl dokunulduğunu kirli dudaklarımla nasıl anlatayım?»',
+        '«Böylece acı, sıkıntı ve susuzluk içinde kupkuru bir konak yerinde [<em>sicca mansione</em> — Meskene] ordugâh kurdular; <mark class="hl-west">o gece orada sudan çok kan döküldü.</mark> [...] Esav’ın oğulları [Müslümanlar] Tanrı’nın halkını çepeçevre kuşatarak etrafındaki kırları ateşe verdiler [<em>incendentes desertum</em>] ve açlık ile susuzluktan bitkin düşmüş olanları bütün gece <mark class="hl-west">ateşin sıcağıyla, dumanla [calore ignis, fumo] ve oklarla</mark> hırpaladılar.»',
+        '«[...] Kalabalık, çoktan sarp dağın zirvesine kaçmış olan piyadelerin üzerine çullandı ve onları sarp dağın uçurumundan aşağı yuvarladı [...] <mark class="hl-west">Haç ele geçirildi; Kral ve Tapınak Şövalyeleri Üstadı da [tutsak edildi].</mark> [...] Yazıklar olsun bana! Kurtuluşumuzun paha biçilmez Rabbani Ağacı’na [Gerçek Haç’a] [...] nasıl dokunulduğunu kirli dudaklarımla nasıl anlatayım?»',
       ],
     },
     synthesisBridge: {
@@ -707,26 +710,28 @@ export const hittinChronicleStages: ChronicleStage[] = [
       pill: 'EYYÛBÎ DİVAN TANIĞI',
       date: '27 Receb 583 / 2 Ekim 1187 · s. 131–132',
       titleHtml: 'İmâdüddin el-İsfahânî · <em>el-Fethu’l-Kussî</em>',
-      authorDesc: 'Selahaddin’in özel inşâ kâtibi; bizzat Sultan’a yaptığı teklifi ve aldığı cevabı yazar.',
+      authorDesc:
+        'Selahaddin’in özel inşâ kâtibi; bizzat Sultan’a yaptığı teklifi ve aldığı cevabı yazar (Arapça aslından doğrudan çeviri; el-Fethu’l-Kussî fi’l-Fethi’l-Kudsî, nşr. C. Landberg, s. 131–132).',
       origLang: 'ar',
       origScript:
-        '«وَجَمَعَ الْبَطْرَكُ الْكَبِيرُ كُلَّ مَا كَانَ عَلَى الْقَبْرِ مِنْ صَفَائِحِ التِّبْرِ وَمَصُوغَاتِ الْعَسْجَدِ وَمَصْنُوعَاتِ اللُّجَيْنِ... فَقُلْتُ لِلسُّلْطَانِ: هَذِهِ أَمْوَالٌ وَافِرَةٌ... تَبْلُغُ مِائَتَيْ أَلْفِ دِينَارٍ، وَالْأَمَانُ عَلَى أَمْوَالِهِمْ لَا أَمْوَالِ الْكَنَائِسِ وَالْأَدْيَارِ، فَلَا تَتْرُكْهَا فِي أَيْدِي هَؤُلَاءِ الْفُجَّارِ! فَقَالَ: إِذَا تَأَوَّلْنَا عَلَيْهِمْ نَسَبُونَا إِلَى الْغَدْرِ، وَهُمْ جَاهِلُونَ بِسِرِّ هَذَا الْأَمْرِ، فَنَحْنُ نُجْرِيهِمْ عَلَى ظَاهِرِ الْأَمَانِ، وَلَا نَتْرُكُهُمْ يَرْمُونَ أَهْلَ الْإِيمَانِ بِنَكْثِ الْأَيْمَانِ، بَلْ يَتَحَدَّثُونَ بِمَا أَفَضْنَاهُ مِنَ الْإِحْسَانِ.»',
+        '«وَجَمَعَ الْبَطْرَكُ الْكَبِيرُ كُلَّ مَا كَانَ عَلَى الْقَبْرِ مِنْ صَفَائِحِ التِّبْرِ وَمَصُوغَاتِ الْعَسْجَدِ وَمَصْنُوعَاتِ اللُّجَيْنِ [...] فَقُلْتُ لِلسُّلْطَانِ: هَذِهِ أَمْوَالٌ وَافِرَةٌ [...] تَبْلُغُ مِائَتَيْ أَلْفِ دِينَارٍ، وَالْأَمَانُ عَلَى أَمْوَالِهِمْ لَا أَمْوَالِ الْكَنَائِسِ وَالْأَدْيَارِ، فَلَا تَتْرُكْهَا فِي أَيْدِي هَؤُلَاءِ الْفُجَّارِ! فَقَالَ: إِذَا تَأَوَّلْنَا عَلَيْهِمْ نَسَبُونَا إِلَى الْغَدْرِ، وَهُمْ جَاهِلُونَ بِسِرِّ هَذَا الْأَمْرِ، فَنَحْنُ نُجْرِيهِمْ عَلَى ظَاهِرِ الْأَمَانِ، وَلَا نَتْرُكُهُمْ يَرْمُونَ أَهْلَ الْإِيمَانِ بِنَكْثِ الْأَيْمَانِ، بَلْ يَتَحَدَّثُونَ بِمَا أَفَضْنَاهُ مِنَ الْإِحْسَانِ.»',
       translationParagraphsHtml: [
-        '«Büyük Patrik [Heraklius], Kutsal Kabir’in üzerindeki tüm altın levhaları, işlenmiş altın takıları ve gümüş sanat eserlerini topladı. Sultan’a dedim ki: <mark class="hl-east">"Bunlar 200.000 dinara ulaşan muazzam servetlerdir; verdiğimiz emân onların şahsi mallarınadır, kilise ve manastırların mallarına değil! Bunları ellerinde bırakma!"</mark>»',
-        '«Sultan şöyle cevap verdi: <mark class="hl-east">"Eğer antlaşmayı onlara karşı böyle kelime oyunuyla yorumlarsak (tevil edersek) bizi ahde vefasızlıkla (gadr ile) suçlarlar; zira onlar bu hukuki inceliği bilmezler. Biz onlara emânın açık anlamına göre muamele edeceğiz; müminleri yemin bozmakla itham etmelerine fırsat vermeyeceğiz, bilakis kendilerine gösterdiğimiz ihsanı konuşmalarını sağlayacağız!"</mark>» <em>(Patrik kendi başı için yalnızca 10 dinar ödeyip 200.000 dinarlık hazineyle Eyyûbî muhafızları eşliğinde Sûr’a güvenle gitti.)</em>',
+        '«Büyük Patrik [Heraklius], [Kutsal] Kabir’in üzerindeki tüm altın levhaları, altın takıları ve gümüş işlemeleri topladı [...] Sultan’a dedim ki: <mark class="hl-east">"Bunlar bol mallardır [...] iki yüz bin dinara ulaşır; emân onların şahsi mallarınadır, kilise ve manastırların mallarına değil! Bunları onların ellerinde bırakma!"</mark>»',
+        '«[Sultan] şöyle buyurdu: <mark class="hl-east">"Eğer antlaşmayı onlara karşı böyle tevil edersek [yorumla daraltırsak] bizi ahde vefasızlıkla [gadr ile] suçlarlar; zira onlar bu işin inceliğinden habersizdir. Biz onlara emânın zahirine [açık anlamına] göre muamele edeceğiz; müminleri yemin bozmakla itham etmelerine fırsat vermeyeceğiz, bilakis kendilerine gösterdiğimiz ihsanı konuşmalarını sağlayacağız!"</mark>» <em>(Kaynak Özeti: Patrik kendi başı için yalnızca 10 dinar ödeyip kilise hazinesiyle birlikte Eyyûbî muhafızları eşliğinde Sûr’a güvenle gitti.)</em>',
       ],
     },
     west: {
       pill: 'FRANK KAYDI & 1099 KONTRASTI',
       date: '15 Temmuz 1099 ↔ 2 Ekim 1187',
       titleHtml: '<em>Ernoul Kroniği</em> ↔ 1099 <em>Raymond d’Aguilers &amp; Gesta</em>',
-      authorDesc: 'Balian’ın silahtarı Ernoul’un 1187 tanıklığı ile 1099 Haçlı görgü tanıklarının Mescid-i Aksâ kaydı.',
+      authorDesc:
+        '1099 Latince Haçlı görgü tanıklarından doğrudan çeviri ve İbelinli Balian’ın silahtarı Ernoul’un 1187 Eski Fransızca kaydının özeti.',
       origLang: 'la',
       origScript:
-        '«[1099 · Raymond d’Aguilers]: In templo et porticu Salomonis equitabatur in sanguine usque ad genua, et usque ad frenos equorum... [Gesta Francorum, X.38]: Tancredus dedit eis suum uexillum... Sed nostri summo mane irruerunt in templum, et decollauerunt masculos et feminas...»',
+        '«[1099 · Raymond d’Aguilers]: In templo et porticu Salomonis equitabatur in sanguine usque ad genua, et usque ad frenos equorum [...] [Gesta Francorum, X.38]: Tancredus dedit eis suum uexillum [...] Sed nostri summo mane irruerunt in templum, et decollauerunt masculos et feminas [...]»',
       translationParagraphsHtml: [
-        '«<strong>[15 Temmuz 1099 Haçlı Kaydı — Raymond d’Aguilers &amp; Gesta Francorum]:</strong> Süleyman Mabedi’nde [Mescid-i Aksâ] ve revaklarında <mark class="hl-west">dizlere ve atların gemlerine kadar kan içinde at sürülüyordu.</mark> Çatıya sığınanlara Tankred kendi güvenlik sancağını [emân] vermişti; fakat sabah erkenden adamlarımız mabede dalıp <mark class="hl-west">kadın-erkek hepsinin başını kesti</mark> (Tankred buna çok öfkelendiyse de katliam durmadı; İbnü’l-Arabî Aksâ’da 3.000 kişinin öldürüldüğünü yazar).»',
-        '«<strong>[2 Ekim 1187 Frank Kaydı — Ernoul Kroniği]:</strong> Selahaddin şehrin sokaklarına ve kapılarına seçkin muhafızlar dikti ki hiçbir Hristiyan’a tek bir hakaret veya yağma yapılmasın. <mark class="hl-west">Kral el-Âdil 1.000 yoksul esiri Allah rızası için isteyip azat etti;</mark> ardından Sultan dul soylu kadınlara ve yaşlılara kapıları karşılıksız açtırıp kendi hazinesinden yol harçlığı dağıttı ve kafileleri Frank bölgesine kadar güvenle uğurlattı.»',
+        '<strong>[15 Temmuz 1099 · Doğrudan Alıntı (Çeviri) — Raymond d’Aguilers &amp; Gesta Francorum X.38]:</strong> «Süleyman Mabedi’nde [Mescid-i Aksâ] ve revakında <mark class="hl-west">dizlere ve atların gemlerine kadar kan içinde at sürülüyordu.</mark> [...] [Çatıya sığınanlara] Tankred kendi sancağını [güvenlik emânını] vermişti [...] Fakat adamlarımız sabah erkenden mabede saldırdı ve <mark class="hl-west">erkeklerin ve kadınların başlarını kesti [...]</mark>» <em>(Not: Tankred buna çok öfkelendiyse de katliam durmadı; İbnü’l-Arabî Aksâ’da 3.000 kişinin öldürüldüğünü yazar.)</em>',
+        '<strong>[2 Ekim 1187 · Kaynak Özeti — Eski Fransızca Ernoul Kroniği]:</strong> Ernoul’un kaydına göre Selahaddin, hiçbir Hristiyan’a hakaret veya yağma yapılmaması için Kudüs’ün kulelerine ve sokaklarına seçkin muhafızlar dikti; <mark class="hl-west">kardeşi el-Melikü’l-Âdil 1.000 yoksul esiri Allah rızası için isteyip karşılıksız azat etti,</mark> ardından Sultan dul kadınlara ve yoksullara kapıları açtırıp kendi hazinesinden ihsan dağıttı ve kafileleri Frank topraklarına kadar güvenle uğurlattı.',
       ],
     },
     ransomTariffBox: {
@@ -954,4 +959,4 @@ export const hittinPrimarySources = [
 ];
 
 export const hittinModernRefsHtml =
-  '<strong>Çağdaş Araştırmalar:</strong> Benjamin Z. Kedar (<em>"The Battle of Hattin Revisited"</em>, 1992; <em>"The Jerusalem Massacre of July 1099"</em>, 2004), Malcolm C. Lyons &amp; D. E. P. Jackson (<em>Saladin: The Politics of the Holy War</em>), Ramazan Şeşen (<em>Salâhaddîn Devrinde Eyyûbîler Devleti</em>, TDV İA <em>"Selâhaddîn-i Eyyûbî"</em>), Vladimir Minorsky (<em>Studies in Caucasian History: Prehistory of Saladin</em>, 1953), H. A. R. Gibb (<em>The Life of Saladin</em>), Yaacov Lev (<em>Saladin in Egypt</em>), Anne-Marie Eddé (<em>Saladin</em>), Bernard Hamilton (<em>The Leper King and His Heirs</em>), Peter W. Edbury (<em>The Conquest of Jerusalem and the Third Crusade</em>) ve Işın Demirkent.';
+  '<strong>Çağdaş Araştırmalar:</strong> Benjamin Z. Kedar (<em>“The Battle of Hattin Revisited”</em>, The Horns of Hattin, Yad Izhak Ben-Zvi, 1992; <em>“The Jerusalem Massacre of July 1099 in the Western Historiography of the Crusades”</em>, Crusades 3, 2004), Malcolm C. Lyons &amp; D. E. P. Jackson (<em>Saladin: The Politics of the Holy War</em>, Cambridge University Press, 1982), Ramazan Şeşen (<em>Salâhaddîn Devrinde Eyyûbîler Devleti</em>, İÜ Ed. Fak. Yay., 1983; <em>Salâhaddîn Eyyûbî ve Devri</em>, IRCICA, 2000; TDV İA <em>“Selâhaddîn-i Eyyûbî”</em>), Vladimir Minorsky (<em>Studies in Caucasian History: III. Prehistory of Saladin</em>, Cambridge University Press, 1953), H. A. R. Gibb (<em>The Life of Saladin: From the Works of ‘Imād ad-Dīn and Bahā’ ad-Dīn</em>, Oxford, 1973), Yaacov Lev (<em>Saladin in Egypt</em>, Brill, 1999), Anne-Marie Eddé (<em>Saladin</em>, Flammarion, 2008 / Harvard University Press, 2011), Bernard Hamilton (<em>The Leper King and His Heirs: Baldwin IV and the Crusader Kingdom of Jerusalem</em>, Cambridge University Press, 2000), Peter W. Edbury (<em>The Conquest of Jerusalem and the Third Crusade: Sources in Translation</em>, Ashgate, 1996) ve Işın Demirkent (<em>Haçlı Seferleri</em>, Dünya Yay., 1997).';

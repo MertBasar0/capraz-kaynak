@@ -88,9 +88,11 @@ const {
       {
         cases.map((item, idx) => (
           <article
+            id={`vaka-${item.id}`}
             class="lens-card reveal"
             style={`--delay: ${idx * 70}ms`}
             data-lens-card
+            data-lens-id={item.id}
             data-mode="claim"
           >
             <div class="lens-card__top">
