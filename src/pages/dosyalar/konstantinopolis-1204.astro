@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SceneCompass from '../../components/SceneCompass.astro';
+import CinematicPrologue from '../../components/CinematicPrologue.astro';
+import ScrollyMapEngine from '../../components/ScrollyMapEngine.astro';
+import PropagandaLens from '../../components/PropagandaLens.astro';
+import ArmyAndKerbogha from '../../components/ArmyAndKerbogha.astro';
+import SplitBattleAndFates from '../../components/SplitBattleAndFates.astro';
+import TwoCenturyBalance from '../../components/TwoCenturyBalance.astro';
+import {
+  konstantinopolisCompassScenes,
+  konstantinopolisPrologueConfig,
+  konstantinopolisMapSteps,
+  konstantinopolisCities,
+  konstantinopolisRoutes,
+  konstantinopolisLegendItems,
+  konstantinopolisRingHighlights,
+  konstantinopolisHeroVisuals,
+  konstantinopolisPropagandaCases,
+  konstantinopolisVerifiedFacts,
+  dandoloCommanderProfile,
+  konstantinopolisStrategicReasons,
+  konstantinopolisArmySegments,
+  konstantinopolisChronicleStages,
+  konstantinopolisActorFates,
+  post1204Fronts,
+  konstantinopolisPhilologySpotlight,
+  konstantinopolisBalanceRows,
+  konstantinopolisPrimarySources,
+  konstantinopolisModernRefsHtml,
+} from '../../data/konstantinopolis1204';
+import { withBase } from '../../utils/paths';
+---
+
+<BaseLayout
+  title="Dosya 04 (Akademik Ön İnceleme Taslağı): 1204 Konstantinopolis Yağması ve IV. Haçlı Seferi — Çapraz Kaynak"
+  description="Akademik ön inceleme sürümü: Nisan 1201 Venedik Antlaşması’ndan 12–15 Nisan 1204 Konstantinopolis yağmasına, İznik, Trabzon (Kraliçe Tamar) ve Türkiye Selçuklularının yükselişine uzanan birincil kaynak okuması."
+  ogImage="/images/arsiv/konstantinopolis-1204/prologue-delacroix-1204.jpg"
+  noindex={true}
+>
+  <section class="academic-preview-banner" aria-label="Akademik Ön İnceleme Bilgilendirmesi">
+    <div class="container academic-preview-banner__inner">
+      <div class="academic-preview-banner__copy">
+        <div class="academic-preview-banner__badges">
+          <span class="preview-pill preview-pill--gold">✦ AKADEMİK ÖN İNCELEME SÜRÜMÜ</span>
+          <span class="preview-pill">GENEL KATALOG ÖNCESİ ÖZEL BAĞLANTI</span>
+        </div>
+        <p>
+          Bu çalışma henüz genel yayın kataloğuna açılmamıştır; uzman değerlendirmesi ve birincil kaynak kontrolü amacıyla
+          özel bağlantı üzerinden paylaşılmaktadır. Özellikle <strong>Nisan 1204 Gürcistan Kraliçesi Tamar’ın Karadeniz
+          harekâtı, Aleksios–David Komnenos kardeşler</strong> ve <strong>Trabzon İmparatorluğu’nun kuruluşu</strong>
+          bölümlerine ilişkin görüş, tashih ve katkılara açıktır.
+        </p>
+      </div>
+      <div class="academic-preview-banner__jumps">
+        <a href="#step-1g-partition-nicaea-trebizond-seljuks" class="preview-jump-btn">
+          Sahne 1G · Nisan 1204 Kraliçe Tamar &amp; Trabzon ↓
+        </a>
+        <a href="#sahne-bilanco" class="preview-jump-btn">
+          Sahne 06 · Trabzon İmparatorluğu &amp; Kaynakça ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <SceneCompass scenes={konstantinopolisCompassScenes} />
+
+  <CinematicPrologue
+    badges={konstantinopolisPrologueConfig.badges}
+    titleMain={konstantinopolisPrologueConfig.titleMain}
+    titleAccent={konstantinopolisPrologueConfig.titleAccent}
+    leadHtml={konstantinopolisPrologueConfig.leadHtml}
+    visual={konstantinopolisPrologueConfig.visual}
+    chronometer={konstantinopolisPrologueConfig.chronometer}
+  />
+
+  <ScrollyMapEngine
+    steps={konstantinopolisMapSteps}
+    cities={konstantinopolisCities}
+    routes={konstantinopolisRoutes}
+    legendItems={konstantinopolisLegendItems}
+    ringHighlights={konstantinopolisRingHighlights}
+  />
+
+  <PropagandaLens
+    eyebrow="SAHNE 02 · MEŞRULAŞTIRICI SÖYLEMLER, «KUTSAL HIRSIZLIK» VE ÇAPRAZ SORGU"
+    title="«Kilise Birliği» ve «Adil Ganimet» Söylemleri Gerçekle Ne Kadar Örtüşüyor?"
+    leadHtml='IV. Haçlı Seferi komutanları ve manastır vakanüvisleri, Hristiyan başkenti Konstantinopolis’e yapılan saldırıyı <strong>"Roma’ya itaat, meşru taht iadesi ve kutsal emanetlerin kurtarılması"</strong> söylemleriyle savundu. Aşağıdaki dört vakada <strong>"Resmi Söylem / Meşrulaştırma"</strong> ile <strong>"Birincil Kaynak Kritiği"</strong> arasında geçiş yaparak Papa III. Innocentius, Clari’li Robert ve Niketas Khoniates’in ne yazdığını inceleyin.'
+    cases={konstantinopolisPropagandaCases}
+    spotlightVisual={konstantinopolisHeroVisuals.propagandaHorses}
+    verifiedBox={{
+      pill: 'DÜRÜST TARİHÇİLİK İLKESİ · DOĞRULANABİLEN ÜÇ SERT TARİHSEL OLGU',
+      title: 'Diplomatik Mazeretler Soyulduğunda Kaynakların İttifakla Doğruladığı Sert Gerçekler Nelerdi?',
+      leadHtml:
+        'Karşıt cephelerde duran <strong>Geoffroi de Villehardouin</strong>, <strong>Clari’li Robert</strong>, <strong>Niketas Khoniates</strong>, <strong>Papa III. Innocentius</strong> ve <strong>Kartlis Tskhovreba</strong> şu üç temel kırılmada tam mutabakat halindedir:',
+      facts: konstantinopolisVerifiedFacts,
+    }}
+  />
+
+  <ArmyAndKerbogha
+    eyebrow="SAHNE 03 · DOJ PROFİLİ, BORÇ DİPLOMASİSİ VE KUŞATMA DONANMASININ ANATOMİSİ"
+    title="Seksenlik Âmâ Doj Enrico Dandolo Seferi Nasıl Yönetti, Kuşatma Ordusu Kimlerden Oluşuyordu?"
+    lead="1201 Venedik Antlaşması aslında Mısır’daki Eyyûbî merkezini vurmak için imzalanmıştı. Lido Adası’nda doğan 34.000 gümüş marklık borç açığı, Venedik’in ticari çıkarları ve Bizans’taki Angelos hanedanı kriziyle birleşerek donanmayı Haliç surlarının önüne nasıl taşıdı?"
+    campVisual={konstantinopolisHeroVisuals.coalitionCamp}
+    commander={dandoloCommanderProfile}
+    reasonsPanel={konstantinopolisStrategicReasons}
+    coalition={{
+      pill: 'NİSAN 1204 KUŞATMA KUVVETLERİ (~20.000–22.000 VENEDİK & HAÇLI KARŞISINDA ~15.000–20.000 BİZANS GARNİZONU)',
+      title: 'Uçan Köprülü Kalyonlar, Frank Şövalyeleri ve Vareg Baltacıları: Haliç Savaş Nizamı',
+      verdictHtml:
+        '<strong>Saha Dengesi:</strong> Konstantinopolis kara surları aşılamaz olduğu için savaşın kaderini <strong>Venedik’in gemi direklerine kurduğu uçan hücum köprüleri</strong> ve at çıkarma gemileri (<em>huissiers</em>) belirledi. Bizans garnizonunda İngiliz–Danimarkalı <strong>Vareg Muhafızları</strong> sert direniş gösterdiyse de 12 Nisan’daki kuzey rüzgârı ve başkentteki komuta çöküşü savunmayı kırdı.',
+      barAriaLabel: '1204 Konstantinopolis kuşatması Venedik ve Haçlı kuvvetleri bileşim çubuğu',
+      segments: konstantinopolisArmySegments,
+    }}
+  />
+
+  <SplitBattleAndFates
+    battleHeader={{
+      eyebrow: 'SAHNE 04 · İKİ CEPHE, İKİ KIRILMA ANI (12–13 NİSAN SURLAR & AYASOFYA YAĞMASI)',
+      title: 'Haliç Surlarının Düşüşü, Ayasofya ve «1187 Selahaddin» Kıyaslaması: Yan Yana Özgün Kayıtlar',
+      leadHtml:
+        'Önce <strong>12–13 Nisan 1204</strong>’te Haliç surlarının düşüşünü, 400.000 marklık ganimet paylaşımını ve eritilen antik heykelleri; ardından <strong>Ayasofya’nın yağmalanışını</strong>, <strong>Papa III. Innocentius’un öfkesini</strong> ve <strong>Niketas Khoniates’in 1187 Selahaddin Eyyûbî karşılaştırmasını</strong> Ortaçağ Yunancası, Eski Fransızca ve Latince özgün metinleriyle yan yana okuyun.',
+      toggleBtnLabel: 'Yunanca, Eski Fransızca ve Latince Orijinal Metin Satırlarını Göster / Gizle',
+    }}
+    chronicleStages={konstantinopolisChronicleStages}
+    fatesHeader={{
+      eyebrow: 'SAHNE 05 · ZAFERİN BEDELİ, EDİRNE BOZGUNU VE TARİHİN İRONİSİ',
+      title: '1204 Kırılmasının Altı Kilit Aktörüne Sonra Ne Oldu?',
+      leadHtml:
+        'Konstantinopolis’i paylaşan Latin liderlerin neredeyse tamamı <strong>1 ila 3 yıl içinde</strong> Bulgar Çarı Kaloyan ve Kuman süvarileri karşısında can verirken, parçalanan imparatorluğun küllerinden Anadolu’da üç yeni güç doğdu. Altı kilit ismin <strong>1204’teki rolünü</strong> ve <strong>sonraki akıbetini</strong> kartları çevirerek inceleyin.',
+      frontLabel: '1203–1204 KRİZİNDEKİ KARARI VE ROLÜ',
+      backLabel: '1204 SONRASINDAKİ TARİHSEL AKIBETİ',
+      flipBackText: '← 1204’teki Rolüne Geri Dön',
+    }}
+    actors={konstantinopolisActorFates}
+  />
+
+  <TwoCenturyBalance
+    eyebrow="SAHNE 06 · 1204 SONRASI YENİ HARİTA: VENEDİK, İZNİK, KRALİÇE TAMAR (TRABZON) VE TÜRKİYE SELÇUKLULARI"
+    title="Konstantinopolis’in Düşüşü Karadeniz ve Anadolu’yu Nasıl Yeniden Şekillendirdi?"
+    leadHtml='1204 yağması yalnızca Bizans başkentini yıkmadı: Venedik’e Ege deniz imparatorluğunu, Laskaris’e <strong>İznik</strong> sürgün devletini, <strong>Gürcistan Kraliçesi Tamar</strong>’a yeğenleri Aleksios ve David Komnenos eliyle <strong>Trabzon İmparatorluğu</strong>’nu kurdurma fırsatını ve <strong>Türkiye Selçuklularına Antalya (1207) ile Sinop (1214) limanlarını</strong> kazandırdı.'
+    explorerVisual={konstantinopolisHeroVisuals.post1204Tetrarchs}
+    tabsAriaLabel="1204 Sonrası Doğu Akdeniz, Karadeniz ve Anadolu Jeopolitiğinin Dört Halkası"
+    fronts={post1204Fronts}
+    philologySpotlight={konstantinopolisPhilologySpotlight}
+    balanceHeader={{
+      pill: '1201 – 1261 STRATEJİK MİRAS TERAZİSİ',
+      title: 'Başlangıçtaki Kudüs/Mısır Hedefi ile 1204 Sonrası Tarihsel Sonuçlar',
+      leadHtml:
+        'Haçlılar Kudüs’ü kurtarmak için çıkıp Doğu Hristiyanlığının kalesini çökertti; bu jeopolitik deprem Venedik’i deniz süper gücü yaparken Anadolu’da <strong>Türkiye Selçuklularının ticari altın çağını</strong> ve Karadeniz’de <strong>Trabzon–Gürcistan eksenini</strong> başlattı.',
+      westSideLabel: 'LATİN HAÇLI & VENEDİK CEPHESİ BİLANÇOSU',
+      eastSideLabel: 'DOĞU ROMA, ANADOLU SELÇUKLU & KAFKASYA BİLANÇOSU',
+    }}
+    rows={konstantinopolisBalanceRows}
+    sourcesTitle="Birincil Kaynaklar ve Çağdaş Araştırmalar (Tıklayıp İnceleyin)"
+    sources={konstantinopolisPrimarySources}
+    modernRefsHtml={konstantinopolisModernRefsHtml}
+  />
+
+  <section class="next-dossier-banner">
+    <div class="container next-dossier-banner__inner reveal">
+      <div>
+        <span class="eyebrow">DOSYA 04 ÖN İNCELEME TASLAĞI · ÇAPRAZ KAYNAK SERİSİNİN DİĞER HALKALARI</span>
+        <h2>1071 Malazgirt’ten 1098 Antakya ve 1187 Hıttîn’e: İki Yüzyıllık Kırılma Zinciri</h2>
+        <p>
+          1204 Konstantinopolis yağmasında Niketas Khoniates’in doğrudan referans verdiği <strong>1187 Hıttîn ve
+          Selahaddin Eyyûbî’nin Kudüs Fethi (Dosya 02)</strong> ile tüm bu süreci başlatan <strong>1071 Malazgirt
+          (Dosya 03)</strong> ve <strong>1098 Antakya Kuşatması (Dosya 01)</strong> dosyalarını karşılaştırmalı olarak
+          inceleyin.
+        </p>
+      </div>
+      <div class="next-dossier-banner__actions">
+        <a href={withBase('/dosyalar/hittin-1187/')} class="next-dossier-primary-btn">
+          Önceki Halka · Dosya 02: Hıttîn 1187 →
+        </a>
+        <a href={withBase('/dosyalar/malazgirt-1071/')} class="back-catalog-btn">
+          Dosya 03: Malazgirt 1071 →
+        </a>
+        <a href={withBase('/dosyalar/antakya-1098/')} class="back-catalog-btn">
+          Dosya 01: Antakya 1098 →
+        </a>
+        <a href={withBase('/')} class="back-catalog-btn">Tüm Dosyalar Kataloğu</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .academic-preview-banner {
+    background: linear-gradient(135deg, rgba(217, 155, 78, 0.13), rgba(20, 26, 38, 0.96));
+    border-bottom: 1px solid rgba(217, 155, 78, 0.38);
+    padding: 1.15rem 0;
+  }
+
+  .academic-preview-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.1rem 1.8rem;
+  }
+
+  .academic-preview-banner__copy {
+    flex: 1 1 540px;
+  }
+
+  .academic-preview-banner__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .preview-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.22rem 0.68rem;
+    border-radius: 999px;
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .preview-pill--gold {
+    color: var(--accent-gold);
+    background: rgba(217, 155, 78, 0.15);
+    border-color: rgba(217, 155, 78, 0.48);
+  }
+
+  .academic-preview-banner__copy p {
+    margin: 0;
+    font-size: 0.87rem;
+    line-height: 1.62;
+    color: var(--text-primary);
+  }
+
+  .academic-preview-banner__jumps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .preview-jump-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.52rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    background: rgba(217, 155, 78, 0.1);
+    border: 1px solid rgba(217, 155, 78, 0.36);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .preview-jump-btn:hover {
+    background: var(--accent-gold);
+    color: #090a0e;
+  }
+
+  @media (max-width: 640px) {
+    .academic-preview-banner {
+      padding: 0.95rem 0;
+    }
+
+    .academic-preview-banner__copy p {
+      font-size: 0.81rem;
+    }
+
+    .preview-jump-btn {
+      font-size: 0.74rem;
+      padding: 0.45rem 0.8rem;
+      white-space: normal;
+    }
+  }
+
+  .next-dossier-banner {
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border-subtle);
+    background: linear-gradient(90deg, rgba(217, 72, 95, 0.08), rgba(217, 155, 78, 0.08));
+  }
+
+  .next-dossier-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .next-dossier-banner h2 {
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+    margin: 0.6rem 0 0.6rem;
+  }
+
+  .next-dossier-banner p {
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .next-dossier-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .next-dossier-primary-btn {
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #e0a354, #c57e2c);
+    color: #090a0e;
+    font-weight: 700;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    box-shadow: 0 12px 28px rgba(217, 155, 78, 0.25);
+    transition: all 0.2s ease;
+  }
+
+  .next-dossier-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(217, 155, 78, 0.38);
+  }
+
+  .back-catalog-btn {
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-gold);
+    background: var(--accent-gold-soft);
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-size: 0.86rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .back-catalog-btn:hover {
+    background: var(--accent-gold);
+    color: #090a0d;
+  }
+</style>

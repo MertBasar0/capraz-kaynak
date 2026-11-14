@@ -136,7 +136,18 @@ const {
                 <h3 set:html={stage.east.titleHtml} />
                 <p class="chronicle-author">{stage.east.authorDesc}</p>
 
-                <div class="orig-script orig-script--arabic" lang={stage.east.origLang} dir="rtl">
+                <div
+                  class:list={[
+                    'orig-script',
+                    stage.east.origLang === 'ar' || stage.east.origLang === 'fa'
+                      ? 'orig-script--arabic'
+                      : stage.east.origLang === 'el'
+                        ? 'orig-script--greek'
+                        : 'orig-script--latin',
+                  ]}
+                  lang={stage.east.origLang}
+                  dir={stage.east.origLang === 'ar' || stage.east.origLang === 'fa' ? 'rtl' : 'ltr'}
+                >
                   {stage.east.origScript}
                 </div>
 

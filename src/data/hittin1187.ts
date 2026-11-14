@@ -20,7 +20,7 @@ export interface ChronicleStage {
     titleHtml: string;
     authorDesc: string;
     origScript: string;
-    origLang: 'ar' | 'fa';
+    origLang: 'ar' | 'fa' | 'el' | 'ka' | 'la' | 'fr';
     translationParagraphsHtml: string[];
   };
   west: {
