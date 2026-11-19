@@ -25,10 +25,10 @@ const dossier02Href = withBase('/dosyalar/hittin-1187/');
 const dossier03Href = withBase('/dosyalar/malazgirt-1071/');
 const methodologyHref = withBase('/metodoloji/');
 const isHome = currentPath === homeHref || currentPath === homeHref.replace(/\/$/, '');
-const canonicalUrl = new URL(currentPath, Astro.site || 'https://mertbasar0.github.io').toString();
+const canonicalUrl = new URL(currentPath, Astro.site || 'https://caprazkaynak.basarlabs.com.tr').toString();
 const ogImageUrl = new URL(
   withBase(ogImage),
-  Astro.site || 'https://mertbasar0.github.io'
+  Astro.site || 'https://caprazkaynak.basarlabs.com.tr'
 ).toString();
 ---
 

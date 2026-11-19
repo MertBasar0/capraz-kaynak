@@ -37,8 +37,8 @@ jobs:
 
       - name: Build static site
         env:
-          ASTRO_SITE: https://mertbasar0.github.io
-          ASTRO_BASE: /capraz-kaynak
+          ASTRO_SITE: https://caprazkaynak.basarlabs.com.tr
+          ASTRO_BASE: /
         run: pnpm build
 
       - name: Upload Pages artifact
