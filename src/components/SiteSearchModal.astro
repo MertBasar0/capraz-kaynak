@@ -83,6 +83,8 @@ const quickChips = [
 </div>
 
 <script>
+  import { onPageReady } from '../utils/onPageReady';
+
   interface SearchActivateAction {
     frontTabId?: string;
     openSources?: boolean;
@@ -593,7 +595,7 @@ const quickChips = [
     }
   }
 
-  document.addEventListener('astro:page-load', initSiteSearch);
+  onPageReady(initSiteSearch);
 </script>
 
 <style is:global>

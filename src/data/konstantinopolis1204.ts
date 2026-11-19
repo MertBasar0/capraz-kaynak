@@ -88,7 +88,7 @@ export const konstantinopolisPrologueConfig = {
   titleMain: 'Hedef Şaşıran Sefer:',
   titleAccent: '1204 Konstantinopolis Yağması, Venedik Borç Kapanı ve Parçalanan İmparatorluk',
   leadHtml:
-    '1187 Hıttîn ve Kudüs’ün kaybından sonra Mısır üzerinden Kutsal Toprakları geri almak için yola çıkan <strong>IV. Haçlı Seferi</strong>, nasıl oldu da <strong>85.000 gümüş marklık</strong> bir navlun borcu ve tahtından indirilmiş bir Bizans prensinin ödeyemediği vaatler yüzünden dünyanın en büyük Hristiyan metropolünü yağmaladı? Mareşal <strong>Geoffroi de Villehardouin</strong>, yoksul şövalye <strong>Clari’li Robert</strong>, görgü tanığı <strong>Niketas Khoniates</strong>, <strong>Papa III. Innocentius</strong> ve <strong>Gürcü Kraliyet Kroniği</strong>’nin özgün satırlarıyla 1201–1204 kırılmasını yan yana okuyun.',
+    '1187 Hıttîn ve Kudüs’ün kaybından sonra Mısır üzerinden Kutsal Toprakları geri almak için yola çıkan <strong>IV. Haçlı Seferi</strong>, nasıl oldu da <strong>85.000 gümüş marklık</strong> bir navlun borcu ve tahtından indirilmiş bir Bizans prensinin ödeyemediği vaatler yüzünden dünyanın en büyük Hristiyan metropolünü yağmaladı? Champagne Mareşali <strong>Geoffroi de Villehardouin</strong>, yoksul şövalye <strong>Clari’li Robert</strong>, görgü tanığı <strong>Niketas Khoniates</strong>, <strong>Papa III. Innocentius</strong> ve <strong>Anonim Gürcü Kroniği (<em>Kartlis Tskhovreba</em>)</strong>’nin özgün satırlarıyla 1201–1204 kırılmasını yan yana okuyun.',
   visual: konstantinopolisHeroVisuals.prologue,
   chronometer: [
     {
@@ -305,8 +305,8 @@ export const konstantinopolisMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§§21–23, nşr. E. Faral, c. I, s. 22–26; Eski Fransızca aslından çeviri)',
-      text: '«[...] 4.500 at ve 4.500 şövalye, 9.000 silahtar [escuier] ve 20.000 yaya serjant taşımak üzere gemiler sağlayacağız; ve bütün bu atlar ile insanların dokuz ay boyunca erzak ve yem anlaşması yapılacaktır. Siz bize, at başına dört mark ve insan başına iki mark olmak üzere, bu şartları yerine getirmek için 85.000 Köln ağırlığı gümüş markı ödeyeceksiniz. Gemileri Venedik limanından ayrıldığımız günden itibaren bir yıl boyunca hizmette tutacağız. Ve buna ek olarak, Tanrı aşkına kendi masrafımızla 50 silahlı kadırga katacağız; şu şartla ki, denizde veya karada yapacağımız bütün toprak ve mal fetihlerinin yarısı bizim, diğer yarısı sizin olacaktır.»',
+        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§§21–23, nşr. E. Faral, c. I, Paris 1938 [2. bs. 1961], s. 22–25 [Eski Fr. s. 22, 24]; krş. nşr. N. de Wailly, Paris 1872, s. 14–15)',
+      text: '«[...] 4.500 at ve 4.500 şövalye, 9.000 silahtar [escuier] ve 20.000 yaya serjant taşımak üzere gemiler sağlayacağız; ve bütün bu atlar ile insanların dokuz ay boyunca erzak ve yem anlaşması yapılacaktır. Siz bize, at başına dört mark ve insan başına iki mark olmak üzere, bu şartları yerine getirmek için 85.000 [Köln ağırlığı gümüş] markı ödeyeceksiniz. Gemileri Venedik limanından ayrıldığımız günden itibaren bir yıl boyunca hizmette tutacağız. Ve buna ek olarak, Tanrı aşkına kendi masrafımızla 50 silahlı kadırga katacağız; şu şartla ki, denizde veya karada yapacağımız bütün toprak ve mal fetihlerinin yarısı bizim, diğer yarısı sizin olacaktır.»',
       tone: 'west',
     },
     camera: {
@@ -338,8 +338,8 @@ export const konstantinopolisMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§§83–84, nşr. E. Faral, c. I, s. 84–86; Eski Fransızca aslından çeviri)',
-      text: '«O sırada Cîteaux tarikatından Vaux-de-Cernay Başrahibi [Guy] ayağa kalktı ve onlara dedi ki: "Efendiler, Roma Papası adına size bu şehre saldırmanızı yasaklıyorum; zira burası Hristiyanların şehridir ve sizler hacılarsınız." Doj [Dandolo] bu sözü duyunca çok öfkelendi ve kontlar ile baronlara dedi ki: "Efendiler, ben bu şehrin kendi istediğim şartlarla teslimi için anlaşmayı sağlamıştım, fakat sizin adamlarınız bunu elimden alıp bozdu; oysa siz onu fethetmemde bana yardım etmeye söz vermiştiniz, şimdi sizi bu sözünüzü tutmaya çağırıyorum!"»',
+        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§83, nşr. E. Faral, c. I, Paris 1938 [2. bs. 1961], s. 82–85 [Eski Fr. s. 82, 84]; krş. nşr. N. de Wailly, Paris 1872, s. 46–49)',
+      text: '«O sırada Cîteaux tarikatından Vaux[-de-Cernay] Başrahibi [Guy] ayağa kalktı ve onlara dedi ki: "Efendiler, Roma Papası adına size bu şehre saldırmanızı yasaklıyorum; zira burası Hristiyanların şehridir ve sizler hacılarsınız." Doj [Dandolo] bu sözü duyunca çok öfkelendi ve sarsıldı; kontlar ile baronlara dedi ki: "Efendiler, ben bu şehrin kendi istediğim şartlarla teslimi için anlaşmayı sağlamıştım, fakat sizin adamlarınız bunu elimden alıp bozdu; oysa siz onu fethetmemde bana yardım etmeye söz vermiştiniz, şimdi sizi bu sözünüzü tutmaya çağırıyorum!"»',
       tone: 'witness',
     },
     camera: {
@@ -370,8 +370,8 @@ export const konstantinopolisMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§93: Ocak 1203 Zara Teklifi, nşr. E. Faral, c. I, s. 94; Eski Fransızca aslından çeviri)',
-      text: '«Her şeyden önce, eğer Tanrı onların yardımıyla mirasını kendisine geri vermeyi nasip ederse, kendisinden çok önce Roma itaatinden ayrılmış olan bütün Romanya [Doğu Roma] İmparatorluğu’nu Roma’nın itaatine sokacaktı. Sonra, onların mallarını harcadıklarını ve yoksul düştüklerini bildiğinden, onlara 200.000 gümüş mark verecek ve ordudaki küçük-büyük herkese bir yıl boyunca erzak sağlayacaktı. Ve kendi şahsıyla onlarla birlikte Babil [Mısır] toprağına gidecek ya da göndermeleri daha iyi olacağını düşünürlerse kendi masrafıyla bir yıl boyunca 10.000 adam gönderecekti. Ve hayatının bütün günleri boyunca, kendi masrafıyla denizaşırı ülkeyi [Kutsal Toprakları] korumak üzere orada 500 şövalye bulunduracaktı.»',
+        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§93: Ocak 1203 Zara Teklifi, nşr. E. Faral, c. I, Paris 1938 [2. bs. 1961], s. 92–95 [Eski Fr. s. 92–94]; krş. nşr. N. de Wailly, s. 52–53)',
+      text: '«Her şeyden önce, eğer Tanrı onların yardımıyla mirasını kendisine geri vermeyi nasip ederse, kendisinden çok önce Roma itaatinden ayrılmış olan bütün Doğu Roma [Bizans / metinde: Romanie] İmparatorluğu’nu Roma’nın itaatine sokacaktı. Sonra, onların mallarını harcadıklarını ve yoksul düştüklerini bildiğinden, onlara 200.000 gümüş mark verecek ve ordudaki küçük-büyük herkese [bir yıl boyunca, krş. §188] erzak sağlayacaktı. Ve kendi şahsıyla onlarla birlikte Babil [Mısır] toprağına gidecek ya da göndermeleri daha iyi olacağını düşünürlerse kendi masrafıyla bir yıl boyunca 10.000 adam gönderecekti. Ve hayatının bütün günleri boyunca, kendi masrafıyla denizaşırı ülkeyi [Kutsal Toprakları] korumak üzere orada 500 şövalye bulunduracaktı.»',
       tone: 'west',
     },
     camera: {
@@ -403,8 +403,8 @@ export const konstantinopolisMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Niketas Khoniates, Historia (CFHB c. XI/1, nşr. J.-L. van Dieten, s. 553; Ortaçağ Yunancası aslından çeviri, krş. Magoulias 1984, s. 303 & Işın Demirkent)',
-      text: '«[...] Pizalılarla barışan Flamanlardan ve Venediklilerden bazıları, ganimet vurmak amacıyla balıkçı kayıklarıyla karşı kıyıya geçerek Agareno’ların [Müslümanların] ibadethanesine [τὸ τῶν ἐξ Ἄγαρ συναγώγιον] —ki halk dilinde buna Mitaton denir— saldırdılar ve buradaki malları kılıç zoruyla ve utanmazca yağmaladılar. Hiç beklemedikleri bir anda baskına uğrayan Müslümanlar, ellerine ne geçtiyse onunla kendilerini savunmaya koyuldular; Romalılar da komşularının yardımına koşunca [...] Latinler geri çekilirken şehrin pek çok noktasını ateşe verdiler.»',
+        'Doğrudan Alıntı (Çeviri) · Niketas Khoniates, Historia (CFHB c. XI/1, nşr. J.-L. van Dieten, Berlin 1975, s. 553; Bonn nşr. s. 730–731; krş. çev. Işın Demirkent, 2004, s. 122–123 & Magoulias 1984, s. 303)',
+      text: '«[...] [Pizalılarla Venediklilerin barıştırılmasının ardından] eskiden Flamanlar diye adlandırılan Franklardan bazıları, yanlarına Pizalılar ve Venediklilerden de bir bölük alarak ganimet vurmak amacıyla balıkçı kayıklarıyla karşı kıyıya geçtiler; Agareno’ların [Müslümanların] ibadethanesine [τὸ τῶν ἐξ Ἄγαρ συναγώγιον] —ki halk dilinde buna Mitaton denir— ansızın baskın yaptılar ve içindeki bütün malları kılıç zoruyla yağmaladılar. Hiç beklemedikleri bir anda saldırıya uğrayan Müslümanlar, ellerine ne geçtiyse onunla kendilerini savunmaya koyuldular; Romalılar da komşularının yardımına koşunca [...] Latinler geri çekilirken şehrin pek çok noktasını ateşe verdiler.»',
       tone: 'east',
     },
     camera: {
@@ -431,12 +431,12 @@ export const konstantinopolisMapSteps: MapStep[] = [
     title: 'IV. Aleksios’un Boğdurulması, Murtzuphlos’un «Red» Cevabı ve Mart 1204 İmparatorluk Paylaşımı',
     narrative: [
       'Ağustos yangını ve kilise hazinelerinin eritilmesi başkent halkını ayağa kaldırdı; Ocak 1204’te Haçlı elçileri Blakhernai Sarayı’nda bizzat imparatoru tehdit edince meşruiyet tamamen çöktü. 25–27 Ocak 1204’te Ayasofya’da toplanan halk ve senatonun Nikolaos Kanabos’u seçmeye kalkışmasının ardından, <strong>27–28 Ocak 1204</strong> gecesi çatık kaşları yüzünden <strong>«Murtzuphlos»</strong> lakabıyla anılan <em>protovestiarios</em> <strong>Aleksios Dukas (V. Aleksios)</strong> saray darbesi yaparak genç IV. Aleksios’u zindana attı (8 Şubat gecesi yay kirişiyle boğdurttu) ve savunma savaşını başlattı.',
-      'Şubat başında Haliç ucundaki Kosmidion’da, kıyıdaki atının üzerinden kadırgasındaki Doj <strong>Enrico Dandolo</strong> ile görüşen Murtzuphlos, derhal <strong>5.000 libre altın</strong> (~360.000 altın <em>hyperpyra</em>) ödeyip ağır itaat ve Roma kilisesine bağlılık şartlarını kabul etmesi talebini kesin bir dille reddetti. Bunun üzerine Venedikliler ve Frank baronları <strong>Mart 1204’te Partitio Romaniae</strong> (Romanya İmparatorluğu’nun Paylaşımı) sözleşmesini imzaladı: Şehir doğrudan fethedilecek, ganimet paylaşılıp Venedik borcu ödenecek, bir <strong>Latin İmparatoru</strong> seçilecek (toprakların 1/4’ü) ve kalan 3/4 Venedik ile Haçlılar arasında eşit bölüşülecekti.',
+      'Şubat başında Haliç ucundaki Kosmidion’da, kıyıdaki atının üzerinden kadırgasındaki Doj <strong>Enrico Dandolo</strong> ile görüşen Murtzuphlos, derhal <strong>5.000 libre altın</strong> (~360.000 altın <em>hyperpyra</em>) ödeyip ağır itaat ve Roma kilisesine bağlılık şartlarını kabul etmesi talebini kesin bir dille reddetti. Bunun üzerine Venedikliler ve Frank baronları <strong>Mart 1204’te <em>Partitio terrarum imperii Romaniae</em> (Bizans / Doğu Roma İmparatorluğu Topraklarının Paylaşımı Antlaşması)</strong> esaslarını imzaladı: Şehir doğrudan fethedilecek, ganimet paylaşılıp Venedik borcu ödenecek, bir <strong>Latin İmparatoru</strong> seçilecek (toprakların 1/4’ü) ve kalan 3/4 Venedik ile Haçlılar arasında eşit bölüşülecekti.',
     ],
     highlightNote: {
       source:
-        'Kaynak Özeti · Niketas Khoniates (Historia, nşr. van Dieten, s. 561–568) & Geoffroi de Villehardouin (§§221–223, 234)',
-      text: 'Kosmidion buluşmasında Doj Enrico Dandolo’nun ağır mali ve dini şartlarını reddeden V. Aleksios Dukas (Murtzuphlos), Venedik süvarilerinin ani baskınından güçlükle kurtulup deniz surlarını ahşap kulelerle yükseltti; Latin ordugâhındaki piskoposlar ise "Yunanlılar meşru efendilerini öldürmüş katiller ve Roma’ya itaatten çıkmış şizmatiklerdir" fetvasıyla saldırıyı günah olmaktan çıkarıp haçlı endüljansına bağladı.',
+        'Kaynak Özeti · Niketas Khoniates (Historia, nşr. van Dieten, s. 561–568; Bonn s. 742–752; çev. Demirkent 2004, s. 132–141), Geoffroi de Villehardouin (§§221–225, 234–235; Faral II, s. 20–25, 34–37) & Clari’li Robert (§§72–73; Lauer s. 71–72)',
+      text: 'Kosmidion buluşmasında Doj Enrico Dandolo’nun ağır mali ve dini şartlarını reddeden V. Aleksios Dukas (Murtzuphlos), Venedik süvarilerinin ani baskınından güçlükle kurtulup deniz surlarını ahşap kulelerle yükseltti; Latin ordugâhındaki Katolik piskoposlar ise (Villehardouin §224–225; Clari §§72–73) "Rumlar meşru efendilerini öldürmüş ve Roma’ya itaatten çıkmıştır; onlarla savaşmak günah değil sevap ve haklı bir davadır" yönündeki vaaz ve kilise hükmüyle saldırıyı Papa adına haçlı endüljansına (günah affına) bağladı.',
       tone: 'witness',
     },
     camera: {
@@ -468,7 +468,7 @@ export const konstantinopolisMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§§242 & 247, nşr. E. Faral, c. II, s. 44, 50; Eski Fransızca aslından çeviri)',
+        'Doğrudan Alıntı (Çeviri) · Geoffroi de Villehardouin, La Conquête de Constantinople (§§242 & 247, nşr. E. Faral, c. II, Paris 1939 [2. bs. 1961], s. 44–45, 50–51 [Eski Fr. s. 44, 50]; krş. nşr. N. de Wailly, s. 140–145)',
       text: '«[...] Ve rüzgâr kuzeyden esmeye başladı ve birbirine bağlı olan iki gemiyi —ki birinin adı Pèlerine [Hacı], diğerinin adı Paradis [Cennet] idi— kıyıya daha çok yaklaştırdı; öyle ki geminin merdiveni doğrudan kulenin üzerine değdi. Ve bir Venedikli ile André d’Urboise adında bir Fransız şövalyesi kuleye girdiler ve arkalarından başka insanlar da girdi; kuledekiler ise bozguna uğrayıp kaçtılar. [...] Ve bu, şehirde çıkan üçüncü yangın oldu; ve Fransa Krallığı’nın en büyük üç şehrinde bulunandan daha fazla ev yandı.»',
       tone: 'west',
     },
@@ -496,12 +496,12 @@ export const konstantinopolisMapSteps: MapStep[] = [
     title: 'Latin İmparatorluğu, Kraliçe Tamar’ın Trabzon Seferi ve Türkiye Selçuklularının İki Denize Açılışı',
     narrative: [
       '1204 yağması Doğu Roma dünyasını bir anda dört parçaya böldü: Başkentte <strong>Flandre Kontu I. Baudouin</strong> Latin İmparatoru seçilirken Venedik Girit, Eğriboz ve Ege limanlarını kapattı; Batı Anadolu’da ise <strong>I. Theodoros Laskaris</strong> vaktiyle 1075’te Süleyman Şah’ın başkent yaptığı <strong>İznik (Nikaia)</strong> merkezli sürgün Rum İmparatorluğu’nu kurdu (ve 1261’de İstanbul’u geri alacak olan damar burası oldu).',
-      'Aynı <strong>Nisan 1204</strong> ayında Karadeniz’de tarihin en hızlı jeopolitik hamlelerinden biri yaşandı: Doç. Dr. <strong>Ayşe Beyza Ercan</strong>’ın <em>Altın Çağ</em> araştırmalarında incelendiği üzere, <strong>Gürcistan Kraliçesi Tamar</strong> (1184–1213), 1185’te Tiflis sarayına sığınan öz yeğenleri (kız kardeşi Rusudan’ın oğulları) <strong>Aleksios ve David Komnenos</strong> kardeşleri Batı Gürcistan (Lih-İmereti) ordusuyla Karadeniz kıyısına sevk etti; Trabzon, Samsun, Sinop, Giresun, Kotyora (Ordu), Amasra ve Karadeniz Ereğlisi zaptedilerek <strong>Trabzon İmparatorluğu (1204–1461)</strong> kuruldu! Bu parçalanma ise Konya’daki <strong>Türkiye Selçuklu Devleti</strong>’ne (I. Gıyâseddin Keyhüsrev ve I. İzzeddin Keykâvus) <strong>1207’de Antalya</strong> ve <strong>1214’te Sinop</strong>’u fethederek Anadolu’yu Akdeniz-Karadeniz transit ticaret imparatorluğuna dönüştürme fırsatını altın tepside sundu.',
+      'Aynı <strong>Nisan 1204</strong> ayında Karadeniz’de tarihin en hızlı jeopolitik hamlelerinden biri yaşandı: <strong>Gürcistan Kraliçesi Tamar</strong> (1184–1213; Gürcü tarih yazıcılığındaki resmî unvanıyla <em>Mepe</em> / «Kral»), 1185’te Tiflis sarayına sığınan ve hanedan akrabalıkları bulunan <strong>Aleksios ve David Komnenos</strong> kardeşlere Batı Gürcistan (Lih-İmereti) ordusunu vererek Karadeniz kıyısına sevk etti. Tamar’ın bu askerî ve siyasî desteği sayesinde Trabzon, Samsun, Sinop, Giresun, Kotyora (Ordu), Amasra ve Karadeniz Ereğlisi zaptedildi ve Aleksios ile David Komnenos kardeşler <strong>Trabzon Rum İmparatorluğu’nu (1204–1461)</strong> kurdu! Bu parçalanma ise Konya’daki <strong>Türkiye Selçuklu Devleti</strong>’ne (I. Gıyâseddin Keyhüsrev ve I. İzzeddin Keykâvus) <strong>1207’de Antalya</strong> ve <strong>1214’te Sinop</strong>’u fethederek Anadolu’yu Akdeniz–Karadeniz transit ticaret imparatorluğuna dönüştürme fırsatını altın tepside sundu.',
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Kartlis Tskhovreba: İstoriani da Azmani Şaravandedtani (Kraliçe Tamar’ın Birinci Tarihçisi, nşr. S. Qaukhchishvili, c. II, s. 112; Klasik Gürcüce aslından çeviri, krş. Vivian 1991, s. 140 & Ercan [Büyükçınar] 2017 / Ercan 2023)',
-      text: '«[...] Kraliçe Tamar bunu duyduğunda [...] onlara kendisininkinden katbekat fazla altın verdi ve hemen o vakit İmereti [Lih-İmereti] yakasındaki askerleri topladı; onları, büyük imparator Kir Andronikos’un oğlu Manuil’in oğlu olan ve o sırada Kraliçe Tamar’ın yanına sığınmış bulunan Aleksios [Komnenos] ile birlikte gönderdi. Gittiler ve Lazia, Trabzon, Limnia, Samsun [Samsoni], Sinop, Kerasus [Giresun], Kotyora [Ordu], Amasra, Herakleia [Karadeniz Ereğlisi] ile Paphlagonia ve Pontos’un bütün yerlerini zapt ettiler; ve bu memleketleri akrabası Aleksios’a verdi.»',
+        'Doğrudan Alıntı (Çeviri) · Kartlis Tskhovreba — Hükümdarların Tarihi ve Methiyeleri / Kraliçe Tamar Dönemi Anonim Gürcü Kroniği (Vakhtang VI redaksiyonu çev. Brosset – Andreasyan, yay. haz. E. Merçil, TTK 2003, s. 412; krş. nşr. S. Qaukhchishvili, c. II, Tiflis 1959 [Basili Ezosmodzghvari bölümü], s. 142–143; İng. çev. K. Vivian 1991, s. 87 & Metreveli–Jones 2014, s. 300)',
+      text: '«[...] Hükümdar [Mepe] Tamar bunu duyduğunda [...] onlara kendisininkinden katbekat fazla altın verdi ve hemen o vakit İmereti [Lih-İmereti] yakasındaki askerleri topladı; onları, büyük imparator Kir Andronikos’un oğlu [soyundan] olup o sırada Tamar’ın yanına sığınmış bulunan Aleksios Komnenos ile birlikte gönderdi. Gittiler ve Lazia, Trabzon, Limnia, Samsun [Samsoni], Sinop, Kerasus [Giresun], Kotyora [Ordu], Amasra, Herakleia [Karadeniz Ereğlisi] ile Paphlagonia ve Pontos’un bütün yerlerini zapt ettiler; ve bu memleketleri akrabası Aleksios’a verdi.»',
       tone: 'east',
     },
     camera: {
@@ -515,7 +515,7 @@ export const konstantinopolisMapSteps: MapStep[] = [
     visual: {
       src: withBase('/images/arsiv/konstantinopolis-1204/step1g-tamar-trebizond-1204.jpg'),
       badge: 'VARDZİA MANASTIRI ÇAĞDAŞ KRALİYET FRESKİ · YKL. 1184–1186',
-      caption: 'Nisan 1204’te Yeğenleri Aleksios ve David Komnenos’a Ordusunu Vererek Trabzon İmparatorluğu’nu Kurduran Gürcistan Kraliçesi Tamar',
+      caption: 'Nisan 1204’te Akrabaları Aleksios ve David Komnenos Kardeşlere Sağladığı Askerî ve Siyasî Destekle Trabzon Rum İmparatorluğu’nun Kuruluşuna Ön Ayak Olan Kraliçe (Mepe) Tamar',
       credit: 'Vardzia Mağara Manastırı Meryem’in Ölümü Kilisesi Freski, Gürcistan (ykl. 1184–1186, Kamu Malı)',
       objectPosition: 'center 22%',
       objectFit: 'contain',
@@ -529,13 +529,13 @@ export const konstantinopolisPropagandaCases: PropagandaCase[] = [
     badge: 'VAKA 01 · DİNİ MEŞRUİYET VE KUDÜS GEREKÇESİ',
     title: '«Şizmatik Yunanlıları Roma’ya Bağlayıp Kudüs Yolunu Güvenceye Alıyoruz» Söylemi',
     verdict: 'Ters Tepti · Papa «Köpeklerden Beter» Dedi, Ayrılık Kalıcılaştı',
-    claimTag: 'LATİN ORDU PİSKOPOSLARININ FETVA VE SÖYLEM ÖZETİ',
+    claimTag: 'LATİN ORDU PİSKOPOSLARININ VAAZ VE ENDÜLJANS İLANI ÖZETİ',
     claimSource:
-      'Söylem Özeti · Geoffroi de Villehardouin (§224) & Robert de Clari (§72: Ordu Piskoposlarının Nisan 1204 Vaazı)',
+      'Söylem Özeti · Geoffroi de Villehardouin (§§224–225, Faral II, s. 22–25) & Clari’li Robert (§§72–73, Lauer s. 71–72)',
     claimQuote:
       'Mart–Nisan 1204’te Latin ordugâhındaki piskoposların askerlere verdiği vaazın özeti: Efendileri IV. Aleksios’u öldüren Rumların "katil" ve Roma Papası’na itaat etmeyen "şizmatikler" olduğu, bu yüzden Konstantinopolis’e saldırmanın günah değil tam tersine Kudüs yolunu açacak haklı bir amel olduğu ve Papa adına tüm haçlı endüljansının geçerli sayılacağı ilan edildi.',
     critiqueSource:
-      'Papa III. Innocentius’un 12 Temmuz 1205 Mektubu (Regesta VIII.126, PL 215, col. 701; krş. Reg. VIII.133, col. 712)',
+      'Papa III. Innocentius’un 12 Temmuz 1205 Mektubu (Regesta VIII.126, Migne PL 215, col. 701 = Hageneder Bd. 8, Reg. 8.127, s. 232; krş. Reg. VIII.133, PL 215, col. 712)',
     critiqueAnalysis:
       'Şehir düştükten ve üç günlük yağmanın ayrıntıları Roma’ya ulaştıktan sonra bizzat Papa III. Innocentius bu söylemi paramparça etti: Haçlıların kılıçlarını dinsizlere değil Hristiyanlara çektiğini, yaş ve cinsiyet gözetmeden kadınları ve rahibeleri kirlettiğini, kilise sunaklarından gümüş levhaları söktüğünü belirterek "Yunanlılar Latinlerde yalnızca ihanet ve karanlık işler gördüler; öyle ki artık onları haklı olarak köpeklerden bile daha çok tiksinerek reddediyorlar!" diye yazdı. 1054’te teolojik bir tartışma olan Doğu–Batı Kilise ayrılığı, 1204 yağmasıyla halk hafızasında bir daha kapanmayacak bir uçuruma dönüştü.',
   },
@@ -545,10 +545,10 @@ export const konstantinopolisPropagandaCases: PropagandaCase[] = [
     title: '«Genç Prens IV. Aleksios Tahta Çıkar Çıkmaz 200.000 Gümüş Markı Kolayca Ödeyecek» Vaadi',
     verdict: 'Mali İmkânsızlık · İkonalar Eritildi, Şehir Yandı',
     claimTag: '1203 ZARA / KORFU ANTLAŞMASINDAKİ VAAT ÖZETİ',
-    claimSource: 'Söylem Özeti · Geoffroi de Villehardouin (§93 & §188)',
+    claimSource: 'Söylem Özeti · Geoffroi de Villehardouin (§93, Faral I, s. 92–95 & §188, Faral I, s. 190–193)',
     claimQuote:
       'Ocak–Mayıs 1203’te Prens Aleksios’un baronlara sunduğu mali taahhüt özeti: Başkent halkının kendisini kurtarıcı olarak karşılayacağı ve Bizans imparatorluk hazinesinden Venedik ile Haçlılara 200.000 Köln gümüş markı (~47 ton gümüş) ile bir yıllık erzakın derhal ödeneceği ileri sürüldü.',
-    critiqueSource: 'Niketas Khoniates (Historia, s. 551–553) & Villehardouin (§§193–215)',
+    critiqueSource: 'Niketas Khoniates (Historia, van Dieten s. 551–553) & Villehardouin (§§193–215, Faral I, s. 196–219)',
     critiqueAnalysis:
       'Gerçekte III. Aleksios kaçarken zaten erimiş olan devlet hazinesindeki son 1.000 libre altını da yanında götürmüştü. Tahta oturan IV. Aleksios ne halk tarafından benimsendi ne de bu parayı bulabildi; çaresizlik içinde kiliselerdeki altın-gümüş kutsal lambaları ve ikona çerçevelerini eritip zorla ağır vergiler topladıysa da ancak 100.000 mark ödeyebildi. Kalan 100.000 markın ödenememesi ve Ağustos 1203 Mitaton Camii yangını, müttefikleri doğrudan kuşatmacıya çeviren yapısal tuzağı kurdu.',
   },
@@ -572,10 +572,10 @@ export const konstantinopolisPropagandaCases: PropagandaCase[] = [
     title: '«Üç Kilisede Toplanan 400.000 Marklık Ganimet Haçlı Ordusuna Adilce Dağıtıldı» Söylemi',
     verdict: 'Baron Vurgunu ve Bronz Heykellerin Sikke İçin Eritilmesi',
     claimTag: 'ÜST DÜZEY BARON KRONİĞİNDEKİ RESMÎ PAYLAŞIM ÖZETİ',
-    claimSource: 'Söylem Özeti · Geoffroi de Villehardouin (§§253–255) & Devastatio Constantinopolitana',
+    claimSource: 'Söylem Özeti · Geoffroi de Villehardouin (§§252–255, Faral II, s. 56–61) & Devastatio Constantinopolitana',
     claimQuote:
-      'Mareşal Villehardouin’in resmi bilançosunun özeti: Üç kilisede toplanan resmi ganimetin 400.000 gümüş mark ve 10.000 at/katır tuttuğu, önce Venedik ile Franklar arasında yarı yarıya bölündüğü, ardından Frankların kendi 200.000 marklık paylarından Venedik’e kalan 50.000 marklık borcu ödeyip gerisini 1 şövalye = 2 atlı serjant = 4 yaya serjant oranıyla hakkaniyetle dağıttığı kaydedilir.',
-    critiqueSource: 'Clari’li Robert (La Conquête, §§80–81) & Niketas Khoniates (De Signis, s. 647–655)',
+      'Mareşal Villehardouin’in resmi bilançosunun özeti: Üç kilisede toplanan resmi ganimetin 400.000 gümüş mark (BCDE yazmalarında 300.000 mark) ve 10.000 at/katır tuttuğu, önce Venedik ile Franklar arasında yarı yarıya bölündüğü, ardından Frankların kendi paylarından Venedik’e kalan 50.000 marklık borcu ödeyip gerisini 1 şövalye = 2 atlı serjant = 4 yaya serjant oranıyla hakkaniyetle dağıttığı kaydedilir.',
+    critiqueSource: 'Clari’li Robert (La Conquête, §§80–81, Lauer s. 79–81) & Niketas Khoniates (De Signis, van Dieten s. 647–655)',
     critiqueAnalysis:
       'Ordunun alt tabakasından yoksul bir şövalye olan Clari’li Robert yüksek baronların maskesini düşürür: Zengin baronlar Bukoleon ve Blakhernai saraylarındaki en değerli hazineleri gizlice kendi konaklarına taşımış, ortak sandığa sadece kaba gümüş leğenleri bırakıp yoksul şövalyeleri ve rahipleri aldatmıştır! Daha da yıkıcı olanı, Niketas Khoniates’in De Signis risalesinde belgelediği üzere, nakit sıkıntısı çeken Latinler Lysippos’un dev tunç Herakles heykelini, Hera ve Paris-Helen heykellerini ve Hipodrom’un antik bronz şaheserlerini bakır sikke basmak için ocaklarda eritmiştir.',
   },
@@ -584,7 +584,8 @@ export const konstantinopolisPropagandaCases: PropagandaCase[] = [
 export const konstantinopolisVerifiedFacts = [
   {
     title: '1. Üç Büyük Yangınla (Temmuz 1203, Ağustos 1203, Nisan 1204) Kül Olan Dünya Metropolü',
-    sources: 'Geoffroi de Villehardouin (§203, §247), Niketas Khoniates (s. 553–555) & Devastatio Constantinopolitana',
+    sources:
+      'Geoffroi de Villehardouin (§176, §§203–205, §247; Faral I, s. 178–179, 206–211 & II, s. 48–51), Niketas Khoniates (van Dieten s. 553–555) & Devastatio Constantinopolitana',
     detail:
       'Hem Latin mareşali Villehardouin hem Bizanslı Khoniates, 1203–1204 kuşatmaları sırasında çıkan üç büyük yangının —özellikle 19–21 Ağustos 1203 Mitaton yangınının— Konstantinopolis’in yaklaşık üçte birini ve Fransa’nın en büyük üç kentinden daha fazla yapıyı kül ettiğinde hemfikirdir.',
   },
@@ -596,27 +597,30 @@ export const konstantinopolisVerifiedFacts = [
   },
   {
     title: '3. 1204 Kırılmasının Anadolu’da Doğurduğu Üç Yeni Merkez: İznik, Trabzon ve Türkiye Selçuklu Limanları',
-    sources: 'Georgios Akropolites, Kartlis Tskhovreba (s. 112), İbn Bîbî (el-Evâmirü’l-Alâ’iyye) & İbnü’l-Esîr',
+    sources:
+      'Georgios Akropolites, Kartlis Tskhovreba (TTK 2003, s. 412; Qaukhchishvili c. II, s. 142–143), İbn Bîbî (el-Evâmirü’l-Alâ’iyye) & İbnü’l-Esîr',
     detail:
-      'Konstantinopolis’in düşüşü Bizans’ı İznik, Epir ve (Kraliçe Tamar’ın Nisan 1204 askeri desteğiyle kurulan) Trabzon İmparatorluğu’na bölerken, batı sınırındaki baskıdan kurtulan Türkiye Selçuklu Devleti 1207’de Antalya’yı ve 1214’te Sinop’u fethederek Anadolu’yu küresel deniz ticaretine açmıştır.',
+      'Konstantinopolis’in düşüşü Bizans’ı İznik, Epir ve (Kraliçe Tamar’ın Nisan 1204 askeri–siyasi desteğiyle Aleksios ve David Komnenos’un kurduğu) Trabzon Rum İmparatorluğu’na bölerken, batı sınırındaki baskıdan kurtulan Türkiye Selçuklu Devleti 1207’de Antalya’yı ve 1214’te Sinop’u fethederek Anadolu’yu küresel deniz ticaretine açmıştır.',
   },
 ];
 
 export const dandoloCommanderProfile = {
   pill: 'DOJ VE STRATEJİST DOSYASI',
   name: 'Enrico Dandolo (Henricus Dandolo)',
-  subtitle: 'Venedik Cumhuriyeti’nin 41. Doju · «Romanya İmparatorluğu’nun Dörtte Bir ve Yarımının Efendisi» (ykl. 1107 – Mayıs 1205, Konstantinopolis)',
+  subtitle:
+    'Venedik Cumhuriyeti’nin 41. Doju · «Doğu Roma (Bizans) İmparatorluğu’nun Dörtte Bir ve Yarımının Efendisi» (ykl. 1107 – Mayıs sonu / Haziran 1205, Konstantinopolis)',
   highlightBox: {
-    leftTitle: '~90 YAŞ & ÂMÂ',
-    leftHtml: 'Gözleri dışarıdan sağlam görünmesine rağmen görme yetisini yitirmiş; ancak <strong>keskin ticari ve askeri zekâsıyla</strong> seferi bizzat kadırga pruvasından yönetmiştir.',
+    leftTitle: '90’LI YAŞLARDA & ÂMÂ',
+    leftHtml:
+      'Gözleri dışarıdan sağlam görünmesine rağmen görme yetisini yitirmiş; <strong>doksanlı yaşlarının ortasında</strong> seferi bizzat kadırga pruvasından yönetmiştir.',
     operator: '+',
     rightTitle: '3/8 İMPARATORLUK',
     rightHtml: '1204 paylaşımıyla Venedik’e kazandırdığı resmi unvan: <em>Dominus quartae partis et dimidiae totius Imperii Romaniae</em>',
   },
   factsHtml: [
     '<strong>Cumhuriyet Borcu ile İmparatorluk Kurmak:</strong> 1201 sözleşmesinde Venedik’in bütün tersane ve ticaret kapasitesini tek bir sefere yatırdı. 1202’de Haçlılar 34.000 mark açık verince donanmanın iflas etmesini önlemek için seferi adım adım önce <strong>Zara</strong>’ya, ardından <strong>Konstantinopolis</strong>’e yönlendiren baş mimar oldu.',
-    '<strong>Haliç Surları Önünde Kadırga Pruvasında (Temmuz 1203 & Nisan 1204):</strong> Villehardouin’in hayranlıkla kaydettiği üzere, seksen yaşını çoktan aşmış ve âmâ olmasına rağmen Aziz Marko sancağını önünde taşıtarak kadırgasını en önce karaya oturttu ve tereddüt eden Venedikli denizcileri bizzat surlara sürdü.',
-    '<strong>Ayasofya’daki Defni ve 1847–1849 Anı Levhası:</strong> Nisan 1205’te Bulgar Çarı Kaloyan karşısındaki Hadrianopolis (Edirne) bozgunundan kalan orduları zorlukla Konstantinopolis’e geri çekti; birkaç hafta sonra (Mayıs 1205) ~98 yaşında öldü ve <strong>Ayasofya</strong>’ya gömüldü (özgün mezarı 1261/1453 sonrasında kaybolmuş olup, bugün güney üst galeride görülen <em>«Henricus Dandolo»</em> mermer levhası 1847–1849 Fossati restorasyonunda yerleştirilen anı taşıdır/kenotaftır).',
+    '<strong>Yaşı ve Haliç Surları Önündeki Cesaret (Temmuz 1203 & Nisan 1204):</strong> Kesin doğum kaydı bulunmamakla birlikte Venedik kronik geleneğine ve modern araştırmalara (Madden 2003; <em>Britannica</em>) göre ykl. 1107 doğumludur (1192’de Doj seçildiğinde ~85 yaşındaydı). Doksanlı yaşlarının ortasında ve âmâ olmasına rağmen Aziz Marko sancağını önünde taşıtarak kadırgasını en önce karaya oturttu.',
+    '<strong>Ayasofya’daki Defni ve 1847–1849 Anı Levhası:</strong> Nisan 1205’te Bulgar Çarı Kaloyan karşısındaki Hadrianopolis (Edirne) bozgunundan kalan orduları zorlukla Konstantinopolis’e geri çekti; kısa süre sonra, Mayıs sonu / Haziran 1205’te (Villehardouin §388 ve Madden 2003, s. 193–194’e göre 29 Mayıs Pentekost öncesinde; geç Venedik geleneğinde Haziran başında) ykl. 97–98 yaşlarında öldü ve <strong>Ayasofya</strong>’ya gömüldü (özgün mezarı 1261/1453 sonrasında kaybolmuş olup, bugün güney üst galeride görülen <em>«Henricus Dandolo»</em> mermer levhası 1847–1849 Fossati restorasyonunda yerleştirilen anı taşıdır/kenotaftır).',
   ],
 };
 
@@ -660,7 +664,7 @@ export const konstantinopolisArmySegments = [
   },
   {
     id: 'frank-flemish-knights',
-    label: 'Frank, Flaman, Şampanya ve Lombard Ağır Zırhlı Şövalyeleri ve Atlı Serjantlar',
+    label: 'Frank, Flaman, Champagne ve Lombard Ağır Zırhlı Şövalyeleri ve Atlı Serjantlar',
     shareText: '~%20 (~4.000 – 4.500 Zırhlı Süvari)',
     percent: 20,
     color: '#d9485f',
@@ -693,10 +697,10 @@ export const konstantinopolisChronicleStages: ChronicleStage[] = [
       date: '12–13 Nisan 1204 · Historia & De Signis',
       titleHtml: 'Niketas Khoniates · <em>Historia &amp; De Signis</em>',
       authorDesc:
-        'Kuşatma sırasında başkentte yüksek saray nazırı (logothetes ton sekreton) olarak bulunan, evi yanıp ailesiyle yürüyerek İznik’e sığınan Bizans tarihçisi (Ortaçağ Yunancası aslından doğrudan çeviri; CFHB XI/1, nşr. van Dieten, s. 576 & 648–650).',
+        'Kuşatma sırasında başkentte yüksek saray nazırı (logothetes ton sekreton) olarak bulunan, evi yanıp ailesiyle yürüyerek İznik’e sığınan Bizans tarihçisi (Ortaçağ Yunancası aslından doğrudan çeviri; CFHB XI/1, nşr. van Dieten, 1975, s. 576 & 648–650; Bonn nşr. s. 763, 856, 858–859; krş. çev. Demirkent 2004, s. 238–241).',
       origLang: 'el',
       origScript:
-        '«[Historia, s. 576] Ὦ πόλις, πόλις, πόλεων πασῶν ὀφθαλμέ, ἄκουσμα παγκόσμιον, θέαμα ὑπερκόσμιον, ἐκκλησιῶν γαλουχέ, πίστεως ἀρχηγέ, ὀρθοδοξίας ποδηγέ, λόγων μέλημα, καλοῦ παντὸς ἐνδιαίτημα! Ὢ ἡ ἐκ χειρὸς Κυρίου πιοῦσα τὸ τοῦ θυμοῦ ποτήριον [...] [De Signis, s. 648–650] Ἥ τε οὖν ἐν τῇ Κωνσταντινείῳ ἀγορᾷ ἱσταμένη πολύχαλκος Ἥρα κέκοπται εἰς στατῆρας καὶ χωνείᾳ παραδίδοται, ἧς ἡ κεφαλὴ μόγις τέτρασι βοῶν ὑποτρόχοις ζεύγμασιν ἐς τὸ μέγα παλάτιον ἀποκεκόμισται. [...] Κατήρειπτο οὖν Ἡρακλῆς ὁ τριέσπερος μέγας μεγαλωστὶ κοφίνῳ ἐνιδρυμένος, τῆς λεοντῆς ὑπεστρωμένης ἄνωθεν [...] ἀθυμίας πλήρης καθυποκλίνων ἠρέμα τὴν κεφαλὴν καὶ τὰς ἰδίας τύχας ὀλοφυρόμενος [...]»',
+        '«[Historia, s. 576] Ὦ πόλις, πόλις, πόλεων πασῶν ὀφθαλμέ, ἄκουσμα παγκόσμιον, θέαμα ὑπερκόσμιον, ἐκκλησιῶν γαλουχέ, πίστεως ἀρχηγέ, ὀρθοδοξίας ποδηγέ, λόγων μέλημα, καλοῦ παντὸς ἐνδιαίτημα! Ὢ ἡ ἐκ χειρὸς Κυρίου τὸ τοῦ θυμοῦ πιοῦσα ποτήριον [...] [De Signis, s. 648–650] Ἥ τε οὖν ἐν τῇ Κωνσταντινείῳ ἀγορᾷ ἱσταμένη πολύχαλκος Ἥρα κέκοπται εἰς στατῆρας καὶ χωνείᾳ παραδίδοται, ἧς ἡ κεφαλὴ μόγις τέτρασι βοῶν ὑποτρόχοις ζεύγμασιν ἐς τὸ μέγα παλάτιον ἀποκεκόμισται. [...] Κατήρειπτο τοίνυν Ἡρακλῆς ὁ τριέσπερος μέγας μεγαλωστὶ κοφίνῳ ἐνιδρυμένος, τῆς λεοντῆς ὑπεστρωμένης ἄνωθεν [...] ἀθυμίας πλήρης καθυποκλίνων ἠρέμα τὴν κεφαλὴν καὶ τὰς ἰδίας τύχας ὀλοφυρόμενος [...]»',
       translationParagraphsHtml: [
         '«[<em>Historia</em>, s. 576] <mark class="hl-east">Ey şehir, ey şehir, bütün şehirlerin gözbebeği,</mark> cihanın şöhreti, dünya üstü temaşa, kiliselerin emziren anası, imanın önderi, Ortodoksluğun kılavuzu, ilimlerin ocağı, her türlü güzelliğin meskeni! <mark class="hl-east">Ey Rabbin elinden gazap kadehini içen</mark> [...] şehir!»',
         '<strong>[De Signis, s. 648–650 · Antik Tunç Heykellerin Sikke İçin Eritilmesi]:</strong> «<mark class="hl-east">Konstantinos Forumu’nda dikili duran o dev tunç Hera heykeli de sikkeler [stater] basılmak üzere parçalandı ve eritme ocağına teslim edildi;</mark> kesilen başı dört çift öküzün çektiği arabayla Büyük Saray’a güçlükle taşınabildi. [...] <mark class="hl-east">Üç gecede doğmuş [triesperos] o muazzam Herakles [Lysippos’un eseri] de devrildi;</mark> üstüne serili aslan postuyla dev bir sepetin üzerinde oturuyor [...] derin bir keder içinde başını usulca eğip kendi talihsizliklerine ağlıyor gibiydi [Latinler bu şaheseri bile bakır sikke uğruna erittiler].»',
@@ -704,32 +708,32 @@ export const konstantinopolisChronicleStages: ChronicleStage[] = [
     },
     west: {
       pill: 'LATİN HAÇLI CEPHESİ · MAREŞAL VE YOKSUL ŞÖVALYE',
-      date: '12–15 Nisan 1204 · Villehardouin §§250, 253–254 & Clari §§80–81',
+      date: '12–15 Nisan 1204 · Villehardouin §250, §§252–255 & Clari §§80–81',
       titleHtml: 'Geoffroi de Villehardouin &amp; Clari’li Robert · <em>La Conquête de Constantinople</em>',
       authorDesc:
-        'Üst düzey komuta divanındaki Şampanya Mareşali Villehardouin ile ordunun alt tabakasındaki Pikardiyalı yoksul şövalye Clari’li Robert’in birbirini denetleyen kayıtları (Eski Fransızca / Pikardiya lehçesi aslından doğrudan çeviri; nşr. Faral II, s. 54–58 & nşr. Lauer, s. 79–81).',
+        'Üst düzey komuta divanındaki Champagne Mareşali Villehardouin ile ordunun alt tabakasındaki Pikardiyalı yoksul şövalye Clari’li Robert’in birbirini denetleyen kayıtları (Eski Fransızca / Pikardiya lehçesi aslından doğrudan çeviri; nşr. E. Faral, c. II, 1939, s. 52–53, 56–61 & nşr. Ph. Lauer, CFMA 40, 1924, s. 79–81).',
       origLang: 'fr',
       origScript:
-        '«[Villehardouin §§250, 253] Et les autres genz qui furent espandu parmi la ville gaaignierent assez; et fu si granz li gaaienz faiz que nus ne vos en savroit dire la fin d’or et d’argent, et de vaisselemente, et de pierres precieuses, et de samiz, et de dras de soie [...] Et bien tesmoigne Joffrois li mareschaus de Champaigne, a son escient par verité, que puis que li siecles fu estorez ne fu tant gaainié en une ville. [...] [Robert de Clari §§80–81] Mais puis que chis siecles fu estorés, si grans avoirs, ne si nobles, ne si rikes, ne fu veus, ne conquis, ne au tans Alixandre, ne au tans Charlemaine [...] Et prisent li haut homme [...] les plus biax avoirs en cheleement [...] Si n’en departi on fors le gros argent, si comme des paieles d’argent que les dames de le chité portoient as bains.»',
+        '«[Villehardouin §250, Faral II, s. 52] Et les autres genz qui furent espandu parmi la ville gaaignierent assez; et fu si granz li gaaienz faiz que nus ne vos en savroit dire la fin d’or et d’argent, et de vasselement, et de pierres preciouses, et de samiz, et de dras de soie [...] Et bien tesmoigne Joffrois de Vilehardoin li mareschaus de Champaigne, a son escient par verté, que puis que li siecles fu estorez ne fu tant gaainié en une ville. [...] [Robert de Clari §81, Lauer s. 80–81] [...] mais puis qe chis siecles fu estorés, si grans avoirs, ne si nobles, ne si rikes, ne fu veus, ne conquis, ne au tans Alixandre, ne au tans Charlemaine, ne devant ne aprés [...] Et chil meïsme qui l’avoir devoient warder si prenoient les joiaus d’or et chou que il voloient et embloient l’avoir ; et prenoit cascuns des rikes hommes ou joiaus d’or ou dras de soie a or, ou chou que il amoit miex, si l’en portoit. Ensi faitement si commenchierent l’avoir a embler, si que on ne departi onques au quemun de l’ost, ne as povres chevaliers, ne as serjans qui l’avoir avoient aidié a waaingnier, fors le gros argent, si comme des paieles d’argent que les dames de le chité portoient as bains.»',
       translationParagraphsHtml: [
-        '<strong>[Villehardouin §§250, 253]:</strong> «Şehrin içine yayılan diğer insanlar ise bolca ganimet topladılar; ve ele geçirilen ganimet öylesine büyüktü ki altınların, gümüşlerin, kap kacakların, değerli taşların, sırmalı kumaşların, ipekli elbiselerin, sincap, kakım ve alaca kürklerin ve yeryüzünde şimdiye dek bulunmuş en seçkin malların hesabını kimse size söyleyemez. Ve <mark class="hl-west">Şampanya Mareşali Geoffroi, bildiği kadarıyla hakikat adına şahitlik eder ki, dünya yaratıldığından beri tek bir şehirde bu kadar büyük ganimet kazanılmamıştır.</mark>»',
-        '<strong>[Clari’li Robert §§80–81 · Yoksul Şövalyenin İtirafı]:</strong> «Fakat bu dünya kurulduğundan beri ne İskender zamanında, ne Şarlman zamanında [...] bu kadar büyük, bu kadar soylu, bu kadar zengin bir hazine ne görüldü ne de fethedildi [...] <mark class="hl-west">Ve yüksek baronlar [...] en güzel ve en değerli hazineleri gizlice aldılar [...] Ortak paylaşımda ise kaba gümüşten —şehirdeki hanımların hamama giderken taşıttıkları gümüş leğenler gibi şeylerden— başka bir şey dağıtılmadı</mark> [yoksul şövalyeler ve küçük insanlar asıl hazineden pay alamadı].»',
+        '<strong>[Villehardouin §250, Faral II, s. 52–53]:</strong> «Şehrin içine yayılan diğer insanlar ise bolca ganimet topladılar; ve ele geçirilen ganimet öylesine büyüktü ki altınların, gümüşlerin, kap kacakların, değerli taşların, sırmalı kumaşların, ipekli elbiselerin, sincap, kakım ve alaca kürklerin ve yeryüzünde şimdiye dek bulunmuş en seçkin malların hesabını kimse size söyleyemez. Ve <mark class="hl-west">Champagne Mareşali Geoffroi de Villehardouin, bildiği kadarıyla hakikat adına şahitlik eder ki, dünya yaratıldığından beri tek bir şehirde bu kadar büyük ganimet kazanılmamıştır.</mark>»',
+        '<strong>[Clari’li Robert §81, Lauer s. 80–81 · Yoksul Şövalyenin İtirafı]:</strong> «[...] Fakat bu dünya kurulduğundan beri ne İskender zamanında, ne Şarlman zamanında, ne öncesinde ne sonrasında bu kadar büyük, bu kadar soylu, bu kadar zengin bir hazine ne görüldü ne de fethedildi [...] <mark class="hl-west">Ve bizzat hazineyi korumakla görevli olanlar altın mücevherleri ve istedikleri şeyleri alıp hazineyi çalıyorlardı; zengin adamların [büyük baronların] her biri de ya altın mücevherleri ya altın sırmalı ipek kumaşları yahut en çok hoşuna giden şeyleri alıp götürüyordu. Böylece hazineyi gizlice aşırıp yağmalamaya başladılar; öyle ki bu servetin kazanılmasına yardım etmiş olan ordunun avamına, yoksul şövalyelere ve serjantlara kaba gümüşten —şehirdeki hanımların hamamlara götürdükleri gümüş leğenler gibi şeylerden— başka hiçbir şey dağıtılmadı.</mark>»',
       ],
     },
     ransomTariffBox: {
-      badge: 'MART – EKİM 1204 PARTITIO ROMANIAE & GANİMET BİLANÇOSU',
-      title: 'Konstantinopolis Ganimetinin ve Doğu Roma Topraklarının Resmi Paylaşım Tablosu',
-      lead: 'Villehardouin (§§234, 253–255), Clari’li Robert (§§80–81), Devastatio Constantinopolitana ve Partitio terrarum imperii Romaniae belgesine göre 1204 vurgununun dört kalemi:',
+      badge: 'MART – EKİM 1204 BİZANS TOPRAKLARININ PAYLAŞIMI (PARTITIO) & GANİMET BİLANÇOSU',
+      title: 'Konstantinopolis Ganimetinin ve Bizans (Doğu Roma) Topraklarının Paylaşım Tablosu',
+      lead: 'Villehardouin (§§234–235, 252–255; Faral II, s. 34–37, 56–61), Clari’li Robert (§§80–81; Lauer s. 79–81), Devastatio Constantinopolitana ve Partitio terrarum imperii Romaniae (Bizans İmparatorluğu Topraklarının Paylaşımı Antlaşması) belgesine göre 1204 vurgununun dört kalemi:',
       items: [
         {
           label: 'Resmi Ortak Ganimet (Gizlenen Hariç)',
           value: '400.000 Gümüş Mark',
-          note: 'Üç kilisede toplanan resmi tutar (~94 ton gümüş + 10.000 binek hayvanı); baronların gizlediği payla toplam yağma ~800.000–900.000 mark tahmin edilir',
+          note: 'Üç kilisede toplanan resmi tutar (~94 ton gümüş + 10.000 binek hayvanı; Faral II, §255, s. 60); baronların gizlediği payla toplam yağma ~800.000–900.000 mark tahmin edilir',
         },
         {
           label: 'Venedik Payı & Borç Tahsili (§254)',
           value: '1/2 Pay + 50.000 Mark Borç',
-          note: '400.000 mark önce Venedik ve Franklar arasında yarı yarıya (200.000’er mark) bölündü; ardından Franklar kendi paylarından Venedik’e kalan 50.000 marklık borcu ödeyip kalan 100.000 markı ordularına dağıttı',
+          note: 'Ortak ganimet Venedik ile Franklar arasında yarı yarıya bölündü; Franklar kendi paylarından Venedik’e kalan 50.000 marklık borcu ödeyip ordularına ~100.000 mark dağıttı (BCDE yazmalarında 300.000 = 150.000’er mark üzerinden; OA yazmalarında toplam 400.000 mark)',
         },
         {
           label: 'Asker Başına Dağıtım Oranı',
@@ -737,7 +741,7 @@ export const konstantinopolisChronicleStages: ChronicleStage[] = [
           note: 'Villehardouin (§254) oranına ve Devastatio kaydına göre şövalyeye 20 mark, atlı serjant ve rahibe 10 mark, yaya serjanta 5 mark verildi',
         },
         {
-          label: 'Toprak Paylaşımı (Partitio Romaniae)',
+          label: 'Toprak Paylaşımı (Partitio terrarum imperii Romaniae)',
           value: '1/4 İmparator · 3/8 Venedik · 3/8 Haçlı',
           note: 'Latin İmparatoru Baudouin 1/4 pay alırken Venedik Girit, Eğriboz, Koron-Modon, Gelibolu ve Ayasofya Patriklik makamını ele geçirdi',
         },
@@ -758,10 +762,10 @@ export const konstantinopolisChronicleStages: ChronicleStage[] = [
     bannerVisual: konstantinopolisHeroVisuals.hagiaSophia4B,
     east: {
       pill: 'DOĞU ROMA GÖRGÜ TANIĞI · AYASOFYA VE 1187 KUDÜS KIYASI',
-      date: '13–15 Nisan 1204 · Historia (nşr. van Dieten, s. 573–576)',
+      date: '13–15 Nisan 1204 · Historia (nşr. van Dieten, s. 573–576; Bonn s. 758–763)',
       titleHtml: 'Niketas Khoniates · <em>Historia (Tarih)</em>',
       authorDesc:
-        'Ayasofya’nın yağmalanışını bizzat gören ve omuzlarında haç taşıyan Latinleri 1187’de Kudüs’ü fetheden Selahaddin Eyyûbî’nin Müslüman askerleriyle doğrudan kıyaslayan Bizans devlet adamı (Ortaçağ Yunancası aslından doğrudan çeviri; CFHB XI/1, nşr. van Dieten, s. 573–576).',
+        'Ayasofya’nın yağmalanışını bizzat gören ve omuzlarında haç taşıyan Latinleri 1187’de Kudüs’ü fetheden Selahaddin Eyyûbî’nin Müslüman askerleriyle doğrudan kıyaslayan Bizans devlet adamı (Ortaçağ Yunancası aslından doğrudan çeviri; CFHB XI/1, nşr. van Dieten, 1975, s. 573–576; Bonn nşr. s. 758–763; krş. Magoulias 1984, s. 314–316).',
       origLang: 'el',
       origScript:
         '«Τὰ δ᾿ ἐπὶ Νεὼ τοῦ Μεγίστου ἠσεβημένα οὐδ᾿ ἀκοαῖς εἰσιν εὐπαράδεκτα. ἡ μὲν θυωρὸς τράπεζα, τὸ ἐκ πασῶν τιμίων ὑλῶν σύνθεμα συντετηγμένων πυρὶ καὶ περιχωρησασῶν ἀλλήλαις εἰς ἑνὸς ποικιλοχρόου κάλλους ὑπερβολήν, ἐξαισίου τῷ ὄντι καὶ ἀξιαγάστου παρ᾿ ἔθνεσιν ἅπασι, κατετεμαχίσθη καὶ διεμερίσθη τοῖς σκυλευταῖς [...] ἡμίονοί τε καὶ ὑποζύγια σεσαγμένα μέχρι τῶν ἀδύτων εἰσήγοντο τοῦ νεώ [...] Ἀλλὰ καὶ γυναικάριον σεσωρευμένον ἁμαρτίαις [...] ἐπὶ τοῦ συνθρόνου καθῖσαν κεκλασμένον ἀφῆκε μέλος καὶ πολλάκις περιδινηθὲν εἰς ὄρχησιν τὼ πόδε παρενεσάλευσε. [...] οἱ δ᾿ ἐξ Ἰσμαὴλ οὐχ οὕτως, ὅτι μὴ καὶ πάνυ φιλανθρώπως καὶ προσηνῶς τοῖς ἐκ τοῦ γένους αὐτῶν προσηνέχθησαν τῆς Σιὼν κατισχύσαντες· οὔτε γὰρ γυναιξὶ Λατινίσιν ἐπεχρεμέτισαν, οὔτε τὸ Χριστοῦ κενήριον πολυάνδριον πεσόντων ἔδειξαν [...] ἁπαξάπασι δ᾿ ἀνέντες τὴν ἔξοδον χρυσίνοις ἀριθμῷ κατ᾿ ἄνδρα βραχέσιν ἀφώριζον τὰ ζωάγρια.»',
@@ -772,16 +776,16 @@ export const konstantinopolisChronicleStages: ChronicleStage[] = [
     },
     west: {
       pill: 'ROMA PAPALIĞI RESMÎ KINAMA MEKTUBU',
-      date: '12 Temmuz 1205 · Regesta VIII.126 (PL 215, col. 699–702; krş. VIII.133, col. 712)',
+      date: '12 Temmuz 1205 · Regesta VIII.126 (PL 215, col. 699–702 [701] = Hageneder Bd. 8, Reg. 8.127, s. 230–233 [232])',
       titleHtml: 'Papa III. Innocentius · <em>Regesta Pontificum Romanorum</em>',
       authorDesc:
-        'Dördüncü Haçlı Seferi’ni başlatan Papa III. Innocentius’un, Konstantinopolis’teki Papalık elçisi Kardinal San Marcello’lu Pietro Capuano’ya (ve paralel ifadelerle Montferratlı Bonifacio’ya) gönderdiği sert kınama mektubu (Latince aslından doğrudan çeviri; Migne, PL 215, col. 701 & 712).',
+        'Dördüncü Haçlı Seferi’ni başlatan Papa III. Innocentius’un, Konstantinopolis’teki Papalık elçisi Kardinal San Marcello’lu Pietro Capuano’ya gönderdiği 12 Temmuz 1205 tarihli kınama mektubu (Latince aslından doğrudan çeviri; Migne, PL 215, col. 701; nşr. Hageneder vd., Bd. 8, Wien 2001, Reg. 8.127 [126], s. 232; krş. Montferratlı Bonifacio’ya mektup: Reg. VIII.133, PL 215, col. 712 = Hageneder Reg. 8.134, s. 246).',
       origLang: 'la',
       origScript:
-        '«[...] Quomodo enim Graecorum Ecclesia, quantumcumque afflicta persecutionibus et angustiis, ad unitatem ecclesiasticam et devotionem Apostolicae Sedis revertetur, quae in Latinis nonnisi perditionis exemplum et opera tenebrarum aspexit, ut jam merito illos abhorreat plus quam canes? Illi etenim, qui non quae sua sunt, sed quae Jesu Christi quaerere credebantur, gladios, quos in paganos exercere debuerant, in Christianorum sanguine cruentarunt, nec religioni, nec aetati, nec sexui pepercerunt [...] matronas et virgines, etiam Deo dicatas, exponentes spurcitiis garcionum. Nec suffecit eisdem imperiales divitias exhaurire ac diripere spolia principum ac minorum, nisi ad thesauros Ecclesiarum, et, quod gravius est, ad ipsarum possessiones extenderent manus suas, tabulas argenteas etiam de altaribus rapientes, et inter se confringentes in frusta, violantes sacraria, cruces, iconas et reliquias asportantes [...]»',
+        '«[...] Quomodo enim Graecorum Ecclesia, quantumcunque afflictionibus et persecutionibus affligatur, ad unitatem ecclesiasticam et devotionem Apostolicae Sedis revertetur, quae in Latinis nonnisi perditionis exemplum et opera tenebrarum aspexit, ut jam merito illos abhorreat plus quam canes? Illi etenim, qui non quae sua sunt, sed quae Jesu Christi quaerere credebantur, gladios, quos exercere debuerant in paganos, Christianorum sanguine cruentantes, nec religioni, nec aetati, nec sexui pepercerunt [...] matronas et virgines, etiam Deo dicatas, exponentes spurcitiis garcionum. Nec suffecit eisdem imperiales divitias exhaurire ac diripere spolia principum ac minorum, nisi ad thesauros Ecclesiarum, et, quod gravius est, ad ipsarum possessiones extenderent manus suas, tabulas argenteas etiam de altaribus rapientes, et inter se confringentes in frusta, violantes sacraria, cruces [Reg. VIII.133 ekler: iconas] et reliquias asportantes [...]»',
       translationParagraphsHtml: [
-        '«[...] Ne kadar zulüm ve sıkıntıyla ezilmiş olursa olsun, <mark class="hl-west">Latinlerde yalnızca yıkım örneği ve karanlığın işlerini gören Yunanlıların Kilisesi, artık onları haklı olarak köpeklerden bile daha çok tiksinerek reddederken,</mark> kilise birliğine ve Apostolik Makam’a bağlılığa nasıl geri dönecektir?»',
-        '«Zira kendi çıkarlarını değil İsa Mesih’in olanı aradıkları sanılan bu kimseler, <mark class="hl-west">dinsizlere karşı kullanmaları gereken kılıçları Hristiyanların kanına buladılar; ne dine, ne yaşa, ne de cinsiyete acıdılar;</mark> [zina, fuhuş ve ensest suçlarını herkesin gözü önünde işleyerek] <mark class="hl-west">saygın evli kadınları ve hatta Tanrı’ya adanmış bakireleri [rahibeleri] uşakların iğrençliklerine teslim ettiler.</mark> İmparatorluk servetini tüketmek ve büyük-küçük herkesin mallarını yağmalamak da onlara yetmedi; ellerini kiliselerin hazinelerine ve —daha da ağırı— bizzat mülklerine uzattılar; <mark class="hl-west">sunaklardan gümüş levhaları dahi söküp kendi aralarında parçalara ayırdılar,</mark> kutsal odaları çiğneyip haçları, ikonaları ve kutsal emanetleri alıp götürdüler [...]»',
+        '«[...] Ne kadar sıkıntı ve zulümle ezilmiş olursa olsun, <mark class="hl-west">Latinlerde yalnızca yıkım örneği ve karanlığın işlerini gören Yunanlıların Kilisesi, artık onları haklı olarak köpeklerden bile daha çok tiksinerek reddederken,</mark> kilise birliğine ve Apostolik Makam’a bağlılığa nasıl geri dönecektir?»',
+        '«Zira kendi çıkarlarını değil İsa Mesih’in olanı aradıkları sanılan bu kimseler, <mark class="hl-west">dinsizlere karşı kullanmaları gereken kılıçları Hristiyanların kanına buladılar; ne dine, ne yaşa, ne de cinsiyete acıdılar;</mark> [zina, fuhuş ve ensest suçlarını herkesin gözü önünde işleyerek] <mark class="hl-west">saygın evli kadınları ve hatta Tanrı’ya adanmış bakireleri [rahibeleri] uşakların iğrençliklerine teslim ettiler.</mark> İmparatorluk servetini tüketmek ve büyük-küçük herkesin mallarını yağmalamak da onlara yetmedi; ellerini kiliselerin hazinelerine ve —daha da ağırı— bizzat mülklerine uzattılar; <mark class="hl-west">sunaklardan gümüş levhaları dahi söküp kendi aralarında parçalara ayırdılar,</mark> kutsal odaları çiğneyip haçları, [VIII.133’te ayrıca: ikonaları] ve kutsal emanetleri alıp götürdüler [...]»',
       ],
     },
     synthesisBridge: {
@@ -799,10 +803,10 @@ export const konstantinopolisActorFates: ActorFate[] = [
     stance: 'loyal',
     badgeText: '1 YIL SONRA AYASOFYA’YA DEFNEDİLDİ',
     calculation1098:
-      '85.000 marklık navlun sözleşmesinden doğan 34.000 marklık açığı Venedik’in lehine çevirdi; ~90 yaşında ve âmâ olmasına rağmen Zara ve Konstantinopolis kuşatmalarını bizzat kadırga pruvasından yönetip Venedik’e imparatorluğun 3/8’ini ve Ege deniz tekelini kazandırdı.',
+      '85.000 marklık navlun sözleşmesinden doğan 34.000 marklık açığı Venedik’in lehine çevirdi; doksanlı yaşlarının ortasında ve âmâ olmasına rağmen Zara ve Konstantinopolis kuşatmalarını bizzat kadırga pruvasından yönetip Venedik’e imparatorluğun 3/8’ini ve Ege deniz tekelini kazandırdı.',
     historicalPayback:
-      'Zaferden sadece 1 yıl sonra (14 Nisan 1205) Bulgar Çarı Kaloyan ve Kuman süvarileri Hadrianopolis (Edirne) önünde Haçlı şövalyelerini imha ettiğinde, kalan orduyu gece karanlığında Konstantinopolis’e geri çeken yine yaşlı Dandolo oldu. Bu yorucu yürüyüşten birkaç hafta sonra, Mayıs 1205’te ~98 yaşında öldü ve Ayasofya’ya defnedildi (bugün üst galeride görülen mermer levha 1847–1849 Fossati restorasyonu anı taşıdır).',
-    endDate: 'Mayıs 1205 · Konstantinopolis (Ayasofya)',
+      'Zaferden sadece 1 yıl sonra (14 Nisan 1205) Bulgar Çarı Kaloyan ve Kuman süvarileri Hadrianopolis (Edirne) önünde Haçlı şövalyelerini imha ettiğinde, kalan orduyu gece karanlığında Konstantinopolis’e geri çeken yine yaşlı Dandolo oldu. Bu yorucu yürüyüşten kısa süre sonra (Mayıs sonu / Haziran 1205’te) ykl. 97–98 yaşlarında öldü ve Ayasofya’ya defnedildi (bugün üst galeride görülen mermer levha 1847–1849 Fossati restorasyonu anı taşıdır).',
+    endDate: 'Mayıs sonu / Haziran 1205 · Konstantinopolis (Ayasofya)',
   },
   {
     name: 'Latin İmparatoru I. Baudouin (Flandre Kontu)',
@@ -849,23 +853,23 @@ export const konstantinopolisActorFates: ActorFate[] = [
     endDate: 'ykl. 1217 · İznik (Nikaia)',
   },
   {
-    name: 'I. Theodoros Laskaris, Kraliçe Tamar & I. Gıyâseddin Keyhüsrev',
-    role: '1204 Sonrası Anadolu Jeopolitiğinin Üç Galip Kurucusu: İznik, Trabzon ve Konya',
+    name: 'I. Theodoros Laskaris, I. Aleksios Komnenos (Kraliçe Tamar Desteğiyle) & I. Gıyâseddin Keyhüsrev',
+    role: '1204 Sonrası Anadolu ve Karadeniz Jeopolitiğinin Üç Yeni Merkezi: İznik, Trabzon ve Konya',
     stance: 'loyal',
     badgeText: 'İZNİK (1261), TRABZON (1461) VE SELÇUKLU DENİZLERİ',
     calculation1098:
-      'Konstantinopolis düşerken Laskaris Bursa–İznik hattında Rum direnişini örgütledi; Gürcistan Kraliçesi Tamar Nisan 1204’te yeğenleri Aleksios ve David Komnenos’u ordusuyla Trabzon’a gönderdi; İstanbul sürgününden dönen I. Gıyâseddin Keyhüsrev ise 1205’te ikinci kez Konya tahtına çıktı.',
+      'Konstantinopolis düşerken Laskaris Bursa–İznik hattında Rum direnişini örgütledi; Kraliçe Tamar Nisan 1204’te akrabaları Aleksios ve David Komnenos kardeşlere Gürcü ordusunu vererek Karadeniz harekâtını destekledi; İstanbul sürgününden dönen I. Gıyâseddin Keyhüsrev ise 1205’te ikinci kez Konya tahtına çıktı.',
     historicalPayback:
-      'Üçü de 1204 boşluğunu kalıcı devlete dönüştürdü: Keyhüsrev 1207’de Antalya’yı fethedip (oğlu Keykâvus 1214’te Sinop’u alıp) Türkiye Selçuklularını deniz imparatorluğu yaptı (Haziran 1211’de Menderes Antakyası [İbn Bîbî’de Alaşehir] Muharebesi’nde Laskaris ile savaşırken şehit düştü); Laskaris’in kurduğu İznik devleti 1261’de İstanbul’u geri aldı; Tamar’ın kurdurduğu Trabzon İmparatorluğu ise 1461’de Fatih Sultan Mehmed’in fethine dek 257 yıl yaşadı.',
-    endDate: '1211 (Keyhüsrev) · 1213 (Tamar) · 1221 (Laskaris)',
+      'Üç eksen de 1204 boşluğunda kalıcı devlet yapılarına dönüştü: Keyhüsrev 1207’de Antalya’yı fethedip (oğlu Keykâvus 1214’te Sinop’u alıp) Türkiye Selçuklularını deniz imparatorluğu yaptı (Haziran 1211’de Menderes Antakyası [İbn Bîbî’de Alaşehir] Muharebesi’nde Laskaris ile savaşırken şehit düştü); Laskaris’in kurduğu İznik devleti 1261’de İstanbul’u geri aldı; Kraliçe Tamar’ın askerî ve siyasî desteğiyle Aleksios ve David Komnenos’un kurduğu Trabzon Rum İmparatorluğu ise 1461’de Fatih Sultan Mehmed’in fethine dek 257 yıl yaşadı.',
+    endDate: '1211 (Keyhüsrev) · 1213 (Tamar) · 1221/22 (Laskaris & Aleksios)',
   },
 ];
 
 export const post1204Fronts = [
   {
     id: 'partitio-romaniae-venice-empire',
-    tabTitle: 'Partitio Romaniae & Venedik Deniz İmparatorluğu',
-    period: '1204 – 1261 (Stato da Màr ve Latin Feodalitesi)',
+    tabTitle: 'Bizans Topraklarının Paylaşımı & Venedik Deniz İmparatorluğu',
+    period: '1204 – 1261 (Partitio terrarum imperii Romaniae ve Stato da Màr)',
     summary:
       'Mart–Ekim 1204 paylaşım antlaşmasıyla Doğu Roma bir yapboz gibi parçalandı: Latin İmparatoru I. Baudouin kâğıt üzerinde Trakya ve Kuzeybatı Anadolu’yu alırken Bulgar Çarı Kaloyan’ın 1205 Edirne zaferiyle Boğaz içine sıkıştı. Asıl büyük kazanan Venedik Cumhuriyeti oldu: Doj Dandolo iç kara toprakları yerine Adriyatik’ten Haliç’e uzanan zincirleme limanları —Korfu, Modon, Koron, Eğriboz (Negroponte), Kiklad Adaları, Girit (Candia) ve Konstantinopolis’in 3/8’ini— seçerek Akdeniz’in ilk modern kolonyal deniz imparatorluğunu (Stato da Màr) kurdu.',
     keyFact:
@@ -882,12 +886,12 @@ export const post1204Fronts = [
   },
   {
     id: 'tamar-trebizond-1204',
-    tabTitle: 'Nisan 1204 Kraliçe Tamar & Trabzon İmparatorluğu',
-    period: 'Nisan 1204 – 1461 (Gürcistan Altın Çağı ve Komnenoslar)',
+    tabTitle: 'Nisan 1204 Kraliçe Tamar Desteği & Trabzon Rum İmparatorluğu',
+    period: 'Nisan 1204 – 1461 (Gürcistan’ın Karadeniz Siyaseti ve Komnenos Kardeşler)',
     summary:
-      'Doç. Dr. Ayşe Beyza Ercan’ın araştırmalarında ayrıntılarıyla ortaya konulduğu üzere, 1185’te I. Andronikos Komnenos’un devrilmesi üzerine bebek yaştaki torunları Aleksios ve David Komnenos, Tiflis’e kaçırılıp öz teyzeleri (anneleri Rusudan’ın kız kardeşi; Trabzon vakanüvisi Mihail Panaretos’ta önceki hanedan evlilikleri sebebiyle baba tarafından hala [πρὸς πατρὸς θεία] olarak da anılan) Gürcistan Kraliçesi Tamar’ın sarayında Gürcü askeri ve kültürel terbiyesiyle yetiştirilmişti. III. Aleksios Angelos’un Antakya (Karadağ), Kıbrıs ve Aynoroz manastırlarından gelen keşişlere Tamar’ın bağışladığı altınlara el koymasını gerekçe gösteren Kraliçe Tamar, tam Haçlıların Konstantinopolis’e girdiği Nisan 1204’te Lih-İmereti (Batı Gürcistan) ordusunu Aleksios ve David’in emrine vererek Trabzon, Samsun, Sinop, Giresun, Kotyora (Ordu), Amasra ve Karadeniz Ereğlisi’ni zapt ettirdi.',
+      'Gürcü tarih yazıcılığında bağımsız iktidarı dolayısıyla kraliçe değil «Kral» (Mepe / მეფე) unvanıyla anılan Gürcistan hükümdarı Tamar, 1195 Şamkor ve 1202 Pasinler zaferlerinin ardından Gürcü Krallığı’nı denizlere açma siyaseti izledi. 1185’te I. Andronikos Komnenos’un devrilmesiyle küçük yaştaki torunları Aleksios ve David Komnenos Tiflis’e getirilip Bagratlı sarayında yetiştirilmişti (Komnenos kardeşlerin yeğenleri kabul edildiği Rusudan’ın Tamar’ın kız kardeşi olup olmadığı bilgisi Kartlis Tskhovreba’da yalnızca bir kez geçtiğinden, kronikteki daha ihtiyatlı «akrabası» vurgusu tarihsel açıdan esastır). III. Aleksios Angelos’un 1203’te Karadağ, Antakya, Kıbrıs ve Mukaddes Dağ (Aynoroz) keşişlerine Tamar’ın verdiği yüklü bağışa İstanbul’da el koymasını meşru gerekçe yapan Tamar, Nisan 1204 İstanbul işgalini fırsata çevirerek Lih-İmereti ordusunu Aleksios ve David’in emrine verdi; bu askerî ve siyasî destekle Trabzon, Samsun, Sinop, Giresun, Kotyora (Ordu), Amasra ve Karadeniz Ereğlisi ele geçirildi ve Aleksios ile David Komnenos kardeşler Trabzon Rum İmparatorluğu’nu kurdu.',
     keyFact:
-      'Kraliçe Tamar’ın Nisan 1204 hamlesiyle Karadeniz’de Gürcistan yanlısı tampon bir devlet olarak doğan Trabzon İmparatorluğu (Megas Komnenos hanedanı), 1261’de İstanbul geri alındıktan sonra bile bağımsızlığını korudu ve 1461’de II. Mehmed’in fethine kadar 257 yıl ayakta kaldı.',
+      '1204’te Trabzon Rum İmparatorluğu’nun kuruluşuna verilen bu destek ile 1210 Kuzey İran (Tebriz–Kazvin) seferi aynı stratejik bütünün parçalarıydı: Bizans’ın Karadeniz tekelini kırıp Tebriz–Tiflis–Trabzon uluslararası ticaret koridorunu güvenceye almak. Tamar’ın doğrudan yönetmediği, ancak kuruluşunun önünü açtığı Trabzon Rum İmparatorluğu 1461’de II. Mehmed’in fethine dek 257 yıl yaşadı.',
   },
   {
     id: 'seljuk-antalya-sinop-trade',
@@ -906,7 +910,7 @@ export const konstantinopolisPhilologySpotlight = {
   eastLabel: 'İSTANBUL ARKEOLOJİ SAHASI (AYASOFYA & BODRUM CAMİİ)',
   eastSource: 'Ayasofya 1847–1849 «Henricus Dandolo» Anı Levhası & 1965 Myrelaion Kazısı (İstanbul Arkeoloji Müzeleri, Env. 5848 T)',
   eastText:
-    'Ayasofya’nın güney üst galerisinde bugün görülen «Henricus Dandolo» yazılı mermer zemin levhası, Mayıs 1205’te kiliseye defnedilen Venedik Doju’nun anısına 1847–1849 Fossati restorasyonunda yerleştirilmiş bir anı taşıdır (kenotaf). Çok daha sarsıcı maddi kanıt ise 1965 yılında Rudolf Naumann’ın İstanbul Laleli’deki Myrelaion Sarayı (Bodrum Camii) kazısında çıktı: Kırmızı Mısır porfirinden (somaki taşından) yontulmuş, mücevherli imparatorluk çizmesi (campagi) giymiş bir sağ topuk ve kaide köşesi!',
+    'Ayasofya’nın güney üst galerisinde bugün görülen «Henricus Dandolo» yazılı mermer zemin levhası, Mayıs sonu / Haziran 1205’te kiliseye defnedilen Venedik Doju’nun anısına 1847–1849 Fossati restorasyonunda yerleştirilmiş bir anı taşıdır (kenotaf). Çok daha sarsıcı maddi kanıt ise 1965 yılında Rudolf Naumann’ın İstanbul Laleli’deki Myrelaion Sarayı (Bodrum Camii) kazısında çıktı: Kırmızı Mısır porfirinden (somaki taşından) yontulmuş, mücevherli imparatorluk çizmesi (campagi) giymiş bir sağ topuk ve kaide köşesi!',
   westLabel: 'VENEDİK SAN MARCO HAZİNE KÖŞESİ',
   westSource: 'Basilica di San Marco (Porta della Carta Köşesi · M.S. ~300 Porfir Tetrarşi Grubu)',
   westText:
@@ -957,8 +961,8 @@ export const konstantinopolisBalanceRows = [
 export const konstantinopolisPrimarySources = [
   {
     name: 'Geoffroi de Villehardouin — La Conquête de Constantinople',
-    side: 'Haçlı Yüksek Komuta Konseyi / Şampanya Mareşali (ykl. 1150–1213)',
-    desc: '1201 Venedik antlaşmasını bizzat müzakere eden altı elçiden biri ve ordunun mareşali. Eski Fransızca nesrin ilk büyük tarih eseri olan kroniğinde 85.000 marklık sözleşmeyi, Lido borç krizini, Zara ve Korfu tartışmalarını, 12 Nisan 1204 deniz surları hücumunu ve 1205 Edirne bozgununu içeriden belgeler.',
+    side: 'Champagne Mareşali (ykl. 1150–1213)',
+    desc: '1201 Venedik antlaşmasını bizzat müzakere eden altı elçiden biri ve Haçlı ordusunun önde gelen komutanlarından Champagne Mareşali. Eski Fransızca nesrin ilk büyük tarih eseri olan kroniğinde 85.000 marklık sözleşmeyi, Lido borç krizini, Zara ve Korfu tartışmalarını, 12 Nisan 1204 deniz surları hücumunu ve 1205 Edirne bozgununu içeriden belgeler.',
   },
   {
     name: 'Niketas Khoniates — Historia (Chronike Diegesis) & De Signis',
@@ -976,9 +980,9 @@ export const konstantinopolisPrimarySources = [
     desc: 'Seferi başlatan Papa’nın Zara kuşatmasını yasaklayan aforoz mektupları ile Temmuz–Ağustos 1205’te (Reg. VIII.126 & VIII.133, PL 215, col. 701, 712) Konstantinopolis’teki kilise yağmasını, kadınlara yapılan saldırıları ve Doğu–Batı kilise birliğinin nasıl baltalandığını ("ut jam merito illos abhorreat plus quam canes") kınayan resmi yazışmaları.',
   },
   {
-    name: 'Kartlis Tskhovreba — İstoriani da Azmani Şaravandedtani (Kraliçe Tamar’ın Tarihi)',
-    side: 'Kafkasya / Gürcü Kraliyet Kroniği (13. Yüzyıl Başı)',
-    desc: 'Kraliçe Tamar’ın çağdaş vakanüvisi; III. Aleksios Angelos’un Antakya, Kıbrıs ve Aynoroz manastırlarındaki keşişlere gönderilen altınları gasp etmesi üzerine Kraliçe Tamar’ın Nisan 1204’te Lih-İmereti ordusunu yeğeni Aleksios Komnenos ile göndererek Trabzon, Samsun, Sinop, Giresun, Kotyora (Ordu), Amasra ve Ereğli’yi zapt ettirip Trabzon İmparatorluğu’nu kurdurduğunu (c. II, s. 112) belgeler.',
+    name: 'Kartlis Tskhovreba — İstoriani da Azmani Şaravandedtani (Hükümdarların Tarihi ve Methiyeleri)',
+    side: 'Kraliçe Tamar Dönemi / Anonim Gürcü Kroniği (13. Yüzyıl Başı)',
+    desc: 'Kraliçe Tamar dönemine ait Gürcü kronik geleneği; III. Aleksios Angelos’un 1203’te Karadağ, Antakya, Kıbrıs ve Mukaddes Dağ (Aynoroz) manastırlarındaki keşişlere gönderilen altınları İstanbul’da gasp etmesi üzerine Tamar’ın Nisan 1204’te Lih-İmereti ordusunu akrabası Aleksios Komnenos ile göndererek Trabzon, Samsun, Sinop, Giresun, Kotyora (Ordu), Amasra ve Ereğli’nin zaptına ve Aleksios–David Komnenos kardeşlerin Trabzon Rum İmparatorluğu’nu kurmasına nasıl destek verdiğini (Vakhtang VI redaksiyonu TTK 2003 çev., s. 412; S. Qaukhchishvili 1959 neşrinde Basili Ezosmodzghvari bölümü, c. II, s. 142–143; İng. çev. Vivian 1991, s. 87 & Metreveli–Jones 2014, s. 300) belgeler.',
   },
   {
     name: 'Gunther von Pairis (Historia Constantinopolitana) & Devastatio Constantinopolitana',
@@ -998,4 +1002,4 @@ export const konstantinopolisPrimarySources = [
 ];
 
 export const konstantinopolisModernRefsHtml =
-  '<strong>Çağdaş Araştırmalar:</strong> Işın Demirkent (<em>Haçlı Seferleri Tarihi</em>, Dünya Yay., 1997; <em>Niketas Khoniates’in Historia’sı (1195–1206): İstanbul’un Haçlılar Tarafından Zaptı ve Yağmalanması</em>, Dünya Yay., 2004), Georg Ostrogorsky (<em>Bizans Devleti Tarihi</em>, çev. Fikret Işıltan, TTK, 1981), Donald E. Queller &amp; Thomas F. Madden (<em>The Fourth Crusade: The Conquest of Constantinople</em>, 2. bs., University of Pennsylvania Press, 1997; Thomas F. Madden, <em>Enrico Dandolo and the Rise of Venice</em>, Johns Hopkins University Press, 2003), Alfred J. Andrea (<em>Contemporary Sources for the Fourth Crusade</em>, Brill, 2000), Jonathan Phillips (<em>The Fourth Crusade and the Sack of Constantinople</em>, Viking/Penguin, 2004), Michael Angold (<em>The Fourth Crusade: Event and Context</em>, Longman, 2003; <em>A Byzantine Government in Exile: Government and Society under the Laskarids of Nicaea, 1204–1261</em>, Oxford University Press, 1975), Paul Magdalino (<em>The Empire of Manuel I Komnenos, 1143–1180</em>, Cambridge University Press, 1993), Ayşe Beyza Ercan (<em>Altın Çağ Dönemi Gürcistan’ının Dâhilî ve Haricî Politikaları</em>, Sonçağ Akademi, Ankara, 2023; [Büyükçınar], <em>“Gürcü Kaynaklarına Göre Gürcistan Altın Çağ Döneminin Son Hükümdarı: Kraliçe Tamar”</em>, Karadeniz Araştırmaları Enstitüsü Dergisi (KAREN), c. 3, sy. 4, 2017, s. 31–46; <em>“The Byzantine Empire in the Kingdom of Georgia’s Foreign Policy in the 11th Century”</em>, KAED, vol. 6, no. 11, pp. 331–344, Dec. 2020), A. A. Vasiliev (<em>“The Foundation of the Empire of Trebizond (1204–1222)”</em>, Speculum, c. 11, sy. 1, 1936, s. 3–37), Cyril Toumanoff (<em>“On the Relationship between the Founder of the Empire of Trebizond and the Georgian Queen Thamar”</em>, Speculum, c. 15, sy. 3, 1940, s. 299–312), Rustam Shukurov (<em>The Byzantine Turks, 1204–1461</em>, Brill, 2016), Osman Turan (<em>Selçuklular Zamanında Türkiye: Siyasî Tarih Alp Arslan’dan Osman Gazi’ye 1071–1318</em>, 1971), Rudolf Naumann (<em>“Der antike Rundbau beim Myrelaion und der Palast Romanos I. Lekapenos”</em>, Istanbuler Mitteilungen, c. 16, 1966, s. 199–216), Edmond Faral (<em>Villehardouin: La Conquête de Constantinople</em>, 2 cilt, Les Belles Lettres, 1938–1939), Philippe Lauer (<em>Robert de Clari: La Conquête de Constantinople</em>, CFMA 40, Champion, 1924), Jan-Louis van Dieten (<em>Nicetae Choniatae Historia</em>, CFHB XI/1–2, De Gruyter, 1975) ve Harry J. Magoulias (<em>O City of Byzantium, Annals of Niketas Choniates</em>, Wayne State University Press, 1984).';
+  '<strong>Çağdaş Araştırmalar:</strong> Işın Demirkent (<em>Haçlı Seferleri Tarihi</em>, Dünya Yay., 1997; <em>Niketas Khoniates’in Historia’sı (1195–1206): İstanbul’un Haçlılar Tarafından Zaptı ve Yağmalanması</em>, Dünya Yay., 2004), Georg Ostrogorsky (<em>Bizans Devleti Tarihi</em>, çev. Fikret Işıltan, TTK, 1981), Donald E. Queller &amp; Thomas F. Madden (<em>The Fourth Crusade: The Conquest of Constantinople</em>, 2. bs., University of Pennsylvania Press, 1997; Thomas F. Madden, <em>Enrico Dandolo and the Rise of Venice</em>, Johns Hopkins University Press, 2003), Alfred J. Andrea (<em>Contemporary Sources for the Fourth Crusade</em>, Brill, 2000), Jonathan Phillips (<em>The Fourth Crusade and the Sack of Constantinople</em>, Viking/Penguin, 2004), Michael Angold (<em>The Fourth Crusade: Event and Context</em>, Longman, 2003; <em>A Byzantine Government in Exile: Government and Society under the Laskarids of Nicaea, 1204–1261</em>, Oxford University Press, 1975), Paul Magdalino (<em>The Empire of Manuel I Komnenos, 1143–1180</em>, Cambridge University Press, 1993), Ayşe Beyza Ercan (<em>“Gürcü Krallığında Kadın Kral Tamar ve İktidarı”</em>, <em>Ortaçağda Kadın: Hırs, Tutku ve Hakimiyet</em> içinde, ed. Tülay Metin – Songül Dumlupınar Alican, Kronik Kitap, İstanbul, Aralık 2024, s. 168–188; <em>Altın Çağ Dönemi Gürcistan’ının Dâhilî ve Haricî Politikaları</em>, Sonçağ Yayınları, Ankara, 2023; [Büyükçınar], <em>“Gürcü Kaynaklarına Göre Gürcistan Altın Çağ Döneminin Son Hükümdarı: Kraliçe Tamar”</em>, Karadeniz Araştırmaları Enstitüsü Dergisi (KAREN), c. 3, sy. 4, 2017, s. 31–46; <em>“The Byzantine Empire in the Kingdom of Georgia’s Foreign Policy in the 11th Century”</em>, Karadeniz Araştırmaları Enstitüsü Dergisi (KAREN), vol. 6, no. 11, pp. 331–344, Dec. 2020), <em>Gürcistan Tarihi (Eski Çağlardan 1212 Yılına Kadar)</em> (çev. Marie Félicité Brosset – Hrand D. Andreasyan, not ve yay. haz. Erdoğan Merçil, TTK Yay., Ankara, 2003), Murat Keçiş (<em>Trabzon Rum İmparatorluğu ve Türkler (1204–1404)</em>, TTK Yay., Ankara, 2013), Manana Gabachvili (<em>“La Politique de la reine Thamar envers la Perse et l’Occident”</em>, Ilia State University Press, 2020, s. 302–310), A. A. Vasiliev (<em>“The Foundation of the Empire of Trebizond (1204–1222)”</em>, Speculum, c. 11, sy. 1, 1936, s. 3–37), Cyril Toumanoff (<em>“On the Relationship between the Founder of the Empire of Trebizond and the Georgian Queen Thamar”</em>, Speculum, c. 15, sy. 3, 1940, s. 299–312), Rustam Shukurov (<em>The Byzantine Turks, 1204–1461</em>, Brill, 2016), Osman Turan (<em>Selçuklular Zamanında Türkiye: Siyasî Tarih Alp Arslan’dan Osman Gazi’ye 1071–1318</em>, 1971), Rudolf Naumann (<em>“Der antike Rundbau beim Myrelaion und der Palast Romanos I. Lekapenos”</em>, Istanbuler Mitteilungen, c. 16, 1966, s. 199–216), Edmond Faral (<em>Villehardouin: La Conquête de Constantinople</em>, 2 cilt, Les Belles Lettres, 1938–1939), Philippe Lauer (<em>Robert de Clari: La Conquête de Constantinople</em>, CFMA 40, Champion, 1924), Jan-Louis van Dieten (<em>Nicetae Choniatae Historia</em>, CFHB XI/1–2, De Gruyter, 1975) ve Harry J. Magoulias (<em>O City of Byzantium, Annals of Niketas Choniates</em>, Wayne State University Press, 1984).';

@@ -301,6 +301,8 @@ const slides: ArchiveSlide[] = [
 </section>
 
 <script>
+  import { onPageReady } from '../utils/onPageReady';
+
   let cleanupCarousel: (() => void) | null = null;
 
   function initAtaturkCarousel() {
@@ -454,7 +456,7 @@ const slides: ArchiveSlide[] = [
     };
   }
 
-  document.addEventListener('astro:page-load', initAtaturkCarousel);
+  onPageReady(initAtaturkCarousel);
   document.addEventListener('astro:before-swap', () => {
     if (cleanupCarousel) {
       cleanupCarousel();

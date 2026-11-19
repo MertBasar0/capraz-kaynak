@@ -340,7 +340,7 @@ export const malazgirtMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Sıbt İbnü’l-Cevzî, Mir’âtü’z-Zamân fî Târîhi’l-A‘yân (456 h., Nakîbü’n-nükabâ Ebû’l-Fevâris’in Anı Mektubu; Arapça aslından çev. Ali Sevim, TTK Belgeler XIX/23, 1998, s. 10)',
+        'Doğrudan Alıntı (Çeviri) · Sıbt İbnü’l-Cevzî, Mir’âtü’z-Zamân fî Târîhi’l-A‘yân (456 h., Nakîbü’n-nükabâ Ebû’l-Fevâris’in Anı Mektubu; nşr. Ali Sevim, TTK Belgeler XIV/18, 1992, s. 134; çev. Ali Sevim, TTK Belgeler XIX/23, 1998, s. 10)',
       text: '«Ben, bu beldede (Anı) korkunç bir görünüme tanık oldum; burasının fethi, hayal bile edilemez; hiçbir hükümdarın burasını almak için harekete geçtiği, şimdiye dek zikredilmemiştir. Bu şehrin üç bölümünü büyük Aras ırmağı, öteki bir bölümünü de Aras’tan alınan su ile dolu bir hendek çevirmektedir. [...] Şehrin surları sert granit taşından yapılmıştır; bu nedenle buraya ulaşmak, çok uzak bir ihtimaldir. [...] Tanrı’nın inayeti olmaksızın burayı almak, asla mümkün değildir.»',
       tone: 'east',
     },
@@ -373,7 +373,7 @@ export const malazgirtMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Kemâleddin İbnü’l-Adîm, Zübdetü’l-Haleb min Târîhi Haleb (463 h. Fırat Geçişi; Arapça aslından çeviri, nşr. Sâmî ed-Dehhân, c. II, s. 20)',
+        'Doğrudan Alıntı (Çeviri) · Kemâleddin İbnü’l-Adîm, Zübdetü’l-Haleb min Târîhi Haleb (463 h. İlk Fırat Geçişi, Ocak 1071; nşr. Sâmî ed-Dehhân, Şam 1954, c. II, s. 20; dönüş geçişi: s. 22–23; krş. Buğyetü’t-Taleb, Sümer & Sevim, TTK 1971, Metinler s. 39, Tercümeler s. 45)',
       text: '«Fakih Ebû Ca‘fer [el-Buhârî] Sultan’a şöyle dedi: "Efendimiz! Bu nimetten ötürü Yüce Allah’a hamd yükseltiniz; o da şudur ki bu nehri [Fırat’ı] şimdiye dek memlûk [köle] olmayan hiçbir Türk geçmemişti, siz ise onu bir hükümdar [melik] olarak geçtiniz!"»',
       tone: 'east',
     },
@@ -406,7 +406,7 @@ export const malazgirtMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Mihail Attaleiates, Historia (§20.5, Bonn nşr. s. 148 · Theodosioupolis / Erzurum; Ortaçağ Yunancası aslından çeviri, krş. Kaldellis & Krallis 2012)',
+        'Doğrudan Alıntı (Çeviri) · Mihail Attaleiates, Historia (§20.5, Bonn nşr. E. Bekker 1853, s. 148; CFHB 50 nşr. E. Tsolakis 2011, s. 115 · Theodosioupolis / Erzurum; krş. Kaldellis & Krallis 2012, s. 268–271)',
       text: '«İmparator orada [Theodosioupolis’te] azımsanmayacak sayıda gün kaldıktan sonra, ıssız ve kavimler [Türkler] tarafından çiğnenmiş bir ülkeden geçecekleri için herkesin iki aylık erzakla donanmasını tellallarla ilan ettirdi.»',
       tone: 'west',
     },
@@ -437,7 +437,8 @@ export const malazgirtMapSteps: MapStep[] = [
       'Oysa Alp Arslan, Vezir Nizâmülmülk’ü hazineyle Hemedan’a yollamış; Meyyâfârikîn Mervânî coğrafyasından katılan <strong>10.000 Kürt/yerel muharip</strong>, Ahlat halkının desteği ve Türkmen süvarileriyle bizzat bölgeye inmişti! Türkmen öncü beyi <strong>Sunduk et-Türkî</strong>’nin baskısıyla karşılaşan Tarkhaniotes ve Roussel, imparatorun acil geri çağrı emrine uymak yerine <strong>hiç haber vermeden Muş–Malatya üzerinden batıya çekildi</strong>. Romanos bir anda Rahve Ovası’nda yarı yarıya erimiş bir orduyla yalnız kaldı.',
     ],
     highlightNote: {
-      source: 'Kaynak Özeti · Mihail Attaleiates, Historia (§20.9–16 · Görgü Tanığı Kaydı)',
+      source:
+        'Kaynak Özeti · Mihail Attaleiates, Historia (§20.6–17, Bonn nşr. s. 149–159; CFHB 50, s. 115–122 · Görgü Tanığı Kaydı)',
       text: 'Attaleiates’in kaydına göre, Türk kuvvetlerini sayıca az sanan İmparator, kendi yanındaki birliklerden çok daha seçkin ve savaşçı olan büyük bir kolu İoseph Tarkhaniotes emrinde Ahlat üzerine ayırdı; ancak öncü baskısıyla karşılaşan bu komutanlar İmparator’un yardımına dönmek yerine Mezopotamya üzerinden Roma topraklarına çekilerek ana orduyu yalnız bıraktı.',
       tone: 'west',
     },
@@ -469,8 +470,8 @@ export const malazgirtMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · İzzeddin İbnü’l-Esîr, el-Kâmil fi’t-Târîh (463 h. Elçilik Kaydı; Arapça aslından çeviri, krş. Sümer & Sevim 1971)',
-      text: '«Rum Kralı İbnü’l-Muhallebân’a: "Hemedan mı daha güzeldir, İsfahan mı?" diye sordu; o da "İsfahan" dedi. Kral: "Bize Hemedan’ın çok soğuk olduğu ulaştı; öyleyse biz İsfahan’da kışlarız, hayvanlarımız da Hemedan’da!" dedi. İbnü’l-Muhallebân ise ona: "Hayvanlarınızın Hemedan’da kışlayacağı doğrudur; fakat sizin nerede kışlayacağınızı bilemem!" karşılığını verdi.»',
+        'Doğrudan Alıntı (Çeviri) · İbnü’l-Ezrak el-Fârikî, Târîhu Meyyâfârikîn ve Âmid (463 h. Elçilik Kaydı; nşr. B. A. Avad, Kahire 1959, s. 189–190; çev. F. Sümer & A. Sevim, TTK 1971, Metinler s. 4, Tercümeler s. 4)',
+      text: '«İbnü’l-Muhallebân Sultan’ın yanından Rum Kralı’na gitti; Kral ona memleketler ve durumları hakkında sordu ve: "Bana haber ver, İsfahan mı daha güzeldir yoksa Hemedan mı?" dedi. O da: "İsfahan" dedi. Kral: "Bize Hemedan’ın çok soğuk olduğu ulaştı" deyince, "Öyledir" dedi. Bunun üzerine Kral: "Öyleyse biz İsfahan’da kışlarız, hayvanlar [atlar] ise Hemedan’da!" dedi. İbnü’l-Muhallebân ise ona: "Hayvanların Hemedan’da kışlayacağı doğrudur; fakat senin [nerede kışlayacağını] bilemem!" karşılığını verdi.»',
       tone: 'witness',
     },
     camera: {
@@ -501,8 +502,8 @@ export const malazgirtMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Mihail Attaleiates, Historia (§20.22–23, Bonn nşr. s. 161–163; Ortaçağ Yunancası aslından çeviri, krş. Kaldellis & Krallis 2012)',
-      text: '«[...] Bu yüzden imparatorluk sancağını geriye çevirerek dönüşü hatırlamalarını buyurdu. [...] Ona pusu kuranlardan biri —İmparator’un üvey oğlu Mihail’in kuzeni [Andronikos Dukas]— ona karşı önceden tasarladığı komployu taşıyarak bu [yenilgi] sözünü askerler arasında bizzat yaydı. [...] Yardımdan bütünüyle yoksun bırakılan İmparator kılıcını kınından çekti [...] elinden yaralanır [...] Romalıların İmparatoru mızrak zoruyla esir düşer ve bağlı olarak Sultan’a götürülür.»',
+        'Doğrudan Alıntı (Çeviri) · Mihail Attaleiates, Historia (§20.21–23, Bonn nşr. E. Bekker 1853, s. 161, 163; CFHB 50 nşr. E. Tsolakis 2011, s. 124–126; krş. Kaldellis & Krallis 2012, s. 290–295)',
+      text: '«[...] Bu yüzden imparatorluk sancağını geriye çevirerek dönüşü hatırlamalarını buyurdu. [...] Ona pusu kuranlardan biri —İmparator’un üvey oğlu Mihail’in kuzeni [Andronikos Dukas]— ona karşı önceden tasarladığı komployu taşıyarak bu [yenilgi] sözünü askerler arasında bizzat yaydı. [...] Düşmanlar İmparator’u çepeçevre kuşattılarsa da onu hemen kolayca alt edemediler [...] pek çoğunu öldürdükten sonra nihayet elinden kılıçla yaralandı, atının da oklarla vurulup devrilmesi üzerine yaya olarak çarpışmayı sürdürdü. Ne var ki akşama doğru bitkin düşerek —eyvahlar olsun bu felakete!— esir düştü.»',
       tone: 'witness',
     },
     camera: {
@@ -533,7 +534,7 @@ export const malazgirtMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Kaynak Özeti · Mihail Attaleiates (Historia, §21.8–9), Sıbt İbnü’l-Cevzî (Mir’âtü’z-Zamân, 464 h.) & İbnü’l-Esîr (el-Kâmil fi’t-Târîh)',
+        'Kaynak Özeti · Mihail Attaleiates (Historia, §21.8–9, Bonn nşr. s. 177–179; CFHB 50, s. 137–139), Sıbt İbnü’l-Cevzî (Mir’âtü’z-Zamân, 464 h., TTK Belgeler XIV/18, s. 174–175; XIX/23, s. 42) & İbnü’l-Esîr (el-Kâmil, nşr. Tornberg c. X, s. 44; Dâr Sâdır c. X, s. 66–67)',
       text: 'Üç metropolitin yeminli güvencesine rağmen Dukas iktidarı Kütahya’da Romanos’un gözlerine mil çektirdi; esir imparator elinde kalan 200.000 altın ve mücevherli kapları sözüne sadakatle Sultan’a gönderdiyse de Konstantinopolis darbesiyle 50 yıllık antlaşma fiilen hükümsüz kaldı ve Anadolu içlerine yönelik Selçuklu–Türkmen harekâtının önü açıldı.',
       tone: 'east',
     },
@@ -576,10 +577,10 @@ export const malazgirtPropagandaCases: PropagandaCase[] = [
     title: '«Uz ve Peçeneklerin Tamamı Savaşın Ortasında Alp Arslan Safına Geçti» İddiası',
     verdict: '50 Yıl Sonraki Abartı · Görgü Tanığı Yalanlıyor',
     claimTag: 'YARIM ASIR SONRAKİ ERMENİ KRONİĞİNDEKİ İDDİA ÖZETİ',
-    claimSource: 'Kaynak Özeti · Urfalı Mateos Vekâyinâmesi (ykl. 1120’ler–1130’lar, olaydan ~50–60 yıl sonra)',
+    claimSource: 'Kaynak Özeti · Urfalı Mateos Vekâyinâmesi (II. Kısım, §37, 520 Erm. / 1071; çev. H. D. Andreasyan, TTK 1962, s. 141–145)',
     claimQuote:
       'Urfalı Mateos anlatısının özeti: Muharebenin en şiddetli anında İmparator’un sağ ve sol kanadında yer alan Uz ile Peçenek paralı askerlerinin savaş ortasında topluca Selçuklu safına geçerek Bizans ordusunu çökerttiği ileri sürülür.',
-    critiqueSource: 'Savaş Meydanındaki Görgü Tanığı Mihail Attaleiates (Historia, §20.18–23)',
+    critiqueSource: 'Savaş Meydanındaki Görgü Tanığı Mihail Attaleiates (Historia, §20.16–23, Bonn nşr. s. 157–164; CFHB 50, s. 122–126)',
     critiqueAnalysis:
       'Kampta bizzat bulunan yüksek yargıç Attaleiates gerçeği gün gün kaydeder: Savaş gününden iki gün önce (24 Ağustos) Bryennios kolundaki küçük bir Uz bölüğü karşıdaki soydaşlarına katılmıştır. Bunun üzerine bizzat Attaleiates kalan Uzlara kendi ata töreleriyle sadakat yemini ettirmiş ve Uzların büyük çoğunluğu 26 Ağustos akşamına dek Bizans safında sadakatle savaşmıştır! Asıl çöküşü yaratan Türk paralı askerlerin ihaneti değil, Bizanslı aristokrat Andronikos Dukas’ın ihtiyat tümenlerini meydandan kaçırmasıdır.',
   },
@@ -620,7 +621,7 @@ export const malazgirtVerifiedFacts = [
   },
   {
     title: '2. Sekiz Günlük «Tuz ve Söz Ortaklığı» ile Onurlu Çadır Antlaşması',
-    sources: 'Mihail Attaleiates (§20.24–25) & İbnü’l-Cevzî (el-Muntazam, c. XVI)',
+    sources: 'Mihail Attaleiates (§20.24–25, Bonn s. 164–166) & İbnü’l-Cevzî (el-Muntazam, Haydarâbâd c. VIII, s. 260–265; Beyrut 1992, c. XVI, s. 125–128)',
     detail:
       'Karşı cephenin görgü tanığı Attaleiates, Alp Arslan’ın esir Romanos’u aşağılamak şöyle dursun sekiz gün kendi sofrasında ağırladığını, yakın dostlarının esirlerini fidyesiz bağışladığını ve Tanrı’nın kibirli tarafı değil adil davranan tarafı muzaffer kıldığını açıkça yazar.',
   },
@@ -667,7 +668,7 @@ export const malazgirtStrategicReasons = {
     {
       num: '03',
       title: '1064–1068 Kafkasya Seferleriyle Kuzey Kanadının Güvenceye Alınmış Olması',
-      text: 'Doç. Dr. Ayşe Beyza Ercan’ın ortaya koyduğu üzere Alp Arslan 1064 Ahılkelek–Ani fethi ve 1068 seferi sonunda Gürcü Kralı IV. Bagrat ile diplomatik denge kurmuştu; böylece 1071’de Kuzey Kafkasya/Gürcistan cephesinden Bizans’a hiçbir takviye gelmedi.',
+      text: 'Alp Arslan 1064 Ahılkelek–Ani fethi ve 1068 seferi sonunda Gürcü Kralı IV. Bagrat ile diplomatik denge kurmuştu; böylece 1071’de Kuzey Kafkasya/Gürcistan cephesinden Bizans’a hiçbir takviye gelmedi.',
     },
     {
       num: '04',
@@ -720,16 +721,16 @@ export const malazgirtChronicleStages: ChronicleStage[] = [
     bannerVisual: malazgirtHeroVisuals.battleManzikert4A,
     east: {
       pill: 'SELÇUKLU / İSLAM CEPHESİ ANA KAYDI',
-      date: '27 Zilkade 463 Cuma · el-Kâmil fi’t-Târîh',
-      titleHtml: 'İzzeddin İbnü’l-Esîr · <em>el-Kâmil fi’t-Târîh</em>',
+      date: '27 Zilkade 463 Cuma · el-Kâmil & el-Muntazam',
+      titleHtml: 'İbnü’l-Esîr · <em>el-Kâmil</em> &amp; İbnü’l-Cevzî · <em>el-Muntazam</em>',
       authorDesc:
-        'Cuma hutbesi vaktindeki beyaz kefen hitabetini ve saray gulâmı Şâdî’nin teşhisini aktaran klasik İslam vekâyinâmesi (Arapça aslından doğrudan çeviri; 463 h. kaydı, krş. Sümer & Sevim 1971).',
+        'Cuma hutbesi vaktindeki beyaz kefen hitabetini (el-Kâmil, nşr. Tornberg c. X, s. 43; Dâr Sâdır c. X, s. 65–66) ve gulâm Şâzî/Şâdî’nin esir teşhisini (el-Muntazam, Haydarâbâd c. VIII, s. 262; Beyrut 1992, c. XVI, s. 125; krş. Sümer & Sevim, TTK 1971, Metinler s. 13, 22–23, Tercümeler s. 14, 25–26) aktaran birincil İslam vekâyinâmeleri.',
       origLang: 'ar',
       origScript:
-        '«فَلَمَّا كَانَتْ تِلْكَ السَّاعَةُ صَلَّى بِهِمْ، وَبَكَى السُّلْطَانُ [...] وَقَالَ لَهُمْ: «مَنْ أَرَادَ الِانْصِرَافَ فَلْيَنْصَرِفْ، فَمَا هَاهُنَا سُلْطَانٌ يَأْمُرُ وَيَنْهَى»، وَأَلْقَى الْقَوْسَ وَالنُّشَّابَ، وَأَخَذَ السَّيْفَ وَالدَّبُوسَ، وَعَقَدَ ذَنَبَ فَرَسِهِ بِيَدِهِ، وَفَعَلَ عَسْكَرُهُ مِثْلَهُ، وَلَبِسَ الْبَيَاضَ، وَتَحَنَّطَ، وَقَالَ: «إِنْ قُتِلْتُ فَهَذَا كَفَنِي» [...] وَأُسِرَ مَلِكُ الرُّومِ، أَسَرَهُ بَعْضُ غِلْمَانِ كُوهَرَائِينَ [...] وَاسْتَحْضَرَ غُلَامًا يُسَمَّى «شَادِي» كَانَ مَضَى دَفَعَاتٍ مَعَ الرُّسُلِ إِلَى مَلِكِ الرُّومِ، فَمَضَى فَرَآهُ ثُمَّ عَادَ فَقَالَ: «هُوَ هُوَ!».»',
+        '«فَلَمَّا كَانَتْ تِلْكَ السَّاعَةُ صَلَّى بِهِمْ، وَبَكَى السُّلْطَانُ [...] وَقَالَ لَهُمْ: «مَنْ أَرَادَ الِانْصِرَافَ فَلْيَنْصَرِفْ، فَمَا هَاهُنَا سُلْطَانٌ يَأْمُرُ وَيَنْهَى»، وَأَلْقَى الْقَوْسَ وَالنُّشَّابَ، وَأَخَذَ السَّيْفَ وَالدَّبُوسَ، وَعَقَدَ ذَنَبَ فَرَسِهِ بِيَدِهِ، وَفَعَلَ عَسْكَرُهُ مِثْلَهُ، وَلَبِسَ الْبَيَاضَ، وَتَحَنَّطَ، وَقَالَ: «إِنْ قُتِلْتُ فَهَذَا كَفَنِي» [...] وَأُسِرَ مَلِكُ الرُّومِ، أَسَرَهُ بَعْضُ غِلْمَانِ كُوهَرَائِينَ [...] [المنتظم]: وَاسْتَحْضَرَ غُلَامًا يُسَمَّى «شَاذِي» كَانَ مَضَى دَفَعَاتٍ مَعَ الرُّسُلِ إِلَى مَلِكِ الرُّومِ [...] فَمَضَى فَرَآهُ ثُمَّ عَادَ فَقَالَ: «هُوَ هُوَ!».»',
       translationParagraphsHtml: [
         '«O saat [hatiplerin minberlerde mücahitlere dua ettikleri Cuma vakti] gelince Sultan onlara namaz kıldırdı ve ağladı [...] Onlara: <mark class="hl-east">"Kim ayrılıp gitmek isterse gitsin; zira burada emreden ve yasaklayan bir sultan yoktur!"</mark> dedi. Yayını ve oklarını bıraktı, kılıcını ve topuzunu [<em>debbûs</em>] aldı, atının kuyruğunu kendi eliyle bağladı; askeri de onun gibi yaptı. <mark class="hl-east">Beyazlar giydi, kefenlik ıtır [hanût] süründü ve: "Eğer öldürülürsem bu benim kefenimdir!"</mark> dedi.»',
-        '«[...] Rum Kralı esir alındı; <mark class="hl-east">onu [Sa‘düddevle] Gevherâyin’in —vaktiyle Nizâmülmülk’ün teftişte küçük görüp "Belki bize Rum kralını esir getirir!" diye istihza ettiği— gulâmlarından biri yakaladı.</mark> [...] [Sultan] elçilerle birlikte defalarca Rum Kralı’nın huzuruna gitmiş olan <strong>"Şâdî"</strong> adlı gulâmı getirtti; o da gidip onu gördü, sonra dönüp: <strong>"Odur, bizzat kendisidir!"</strong> dedi.»',
+        '«[...] Rum Kralı esir alındı; <mark class="hl-east">onu [Sa‘düddevle] Gevherâyin’in —vaktiyle Nizâmülmülk’ün teftişte küçük görüp "Belki bize Rum kralını esir getirir!" diye istihza ettiği— gulâmlarından biri yakaladı.</mark> [...] <strong>[el-Muntazam, c. XVI, s. 125]:</strong> [Sultan] elçilerle birlikte defalarca Rum Kralı’nın huzuruna gitmiş olan <strong>"Şâzî [Şâdî]"</strong> adlı gulâmı getirtti [...] o da gidip onu gördü, sonra dönüp: <strong>"Odur, bizzat kendisidir!"</strong> dedi.»',
       ],
     },
     west: {
@@ -737,13 +738,13 @@ export const malazgirtChronicleStages: ChronicleStage[] = [
       date: '26 Ağustos 1071 Akşamüstü · Historia §20.21–23',
       titleHtml: 'Mihail Attaleiates · <em>Historia (Tarih)</em>',
       authorDesc:
-        'Romanos Diogenes’in savaş divanında bizzat bulunan Bizans yüksek askeri yargıcı (Ortaçağ Yunancası aslından doğrudan çeviri; Bonn nşr. s. 161–163, krş. Kaldellis & Krallis 2012).',
+        'Romanos Diogenes’in savaş divanında bizzat bulunan Bizans yüksek askeri yargıcı (Ortaçağ Yunancası aslından doğrudan çeviri; Bonn nşr. E. Bekker 1853, s. 161, 163; CFHB 50 nşr. E. Tsolakis 2011, s. 124–126; krş. Kaldellis & Krallis 2012, s. 290–295).',
       origLang: 'el',
       origScript:
-        '«[...] καὶ τηνικαῦτα οἱ Τοῦρκοι παλίντροπον θήσουσι τὴν φυγήν, ἑκηβόλοι τυγχάνοντες. Διὰ ταῦτα καὶ τὴν βασιλικὴν σημαίαν ἐπιστρέψας, νόστου ἐπιμνησθῆναι διήγγελλεν [...] τῶν ἐφεδρευόντων αὐτῷ τις, ἐξάδελφος ὢν τῷ τοῦ βασιλέως προγονῷ Μιχαήλ, προβεβουλευμένην ἔχων τὴν κατὰ τούτου ἐπιβουλήν, αὐτὸς τὸν τοιοῦτον λόγον τοῖς στρατιώταις διέσπειρε [...] Ὁ δὲ βασιλεὺς παντάπασιν ἔρημος ἀπολειφθεὶς βοηθείας τὸ ξίφος ἐγύμνωσεν [...] τὴν χεῖρα τιτρώσκεται [...] δορυάλωτος ὁ βασιλεὺς Ῥωμαίων γίνεται καὶ πρὸς τὸν σουλτάνον ἀποκομίζεται δέσμιος.»',
+        '«[...] καὶ τηνικαῦτα οἱ Τοῦρκοι παλίντροπον θήσουσι τὴν φυγήν, ἑκηβόλοι τυγχάνοντες. Διὰ ταῦτα καὶ τὴν βασιλικὴν σημαίαν ἐπιστρέψας, νόστου ἐπιμνησθῆναι διήγγελλεν [...] τῶν ἐφεδρευόντων αὐτῷ τις, ἐξάδελφος ὢν τῷ τοῦ βασιλέως προγόνῳ Μιχαήλ, προβεβουλευμένην ἔχων τὴν κατὰ τούτου ἐπιβουλήν, αὐτὸς τὸν τοιοῦτον λόγον τοῖς στρατιώταις διέσπειρε [...] τὸν δὲ βασιλέα περιστοιχίσαντες οἱ πολέμιοι οὐκ εὐχείρωτον ἔσχον εὐθύς [...] καὶ πολλοὺς ἀνελὼν τέλος ἐπλήγη φασγάνῳ τὴν χεῖρα τοῦ τε ἵππου βέλεσι κατακοντισθέντος ἐκ ποδὸς μαχόμενος ἵστατο. Καμὼν δ᾽ ὅμως πρὸς ἑσπέραν ἁλώσιμος καὶ ὑπόσπονδος, φεῦ τοῦ πάθους, ἐγένετο.»',
       translationParagraphsHtml: [
         '«[...] [İmparator çekindi ki] uzaktan ok atan Türkler o vakit kaçışlarını tersine çevirip [korumasız ordugâha] döneceklerdi. Bu yüzden <mark class="hl-west">imparatorluk sancağını geriye çevirerek [kampa] dönüşü hatırlamalarını buyurdu.</mark> [...] Ona pusu kuranlardan biri —İmparator’un üvey oğlu Mihail’in kuzeni [<strong>Andronikos Dukas</strong>]— <mark class="hl-west">ona karşı önceden tasarladığı komployu taşıyarak bu [yenilgi] sözünü askerler arasında bizzat yaydı [...]</mark>»',
-        '«Yardımdan bütünüyle yoksun bırakılan İmparator ise kılıcını kınından çekti [...] <mark class="hl-west">elinden yaralanır [...] Romalıların İmparatoru mızrak zoruyla esir düşer</mark> ve bağlı olarak Sultan’a götürülür.»',
+        '«Düşmanlar İmparator’u çepeçevre kuşattılarsa da onu hemen kolayca alt edemediler [...] pek çoğunu öldürdükten sonra <mark class="hl-west">nihayet elinden kılıçla yaralandı, atının da oklarla vurulup devrilmesi üzerine yaya olarak çarpışmayı sürdürdü. Ne var ki akşama doğru bitkin düşerek —eyvahlar olsun bu felakete!— esir düştü.</mark>»',
       ],
     },
     synthesisBridge: {
@@ -764,12 +765,12 @@ export const malazgirtChronicleStages: ChronicleStage[] = [
       date: 'Eylül 1071 · Mir’âtü’z-Zamân (Ğarsü’n-Ni‘me’nin Uyûnü’t-Tevârîh’inden Naklen)',
       titleHtml: 'Sıbt İbnü’l-Cevzî · <em>Mir’âtü’z-Zamân fî Târîhi’l-A‘yân</em>',
       authorDesc:
-        'Hilâfet İnşâ Divanı kâtibi Ğarsü’n-Ni‘me Muhammed b. Hilâl es-Sâbî’nin (ö. 1088) kayıp Uyûnü’t-Tevârîh’inden Sıbt İbnü’l-Cevzî’nin naklettiği esaret tutanağı (Arapça aslından doğrudan çev. Ali Sevim, TTK Belgeler XIX/23, 1998, s. 39–40).',
+        'Hilâfet İnşâ Divanı kâtibi Ğarsü’n-Ni‘me Muhammed b. Hilâl es-Sâbî’nin (ö. 1088) kayıp Uyûnü’t-Tevârîh’inden Sıbt İbnü’l-Cevzî’nin naklettiği esaret tutanağı (Arapça tenkitli nşr. Ali Sevim, TTK Belgeler XIV/18, 1992, s. 170–172; çev. Ali Sevim, TTK Belgeler XIX/23, 1998, s. 39–40; krş. Sümer & Sevim, TTK 1971, Metinler s. 31–33, Tercümeler s. 36–38).',
       origLang: 'ar',
       origScript:
-        '«فَقَالَ لَهُ السُّلْطَانُ: «لَوْ كَانَ الظَّفَرُ لَكَ مَا كُنْتَ تَفْعَلُ بِي؟» فَقَالَ: «الْقَبِيحَ!» فَقَالَ: «صَدَقَ وَاللَّهِ، وَلَوْ قَالَ غَيْرَ هَذَا لَكَذَبَ، هَذَا رَجُلٌ عَاقِلٌ جَلْدٌ، لَا يَجُوزُ أَنْ يُقْتَلَ». ثُمَّ قَالَ لَهُ: «مَا تَظُنُّ الْآنَ أَنْ أَفْعَلَ بِكَ؟» قَالَ: «أَحَدَ ثَلَاثَةِ أَقْسَامٍ: الْأَوَّلُ قَتْلِي، وَالثَّانِي إِشْهَارِي فِي بِلَادِكَ الَّتِي قَصَدْتُهَا، وَالثَّالِثُ فَلَا فَائِدَةَ فِي ذِكْرِهِ فَإِنَّكَ لَا تَفْعَلُهُ». قَالَ: «وَمَا هُوَ؟» قَالَ: «الْعَفْوُ عَنِّي، وَقَبُولُ الْأَمْوَالِ وَالْهَدَايَا، وَاصْطِنَاعِي وَرَدِّي إِلَى مَمْلَكَتِي مَمْلُوكًا لَكَ وَقَائِدًا مِنْ قُوَّادِكَ وَنَائِبًا عَنْكَ فِي بِلَادِ الرُّومِ، وَإِنْ قَتَلْتَنِي لَمْ يَنْفَعْكَ ذَلِكَ فَإِنَّهُمْ يُقِيمُونَ غَيْرِي» فَقَالَ السُّلْطَانُ: «مَا عَزَمْتُ إِلَّا عَلَى الْعَفْوِ عَنْكَ، فَاشْتَرِ نَفْسَكَ!» [...] فَلَمَّا كَانَ الْغَدُ [...] أَجْلَسَهُ عَلَى سَرِيرِهِ وَأَلْبَسَهُ ثِيَابَهُ وَقَلَنْسُوَتَهُ بِيَدِهِ وَقَالَ: «قَدِ اسْتَنَبْتُكَ وَوَثِقْتُ بِقَوْلِكَ وَأُسَيِّرُكَ إِلَى بِلَادِكَ وَأُعِيدُ إِلَيْكَ مُلْكَكَ» [...] وَعَقَدَ لَهُ رَايَةً مَكْتُوبٌ عَلَيْهَا «لَا إِلٰهَ إِلَّا اللَّهُ مُحَمَّدٌ رَسُولُ اللَّهِ»، وَسَيَّرَ مَعَهُ حَاجِبَيْنِ وَمِائَةَ غُلَامٍ [...] وَرَكِبَ السُّلْطَانُ وَشَيَّعَهُ نَحْوَ فَرْسَخٍ.»',
+        '«فَقَالَ لَهُ السُّلْطَانُ: «لَوْ كَانَ الظَّفَرُ لَكَ مَا كُنْتَ تَفْعَلُ مَعِي؟» فَقَالَ: «الْقَبِيحَ!» قَالَ: «آهِ وَاللَّهِ صَدَقَ، وَلَوْ قَالَ غَيْرَ هَذَا لَكَذَبَ، هَذَا رَجُلٌ عَاقِلٌ جَلْدٌ، لَا يَجُوزُ أَنْ يُقْتَلَ». قَالَ لَهُ: «مَا تَظُنُّ الْآنَ أَنِّي أَفْعَلُ بِكَ؟» قَالَ: «أَحَدَ ثَلَاثَةِ أَقْسَامٍ: أَمَّا الْأُولَى فَقَتْلِي، وَالثَّانِي إِشْهَارِي فِي بِلَادِكَ الَّتِي تَحَدَّثْتُ بِقَصْدِهَا، وَأَمَّا الثَّالِثُ فَلَا فَائِدَةَ فِي ذِكْرِهِ فَإِنَّكَ لَا تَفْعَلُهُ». قَالَ: «وَمَا هُوَ؟» قَالَ: «الْعَفْوُ عَنِّي، وَقَبُولُ الْأَمْوَالِ وَالْهَدِيَّةِ، وَاصْطِنَاعِي وَرَدِّي إِلَى مُلْكِي مَمْلُوكًا لَكَ وَبَعْضَ إِسْفَهْسَلَارِيَّتِكَ وَنَائِبَكَ فِي الرُّومِ، فَإِنَّ قَتْلِي لَا يُفِيدُكَ، هُمْ يُقِيمُونَ غَيْرِي». فَقَالَ السُّلْطَانُ: «مَا نَوَيْتُ إِلَّا الْعَفْوَ عَنْكَ، فَاشْتَرِ نَفْسَكَ!» [...] فَلَمَّا كَانَ مِنَ الْغَدِ أَحْضَرَهُ السُّلْطَانُ وَقَدْ نُصِبَ لَهُ سَرِيرُهُ وَدَسْتُهُ الَّذِي أُخِذَ مِنْهُ فَأَجْلَسَهُ عَلَيْهِ، وَخَلَعَ عَلَيْهِ قَبَاهُ وَقَلَنْسُوَتَهُ وَأَلْبَسَهُ إِيَّاهُمَا بِيَدِهِ وَقَالَ: «قَدِ اصْطَنَعْتُكَ وَقَنِعْتُ بِأَمَانَتِكَ، وَأَنَا أُسَيِّرُكَ إِلَى بِلَادِكَ وَأَرُدُّكَ إِلَى مُلْكِكَ» [...] وَعَقَدَ لَهُ رَايَةً فِيهَا مَكْتُوبٌ: «لَا إِلٰهَ إِلَّا اللَّهُ مُحَمَّدٌ رَسُولُ اللَّهِ»، وَأَنْفَذَ مَعَهُ حَاجِبَيْنِ وَمِائَةَ غُلَامٍ [...] وَرَكِبَ مَعَهُ وَشَيَّعَهُ قَدْرَ فَرْسَخٍ.»',
       translationParagraphsHtml: [
-        '«Bunun üzerine sultan ona, <mark class="hl-east">"Eğer zaferi sen kazansaydın, bana ne yapardın?"</mark> deyince imparator, <strong>"Fena şeyler"</strong> diye cevap verdi. Bunun üzerine sultan, <em>"Gerçekten doğru söyledin. Eğer bunun aksini söyleseydin, o zaman yalan söylemiş olurdun. Bu akıllı ve metin bir adamdır. Onun öldürülmesi doğru değildir"</em> dedi ve ilâve etti: <em>"Şimdi sana ne yapacağımı sanıyorsun?"</em>. İmparator şöyle cevap verdi: <em>"Bana, üç şeyden birini yapabilirsin: Birincisi öldürmek, ikincisi ele geçirmek istediğim ülkelerinde beni teşhir etmek, üçüncüsü de yapmayacağın bir şey olduğundan söylenmesine gerek yoktur"</em>. Alp Arslan, <em>"Bu nedir?"</em> diye sordu, o da, <mark class="hl-east">"Affetmek, para ve armağanlar kabul edip Bizans topraklarında senin bir memlûkün, bir kumandanın ve bir nâibin sıfatiyle beni memleketime göndermendir. Eğer beni öldürürsen bu, sana bir fayda sağlamaz, çünkü bir başkasını benim yerime imparator yaparlar"</mark> cevabını verdi. Bunun üzerine sultan, <strong>"Seni affetmek kararındayım. Ancak kendin için bir kurtuluş akçası vermelisin"</strong> deyince imparator, <em>"Sultan, istediği meblâğı söylemelidir"</em> dedi.»',
+        '«Bunun üzerine sultan ona, <mark class="hl-east">"Eğer zaferi sen kazansaydın, bana ne yapardın?"</mark> deyince imparator, <strong>"Fena şeyler"</strong> diye cevap verdi. Bunun üzerine sultan, <em>"Gerçekten doğru söyledin. Eğer bunun aksini söyleseydin, o zaman yalan söylemiş olurdun. Bu akıllı ve metin bir adamdır. Onun öldürülmesi doğru değildir"</em> dedi ve ilâve etti: <em>"Şimdi sana ne yapacağımı sanıyorsun?"</em>. İmparator şöyle cevap verdi: <em>"Bana, üç şeyden birini yapabilirsin: Birincisi öldürmek, ikincisi ele geçirmek istediğim ülkelerinde beni teşhir etmek, üçüncüsü de yapmayacağın bir şey olduğundan söylenmesine gerek yoktur"</em>. Alp Arslan, <em>"Bu nedir?"</em> diye sordu, o da, <mark class="hl-east">"Affetmek, para ve armağanlar kabul edip Bizans topraklarında senin bir memlûkün, bir kumandanın [isfehsâlârın] ve bir nâibin sıfatiyle beni memleketime göndermendir. Eğer beni öldürürsen bu, sana bir fayda sağlamaz, çünkü bir başkasını benim yerime imparator yaparlar"</mark> cevabını verdi. Bunun üzerine sultan, <strong>"Seni affetmek kararındayım. Ancak kendin için bir kurtuluş akçası vermelisin"</strong> deyince imparator, <em>"Sultan, istediği meblâğı söylemelidir"</em> dedi.»',
         '«Ertesi gün sultan, imparatoru yeniden katına getirtti. Sultan, imparatorun ganimet olarak alınmış olan taht ve diğer şeylerini hazırlatarak onu tahtına oturttu, <mark class="hl-east">kendi elbise ve külâhını bizzat eliyle ona giydirdi ve "Seni nâibim yapıyor, söylediğin sözlerine inanıyorum ve seni ülkene göndereceğim, hükümdarlığını da sana geri veriyorum"</mark> dedi. Bunun üzerine imparator yer öptü. [...] Bu nedenle sultan, <em>"Sen halifenin elçisi İbnü’l-Mahlebân’a bunları yaptırmadın mı? O halde kalk başını aç, kemerini bağla ve halifenin bulunduğu tarafa doğru dön ve yeri öp"</em> dedi. O da bunu aynen yaptı. [...] Daha sonra sultan, üzerinde <em>"Tanrı’dan başka ilâh yoktur ve Muhammed onun elçisidir"</em> yazılı bir bayrak hazırlatarak imparatora verdi ve onu iki hâcib ve 100 hassa askerinin koruması altında ülkesine gönderdi. [...] <mark class="hl-east">Hareketinden önce sultan, atına binip imparatoru bir fersah kadar giderek uğurlamıştı.</mark>»',
       ],
     },
@@ -778,13 +779,13 @@ export const malazgirtChronicleStages: ChronicleStage[] = [
       date: 'Eylül 1071 & 29 Haziran 1072 · Historia §20.24–25 & §21.8',
       titleHtml: 'Mihail Attaleiates · <em>Historia (Tarih)</em>',
       authorDesc:
-        'Hristiyan bir Bizans yargıcı olmasına rağmen Alp Arslan’ın adaletini öven, kendi sarayının yemin bozuculuğunu lanetleyen görgü tanığı (Ortaçağ Yunancası aslından doğrudan çeviri; Bonn nşr. s. 164–166, 179; krş. Kaldellis & Krallis 2012).',
+        'Hristiyan bir Bizans yargıcı olmasına rağmen Alp Arslan’ın adaletini öven, kendi sarayının yemin bozuculuğunu lanetleyen görgü tanığı (Ortaçağ Yunancası aslından doğrudan çeviri; Bonn nşr. E. Bekker 1853, s. 164–166, 178 [§21.8–9: s. 178–179]; CFHB 50 nşr. E. Tsolakis 2011, s. 127–128, 137–138; krş. Kaldellis & Krallis 2012, s. 295–301, 323–327).',
       origLang: 'el',
       origScript:
-        '«[...] περιπτυξάμενος τοῦτον «μὴ δέδιθι» ἔφη, «ὦ βασιλεῦ [...]» σύνδειπνον αὐτὸν αὐτίκα καὶ ὁμοδίαιτον ἀπειργάσατο [...] μέχρις ἡμερῶν ὀκτὼ τῶν ὁμοίων αὐτῷ ἐκοινώνει καὶ λόγων καὶ ἁλῶν [...] διερωτήσαντος τοῦ σουλτάνου τὸν βασιλέα «τί ἂν ἔδρασας εἰ οὕτως ἔσχες αὐτὸς ἐμὲ ὑποχείριον;», ἀνυποκρίτως [...] ἀπήγγειλεν «ὅτι πολλαῖς ταῖς πληγαῖς κατεδαπάνησά σου τὸ σῶμα γίνωσκε.» Ὁ δὲ «ἀλλ’ ἐγὼ» φησὶν «οὐ μιμήσομαί σου τὸ αὐστηρὸν καὶ ἀπότομον.» [...] ἡ τοῦ Θεοῦ κρίσις μετὰ τῶν ἄλλων κἀνταῦθα δικαία καὶ ἀρρεπὴς κατεφάνη [...] [§21.8] παρῆσαν γὰρ ἐκεῖσε ὅ τε Χαλκηδόνος, ὁ Ἡρακλείας καὶ ὁ Κολωνείας, τὰς σπονδὰς αὐτῷ συντελέσαντες [...] καί τινα Ἰουδαῖον ἀμαθῆ τὰ τοιαῦτα τὴν τῶν ὀφθαλμῶν αὐτοῦ διαχείρισιν ἐπιτρέπουσι.»',
+        '«[...] περιπτυξάμενος τοῦτον «μὴ δέδιθι» ἔφη, «ὦ βασιλεῦ [...]» σύνδειπνον αὐτὸν αὐτίκα καὶ ὁμοδίαιτον ἀπειργάσατο [...] μέχρις ἡμερῶν ὀκτὼ τῶν ὁμοίων αὐτῷ ἐκοινώνει καὶ λόγων καὶ ἁλῶν [...] ἡ τοῦ Θεοῦ κρίσις μετὰ τῶν ἄλλων κἀνταῦθα δικαία καὶ ἀρρεπὴς κατεφάνη [...] διερωτήσαντος τοῦ σουλτάνου τὸν βασιλέα «τί ἂν ἔδρασας εἰ οὕτως ἔσχες αὐτὸς ἐμὲ ὑποχείριον;», ἀνυποκρίτως [...] ἀπήγγειλεν «ὅτι πολλαῖς ταῖς πληγαῖς κατεδαπάνησά σου τὸ σῶμα γίνωσκε.» Ὁ δὲ «ἀλλ’ ἐγὼ» φησὶν «οὐ μιμήσομαί σου τὸ αὐστηρὸν καὶ ἀπότομον.» [...] [§21.8] παρῆσαν γὰρ ἐκεῖσε ὅ τε Καλχηδόνος, ὁ Ἡρακλείας καὶ ὁ Κολωνείας, τὰς σπονδὰς αὐτῷ συντελέσαντες [...] καί τινα Ἰουδαῖον ἀμαθῆ τὰ τοιαῦτα τὴν τῶν ὀφθαλμῶν αὐτοῦ διαχείρισιν ἐπιτρέπουσι.»',
       translationParagraphsHtml: [
-        '«[...] Onu kucaklayarak: <mark class="hl-west">"Korkma ey İmparator [...] bedenin hiçbir tehlike görmeyecek ve şanına layık biçimde onurlandırılacaksın; zira insan kaderinin tersine dönebileceğinden habersiz olan kişi budaladır!"</mark> dedi. Derhal onu kendi sofrasına ve ikametine ortak etti [...] <mark class="hl-west">sekiz gün boyunca onunla aynı sözü ve tuzu paylaştı.</mark> [...] Sultan İmparator’a <em>"Beni böyle eline geçirseydin ne yapardın?"</em> diye sorduğunda, riyakârlık etmeden [...] <em>"Bedenini sayısız kırbaç darbesiyle tüketirdim, bunu bil!"</em> dedi. O [Sultan] ise: <strong>"Fakat ben senin bu sertliğini ve acımasızlığını taklit etmeyeceğim; [zira sizin Mesih’inizin de size barışı ve kötülüğe iyilikle karşılık vermeyi buyurduğunu işittim]"</strong> dedi. [...] <mark class="hl-west">Tanrı’nın hükmü diğer işlerin yanı sıra burada da adil ve tarafsız göründü!</mark>»',
-        '<strong>[§21.8, Kütahya · 29 Haziran 1072]:</strong> «[...] Zira ona [dokunulmazlık] antlaşmalarını akdetmiş olan <strong>Kalkedon [Kadıköy], Herakleia [Ereğli] ve Koloneia [Şebinkarahisar] metropolitleri</strong> de orada hazır bulunuyorlardı [...] ve bu gibi işlerde bilgisiz [acemi] bir Yahudi’ye <mark class="hl-west">onun gözlerinin [kör edilmesi] işlemini havale ettiler.</mark>» <em>(Kaynak Özeti, §21.8–9: Başkentteki Dukas darbesi sonrası keşiş cübbesi giyip üç metropolitin yeminli kefaletiyle teslim olan Romanos’un Kütahya’da gözlerine mil çekilmiş; başındaki yaralar enfeksiyon kapan İmparator götürüldüğü Kınalıada’da [Proti] 4 Ağustos 1072’de hayatını kaybetmiştir.)</em>',
+        '«[...] Onu kucaklayarak: <mark class="hl-west">"Korkma ey İmparator [...] bedenin hiçbir tehlike görmeyecek ve şanına layık biçimde onurlandırılacaksın; zira insan kaderinin tersine dönebileceğinden habersiz olan kişi budaladır!"</mark> dedi. Derhal onu kendi sofrasına ve ikametine ortak etti [...] <mark class="hl-west">sekiz gün boyunca onunla aynı sözü ve tuzu paylaştı.</mark> [...] <mark class="hl-west">Tanrı’nın hükmü diğer işlerin yanı sıra burada da adil ve tarafsız göründü!</mark> [...] Zira bir sohbette Sultan İmparator’a <em>"Beni böyle eline geçirseydin ne yapardın?"</em> diye sorduğunda, riyakârlık etmeden [...] <em>"Bedenini sayısız kırbaç darbesiyle tüketirdim, bunu bil!"</em> dedi. O [Sultan] ise: <strong>"Fakat ben senin bu sertliğini ve acımasızlığını taklit etmeyeceğim!"</strong> dedi.» <em>(Paralel Bizans kaydı — Skylitzes Continuatus, nşr. E. Tsolakis 1968, s. 151: Sultan’ın bu sözün devamında «Sizin Mesih’inizin de size barışı ve kötülüklerin affını buyurduğunu işittim» dediği aktarılır.)</em>',
+        '<strong>[§21.8, Kütahya · 29 Haziran 1072]:</strong> «[...] Zira ona [dokunulmazlık] antlaşmalarını akdetmiş olan <strong>Kalkedon [Kadıköy], Herakleia [Ereğli] ve Koloneia [Şebinkarahisar] metropolitleri</strong> de orada hazır bulunuyorlardı [...] ve bu gibi işlerde bilgisiz [acemi] bir Yahudi’ye <mark class="hl-west">onun gözlerinin [kör edilmesi] işlemini havale ettiler.</mark>» <em>(Kaynak Özeti, §21.8–9, Bonn s. 178–179: Başkentteki Dukas darbesi sonrası keşiş cübbesi giyip üç metropolitin yeminli kefaletiyle teslim olan Romanos’un Kütahya’da gözlerine mil çekilmiş; başındaki yaralar enfeksiyon kapan İmparator götürüldüğü Kınalıada’da [Proti] 4 Ağustos 1072’de hayatını kaybetmiştir.)</em>',
       ],
     },
     ransomTariffBox: {
@@ -795,7 +796,7 @@ export const malazgirtChronicleStages: ChronicleStage[] = [
         {
           label: 'Şahsî Kurtuluş Fidyesi',
           value: '1.500.000 Dinar',
-          note: 'İlk istenen 10 milyon dinardan indirildi; tahttan indirilen Romanos elinde kalan 200.000 dinar + 90.000 dinarlık mücevherli tepsiyi sözüne sadakatle Sultan’a gönderdi',
+          note: 'İlk istenen 10 milyon dinardan indirildi; tahttan indirilen Romanos elinde kalan 200.000 dinar + 70.000–90.000 dinarlık mücevherli kabı (Sıbt: 70.000; el-Muntazam: 90.000) sözüne sadakatle Sultan’a gönderdi',
         },
         {
           label: '50 Yıllık Mütareke & Yıllık Vergi',
@@ -897,7 +898,7 @@ export const post1071Fronts = [
     tabTitle: '1064–1080 Kafkasya & Didi Turkoba',
     period: '1064 Ahılkelek–Ani · 1074 Partskhisi · 1080 Büyük Türk İskânı',
     summary:
-      'Doç. Dr. Ayşe Beyza Ercan’ın araştırmalarının gösterdiği üzere, Alp Arslan’ın 1064 Ahılkelek–Ani fethi ve 1068 seferi sonrasında Gürcistan Kralı IV. Bagrat ile kurduğu diplomatik denge sayesinde Gürcistan 1071 Malazgirt’te Bizans’a asker göndermedi. Kasım 1072’de hem IV. Bagrat hem Alp Arslan peş peşe vefat edince, Sultan Melikşah ve Kral II. Giorgi döneminde denge bozuldu: II. Giorgi (Kaheti Kralı I. Ağsartan’ın desteğiyle) 1074 Partskhisi Muharebesi’nde (ფარცხისის ბრძოლა — Matiane Kartlisa’da «ფარცხისს ქუემოთ», Aşağı Kartli / Algeti Vadisi) Melikşah’ın Gence–Arran valisi Emîr Savtegin’i (Gürcüce kaynakta სარანგი / Sarangi) mağlup ettiyse de, 1080’den itibaren Gürcü kroniklerinin "Didi Turkoba" (დიდი თურქობა — Büyük Türk Dönemi / Göçü) adını verdiği yoğun Kura–Aras yaylak-kışlak iskânı başladı.',
+      'Alp Arslan’ın 1064 Ahılkelek–Ani fethi ve 1068 seferi sonrasında Gürcistan Kralı IV. Bagrat ile kurduğu diplomatik denge sayesinde Gürcistan 1071 Malazgirt’te Bizans’a asker göndermedi. Kasım 1072’de hem IV. Bagrat hem Alp Arslan peş peşe vefat edince, Sultan Melikşah ve Kral II. Giorgi döneminde denge bozuldu: II. Giorgi (Kaheti Kralı I. Ağsartan’ın desteğiyle) 1074 Partskhisi Muharebesi’nde (ფარცხისის ბრძოლა — Matiane Kartlisa’da «ფარცხისს ქუემოთ», Aşağı Kartli / Algeti Vadisi) Melikşah’ın Gence–Arran valisi Emîr Savtegin’i (Gürcüce kaynakta სარანგი / Sarangi) mağlup ettiyse de, 1080’den itibaren Gürcü kroniklerinin "Didi Turkoba" (დიდი თურქობა — Büyük Türk Dönemi / Göçü) adını verdiği yoğun Kura–Aras yaylak-kışlak iskânı başladı.',
     keyFact:
       '1080’de başlayan bu demografik dönüşüm, kırk yıl sonra Kral IV. David’in Kuzey Kafkasya’dan 40.000 Kıpçak ailesini indirerek yanıt vereceği 1121 Didgori (Dosya 05) dengesinin doğrudan temelini oluşturdu.',
   },
@@ -993,22 +994,22 @@ export const malazgirtPrimarySources = [
   {
     name: 'Ğarsü’n-Ni‘me es-Sâbî → İbnü’l-Cevzî (el-Muntazam) & Sıbt İbnü’l-Cevzî (Mir’âtü’z-Zamân)',
     side: 'Bağdat Çağdaş Saray Kaydı (1071 Sonrası · ö. 1088)',
-    desc: 'Bağdat’ta Abbâsî saray bürokrasisinde görev yapan Ğarsü’n-Ni‘me’nin 1071 fetihnâmelerine, Halife elçisi İbnü’l-Muhallebân’a ve saray gulâmı Şâdî’ye dayanan çağdaş metni; torun Sıbt İbnü’l-Cevzî sayesinde tüm çadır diyaloğu ve antlaşma rakamlarıyla günümüze ulaşmıştır.',
+    desc: 'Bağdat’ta Abbâsî saray bürokrasisinde görev yapan Ğarsü’n-Ni‘me’nin 1071 fetihnâmelerine, Halife elçisi İbnü’l-Muhallebân’a ve saray gulâmı Şâzî/Şâdî’ye dayanan çağdaş metni; İbnü’l-Cevzî (el-Muntazam, c. VIII / XVI) ve torun Sıbt İbnü’l-Cevzî (TTK Belgeler XIV/18 & XIX/23) sayesinde tüm çadır diyaloğu ve antlaşma rakamlarıyla günümüze ulaşmıştır.',
   },
   {
     name: 'İzzeddin İbnü’l-Esîr — el-Kâmil fi’t-Târîh (463 h.)',
     side: 'İslam / Musul-Cezîre Ana Sentezi (1160–1233)',
-    desc: 'Halife elçisi İbnü’l-Muhallebân’ın "Hemedan–İsfahan" diyaloğunu, İmam Ebû Nasr el-Buhârî’nin Cuma hutbesi vaktinde taarruz tavsiyesini, Alp Arslan’ın beyaz kefenlik elbisesini, Gevherâyin’in gulâmının Romanos’u esir alışını ve 50 yıllık barış şartlarını klasikleştiren temel İslam vekâyinâmesi.',
+    desc: 'Romanos’un barış elçisine verdiği «Mütareke ancak Rey’de olur!» cevabını, İmam Ebû Nasr el-Buhârî’nin Cuma hutbesi vaktinde taarruz tavsiyesini, Alp Arslan’ın beyaz kefenlik elbisesini, Gevherâyin’in gulâmının Romanos’u esir alışını ve 50 yıllık barış şartlarını klasikleştiren temel İslam vekâyinâmesi (nşr. Tornberg c. X, s. 41–44; Dâr Sâdır c. X, s. 64–67).',
   },
   {
     name: 'Nikephoros Bryennios — Hyle Historias (Tarihin Malzemesi)',
     side: 'Bizans Askerî Aile Kaynağı (1062–1137)',
-    desc: 'Malazgirt’te Bizans sol kanadını yöneten ve 24 Ağustos çarpışmalarında yaralanan general Nikephoros Bryennios’un aynı adlı torunu (ve Anna Komnena’nın eşi); Selçuklu hilâl/pusu taktiğini (Taranges/Savtegin manevrasını) en teknik askeri dille anlatan Bizans kaynağıdır.',
+    desc: 'Malazgirt’te Bizans sol kanadını yöneten ve 24 Ağustos çarpışmalarında yaralanan general Nikephoros Bryennios’un aynı adlı torunu (ve Anna Komnena’nın eşi); Selçuklu hilâl/pusu taktiğini (Taranges/Savtegin manevrasını) en teknik askeri dille anlatan Bizans kaynağıdır (I.13–18, CFHB 9 nşr. P. Gautier 1975, s. 107–121).',
   },
   {
     name: 'İbnü’l-Ezrak el-Fârikî — Târîhu Meyyâfârikîn ve Âmid',
     side: 'Diyarbakır–Silvan–Ahlat Yerel Kaynağı (1116–1176)',
-    desc: 'Savaş alanına en yakın coğrafyanın yerel tarihçisi; Mervânî Emirliği ve Ahlat halkının Selçuklu ordusuna verdiği lojistik/askeri desteği, Meyyâfârikîn’deki Alp Arslan–Nizâmülmülk temasını ve Kâdî İbn Merd’in stratejik uyarısını aktarır.',
+    desc: 'Savaş alanına en yakın coğrafyanın yerel tarihçisi; Halife elçisi İbnü’l-Muhallebân ile Romanos arasındaki meşhur «İsfahan–Hemedan» diyaloğunu (nşr. B. A. Avad 1959, s. 189–190), Mervânî Emirliği ve Ahlat halkının lojistik/askeri desteğini ve Kâdî İbn Merd’in stratejik uyarısını aktarır.',
   },
   {
     name: 'Kemâleddin İbnü’l-Adîm — Zübdetü’l-Haleb & Buğyetü’t-Taleb',
@@ -1028,4 +1029,4 @@ export const malazgirtPrimarySources = [
 ];
 
 export const malazgirtModernRefsHtml =
-  '<strong>Çağdaş Araştırmalar:</strong> Osman Turan (<em>Selçuklular Tarihi ve Türk-İslâm Medeniyeti</em>, TKAE, 1965; <em>Selçuklular Zamanında Türkiye: Siyasî Tarih Alp Arslan’dan Osman Gazi’ye 1071–1318</em>, 1971), Claude Cahen (<em>“La campagne de Mantzikert d’après les sources musulmanes”</em>, Byzantion IX, 1934; <em>Pre-Ottoman Turkey / Osmanlılardan Önce Anadolu</em>), Carole Hillenbrand (<em>Turkish Myth and Muslim Symbol: The Battle of Manzikert</em>, Edinburgh University Press, 2007), Ali Sevim (<em>“Sıbt İbnü’l-Cevzî’nin Mir’âtü’z-Zamân fî Târîhi’l-A‘yân Adlı Eserindeki Selçuklularla İlgili Bilgiler: II. Sultan Alp Arslan Dönemi”</em>, TTK Belgeler XIX/23, 1998, s. 1–51; <em>Mir’âtü’z-Zamân</em> ve <em>Buğyetü’t-Taleb</em> seçme neşirleri, TTK), Faruk Sümer &amp; Ali Sevim (<em>İslâm Kaynaklarına Göre Malazgirt Savaşı: Metinler ve Çeviriler</em>, TTK, 1971), Muharrem Kesik (<em>1071 Malazgirt: Zafere Giden Yol</em>, Timaş Yay.), Cihan Piyadeoğlu (<em>Çağrı Bey: Selçukluların Kuruluş Hikâyesi</em>; <em>Sultan Alp Arslan: Fethin Babası</em>; <em>Büyük Selçuklular: Yeni Bir Devrin Başlangıcı</em>, Kronik Kitap), Ayşe Beyza Ercan (<em>“The Byzantine Empire in the Kingdom of Georgia’s Foreign Policy in the 11th Century”</em>, Karadeniz Araştırmaları Enstitüsü Dergisi (KAED), vol. 6, no. 11, pp. 331–344, Dec. 2020; <em>“XI. Yüzyıl Gürcistan Kralları ve Gürcistan’ın Siyasi Durumuna Genel Bir Bakış”</em>, Avrasya Üniversitesi İktisadi ve İdari Bilimler Fakültesi Uluslararası Sosyal Bilimler Araştırmaları Çevrim İçi Kongresi, Trabzon, 2020; <em>Altın Çağ Dönemi Gürcistan’ının Dâhilî ve Haricî Politikaları</em>, Sonçağ Akademi, 2023), Adnan Çevik (<em>Malazgirt Savaş Alanının Tespiti, Tarihi ve Arkeolojik Yüzey Araştırması Projesi</em>), John Haldon (<em>The Byzantine Wars</em>, Tempus, 2001), Jean-Claude Cheynet (<em>“Mantzikert: un désastre militaire?”</em>, Byzantion L, 1980), Anthony Kaldellis &amp; Dimitris Krallis (<em>Michael Attaleiates: The History</em>, Dumbarton Oaks Medieval Library, 2012) ve Speros Vryonis (<em>The Decline of Medieval Hellenism in Asia Minor and the Process of Islamization from the Eleventh through the Fifteenth Century</em>, University of California Press, 1971).';
+  '<strong>Çağdaş Araştırmalar:</strong> Osman Turan (<em>Selçuklular Tarihi ve Türk-İslâm Medeniyeti</em>, TKAE, 1965; <em>Selçuklular Zamanında Türkiye: Siyasî Tarih Alp Arslan’dan Osman Gazi’ye 1071–1318</em>, 1971), Claude Cahen (<em>“La campagne de Mantzikert d’après les sources musulmanes”</em>, Byzantion IX, 1934; <em>Pre-Ottoman Turkey / Osmanlılardan Önce Anadolu</em>), Carole Hillenbrand (<em>Turkish Myth and Muslim Symbol: The Battle of Manzikert</em>, Edinburgh University Press, 2007), Ali Sevim (<em>“Sıbt İbnü’l-Cevzî’nin Mir’âtü’z-Zamân fî Târîhi’l-A‘yân Adlı Eserindeki Selçuklularla İlgili Bilgiler: II. Sultan Alp Arslan Dönemi”</em>, TTK Belgeler XIX/23, 1998, s. 1–51; <em>Mir’âtü’z-Zamân</em> ve <em>Buğyetü’t-Taleb</em> seçme neşirleri, TTK), Faruk Sümer &amp; Ali Sevim (<em>İslâm Kaynaklarına Göre Malazgirt Savaşı: Metinler ve Çevirileri</em>, TTK, 1971), Muharrem Kesik (<em>1071 Malazgirt: Zafere Giden Yol</em>, Timaş Yay.), Cihan Piyadeoğlu (<em>Çağrı Bey: Selçukluların Kuruluş Hikâyesi</em>; <em>Sultan Alp Arslan: Fethin Babası</em>; <em>Büyük Selçuklular: Yeni Bir Devrin Başlangıcı</em>, Kronik Kitap), Ayşe Beyza Ercan (<em>“The Byzantine Empire in the Kingdom of Georgia’s Foreign Policy in the 11th Century”</em>, Karadeniz Araştırmaları Enstitüsü Dergisi (KAREN), vol. 6, no. 11, pp. 331–344, Dec. 2020; <em>“XI. Yüzyıl Gürcistan Kralları ve Gürcistan’ın Siyasi Durumuna Genel Bir Bakış”</em>, Avrasya Üniversitesi İktisadi ve İdari Bilimler Fakültesi Uluslararası Sosyal Bilimler Araştırmaları Çevrim İçi Kongresi, Trabzon, 2020; <em>Altın Çağ Dönemi Gürcistan’ının Dâhilî ve Haricî Politikaları</em>, Sonçağ Akademi, 2023), Adnan Çevik (<em>Malazgirt Savaş Alanının Tespiti, Tarihi ve Arkeolojik Yüzey Araştırması Projesi</em>), John Haldon (<em>The Byzantine Wars</em>, Tempus, 2001), Jean-Claude Cheynet (<em>“Mantzikert: un désastre militaire?”</em>, Byzantion L, 1980), Anthony Kaldellis &amp; Dimitris Krallis (<em>Michael Attaleiates: The History</em>, Dumbarton Oaks Medieval Library, 2012) ve Speros Vryonis (<em>The Decline of Medieval Hellenism in Asia Minor and the Process of Islamization from the Eleventh through the Fifteenth Century</em>, University of California Press, 1971).';

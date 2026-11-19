@@ -202,6 +202,8 @@ const {
 </section>
 
 <script>
+  import { onPageReady } from '../utils/onPageReady';
+
   function initArmyInteractive() {
     const segBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-army-seg]'));
     const segCards = Array.from(document.querySelectorAll<HTMLElement>('[data-army-card]'));
@@ -224,7 +226,7 @@ const {
     });
   }
 
-  document.addEventListener('astro:page-load', initArmyInteractive);
+  onPageReady(initArmyInteractive);
 </script>
 
 <style>

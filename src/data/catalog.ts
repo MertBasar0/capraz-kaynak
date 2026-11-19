@@ -115,7 +115,7 @@ export const dossiers: DossierMeta[] = [
       'Niketas Khoniates (Historia & De Signis)',
       "Clari'li Robert",
       'Papa III. Innocentius (Regesta)',
-      'Kartlis Tskhovreba (Tamar’ın Tarihçisi)',
+      'Kartlis Tskhovreba (Anonim Gürcü Kroniği)',
       'Gunther von Pairis',
       'Georgios Akropolites',
       'İbn Bîbî & İbnü’l-Esîr',

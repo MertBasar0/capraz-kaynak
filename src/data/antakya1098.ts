@@ -205,7 +205,8 @@ export const mapSteps: MapStep[] = [
       'Kutalmışoğlu Süleyman Şah Hristiyanlığın ilk konsil kenti İznik’i başkent yaptı; Türk atlıları Üsküdar kıyılarına ulaştı. 1084’te beş büyük patriklik merkezinden biri olan Antakya düştü; 1090–91 kışında İzmir Beyi Çaka Bey denizden, Peçenekler karadan İstanbul’u kıskaca aldı.',
     ],
     highlightNote: {
-      source: 'Kaynak Özeti · Papa VII. Gregorius’un Mektupları (Registrum I.46 & II.31 · Mart–Aralık 1074)',
+      source:
+        'Kaynak Özeti · Papa VII. Gregorius’un Mektupları (Registrum I.46, I.49 & II.31 · Şubat–Aralık 1074, nşr. E. Caspar, MGH Epist. sel. 2/1, Berlin 1920, s. 69–71, 75–76, 165–168)',
       text: 'Daha I. Haçlı Seferi’nden 21 yıl önce Papa VII. Gregorius, Türk birliklerinin Konstantinopolis surlarına yaklaştığını bildirerek Doğu Hristiyanlarına yardım için 50.000 kişilik bir ordu götürmeyi tasarlamış, ancak Alman İmparatoru IV. Heinrich ile yaşadığı Atama Kavgası yüzünden seferi başlatamamıştı.',
       tone: 'west',
     },
@@ -237,7 +238,7 @@ export const mapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Chartreslı Fulcherius, Historia Hierosolymitana (I.3.7, 1095 Clermont Vaazı; Latince aslından çeviri)',
+        'Doğrudan Alıntı (Çeviri) · Chartreslı Fulcherius, Historia Hierosolymitana (Lib. I, cap. III, §7, nşr. H. Hagenmeyer, Heidelberg 1913, s. 136; RHC Occ. III, Paris 1866, s. 324 D–E)',
       text: '«Şimdiye dek haydut olanlar, artık Mesih’in askerleri olsunlar; eskiden kardeşlerine ve akrabalarına karşı dövüşenler, şimdi haklı olarak barbarlara karşı savaşsınlar!»',
       tone: 'west',
     },
@@ -331,7 +332,8 @@ export const mapSteps: MapStep[] = [
       'Bundan yalnızca 48 saat sonra (4–5 Haziran) Kürboğa’nın ordusu Antakya önüne ulaştı! Roller bir gecede değişmişti: Haçlılar içerideki Türk İçkalesi ile dışarıdaki Kürboğa ordusu arasında aç ve mahsur kaldılar.',
     ],
     highlightNote: {
-      source: 'Kaynak Özeti · Gesta Francorum, Nogentlı Guibert (Dei gesta per Francos) & İbnü’l-Adîm (Zübdetü’l-Haleb)',
+      source:
+        'Kaynak Özeti · Gesta Francorum (IX.23, nşr. R. Hill, s. 56), Dol Başpiskoposu Baudri (Historia Ierosolimitana, III.7, RHC Occ. IV, s. 64 F: «furtivi funambuli») & İbnü’l-Adîm (Zübdetü’l-Haleb)',
       text: 'Açlıktan savaş atlarını ve deri kayışları yiyen şövalyeler gece surlardan iple sarkıp kaçmaya başladı; dönemin Latin vekâyinâmeleri bu firarilere alayla "funambuli" (ip cambazları) adını taktı.',
       tone: 'west',
     },
@@ -362,7 +364,8 @@ export const mapSteps: MapStep[] = [
       'İçeride çöküşün eşiğindeki Haçlılar, Aziz Petrus Kilisesi’nin zemininden "Kutsal Mızrak"ı çıkardıklarını ilan ederek fanatik bir ölüm-kalım coşkusuna kapıldı. Keşiş Pierre elçi olarak Kürboğa’nın çadırına gönderildi; Kürboğa "Buradan ancak kılıçla çıkabilirsiniz" diyerek elçileri kovdu.',
     ],
     highlightNote: {
-      source: 'Kaynak Özeti · Fulcherius & Raymond d’Aguilers (Satranç Anekdotu)',
+      source:
+        'Kaynak Özeti · Chartreslı Fulcherius (I.21.5, nşr. Hagenmeyer, s. 251) & Raymond d’Aguilers (Liber, nşr. Hill & Hill, 1969, s. 81; RHC Occ. III, s. 260 B)',
       text: 'Batı kronikleri, Kürboğa’nın Haçlı çıkışını ciddiye almayacak kadar kendine güvendiğini ve haberciler geldiğinde çadırında satranç oynamayı sürdürdüğünü aktarır.',
       tone: 'witness',
     },
@@ -435,7 +438,7 @@ export const propagandaCases: PropagandaCase[] = [
     title: 'Vaftiz Kurnasında Sünnet Kanı ve Bağırsak İşkencesi İddiası',
     verdict: 'Savaş Propagandası / Kurgu',
     claimSource:
-      'Doğrudan Alıntı (Çeviri) · Keşiş Robert (Robertus Monachus), Historia Iherosolimitana (I.1, ykl. 1107; Latince aslından çeviri)',
+      'Doğrudan Alıntı (Çeviri) · Keşiş Robert (Robertus Monachus), Historia Iherosolimitana (Lib. I, cap. I, ykl. 1107; RHC Occ. III, Paris 1866, s. 727–728; nşr. D. Kempf & M. G. Bull, Boydell 2013, s. 5)',
     claimQuote:
       '«Sunakları kendi pislikleriyle kirlettikten sonra deviriyorlar; Hristiyanları sünnet ediyor, sünnet kanını da ya sunakların üzerine döküyor ya da vaftiz kurnalarının içine boşaltıyorlar. Utanç verici bir ölümle cezalandırmak istediklerinin ise göbeklerini deliyor, bağırsaklarının ucunu dışarı çıkarıp bir kazığa bağlıyor ve böylece kırbaçlayarak etrafında döndürüyorlar [...]»',
     critiqueSource: 'Görgü Tanığı Chartreslı Fulcherius (1095) & Süryani Mihail Vekâyinâmesi',
@@ -447,7 +450,8 @@ export const propagandaCases: PropagandaCase[] = [
     badge: 'VAKA 02 · TARİHSEL PROJEKSİYON (YANSITMA)',
     title: 'Yutulmuş Altınları Bulmak İçin Hacıların Karnının Yarılması',
     verdict: 'Tersyüz Edilmiş Projeksiyon',
-    claimSource: 'Kaynak Özeti · Nogentlı Guibert, Dei gesta per Francos (Kitap I, ykl. 1108 — Latince metinden özet)',
+    claimSource:
+      'Kaynak Özeti · Nogentlı Guibert, Dei gesta per Francos (Kitap II, Bölüm 4, ykl. 1108; nşr. R. B. C. Huygens, CCCM 127A, 1996, s. 115–116; RHC Occ. IV, s. 140 B–C)',
     claimQuote:
       'Guibert’in aktardığı iddianın özeti: Yoksul Hristiyan hacıların altın yuttuklarından şüphelenilerek kendilerine zorla kusturucu (mahmûde otu / scammonia) içirildiği ya da iç organlarında gizlenmiş altın ve gümüş aramak için karınlarının kılıçla yarıldığı ve topuk derilerinin yüzüldüğü ileri sürülür.',
     critiqueSource: 'Chartreslı Fulcherius & Gesta Francorum (1098 Maarra ve 1099 Kudüs Tanıklığı)',
@@ -472,9 +476,9 @@ export const propagandaCases: PropagandaCase[] = [
     title: 'Kürboğa ile Annesinin Savaş Öncesi Kehanet Konuşması',
     verdict: 'Savaş Propagandası / Kurgu',
     claimSource:
-      'Doğrudan Alıntı (Çeviri) · Gesta Francorum et aliorum Hierosolimitanorum (IX.22, ykl. 1100; Latince aslından çeviri, nşr. R. Hill, s. 53–56)',
+      'Doğrudan Alıntı (Çeviri) · Gesta Francorum et aliorum Hierosolimitanorum (IX.22, ykl. 1100; nşr. Rosalind Hill, London 1962, s. 53–56 [replikler: s. 55–56]; krş. nşr. H. Hagenmeyer, 1890, cap. XXII, §§7–9, s. 327–329)',
     claimQuote:
-      '«[Kürboğa:] "Sevgili anne, [...] Tanrı’nın onları bu kadar çok sevdiğini, [...] Antakya savaşında bizi yeneceklerini ve benim bu yıl içinde ani bir ölümle öleceğimi sana kim söyledi? [...] Bohemund ve Tankred Frankların tanrıları değil midir ki her öğünde iki bin inek ile dört bin domuz yiyorlar?" — [Annesi:] "Sevgili oğlum, [...] bizim kitabımızda ve kavimlerin ciltlerinde Hristiyan kavminin üzerimize geleceğini ve bizi her yerde yeneceğini bulduk [...]"»',
+      '«[Kürboğa (§7):] "Sevgili anne, [...] Tanrı’nın onları bu kadar çok sevdiğini, [...] Antakya savaşında bizi yeneceklerini ve benim bu yıl içinde ani bir ölümle öleceğimi sana kim söyledi?" — [Annesi (§8):] "Sevgili oğlum, [...] bizim kitabımızda ve kavimlerin ciltlerinde Hristiyan kavminin üzerimize geleceğini ve bizi her yerde yeneceğini bulduk [...]" — [Kürboğa (§9):] "Bohemund ve Tankred Frankların tanrıları değil midir ki her öğünde iki bin inek ile dört bin domuz yiyorlar?"»',
     critiqueSource: 'İslam Vekâyinâmeleri & Kronolojik Kanıt (1102 Hoy Vefatı)',
     critiqueAnalysis:
       'İslam kaynaklarında hiç yer almayan bu diyalogda Müslüman bir Türk komutanın annesi doğrudan İncil’den (Pavlus’un Mektupları’ndan) ayetler okur! Üstelik metin Kürboğa’nın "o yıl içinde (1098)" öleceğini kehanet eder; oysa Kürboğa savaştan dört yıl sonra, Ağustos 1102’de Azerbaycan’ın Hoy şehrinde hastalanarak vefat etmiştir.',

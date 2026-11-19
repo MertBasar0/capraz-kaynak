@@ -212,6 +212,8 @@ const ogImageUrl = new URL(
     <SiteSearchModal />
 
     <script>
+      import { onPageReady } from '../utils/onPageReady';
+
       let globalScrollCleanup: (() => void) | null = null;
 
       function syncMourningTheme(docRoot: HTMLElement = document.documentElement) {
@@ -284,7 +286,7 @@ const ogImageUrl = new URL(
         }
       }
 
-      document.addEventListener('astro:page-load', initGlobalInteractions);
+      onPageReady(initGlobalInteractions);
       document.addEventListener('astro:before-swap', (ev: any) => {
         if (globalScrollCleanup) {
           globalScrollCleanup();

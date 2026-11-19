@@ -434,7 +434,7 @@ export const hittinMapSteps: MapStep[] = [
     ],
     highlightNote: {
       source:
-        'Doğrudan Alıntı (Çeviri) · Bahâeddin İbn Şeddâd, en-Nevâdirü’s-Sultâniyye (4 Temmuz 1187 Akşamı; Arapça aslından çeviri)',
+        'Doğrudan Alıntı (Çeviri) · Bahâeddin İbn Şeddâd, en-Nevâdirü’s-Sultâniyye (4 Temmuz 1187 Akşamı; nşr. C. eş-Şeyyâl, Kahire 1964, s. 78 [2. bs. 1994, s. 130]; RHC Or. III, s. 97; krş. çev. D. S. Richards 2001, s. 73–74)',
       text: 'Susuzluktan titreyen Kral Guy kendisine sunulan buzlu sudan içip kadehi Renaud’ya uzatınca Selahaddin tercümana buyurdu: «Krala söyle: Ona suyu sen içirdin; bana gelince, ben ona su içirmedim [emân vermedim]!»',
       tone: 'east',
     },
@@ -523,7 +523,8 @@ export const hittinPropagandaCases: PropagandaCase[] = [
     claimSource: 'Kurgu Özeti · Luttrell Psalter (fol. 82r), Fransız Romansları & Walter Scott (The Talisman, 1825)',
     claimQuote:
       'Batı şövalye romanslarındaki kurgunun özeti: Selahaddin’in gizlice Hristiyan şövalye kuşağı takmış pasifist bir Batı şövalyesi olduğu ve Aslan Yürekli Kral Richard ile savaş meydanında at sırtında teke tek mızrak düellosu yaptığı anlatılır.',
-    critiqueSource: 'Bahâeddin İbn Şeddâd (en-Nevâdirü’s-Sultâniyye) & İmâdüddin el-İsfahânî',
+    critiqueSource:
+      'Bahâeddin İbn Şeddâd (en-Nevâdirü’s-Sultâniyye, nşr. eş-Şeyyâl 1964, s. 201; RHC Or. III, s. 294) & İmâdüddin el-İsfahânî',
     critiqueAnalysis:
       '1) İbn Şeddâd’ın kesin kaydıyla I. Richard ile Selahaddin hayatları boyunca yüz yüze hiç görüşmemiştir! Tüm müzakereleri kardeşi el-Melikü’l-Âdil yürütmüş; Richard’ın görüşme talebini Selahaddin «Savaş halindeki iki hükümdarın buluşup sonra tekrar kılıç çekmesi yakışık almaz» diyerek reddetmiştir. 2) Selahaddin "modern pasifist" değil, emâna sadık ama gerektiğinde acımasız bir ortaçağ devlet adamıydı: Hıttîn’den iki gün sonra ateşkese uymayan daimi ideolojik ordu çekirdeği olan ~200–230 Tapınak ve Hospitalier şövalyesini tanesi 50 dinara satın alarak bizzat huzurunda idam ettirmiştir.',
   },
@@ -536,7 +537,8 @@ export const hittinPropagandaCases: PropagandaCase[] = [
     claimSource: 'Söylem Özeti · Popüler Anlatılardaki "Çatışmasız Tek Cephe" Kurgusu',
     claimQuote:
       'Popüler tarih söylemindeki basitleştirmenin özeti: 1144 Urfa fethinden 1187 Kudüs zaferine kadar Nûreddin Zengî, Selahaddin ve tüm Müslüman hanedanların hiçbir iktidar gerilimi yaşamadan pürüzsüz bir uyum içinde hareket ettiği varsayılır.',
-    critiqueSource: 'İbnü’l-Esîr (el-Kâmil fi’t-Târîh & et-Târîhu’l-Bâhir) — "Şeker Kamışı" Meclisi Kaydı',
+    critiqueSource:
+      'İbnü’l-Esîr (el-Kâmil fi’t-Târîh, 567 h., nşr. Tornberg, c. XI, s. 245–246; Beyrut: Dâr Sâdır, c. XI, s. 372 & et-Târîhu’l-Bâhir) — "Şeker Kamışı" Meclisi Kaydı',
     critiqueAnalysis:
       '1171’de Fâtımîlik kaldırılınca Nûreddin ile Selahaddin arasında derin bir güvensizlik (el-vahşe) doğdu; Selahaddin azledilmemek için 1171 Şevbek ve 1173 Kerek kuşatmalarını Nûreddin yaklaştığında yarıda bırakıp Mısır’a çekildi. Babası Necmeddin Eyyûb, Kahire divanında açık itaat gösterdikten sonra yalnız kaldıklarında oğluna: «Vallahi Nûreddin bizim şeker kamışlarımızdan tek bir kamış istese ölünceye dek savaşırdım; ama şimdi mektupla alttan al ki zaman kazanalım!» dedi. Nûreddin Mayıs 1174’te Mısır’a ordu hazırlarken öldü; Selahaddin de Hıttîn öncesi tam 12 yılını (1174–1186) Şam, Halep ve Musul Zengîleriyle savaşarak birliği zorla ve diplomasiyle kurmaya harcadı.',
   },
@@ -667,30 +669,30 @@ export const hittinChronicleStages: ChronicleStage[] = [
     bannerVisual: hittinHeroVisuals.battleHattin4A,
     east: {
       pill: 'İSLAM CEPHESİ GÖRGÜ TANIKLIĞI',
-      date: '24/25 Rebîülâhir 583 · 4 Temmuz 1187',
+      date: '24/25 Rebîülâhir 583 · 4 Temmuz 1187 (el-Kâmil XI, s. 353–354; İbn Şeddâd s. 78)',
       titleHtml: 'İbnü’l-Esîr (<em>el-Kâmil fi’t-Târîh</em>) &amp; İbn Şeddâd',
       authorDesc:
-        'el-Melikü’l-Efdal’in meydan tanıklığı ve aynı akşam çadırdaki şerbet hukuku (Arapça aslından doğrudan çeviri; el-Kâmil fi’t-Târîh, 583 h. & en-Nevâdirü’s-Sultâniyye).',
+        'el-Melikü’l-Efdal’in meydan tanıklığı ve aynı akşam çadırdaki şerbet hukuku (Arapça aslından doğrudan çeviri; el-Kâmil fi’t-Târîh, 583 h., nşr. Tornberg, c. XI, s. 353–354 [Dâr Sâdır c. XI, s. 534–535] & en-Nevâdirü’s-Sultâniyye, nşr. eş-Şeyyâl 1964, s. 78 [RHC Or. III, s. 97]).',
       origLang: 'ar',
       origScript:
-        '«وَكَانَ بَعْضُ الْمُتَطَوِّعَةِ قَدْ أَلْقَى فِي تِلْكَ الْأَرْضِ نَارًا، وَكَانَ الْحَشِيشُ كَثِيرًا فَاحْتَرَقَ، وَكَانَتِ الرِّيحُ قَدْ هَبَّتْ فَحَمَلَتْ حَرَّ النَّارِ وَالدُّخَانَ إِلَيْهِمْ، فَاجْتَمَعَ عَلَيْهِمُ الْعَطَشُ، وَحَرُّ الزَّمَانِ، وَحَرُّ النَّارِ وَالدُّخَانِ، وَحَرُّ الْقِتَالِ [...] فَنَظَرْتُ إِلَيْهِ وَقَدْ عَلَتْهُ كَآبَةٌ وَارْبَدَّ لَوْنُهُ وَأَمْسَكَ بِلِحْيَتِهِ وَتَقَدَّمَ وَهُوَ يَصِيحُ: "كَذَبَ الشَّيْطَانُ!" [...] فَالْتَفَتَ وَالِدِي إِلَيَّ وَقَالَ: "اسْكُتْ! مَا نَهْزِمُهُمْ حَتَّى تَسْقُطَ تِلْكَ الْخَيْمَةُ!" قَالَ: فَهُوَ يَقُولُ لِي ذَلِكَ وَإِذَا الْخَيْمَةُ قَدْ سَقَطَتْ، فَنَزَلَ السُّلْطَانُ وَسَجَدَ شُكْرًا لِلَّهِ تَعَالَى وَبَكَى مِنْ فَرَحِهِ.» — (ابن شداد): «قُلْ لِلْمَلِكِ: أَنْتَ الَّذِي سَقَيْتَهُ، وَأَمَّا أَنَا فَمَا سَقَيْتُهُ!»',
+        '«وَكَانَ بَعْضُ الْمُتَطَوِّعَةِ قَدْ أَلْقَى فِي تِلْكَ الْأَرْضِ نَارًا، وَكَانَ الْحَشِيشُ كَثِيرًا فَاحْتَرَقَ، وَكَانَتِ الرِّيحُ عَلَى الْفِرَنْجِ فَحَمَلَتْ حَرَّ النَّارِ وَالدُّخَانَ إِلَيْهِمْ، فَاجْتَمَعَ عَلَيْهِمُ الْعَطَشُ، وَحَرُّ الزَّمَانِ، وَحَرُّ النَّارِ وَالدُّخَانِ، وَحَرُّ الْقِتَالِ [...] فَنَظَرْتُ إِلَيْهِ وَقَدْ عَلَتْهُ كَآبَةٌ وَارْبَدَّ لَوْنُهُ وَأَمْسَكَ بِلِحْيَتِهِ وَتَقَدَّمَ وَهُوَ يَصِيحُ: "كَذَبَ الشَّيْطَانُ!" [...] فَالْتَفَتَ وَالِدِي إِلَيَّ وَقَالَ: "اسْكُتْ! مَا نَهْزِمُهُمْ حَتَّى تَسْقُطَ تِلْكَ الْخَيْمَةُ!" قَالَ: فَهُوَ يَقُولُ لِي ذَلِكَ وَإِذَا الْخَيْمَةُ قَدْ سَقَطَتْ، فَنَزَلَ السُّلْطَانُ وَسَجَدَ شُكْرًا لِلَّهِ تَعَالَى فَبَكَى مِنْ فَرَحِهِ.» — (ابن شداد): «قُلْ لِلْمَلِكِ: أَنْتَ الَّذِي سَقَيْتَهُ، وَأَمَّا أَنَا فَمَا سَقَيْتُهُ!»',
       translationParagraphsHtml: [
-        '«Gönüllülerden [<em>mutavvia</em>] biri o arazide ateş yakmıştı; kuru ot çok olduğundan tutuşup yandı. Rüzgâr da esmişti; ateşin hararetini ve dumanı onların üzerine taşıdı. Böylece üzerlerinde <mark class="hl-east">susuzluk, mevsimin sıcağı, ateşin ve dumanın harareti ile çarpışmanın harareti</mark> birleşti. [...] [el-Melikü’l-Efdal anlatıyor:] Ona [babama] baktım; yüzünü bir keder kaplamış, rengi kül gibi bozarmıştı. Sakalını kavradı ve <mark class="hl-east">"Şeytan yalan söyledi!" [Kezebe’ş-Şeytân!]</mark> diye haykırarak ileri atıldı.»',
+        '«Gönüllülerden [<em>mutavvia</em>] biri o arazide ateş yakmıştı; kuru ot çok olduğundan tutuşup yandı. Rüzgâr da Franklara doğru esiyordu; ateşin hararetini ve dumanı onların üzerine taşıdı. Böylece üzerlerinde <mark class="hl-east">susuzluk, mevsimin sıcağı, ateşin ve dumanın harareti ile çarpışmanın harareti</mark> birleşti. [...] [el-Melikü’l-Efdal anlatıyor:] Ona [babama] baktım; yüzünü bir keder kaplamış, rengi kül gibi bozarmıştı. Sakalını kavradı ve <mark class="hl-east">"Şeytan yalan söyledi!" [Kezebe’ş-Şeytân!]</mark> diye haykırarak ileri atıldı.»',
         '«[...] Babam bana döndü ve: <mark class="hl-east">"Sus! Şu [kırmızı] çadır yıkılmadıkça onları yenmiş olmayız!"</mark> dedi. O bana daha bunu söylerken bir de baktık ki çadır devrilmiş! Sultan derhal [atından] indi, Yüce Allah’a şükür secdesine kapandı ve sevincinden ağladı.» — <em>(İbn Şeddâd, aynı akşam çadırda buzlu su sahnesi):</em> «[Selahaddin tercümana buyurdu:] <strong>"Krala söyle: Ona suyu sen içirdin; bana gelince, ben ona su içirmedim [emân vermedim]!"</strong>»',
       ],
     },
     west: {
       pill: 'HAÇLI CEPHESİ GÖRGÜ TANIĞI',
-      date: 'Bölüm XI–XII · 3–4 Temmuz 1187',
-      titleHtml: 'Anonim Tanık · <em>Libellus</em> &amp; <em>Epistola Terrici</em>',
+      date: '3–4 Temmuz 1187 · nşr. J. Stevenson, s. 223, 226–227 (Brewer & Kane cap. XI–XIV)',
+      titleHtml: 'Anonim Tanık · <em>De Expugnatione Terrae Sanctae Libellus</em>',
       authorDesc:
-        'De Expugnatione Terrae Sanctae per Saladinum Libellus (Bizzat kuşatmayı yaşayan Latin yazar; Latince aslından doğrudan çeviri, nşr. J. Stevenson, s. 222–228).',
+        'De Expugnatione Terrae Sanctae per Saladinum Libellus (Bizzat kuşatmayı yaşayan Latin yazar; Latince aslından doğrudan çeviri, nşr. J. Stevenson, Rolls Series 66, London 1875, s. 223, 226–227 [genel bölüm: s. 222–228]; nşr. K. Brewer & J. H. Kane, Routledge 2019, cap. XI, XIII–XIV, s. 154–165).',
       origLang: 'la',
       origScript:
-        '«Castra metati sunt ergo cum dolore et angustia et siti in sicca mansione, ubi magis est effusus sanguis nocte illa quam aqua [...] Igitur filii Esau circumdantes populum Dei, et incendentes desertum circa eum, atque tota nocte calore ignis, fumo, sagittis, vexatos fame et siti vexabant [...] Irruerunt autem multitudo paganorum super pedites atque per praecipitium praerupti montis, in cuius cacumine iamdudum fugerant, praecipitaverunt [...] Capta est crux et rex et magister militiae Templi [...] Heu mihi! Dicam pollutis labiis qualiter pretiosum lignum Dominicum nostrae redemptionis tactum sit damnatis manibus?»',
+        '«Castra metati sunt ergo cum dolore et angustia et siti in sicca mansione, ubi magis effusus sanguis nocte illa quam aqua [...] Igitur filii Esau circumdantes populum Dei, et incendentes desertum circa eum, atque tota nocte calore ignis, fumo, sagittis, vexatos fame et siti vexabant [...] Irruerunt autem multitudo paganorum super pedites atque per praecipitium praerupti montis, in cujus cacumine jamdudum fugerant, praecipitaverunt [...] Heu mihi! dicam pollutis labiis, qualiter pretiosum lignum Dominicum nostrae redemptionis tactum sit damnatis manibus damnatorum? [...] Capta est crux, et rex, et magister militiae Templi [...]»',
       translationParagraphsHtml: [
         '«Böylece acı, sıkıntı ve susuzluk içinde kupkuru bir konak yerinde [<em>sicca mansione</em> — Meskene] ordugâh kurdular; <mark class="hl-west">o gece orada sudan çok kan döküldü.</mark> [...] Esav’ın oğulları [Müslümanlar] Tanrı’nın halkını çepeçevre kuşatarak etrafındaki kırları ateşe verdiler [<em>incendentes desertum</em>] ve açlık ile susuzluktan bitkin düşmüş olanları bütün gece <mark class="hl-west">ateşin sıcağıyla, dumanla [calore ignis, fumo] ve oklarla</mark> hırpaladılar.»',
-        '«[...] Kalabalık, çoktan sarp dağın zirvesine kaçmış olan piyadelerin üzerine çullandı ve onları sarp dağın uçurumundan aşağı yuvarladı [...] <mark class="hl-west">Haç ele geçirildi; Kral ve Tapınak Şövalyeleri Üstadı da [tutsak edildi].</mark> [...] Yazıklar olsun bana! Kurtuluşumuzun paha biçilmez Rabbani Ağacı’na [Gerçek Haç’a] [...] nasıl dokunulduğunu kirli dudaklarımla nasıl anlatayım?»',
+        '«[...] Kalabalık, çoktan sarp dağın zirvesine kaçmış olan piyadelerin üzerine çullandı ve onları sarp dağın uçurumundan aşağı yuvarladı [...] Yazıklar olsun bana! Kurtuluşumuzun paha biçilmez Rabbani Ağacı’na [Gerçek Haç’a] [...] nasıl dokunulduğunu kirli dudaklarımla nasıl anlatayım? [...] <mark class="hl-west">Haç ele geçirildi; Kral ve Tapınak Şövalyeleri Üstadı da [tutsak edildi].</mark>»',
       ],
     },
     synthesisBridge: {
@@ -708,10 +710,10 @@ export const hittinChronicleStages: ChronicleStage[] = [
     bannerVisual: hittinHeroVisuals.jerusalemKeys4B,
     east: {
       pill: 'EYYÛBÎ DİVAN TANIĞI',
-      date: '27 Receb 583 / 2 Ekim 1187 · s. 131–132',
+      date: '27 Receb 583 / 2 Ekim 1187 · nşr. Landberg, s. 60–61',
       titleHtml: 'İmâdüddin el-İsfahânî · <em>el-Fethu’l-Kussî</em>',
       authorDesc:
-        'Selahaddin’in özel inşâ kâtibi; bizzat Sultan’a yaptığı teklifi ve aldığı cevabı yazar (Arapça aslından doğrudan çeviri; el-Fethu’l-Kussî fi’l-Fethi’l-Kudsî, nşr. C. Landberg, s. 131–132).',
+        'Selahaddin’in özel inşâ kâtibi; bizzat Sultan’a yaptığı teklifi ve aldığı cevabı yazar (Arapça aslından doğrudan çeviri; el-Fethu’l-Kussî fi’l-Fethi’l-Kudsî, nşr. C. Landberg, Leiden 1888, s. 60 [bölüm: s. 60–61]; krş. Kahire: Dârü’l-Menâr 2004, s. 74–75).',
       origLang: 'ar',
       origScript:
         '«وَجَمَعَ الْبَطْرَكُ الْكَبِيرُ كُلَّ مَا كَانَ عَلَى الْقَبْرِ مِنْ صَفَائِحِ التِّبْرِ وَمَصُوغَاتِ الْعَسْجَدِ وَمَصْنُوعَاتِ اللُّجَيْنِ [...] فَقُلْتُ لِلسُّلْطَانِ: هَذِهِ أَمْوَالٌ وَافِرَةٌ [...] تَبْلُغُ مِائَتَيْ أَلْفِ دِينَارٍ، وَالْأَمَانُ عَلَى أَمْوَالِهِمْ لَا أَمْوَالِ الْكَنَائِسِ وَالْأَدْيَارِ، فَلَا تَتْرُكْهَا فِي أَيْدِي هَؤُلَاءِ الْفُجَّارِ! فَقَالَ: إِذَا تَأَوَّلْنَا عَلَيْهِمْ نَسَبُونَا إِلَى الْغَدْرِ، وَهُمْ جَاهِلُونَ بِسِرِّ هَذَا الْأَمْرِ، فَنَحْنُ نُجْرِيهِمْ عَلَى ظَاهِرِ الْأَمَانِ، وَلَا نَتْرُكُهُمْ يَرْمُونَ أَهْلَ الْإِيمَانِ بِنَكْثِ الْأَيْمَانِ، بَلْ يَتَحَدَّثُونَ بِمَا أَفَضْنَاهُ مِنَ الْإِحْسَانِ.»',
@@ -725,12 +727,12 @@ export const hittinChronicleStages: ChronicleStage[] = [
       date: '15 Temmuz 1099 ↔ 2 Ekim 1187',
       titleHtml: '<em>Ernoul Kroniği</em> ↔ 1099 <em>Raymond d’Aguilers &amp; Gesta</em>',
       authorDesc:
-        '1099 Latince Haçlı görgü tanıklarından doğrudan çeviri ve İbelinli Balian’ın silahtarı Ernoul’un 1187 Eski Fransızca kaydının özeti.',
+        '1099 Latince Haçlı görgü tanıklarından doğrudan çeviri (Raymond d’Aguilers, RHC Occ. III, cap. XX, s. 300 D [nşr. Hill & Hill 1969, s. 150]; Gesta Francorum, X.38, nşr. R. Hill 1962, s. 91–92 [Hagenmeyer 1890, s. 472–474]) ve İbelinli Balian’ın silahtarı Ernoul’un 1187 Eski Fransızca kaydının özeti.',
       origLang: 'la',
       origScript:
-        '«[1099 · Raymond d’Aguilers]: In templo et porticu Salomonis equitabatur in sanguine usque ad genua, et usque ad frenos equorum [...] [Gesta Francorum, X.38]: Tancredus dedit eis suum uexillum [...] Sed nostri summo mane irruerunt in templum, et decollauerunt masculos et feminas [...]»',
+        '«[1099 · Raymond d’Aguilers, RHC Occ. III, s. 300 D]: In templo et porticu Salomonis equitabatur in sanguine usque ad genua, et usque ad frenos equorum [...] [Gesta Francorum, X.38, nşr. R. Hill, s. 91–92]: Super templum uero Salomonis erat maxima paganorum congregatio utriusque sexus, quibus Tancredus et Gaston de Beert dederunt sua uexilla [...] Mane autem facto ascenderunt nostri caute supra tectum templi, et inuaserunt Saracenos masculos et feminas, decollantes eos nudis ensibus.»',
       translationParagraphsHtml: [
-        '<strong>[15 Temmuz 1099 · Doğrudan Alıntı (Çeviri) — Raymond d’Aguilers &amp; Gesta Francorum X.38]:</strong> «Süleyman Mabedi’nde [Mescid-i Aksâ] ve revakında <mark class="hl-west">dizlere ve atların gemlerine kadar kan içinde at sürülüyordu.</mark> [...] [Çatıya sığınanlara] Tankred kendi sancağını [güvenlik emânını] vermişti [...] Fakat adamlarımız sabah erkenden mabede saldırdı ve <mark class="hl-west">erkeklerin ve kadınların başlarını kesti [...]</mark>» <em>(Not: Tankred buna çok öfkelendiyse de katliam durmadı; İbnü’l-Arabî Aksâ’da 3.000 kişinin öldürüldüğünü yazar.)</em>',
+        '<strong>[15 Temmuz 1099 · Doğrudan Alıntı (Çeviri) — Raymond d’Aguilers (s. 300 D) &amp; Gesta Francorum (X.38, s. 91–92)]:</strong> «Süleyman Mabedi’nde [Mescid-i Aksâ] ve revakında <mark class="hl-west">dizlere ve atların gemlerine kadar kan içinde at sürülüyordu.</mark> [...] Süleyman Mabedi’nin çatısı üzerinde ise her iki cinsiyetten büyük bir kalabalık toplanmıştı; Tankred ile Gaston de Béarn bunlara kendi [güvenlik] sancaklarını vermişlerdi [...] Fakat sabah olunca adamlarımız gizlice mabedin çatısına çıktılar ve <mark class="hl-west">Müslüman erkeklerle kadınlara saldırıp yalın kılıçlarla başlarını kestiler.</mark>» <em>(Not: Tankred buna çok öfkelendiyse de katliam durmadı; İbnü’l-Arabî Aksâ’da 3.000 kişinin öldürüldüğünü yazar.)</em>',
         '<strong>[2 Ekim 1187 · Kaynak Özeti — Eski Fransızca Ernoul Kroniği]:</strong> Ernoul’un kaydına göre Selahaddin, hiçbir Hristiyan’a hakaret veya yağma yapılmaması için Kudüs’ün kulelerine ve sokaklarına seçkin muhafızlar dikti; <mark class="hl-west">kardeşi el-Melikü’l-Âdil 1.000 yoksul esiri Allah rızası için isteyip karşılıksız azat etti,</mark> ardından Sultan dul kadınlara ve yoksullara kapıları açtırıp kendi hazinesinden ihsan dağıttı ve kafileleri Frank topraklarına kadar güvenle uğurlattı.',
       ],
     },
@@ -865,15 +867,16 @@ export const jaffaPhilologySpotlight = {
   badge: 'ÇAPRAZ KAYNAK FİLOLOJİK İMZASI · TAKVİM BULMACASI ÇÖZÜMÜ',
   title: '1–2 Eylül 1192 Yafa/Remle Antlaşması’nın Süresi Neden İki Kaynakta Farklı Yazıldı?',
   eastLabel: 'ARAPÇA DİVAN KAYDI (ŞÂFİÎ HUDNE HUKUKU)',
-  eastSource: 'Bahâeddin İbn Şeddâd (Müzakere heyetinin bizzat üyesi)',
+  eastSource:
+    'İmâdüddin el-İsfahânî (el-Fethu’l-Kussî, nşr. Landberg 1888, s. 439) & İbnü’l-Esîr (el-Kâmil, Dâr Sâdır c. XII, s. 85; krş. İbn Şeddâd s. 232–234)',
   eastText:
-    'Ateşkesin 1 Eylül 1192 (21 Şâban 588) gününden geçerli olmak üzere tam «3 Yıl ve 8 Ay» (selâs sinîn ve semâniyet eşhur) süreyle bağlandığını yazar.',
+    'İmâdüddin’in Bağdat divan mektubunda ve İbnü’l-Esîr’de ateşkesin 1 Eylül 1192 (21 Şâban 588 Salı) gününden geçerli olmak üzere tam «3 Yıl ve 8 Ay» (selâs sinîn ve semâniyet eşhur) süreyle bağlandığı kaydedilir (İbn Şeddâd ise 2 Eylül’den başlayan 3 yıllık ana süreyi özetler).',
   westLabel: 'LATİNCE / ANGLO-NORMAN KAYDI (SEFER TAKVİMİ)',
-  westSource: 'Itinerarium Peregrinorum (VI.27) & Ambroise',
+  westSource: 'Itinerarium Peregrinorum (VI.27–28, nşr. W. Stubbs, Rolls Series 38/1, s. 428–430) & Ambroise',
   westText:
     'Ateşkes süresini gelecek Paskalya Yortusu’ndan (28 Mart 1193) itibaren «3 Tam Yıl» (veya geleneksel hukuk aliterasyonuyla 3 yıl, 3 ay, 3 hafta, 3 gün) olarak kaydeder.',
   resolutionHtml:
-    '<strong>Çapraz Çözümleme:</strong> Ortada bir çelişki değil, muazzam bir takvim uyumu vardır! <strong>1 Eylül 1192’den Paskalya / 1 Mayıs 1193 bahar sefer mevsimine kadar geçen 8 kış ayı + 3 tam yıl = Bahar 1196!</strong> Şâfiî İslam fıkhında <em>hudne</em> (ateşkes) imza anından itibaren kesintisiz ve kesin bir süre taşımak zorunda olduğundan Kâdî el-Fâzıl ve İbn Şeddâd metne <strong>3 yıl 8 ay</strong> yazmış; Batılı vakanüvisler ise kışın deniz seferi yapılamadığı için süreyi 1193 baharından başlatıp <strong>3 yıl</strong> olarak kaydetmiştir. İki ayrı takvim geleneği aynı bitiş gününde birleşir!',
+    '<strong>Çapraz Çözümleme:</strong> Ortada bir çelişki değil, muazzam bir takvim uyumu vardır! <strong>1 Eylül 1192’den Paskalya / 1 Mayıs 1193 bahar sefer mevsimine kadar geçen 8 kış ayı + 3 tam yıl = Bahar 1196!</strong> Şâfiî İslam fıkhında <em>hudne</em> (ateşkes) imza anından itibaren kesintisiz ve kesin bir süre taşımak zorunda olduğundan Kâdî el-Fâzıl ve İmâdüddin el-İsfahânî resmî divan metnine <strong>3 yıl 8 ay</strong> yazmış; Batılı vakanüvisler ise kışın deniz seferi yapılamadığı için süreyi 1193 baharından başlatıp <strong>3 yıl</strong> olarak kaydetmiştir. İki ayrı takvim geleneği aynı bitiş mevsiminde birleşir!',
 };
 
 export const hittinBalanceRows = [
@@ -919,12 +922,12 @@ export const hittinPrimarySources = [
   {
     name: 'Bahâeddin İbn Şeddâd (en-Nevâdirü’s-Sultâniyye)',
     side: 'Eyyûbî Kazaskeri ve Sırdaşı Görgü Tanığı (1145–1234)',
-    desc: 'Selahaddin’in son beş yılında yanından ayrılmayan başkadısı; buzlu şerbet sahnesini, Akka ve Yafa muharebelerini, 1192 Antlaşması’nın "3 yıl 8 ay" kaydını ve vefatındaki 1 dinar + 47 dirhemlik terekeyi bizzat belgeler.',
+    desc: 'Selahaddin’in son beş yılında yanından ayrılmayan başkadısı; buzlu şerbet sahnesini (nşr. eş-Şeyyâl 1964, s. 78), Akka ve Yafa muharebelerini, 2 Eylül 1192 Yafa Antlaşması müzakerelerini (s. 232–234) ve vefatındaki 1 dinar + 47 dirhemlik terekeyi bizzat belgeler.',
   },
   {
     name: 'İmâdüddin el-İsfahânî (el-Fethu’l-Kussî fi’l-Fethi’l-Kudsî)',
     side: 'Selahaddin’in Özel İnşâ Kâtibi Görgü Tanığı (1125–1201)',
-    desc: 'Hıttîn meydanını, tarikat şövalyelerinin infazını, Kudüs fidye muhasebesini ve Patrik Heraklius’un 200.000 dinarlık hazinesi üzerine Sultan ile aralarında geçen "emân" diyaloğunu ilk elden kaydeder.',
+    desc: 'Hıttîn meydanını, tarikat şövalyelerinin infazını, Patrik Heraklius’un 200.000 dinarlık hazinesi üzerine Sultan ile aralarında geçen "emân" diyaloğunu (nşr. Landberg 1888, s. 60–61) ve 1 Eylül 1192 ateşkesinin "3 yıl 8 ay"lık resmî divan kaydını (s. 439) ilk elden aktarır.',
   },
   {
     name: 'İzzeddin İbnü’l-Esîr (el-Kâmil fi’t-Târîh & et-Târîhu’l-Bâhir)',

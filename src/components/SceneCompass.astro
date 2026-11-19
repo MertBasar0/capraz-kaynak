@@ -37,6 +37,8 @@ const { scenes = defaultScenes } = Astro.props;
 </aside>
 
 <script>
+  import { onPageReady } from '../utils/onPageReady';
+
   let compassCleanup: (() => void) | null = null;
 
   function initCompass() {
@@ -76,7 +78,7 @@ const { scenes = defaultScenes } = Astro.props;
     };
   }
 
-  document.addEventListener('astro:page-load', initCompass);
+  onPageReady(initCompass);
   document.addEventListener('astro:before-swap', () => {
     if (compassCleanup) {
       compassCleanup();

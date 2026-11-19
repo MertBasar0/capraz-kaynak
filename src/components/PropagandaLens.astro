@@ -147,6 +147,8 @@ const {
 </section>
 
 <script>
+  import { onPageReady } from '../utils/onPageReady';
+
   function initPropagandaLens() {
     const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-lens-card]'));
     const masterBtn = document.getElementById('toggle-all-lenses');
@@ -184,7 +186,7 @@ const {
     });
   }
 
-  document.addEventListener('astro:page-load', initPropagandaLens);
+  onPageReady(initPropagandaLens);
 </script>
 
 <style>

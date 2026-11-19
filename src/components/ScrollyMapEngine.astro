@@ -132,6 +132,7 @@ const mapPayload = JSON.stringify({
 
 <script>
   import 'maplibre-gl/dist/maplibre-gl.css';
+  import { onPageReady } from '../utils/onPageReady';
 
   let cleanupFn: (() => void) | null = null;
 
@@ -376,7 +377,7 @@ const mapPayload = JSON.stringify({
     };
   }
 
-  document.addEventListener('astro:page-load', initScrollyMap);
+  onPageReady(initScrollyMap);
   document.addEventListener('astro:before-swap', () => {
     if (cleanupFn) {
       cleanupFn();
