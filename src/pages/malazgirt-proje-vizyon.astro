@@ -1,0 +1,1351 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  visionStats,
+  wixVsCustomComparison,
+  mediaShowcaseItems,
+  fieldSectorPresets,
+  simulationPipelineSteps,
+  implementationPhases,
+  verifiedProjectPublications,
+} from '../data/malazgirtProjeVizyon';
+import { withBase } from '../utils/paths';
+
+const gisPayload = JSON.stringify({
+  presets: fieldSectorPresets,
+});
+---
+
+<BaseLayout
+  title="malazgirtprojesi.com Yeni Dijital Mimari, Çift Katmanlı CBS ve 3B Simülasyon Taslağı"
+  description="Prof. Dr. Adnan Çevik ve Malazgirt Savaş Alanı Arkeolojisi / Tarihi Malazgirt Kenti Kazıları heyeti için hazırlanan özel dijital portal, çift katmanlı 3B CBS ve sanal simülasyon yol haritası."
+  ogImage="/images/arsiv/malazgirt-1071/prologue-van-sipan-lynch.jpg"
+  noindex={true}
+>
+  <!-- Top Private Presentation Banner -->
+  <section class="vision-banner" aria-label="Özel Sunum Bilgilendirmesi">
+    <div class="container vision-banner__inner">
+      <div class="vision-banner__left">
+        <span class="vision-pill vision-pill--gold">✦ ÖZEL TEKNİK TASLAK &amp; CANLI PROTOTİP</span>
+        <span class="vision-pill">ARAMA MOTORLARINA KAPALI ÖN İZLEME</span>
+      </div>
+      <p class="vision-banner__note">
+        <strong>Prof. Dr. Adnan Çevik</strong> ve proje heyeti için hazırlanmıştır. Ayrıca güncellenen
+        <a href={withBase('/dosyalar/malazgirt-1071/')}>Dosya 03: 1071 Malazgirt →</a> çalışmamızı da inceleyebilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 01: Hero Concept for malazgirtprojesi.com -->
+  <header class="vision-hero">
+    <div
+      class="vision-hero__bg"
+      style={`background-image: url('${withBase('/images/arsiv/malazgirt-1071/prologue-van-sipan-lynch.jpg')}')`}
+      aria-hidden="true"
+    ></div>
+    <div class="vision-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container vision-hero__content">
+      <div class="vision-hero__badges">
+        <span class="hero-tag hero-tag--turquoise">malazgirtprojesi.com YENİ NESİL PORTAL MİMARİSİ</span>
+        <span class="hero-tag">0 TL / AY SABİT ALTYAPI MALİYETİ</span>
+        <span class="hero-tag">DRON · ÇİFT KATMANLI CBS · 3B SİMÜLASYON</span>
+      </div>
+
+      <h1>
+        Topraktaki Kanıttan <span>Üç Boyutlu Dijital Hafızaya:</span><br />
+        Malazgirt Projesi Dijital Omurga Taslağı
+      </h1>
+
+      <p class="vision-hero__lead">
+        T.C. Kültür ve Turizm Bakanlığı himayesinde yürütülen <strong>Malazgirt Savaş Alanının Tespiti, Tarihi ve
+        Arkeolojik Yüzey Araştırması (2020–2026)</strong> ile Cumhurbaşkanlığı kararlı <strong>Tarihi Malazgirt Kenti
+        Kazıları</strong>’nın ürettiği zengin dron, jeofizik, biyoarkeoloji ve buluntu birikimini; abonelik maliyeti
+        olmayan kalıcı bir web portalı, <strong>defineci/kaçak kazı korumalı çift katmanlı 3B CBS haritası</strong> ve
+        <strong>Süphan volkanik platosu 3B savaş simülasyonu</strong> ile birleştiren somut yol haritası.
+      </p>
+
+      <div class="vision-hero__cta-row">
+        <a href="#canli-3b-cbs" class="vision-btn vision-btn--primary">Canlı 3B CBS Saha Haritasını Dene ↓</a>
+        <a href="#medya-arsivi" class="vision-btn vision-btn--ghost">Dron &amp; Görsel Arşiv Vitrinini Gör ↓</a>
+        <a href="#simulasyon-mimarisi" class="vision-btn vision-btn--ghost">3B Simülasyon Yol Haritası ↓</a>
+      </div>
+
+      <div class="vision-stats-grid">
+        {
+          visionStats.map((st) => (
+            <div class="vision-stat-card">
+              <strong>{st.value}</strong>
+              <span>{st.label}</span>
+              <p>{st.detail}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 01B: Why Wix Failed vs. Zero-Cost Custom Architecture -->
+  <section class="vision-section vision-section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">MİMARİ KARŞILAŞTIRMA · NEDEN YENİ ALTYAPI?</span>
+        <h2>Düşen Wix Şablonundan Ömür Boyu Sıfır Maliyetli Bilimsel Portala Geçiş</h2>
+        <p>
+          Mevcut <code>malazgirtprojesi.com</code> adresi Wix abonelik bağlantısı koptuğu için şu an <code>HTTP 404</code>
+          vermektedir. Hazır site şablonları yerine doğrudan projeye özel statik + WebGL mimarisi kurulduğunda hem aylık
+          fatura bağımlılığı biter hem de 3B arazi ve CBS verileri tam hızda çalışır.
+        </p>
+      </div>
+
+      <div class="comp-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Kriter</th>
+              <th>Eski Şablon Altyapısı (Wix)</th>
+              <th>Önerilen Yeni Mimari (Özel WebGL + Statik Portal)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              wixVsCustomComparison.map((row) => (
+                <tr>
+                  <td class="comp-aspect">{row.aspect}</td>
+                  <td class="comp-old">{row.oldWix}</td>
+                  <td class="comp-new">{row.newCustom}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 02: Drone, Video & Visual Archive Hub Prototype -->
+  <section id="medya-arsivi" class="vision-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">MODÜL 01 · DRON ÇEKİMLERİ, VİDEOLAR VE GÖRSEL BELLEK VİTRİNİ</span>
+        <h2>Eldeki Zengin Görsel ve Dron Arşivini Nasıl Verimli Kullanacağız?</h2>
+        <p>
+          6 sezonu aşkın sürede biriken <strong>İHA uçuş videoları, 3B ortofotolar, mobil LiDAR taramaları, XRF analizli
+          savaş buluntuları ve mezarlık kazısı kayıtları</strong> sosyal medya akışında kaybolmak yerine, konu ve saha
+          sektörüne göre saniyeler içinde filtrelenebilen kalıcı bir dijital kütüphaneye dönüşür:
+        </p>
+      </div>
+
+      <div class="media-filter-bar" role="tablist" aria-label="Saha Medya Kategorileri">
+        <button type="button" class="media-filter-btn is-active" data-media-filter="all">Tümü (5 Modül)</button>
+        <button type="button" class="media-filter-btn" data-media-filter="iha-3b">İHA &amp; Çıplak Topografya</button>
+        <button type="button" class="media-filter-btn" data-media-filter="jeofizik">Jeofizik &amp; İHA Manyetometri</button>
+        <button type="button" class="media-filter-btn" data-media-filter="buluntu">Savaş Buluntuları &amp; Mühürler</button>
+        <button type="button" class="media-filter-btn" data-media-filter="biyoarkeoloji">Afşin &amp; Biyoarkeoloji</button>
+        <button type="button" class="media-filter-btn" data-media-filter="kale-mimari">İç Kale &amp; Mobil LiDAR</button>
+      </div>
+
+      <div class="media-cards-grid">
+        {
+          mediaShowcaseItems.map((item) => (
+            <article class="media-card" data-media-category={item.category}>
+              <div class="media-card__img-wrap">
+                <img src={item.previewImg} alt={item.title} loading="lazy" />
+                <span class="media-card__badge">{item.formatBadge}</span>
+              </div>
+              <div class="media-card__body">
+                <div class="media-card__meta">
+                  <span class="media-card__cat">{item.categoryLabel}</span>
+                  <span class="media-card__sector">{item.sector}</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.summary}</p>
+                <div class="media-card__spec">{item.techSpec}</div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: LIVE Interactive Dual-Tier 3D GIS Map of the 153 km2 Basin -->
+  <section id="canli-3b-cbs" class="vision-section vision-section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">MODÜL 02 · CANLI ÇALIŞAN PROTOTİP · ÇİFT KATMANLI GÜVENLİ 3B CBS HARİTASI</span>
+        <h2>153 km² Süphan Volkanik Platosu: Halka Açık Güvenli Katman vs. Ekip İçi CBS Katmanı</h2>
+        <p>
+          Arkeolojik yüzey araştırmalarında en kritik hassasiyet <strong>kaçak kazı ve definecilik riskine karşı ham
+          buluntu koordinatlarının korunmasıdır</strong>. Aşağıdaki canlı 3B arazi prototipinde haritayı fareyle döndürüp
+          eğebilir, sektörler arasında uçabilir ve <strong>Halka Açık Güvenli Görünüm</strong> ile <strong>Ekip İçi
+          Yetkili CBS Önizlemesi</strong> (temsili grid ve jeofizik katmanları) arasında geçiş yapabilirsiniz:
+        </p>
+      </div>
+
+      <div class="gis-workbench">
+        <!-- Top Control Toolbar -->
+        <div class="gis-toolbar">
+          <div class="gis-mode-switch" role="group" aria-label="CBS Güvenlik Katmanı Seçimi">
+            <button type="button" class="gis-mode-btn is-active" data-gis-mode="public">
+              🔓 Halka Açık Güvenli Katman (Hassas Noktalar Gizli)
+            </button>
+            <button type="button" class="gis-mode-btn" data-gis-mode="internal">
+              🔐 Ekip İçi CBS Önizlemesi (Temsili Kareleme &amp; Jeofizik)
+            </button>
+          </div>
+
+          <button type="button" class="gis-sat-btn" id="gis-toggle-sat" aria-pressed="true">
+            🛰️ 3B Uydu + Rölyef Açık
+          </button>
+        </div>
+
+        <!-- Sector Preset Pills -->
+        <div class="gis-sectors-bar" role="tablist" aria-label="Saha Sektörleri">
+          {
+            fieldSectorPresets.map((sec, idx) => (
+              <button
+                type="button"
+                class:list={['gis-sector-pill', { 'is-active': idx === 0 }]}
+                data-sector-id={sec.id}
+              >
+                {sec.label}
+              </button>
+            ))
+          }
+        </div>
+
+        <!-- 3D Map Canvas + Floating Info Card -->
+        <div class="gis-canvas-shell">
+          <div id="malazgirt-vision-map" class="gis-canvas"></div>
+
+          <aside class="gis-info-panel" aria-live="polite">
+            <div class="gis-info-panel__top">
+              <span class="gis-info-badge" id="gis-active-badge">{fieldSectorPresets[0].badge}</span>
+              <span class="gis-security-tag" id="gis-security-indicator">HALKA AÇIK GÜVENLİ MOD</span>
+            </div>
+            <h3 id="gis-active-title">{fieldSectorPresets[0].label}</h3>
+            <p id="gis-active-desc">{fieldSectorPresets[0].publicSummary}</p>
+            <p class="gis-disclaimer">
+              <strong>Veri Güvenliği Notu:</strong> Bu prototipteki poligon ve kareleme (grid) sınırları mimari gösterim
+              amaçlı temsili veridir; gerçek buluntu koordinatları asla istemci tarafına açık gönderilmez.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/json" id="vision-gis-payload" set:html={gisPayload} />
+  </section>
+
+  <!-- Section 04: 3D Virtual Battlefield Simulation Architecture -->
+  <section id="simulasyon-mimarisi" class="vision-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">MODÜL 03 · 3B SANAL SAVAŞ ALANI SİMÜLASYONU MİMARİSİ</span>
+        <h2>«Düz Ova» Ezberini Yıkan Üç Boyutlu Fizik ve Görüş Açısı Simülasyonu</h2>
+        <p>
+          Malazgirt Muharebesi düz bir çayırda statik iki hattın çarpışması değil; Süphan volkanizmasının şekillendirdiği
+          kırıklı bazalt platoda arazi kotlarını, görüş gölgelerini ve sahte ricatı kullanan dinamik bir manevra savaşıdır.
+          Saha verilerini dört adımlı mühendislik hattıyla 3B sanal simülasyona dönüştürüyoruz:
+        </p>
+      </div>
+
+      <div class="sim-pipeline-grid">
+        {
+          simulationPipelineSteps.map((st) => (
+            <div class="sim-step-card">
+              <span class="sim-step-num">ADIM {st.step}</span>
+              <h3>{st.title}</h3>
+              <p>{st.desc}</p>
+              <div class="sim-step-out">Çıktı: {st.deliverable}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 05: 3-Phase Roadmap & Verified Publications -->
+  <section class="vision-section vision-section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">UYGULAMA TAKVİMİ &amp; EKİP UYUMU</span>
+        <h2>Üç Fazlı Yol Haritası ve Mevcut Ekiple Çalışma Modeli</h2>
+        <p>
+          Sosyal medya ve görsel içeriklerle ilgilenen mevcut ekip arkadaşımızın iş akışını bozmadan; onun saha
+          paylaşımlarını doğrudan besleyen, tüm ağır yazılım, 3B CBS ve simülasyon mühendisliğini üstlenen 3 aşamalı plan:
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        {
+          implementationPhases.map((ph) => (
+            <div class="roadmap-card">
+              <span class="roadmap-badge">{ph.phase}</span>
+              <h3>{ph.title}</h3>
+              <ul>
+                {ph.scope.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="pubs-box">
+        <div class="pubs-box__head">
+          <span class="eyebrow">AKADEMİK TEMEL · PORTALDA YER ALACAK DOĞRULANMIŞ YAYIN SEÇKİSİ (2022–2026)</span>
+          <h3>Proje Heyetinin Hakemli Metodoloji, Jeofizik, CBS, LiDAR ve Biyoarkeoloji Yayınlarından Örnekler</h3>
+        </div>
+        <div class="pubs-list">
+          {
+            verifiedProjectPublications.map((pub) => (
+              <div class="pub-row">
+                <span class="pub-year">{pub.year}</span>
+                <div class="pub-main">
+                  <strong>{pub.title}</strong>
+                  <span>{pub.authors} · <em>{pub.venue}</em></span>
+                </div>
+                <span class="pub-tag">{pub.tag}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import 'maplibre-gl/dist/maplibre-gl.css';
+  import { onPageReady } from '../utils/onPageReady';
+
+  let cleanupVision: (() => void) | null = null;
+
+  async function initVisionPage() {
+    if (cleanupVision) {
+      cleanupVision();
+      cleanupVision = null;
+    }
+
+    // 1. Media Showcase Category Filter
+    const filterBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-media-filter]'));
+    const mediaCards = Array.from(document.querySelectorAll<HTMLElement>('[data-media-category]'));
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.mediaFilter || 'all';
+        filterBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+        mediaCards.forEach((card) => {
+          const match = cat === 'all' || card.dataset.mediaCategory === cat;
+          card.style.display = match ? '' : 'none';
+        });
+      });
+    });
+
+    // 2. Interactive 3D Dual-Tier GIS Map
+    const mapContainer = document.getElementById('malazgirt-vision-map');
+    const payloadEl = document.getElementById('vision-gis-payload');
+    if (!mapContainer || !payloadEl) return;
+
+    const { presets = [] } = JSON.parse(payloadEl.textContent || '{}');
+    if (!presets.length) return;
+
+    const { default: maplibregl } = await import('maplibre-gl');
+
+    let gisMode: 'public' | 'internal' = 'public';
+    let satActive = true;
+    let activePreset = presets[0];
+
+    const modeBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-gis-mode]'));
+    const satBtn = document.getElementById('gis-toggle-sat') as HTMLButtonElement | null;
+    const sectorBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-sector-id]'));
+    const badgeEl = document.getElementById('gis-active-badge');
+    const secTagEl = document.getElementById('gis-security-indicator');
+    const titleEl = document.getElementById('gis-active-title');
+    const descEl = document.getElementById('gis-active-desc');
+
+    const updateInfoPanel = () => {
+      if (badgeEl) badgeEl.textContent = activePreset.badge;
+      if (titleEl) titleEl.textContent = activePreset.label;
+      if (descEl) {
+        descEl.textContent = gisMode === 'public' ? activePreset.publicSummary : activePreset.internalSummary;
+      }
+      if (secTagEl) {
+        secTagEl.textContent =
+          gisMode === 'public' ? 'HALKA AÇIK GÜVENLİ MOD' : 'EKİP İÇİ CBS ÖNİZLEME (TEMSİLİ)';
+        secTagEl.classList.toggle('is-internal', gisMode === 'internal');
+      }
+    };
+
+    // Build representative macro survey polygon & simulated internal 2km grid cells (strictly schematic!)
+    const surveyPolygonGeoJson = {
+      type: 'FeatureCollection' as const,
+      features: [
+        {
+          type: 'Feature' as const,
+          properties: { name: '153 km² Yüzey Araştırması Genel Havza Sınırı (Şematik)' },
+          geometry: {
+            type: 'Polygon' as const,
+            coordinates: [
+              [
+                [42.515, 39.168],
+                [42.748, 39.158],
+                [42.755, 39.048],
+                [42.648, 38.995],
+                [42.548, 39.032],
+                [42.515, 39.168],
+              ],
+            ],
+          },
+        },
+      ],
+    };
+
+    const gridLines: number[][][] = [];
+    for (let lon = 42.54; lon <= 42.74; lon += 0.02) {
+      gridLines.push([
+        [lon, 39.03],
+        [lon, 39.155],
+      ]);
+    }
+    for (let lat = 39.03; lat <= 39.155; lat += 0.015) {
+      gridLines.push([
+        [42.54, lat],
+        [42.74, lat],
+      ]);
+    }
+
+    const internalGridGeoJson = {
+      type: 'FeatureCollection' as const,
+      features: gridLines.map((coords) => ({
+        type: 'Feature' as const,
+        properties: {},
+        geometry: { type: 'LineString' as const, coordinates: coords },
+      })),
+    };
+
+    const internalVectorsGeoJson = {
+      type: 'FeatureCollection' as const,
+      features: [
+        // Bizans Ordugâhı -> Gezo Düzü -> Gülkoru Düzü (26 Ağustos İlerleyiş & Sahte Ricat Çemberi)
+        {
+          type: 'Feature' as const,
+          properties: { kind: 'advance' },
+          geometry: {
+            type: 'LineString' as const,
+            coordinates: [
+              [42.556, 39.136],
+              [42.608, 39.115],
+              [42.630, 39.108],
+            ],
+          },
+        },
+        // Seyran Tepe (1.829 m) & Ziyaret Tepe (1.798 m) -> Gülkoru Çemberi Kapanış Vektörü
+        {
+          type: 'Feature' as const,
+          properties: { kind: 'ambush' },
+          geometry: {
+            type: 'LineString' as const,
+            coordinates: [
+              [42.668, 39.084],
+              [42.630, 39.108],
+              [42.712, 39.136],
+            ],
+          },
+        },
+      ],
+    };
+
+    const keySectors = [
+      { name: 'Malazgirt İç Kalesi & Arap Mezarlığı', sub: '1.548 m · Kent Kazısı & Mobil LiDAR', coords: [42.54521, 39.14700], color: '#d99b4e' },
+      { name: 'Bizans Hendekli Ordugâhı', sub: 'Kızköprü – Karahasanyolu · Taşbaşı Balista', coords: [42.55600, 39.13600], color: '#d9485f' },
+      { name: 'Afşin Mahallesi (Kıfrî)', sub: '1.665 m · 51 C14 Çatışma Mezarı & İleri Otağ', coords: [42.59348, 39.08081], color: '#2cc5b3' },
+      { name: 'Gezo Düzü & Aytaç–Çivi Düzü', sub: '1.605 m · Kör Alan Eşikleri & Merkez Hilâl', coords: [42.60800, 39.11500], color: '#a78bfa' },
+      { name: 'Gülkoru Düzü (Büyükdua)', sub: '1.675 m · Cuma Namazı & Akşamüstü Son Çember', coords: [42.63000, 39.10800], color: '#f59e0b' },
+      { name: 'Seyran Tepe (1.829 m)', sub: 'Gülkoru Sırtları · Alp Arslan Komuta Noktası', coords: [42.66800, 39.08400], color: '#2cc5b3' },
+      { name: 'Ziyaret Tepe (Grebido · 1.798 m)', sub: 'Doğu Gözetleme & Doğansu Selçuklu Kampı', coords: [42.71200, 39.13600], color: '#2cc5b3' },
+      { name: 'Kurtulmuşoğlu (Selekutlu)', sub: '1.780 m · Güney Selçuklu Ana Ordugâhı', coords: [42.64643, 39.05513], color: '#2cc5b3' },
+    ];
+
+    let map: InstanceType<typeof maplibregl.Map> | null = null;
+    let styleReady = false;
+
+    const syncGisLayers = () => {
+      if (!map || !styleReady) return;
+      const isInternal = gisMode === 'internal';
+      if (map.getLayer('internal-grid-lines')) {
+        map.setPaintProperty('internal-grid-lines', 'line-opacity', isInternal ? 0.52 : 0);
+      }
+      if (map.getLayer('internal-vectors-line')) {
+        map.setPaintProperty('internal-vectors-line', 'line-opacity', isInternal ? 0.95 : 0);
+      }
+      if (map.getLayer('survey-poly-fill')) {
+        map.setPaintProperty('survey-poly-fill', 'fill-opacity', isInternal ? 0.18 : 0.08);
+      }
+    };
+
+    try {
+      map = new maplibregl.Map({
+        container: mapContainer,
+        maxPitch: 72,
+        style: {
+          version: 8,
+          sources: {
+            'dark-base': {
+              type: 'raster',
+              tiles: [
+                'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+              ],
+              tileSize: 256,
+            },
+            'sat-base': {
+              type: 'raster',
+              tiles: [
+                'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+              ],
+              tileSize: 256,
+              maxzoom: 17,
+            },
+            'dem-src': {
+              type: 'raster-dem',
+              tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+              encoding: 'terrarium',
+              tileSize: 256,
+              maxzoom: 13,
+            },
+          },
+          layers: [
+            { id: 'bg', type: 'background', paint: { 'background-color': '#090b10' } },
+            {
+              id: 'dark-layer',
+              type: 'raster',
+              source: 'dark-base',
+              paint: { 'raster-opacity': 0.65 },
+            },
+            {
+              id: 'sat-layer',
+              type: 'raster',
+              source: 'sat-base',
+              paint: { 'raster-opacity': 0.88, 'raster-contrast': 0.14, 'raster-brightness-max': 0.9 },
+            },
+            {
+              id: 'hillshade-layer',
+              type: 'hillshade',
+              source: 'dem-src',
+              paint: {
+                'hillshade-exaggeration': 0.36,
+                'hillshade-shadow-color': '#05070c',
+                'hillshade-highlight-color': '#e0b168',
+              },
+            },
+          ],
+        },
+        center: activePreset.coords,
+        zoom: activePreset.zoom,
+        pitch: activePreset.pitch,
+        bearing: activePreset.bearing,
+        attributionControl: false,
+      });
+
+      map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
+
+      map.once('style.load', () => {
+        if (!map) return;
+        styleReady = true;
+        try {
+          map.setTerrain({ source: 'dem-src', exaggeration: 1.65 });
+        } catch {}
+
+        map.addSource('survey-poly', { type: 'geojson', data: surveyPolygonGeoJson });
+        map.addLayer({
+          id: 'survey-poly-fill',
+          type: 'fill',
+          source: 'survey-poly',
+          paint: { 'fill-color': '#2cc5b3', 'fill-opacity': 0.08 },
+        });
+        map.addLayer({
+          id: 'survey-poly-outline',
+          type: 'line',
+          source: 'survey-poly',
+          paint: { 'line-color': '#2cc5b3', 'line-width': 2.2, 'line-dasharray': [3, 2], 'line-opacity': 0.88 },
+        });
+
+        map.addSource('internal-grid', { type: 'geojson', data: internalGridGeoJson });
+        map.addLayer({
+          id: 'internal-grid-lines',
+          type: 'line',
+          source: 'internal-grid',
+          paint: { 'line-color': '#d99b4e', 'line-width': 1.15, 'line-opacity': 0 },
+        });
+
+        map.addSource('internal-vectors', { type: 'geojson', data: internalVectorsGeoJson });
+        map.addLayer({
+          id: 'internal-vectors-line',
+          type: 'line',
+          source: 'internal-vectors',
+          paint: { 'line-color': '#f43f5e', 'line-width': 3.5, 'line-dasharray': [2, 1.5], 'line-opacity': 0 },
+        });
+
+        keySectors.forEach((sec) => {
+          const el = document.createElement('div');
+          el.className = 'vision-map-pin';
+          el.innerHTML = `
+            <span class="vision-map-pin__dot" style="background:${sec.color}"></span>
+            <span class="vision-map-pin__lbl">
+              <strong>${sec.name}</strong>
+              <small>${sec.sub}</small>
+            </span>
+          `;
+          new maplibregl.Marker({ element: el, anchor: 'left' }).setLngLat(sec.coords as [number, number]).addTo(map!);
+        });
+
+        syncGisLayers();
+      });
+    } catch {}
+
+    modeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        gisMode = (btn.dataset.gisMode as 'public' | 'internal') || 'public';
+        modeBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+        updateInfoPanel();
+        syncGisLayers();
+      });
+    });
+
+    if (satBtn) {
+      satBtn.addEventListener('click', () => {
+        satActive = !satActive;
+        satBtn.setAttribute('aria-pressed', String(satActive));
+        satBtn.textContent = satActive ? '🛰️ 3B Uydu + Rölyef Açık' : '🏔️ 3B Karanlık Rölyef Açık';
+        if (map && styleReady) {
+          if (map.getLayer('sat-layer')) {
+            map.setPaintProperty('sat-layer', 'raster-opacity', satActive ? 0.88 : 0);
+          }
+          if (map.getLayer('dark-layer')) {
+            map.setPaintProperty('dark-layer', 'raster-opacity', satActive ? 0.65 : 0.92);
+          }
+        }
+      });
+    }
+
+    sectorBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const found = presets.find((p: any) => p.id === btn.dataset.sectorId);
+        if (!found) return;
+        activePreset = found;
+        sectorBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+        updateInfoPanel();
+        if (map) {
+          map.flyTo({
+            center: found.coords,
+            zoom: found.zoom,
+            pitch: found.pitch,
+            bearing: found.bearing,
+            duration: 1500,
+            essential: true,
+          });
+        }
+      });
+    });
+
+    cleanupVision = () => {
+      if (map) {
+        map.remove();
+        map = null;
+      }
+    };
+  }
+
+  onPageReady(initVisionPage);
+  document.addEventListener('astro:before-swap', () => {
+    if (cleanupVision) {
+      cleanupVision();
+      cleanupVision = null;
+    }
+  });
+</script>
+
+<style>
+  .vision-banner {
+    background: linear-gradient(90deg, rgba(217, 155, 78, 0.16), rgba(44, 197, 179, 0.12));
+    border-bottom: 1px solid var(--border-gold);
+    padding: 0.75rem 0;
+  }
+
+  .vision-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  .vision-banner__left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .vision-pill {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    background: rgba(9, 11, 16, 0.75);
+  }
+
+  .vision-pill--gold {
+    border-color: var(--border-gold);
+    color: var(--accent-gold);
+  }
+
+  .vision-banner__note {
+    margin: 0;
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+  }
+
+  .vision-banner__note a {
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-left: 0.35rem;
+  }
+
+  .vision-hero {
+    position: relative;
+    padding: 4.5rem 0 4rem;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .vision-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 45%;
+    opacity: 0.24;
+    filter: contrast(1.1) saturate(0.85);
+  }
+
+  .vision-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 25%, rgba(12, 16, 24, 0.65), rgba(8, 10, 15, 0.96) 75%);
+  }
+
+  .vision-hero__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .vision-hero__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    padding: 0.32rem 0.78rem;
+    border-radius: 999px;
+    border: 1px solid rgba(243, 237, 226, 0.16);
+    background: rgba(12, 15, 22, 0.8);
+    color: var(--text-secondary);
+  }
+
+  .hero-tag--turquoise {
+    border-color: rgba(44, 197, 179, 0.45);
+    color: #2cc5b3;
+  }
+
+  .vision-hero h1 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.14;
+    margin: 0 0 1.2rem;
+    max-width: 920px;
+  }
+
+  .vision-hero h1 span {
+    color: var(--accent-gold);
+  }
+
+  .vision-hero__lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 850px;
+    margin: 0 0 1.8rem;
+  }
+
+  .vision-hero__cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .vision-btn {
+    padding: 0.85rem 1.35rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+
+  .vision-btn--primary {
+    background: linear-gradient(135deg, #e0a354, #c57e2c);
+    color: #090a0e;
+  }
+
+  .vision-btn--ghost {
+    border: 1px solid var(--border-gold);
+    background: rgba(217, 155, 78, 0.08);
+    color: var(--accent-gold);
+  }
+
+  .vision-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 1rem;
+  }
+
+  .vision-stat-card {
+    padding: 1.25rem 1.35rem;
+    border-radius: var(--radius-md);
+    background: rgba(13, 17, 25, 0.86);
+    border: 1px solid rgba(243, 237, 226, 0.12);
+  }
+
+  .vision-stat-card strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.9rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.2rem;
+  }
+
+  .vision-stat-card span {
+    display: block;
+    font-size: 0.83rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.45rem;
+  }
+
+  .vision-stat-card p {
+    margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+
+  .vision-section {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .vision-section--alt {
+    background: rgba(12, 15, 22, 0.55);
+  }
+
+  .section-head {
+    max-width: 820px;
+    margin-bottom: 2.2rem;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+    margin: 0.55rem 0 0.75rem;
+  }
+
+  .section-head p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.72;
+  }
+
+  .comp-table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(11, 14, 21, 0.9);
+  }
+
+  .comp-table th,
+  .comp-table td {
+    padding: 1rem 1.15rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    vertical-align: top;
+  }
+
+  .comp-table th {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    background: rgba(217, 155, 78, 0.08);
+  }
+
+  .comp-aspect {
+    font-weight: 700;
+    color: var(--text-primary);
+    width: 24%;
+  }
+
+  .comp-old {
+    color: #fca5a5;
+    width: 36%;
+  }
+
+  .comp-new {
+    color: #5eead4;
+    font-weight: 500;
+  }
+
+  .media-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .media-filter-btn {
+    padding: 0.52rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(13, 17, 25, 0.8);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .media-filter-btn.is-active {
+    background: var(--accent-gold);
+    color: #090a0d;
+    border-color: var(--accent-gold);
+  }
+
+  .media-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .media-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: rgba(14, 18, 27, 0.9);
+    border: 1px solid rgba(243, 237, 226, 0.11);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .media-card__img-wrap {
+    position: relative;
+    height: 175px;
+    overflow: hidden;
+  }
+
+  .media-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .media-card__badge {
+    position: absolute;
+    top: 0.65rem;
+    left: 0.7rem;
+    padding: 0.24rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(8, 10, 15, 0.88);
+    border: 1px solid var(--border-gold);
+    color: var(--accent-gold);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+  }
+
+  .media-card__body {
+    padding: 1.2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .media-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .media-card__cat {
+    color: #2cc5b3;
+    font-weight: 700;
+  }
+
+  .media-card__sector {
+    color: var(--text-muted);
+  }
+
+  .media-card h3 {
+    font-size: 1.12rem;
+    margin: 0 0 0.55rem;
+  }
+
+  .media-card p {
+    font-size: 0.85rem;
+    line-height: 1.62;
+    color: var(--text-secondary);
+    margin: 0 0 0.9rem;
+    flex: 1;
+  }
+
+  .media-card__spec {
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  /* GIS Workbench */
+  .gis-workbench {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-gold);
+    background: rgba(10, 13, 20, 0.95);
+    overflow: hidden;
+  }
+
+  .gis-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.95rem 1.15rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .gis-mode-switch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .gis-mode-btn,
+  .gis-sat-btn {
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(16, 20, 30, 0.9);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .gis-mode-btn.is-active {
+    background: var(--accent-gold);
+    color: #090a0d;
+    border-color: var(--accent-gold);
+  }
+
+  .gis-sectors-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding: 0.7rem 1.15rem;
+    background: rgba(14, 18, 27, 0.85);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .gis-sector-pill {
+    padding: 0.38rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(243, 237, 226, 0.14);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .gis-sector-pill.is-active {
+    border-color: #2cc5b3;
+    background: rgba(44, 197, 179, 0.16);
+    color: #5eead4;
+  }
+
+  .gis-canvas-shell {
+    position: relative;
+    height: 540px;
+  }
+
+  .gis-canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gis-info-panel {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    width: min(calc(100% - 2rem), 410px);
+    padding: 1rem 1.15rem;
+    border-radius: var(--radius-md);
+    background: rgba(10, 13, 20, 0.9);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(243, 237, 226, 0.16);
+    z-index: 4;
+  }
+
+  .gis-info-panel__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .gis-info-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+  }
+
+  .gis-security-tag {
+    font-size: 0.63rem;
+    font-weight: 800;
+    padding: 0.14rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(44, 197, 179, 0.18);
+    color: #5eead4;
+  }
+
+  .gis-security-tag.is-internal {
+    background: rgba(244, 63, 94, 0.2);
+    color: #fda4af;
+  }
+
+  .gis-info-panel h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.35rem;
+  }
+
+  .gis-info-panel p {
+    font-size: 0.8rem;
+    line-height: 1.52;
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem;
+  }
+
+  .gis-disclaimer {
+    font-size: 0.7rem !important;
+    color: var(--text-muted) !important;
+    margin: 0 !important;
+    padding-top: 0.45rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  :global(.vision-map-pin) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    pointer-events: none;
+  }
+
+  :global(.vision-map-pin__dot) {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  }
+
+  :global(.vision-map-pin__lbl) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    background: rgba(8, 10, 16, 0.86);
+    border: 1px solid rgba(243, 237, 226, 0.18);
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  :global(.vision-map-pin__lbl strong) {
+    font-size: 0.72rem;
+    color: #f3ede2;
+  }
+
+  :global(.vision-map-pin__lbl small) {
+    font-size: 0.61rem;
+    color: #bfb6a6;
+  }
+
+  .sim-pipeline-grid,
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .sim-step-card,
+  .roadmap-card {
+    padding: 1.45rem;
+    border-radius: var(--radius-md);
+    background: rgba(14, 18, 27, 0.9);
+    border: 1px solid rgba(243, 237, 226, 0.12);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sim-step-num,
+  .roadmap-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    margin-bottom: 0.55rem;
+  }
+
+  .sim-step-card h3,
+  .roadmap-card h3 {
+    font-size: 1.14rem;
+    margin: 0 0 0.65rem;
+  }
+
+  .sim-step-card p {
+    font-size: 0.86rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0 0 1rem;
+    flex: 1;
+  }
+
+  .sim-step-out {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #2cc5b3;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .roadmap-card ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+
+  .roadmap-card li {
+    margin-bottom: 0.55rem;
+  }
+
+  .pubs-box {
+    margin-top: 2.8rem;
+    padding: 1.65rem;
+    border-radius: var(--radius-md);
+    background: rgba(11, 14, 21, 0.92);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .pubs-box__head h3 {
+    font-size: 1.25rem;
+    margin: 0.45rem 0 1.2rem;
+  }
+
+  .pubs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .pub-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 0.95rem;
+    border-radius: 8px;
+    background: rgba(18, 23, 34, 0.75);
+    border: 1px solid rgba(243, 237, 226, 0.08);
+  }
+
+  .pub-year {
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    min-width: 44px;
+  }
+
+  .pub-main {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+  }
+
+  .pub-main strong {
+    font-size: 0.86rem;
+    color: var(--text-primary);
+  }
+
+  .pub-main span {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+  }
+
+  .pub-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(44, 197, 179, 0.12);
+    color: #5eead4;
+  }
+
+  @media (max-width: 760px) {
+    .gis-canvas-shell {
+      height: 580px;
+    }
+    .gis-info-panel {
+      left: 0.6rem;
+      right: 0.6rem;
+      bottom: 0.6rem;
+      width: auto;
+      padding: 0.8rem 0.9rem;
+    }
+  }
+</style>

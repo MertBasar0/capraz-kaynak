@@ -50,20 +50,32 @@ const mapPayload = JSON.stringify({
         <span class="map-hud__sep">·</span>
         <span class="map-hud__loc" id="hud-loc">{steps[0].locationBadge}</span>
       </div>
-      <div class="map-hud__steps" role="tablist" aria-label="Harita Adımları">
-        {
-          steps.map((s, idx) => (
-            <button
-              type="button"
-              class:list={['hud-step-dot', { 'is-active': idx === 0 }]}
-              data-jump-step={idx}
-              title={s.title}
-              aria-label={`Adım ${idx + 1}: ${s.title}`}
-            >
-              {idx + 1}
-            </button>
-          ))
-        }
+      <div class="map-hud__controls">
+        <button
+          type="button"
+          class="hud-basemap-toggle"
+          id="toggle-map-basemap"
+          aria-pressed="false"
+          title="3B Karanlık Rölyef ve 3B Uydu Arazi Görünümü Arasında Geçiş Yap"
+        >
+          <span class="hud-basemap-toggle__dot" aria-hidden="true"></span>
+          <span data-basemap-label>3B Uydu Arazi</span>
+        </button>
+        <div class="map-hud__steps" role="tablist" aria-label="Harita Adımları">
+          {
+            steps.map((s, idx) => (
+              <button
+                type="button"
+                class:list={['hud-step-dot', { 'is-active': idx === 0 }]}
+                data-jump-step={idx}
+                title={s.title}
+                aria-label={`Adım ${idx + 1}: ${s.title}`}
+              >
+                {idx + 1}
+              </button>
+            ))
+          }
+        </div>
       </div>
     </div>
 
@@ -157,15 +169,34 @@ const mapPayload = JSON.stringify({
 
     const hudDate = document.getElementById('hud-date');
     const hudLoc = document.getElementById('hud-loc');
+    const basemapBtn = document.getElementById('toggle-map-basemap') as HTMLButtonElement | null;
+    const basemapLabel = basemapBtn?.querySelector<HTMLElement>('[data-basemap-label]');
     const stepDots = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-jump-step]'));
     const stepArticles = Array.from(document.querySelectorAll<HTMLElement>('[data-map-step-index]'));
 
     let map: InstanceType<typeof maplibregl.Map> | null = null;
+    let isSatellite = false;
+    let styleReady = false;
+    let currentStepIndex = 0;
     const cityMarkerEls = new Map<string, HTMLElement>();
+
+    const syncBasemapPaint = () => {
+      if (!map || !styleReady) return;
+      if (map.getLayer('sat-imagery-layer')) {
+        map.setPaintProperty('sat-imagery-layer', 'raster-opacity', isSatellite ? 0.88 : 0);
+      }
+      if (map.getLayer('dark-relief-layer')) {
+        map.setPaintProperty('dark-relief-layer', 'raster-opacity', isSatellite ? 0.55 : 0.92);
+      }
+      if (map.getLayer('terrain-hillshade-layer')) {
+        map.setPaintProperty('terrain-hillshade-layer', 'hillshade-exaggeration', isSatellite ? 0.26 : 0.44);
+      }
+    };
 
     try {
       map = new maplibregl.Map({
         container: mapEl,
+        maxPitch: 72,
         style: {
           version: 8,
           sources: {
@@ -176,6 +207,22 @@ const mapPayload = JSON.stringify({
               ],
               tileSize: 256,
               attribution: '© Esri, HERE, Garmin, OpenStreetMap',
+            },
+            'sat-imagery': {
+              type: 'raster',
+              tiles: [
+                'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+              ],
+              tileSize: 256,
+              maxzoom: 17,
+              attribution: '© Esri, Maxar, Earthstar Geographics',
+            },
+            'terrain-dem': {
+              type: 'raster-dem',
+              tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+              encoding: 'terrarium',
+              tileSize: 256,
+              maxzoom: 13,
             },
           },
           layers: [
@@ -194,6 +241,28 @@ const mapPayload = JSON.stringify({
                 'raster-brightness-max': 0.78,
               },
             },
+            {
+              id: 'sat-imagery-layer',
+              type: 'raster',
+              source: 'sat-imagery',
+              paint: {
+                'raster-opacity': 0,
+                'raster-contrast': 0.14,
+                'raster-saturation': -0.18,
+                'raster-brightness-max': 0.86,
+              },
+            },
+            {
+              id: 'terrain-hillshade-layer',
+              type: 'hillshade',
+              source: 'terrain-dem',
+              paint: {
+                'hillshade-exaggeration': 0.44,
+                'hillshade-shadow-color': '#05070c',
+                'hillshade-highlight-color': '#d99b4e',
+                'hillshade-accent-color': '#1a2232',
+              },
+            },
           ],
         },
         center: steps[0].camera.center,
@@ -204,8 +273,15 @@ const mapPayload = JSON.stringify({
         attributionControl: false,
       });
 
-      map.on('load', () => {
+      map.once('style.load', () => {
         if (!map) return;
+        styleReady = true;
+
+        try {
+          map.setTerrain({ source: 'terrain-dem', exaggeration: 1.55 });
+        } catch {
+          // Graceful fallback if WebGL terrain unsupported
+        }
 
         // Add each historical route layer
         routes.forEach((route: any) => {
@@ -222,6 +298,8 @@ const mapPayload = JSON.stringify({
             },
           });
 
+          const activeNow = steps[currentStepIndex]?.activeRouteIds.includes(route.id);
+
           // Soft outer glow
           map!.addLayer({
             id: `route-glow-${route.id}`,
@@ -232,7 +310,7 @@ const mapPayload = JSON.stringify({
               'line-color': route.color,
               'line-width': 9,
               'line-blur': 6,
-              'line-opacity': steps[0].activeRouteIds.includes(route.id) ? 0.35 : 0.04,
+              'line-opacity': activeNow ? 0.35 : 0.04,
             },
           });
 
@@ -240,7 +318,7 @@ const mapPayload = JSON.stringify({
           const paintObj: Record<string, any> = {
             'line-color': route.color,
             'line-width': 3,
-            'line-opacity': steps[0].activeRouteIds.includes(route.id) ? 0.95 : 0.12,
+            'line-opacity': activeNow ? 0.95 : 0.12,
           };
           if (route.dashed) {
             paintObj['line-dasharray'] = [2, 2];
@@ -289,7 +367,7 @@ const mapPayload = JSON.stringify({
         cities.forEach((city: any) => {
           const el = document.createElement('div');
           el.className = `hist-marker hist-marker--${city.faction}`;
-          if (steps[0].focusCityIds.includes(city.id)) {
+          if (steps[currentStepIndex]?.focusCityIds.includes(city.id)) {
             el.classList.add('is-focused');
           }
           el.innerHTML = `
@@ -302,6 +380,8 @@ const mapPayload = JSON.stringify({
           cityMarkerEls.set(city.id, el);
           new maplibregl.Marker({ element: el, anchor: 'left' }).setLngLat(city.coords).addTo(map!);
         });
+
+        syncBasemapPaint();
       });
     } catch {
       mapEl.innerHTML =
@@ -311,6 +391,7 @@ const mapPayload = JSON.stringify({
     const activateStep = (index: number) => {
       const step = steps[index];
       if (!step) return;
+      currentStepIndex = index;
 
       stepArticles.forEach((art, idx) => art.classList.toggle('is-active', idx === index));
       stepDots.forEach((dot, idx) => dot.classList.toggle('is-active', idx === index));
@@ -322,16 +403,18 @@ const mapPayload = JSON.stringify({
         el.classList.toggle('is-focused', step.focusCityIds.includes(cityId));
       });
 
-      if (map && map.isStyleLoaded()) {
-        routes.forEach((route: any) => {
-          const isActive = step.activeRouteIds.includes(route.id);
-          if (map!.getLayer(`route-line-${route.id}`)) {
-            map!.setPaintProperty(`route-line-${route.id}`, 'line-opacity', isActive ? 0.95 : 0.1);
-          }
-          if (map!.getLayer(`route-glow-${route.id}`)) {
-            map!.setPaintProperty(`route-glow-${route.id}`, 'line-opacity', isActive ? 0.38 : 0.03);
-          }
-        });
+      if (map) {
+        if (styleReady) {
+          routes.forEach((route: any) => {
+            const isActive = step.activeRouteIds.includes(route.id);
+            if (map!.getLayer(`route-line-${route.id}`)) {
+              map!.setPaintProperty(`route-line-${route.id}`, 'line-opacity', isActive ? 0.95 : 0.1);
+            }
+            if (map!.getLayer(`route-glow-${route.id}`)) {
+              map!.setPaintProperty(`route-glow-${route.id}`, 'line-opacity', isActive ? 0.38 : 0.03);
+            }
+          });
+        }
 
         map.flyTo({
           center: step.camera.center,
@@ -366,6 +449,18 @@ const mapPayload = JSON.stringify({
         }
       });
     });
+
+    if (basemapBtn) {
+      basemapBtn.addEventListener('click', () => {
+        isSatellite = !isSatellite;
+        basemapBtn.setAttribute('aria-pressed', String(isSatellite));
+        basemapBtn.classList.toggle('is-active', isSatellite);
+        if (basemapLabel) {
+          basemapLabel.textContent = isSatellite ? '3B Uydu Açık · Rölyefe Dön' : '3B Uydu Arazi';
+        }
+        syncBasemapPaint();
+      });
+    }
 
     cleanupFn = () => {
       window.removeEventListener('resize', onResize);
@@ -430,6 +525,12 @@ const mapPayload = JSON.stringify({
     pointer-events: none;
   }
 
+  @media (min-width: 1120px) {
+    .map-hud {
+      left: calc(max(1rem, (100vw - var(--max-width)) / 2) + 528px);
+    }
+  }
+
   .map-hud__meta {
     display: inline-flex;
     align-items: center;
@@ -440,11 +541,14 @@ const mapPayload = JSON.stringify({
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-gold);
     font-size: 0.78rem;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .map-hud__date {
     font-weight: 700;
     color: var(--accent-gold);
+    white-space: nowrap;
   }
 
   .map-hud__sep {
@@ -453,6 +557,59 @@ const mapPayload = JSON.stringify({
 
   .map-hud__loc {
     color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 34vw;
+  }
+
+  .map-hud__controls {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    pointer-events: auto;
+  }
+
+  .hud-basemap-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    padding: 0.46rem 0.88rem;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 155, 78, 0.36);
+    background: rgba(12, 15, 22, 0.86);
+    backdrop-filter: blur(12px);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .hud-basemap-toggle:hover {
+    border-color: var(--accent-gold);
+    background: rgba(217, 155, 78, 0.16);
+  }
+
+  .hud-basemap-toggle.is-active {
+    background: var(--accent-gold);
+    color: #090a0d;
+    border-color: var(--accent-gold);
+  }
+
+  .hud-basemap-toggle__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2cc5b3;
+    box-shadow: 0 0 8px rgba(44, 197, 179, 0.7);
+  }
+
+  .hud-basemap-toggle.is-active .hud-basemap-toggle__dot {
+    background: #090a0d;
+    box-shadow: none;
   }
 
   .map-hud__steps {

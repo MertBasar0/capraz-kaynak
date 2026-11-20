@@ -78,11 +78,11 @@ export const dossiers: DossierMeta[] = [
     slug: withBase('/dosyalar/malazgirt-1071/'),
     status: 'yayinda',
     period: '1048 – 1081 (Merkez: 26 Ağustos 1071)',
-    geography: 'Ahılkelek · Ani · Halep · Konstantinopolis · Erzurum · Ahlat · Malazgirt (Rahve Ovası) · İznik',
-    readingTime: '17 dk etkileşimli deneyim',
-    title: 'Anadolu Kapısında İki İmparatorluk: 1071 Malazgirt Meydan Muharebesi',
+    geography: 'Ahılkelek · Ani · Halep · Musul · Hoy · Erzurum · Ahlat · Malazgirt (Süphan Platosu) · İznik',
+    readingTime: '18 dk etkileşimli deneyim',
+    title: 'Anadolu Kapısında İki İmparatorluk: 1071 Malazgirt Muharebesi',
     subtitle:
-      '1064 Ani’den 1071 Rahve Ovası’na uzanan stratejik satranç: Sultan Alp Arslan ile İmparator IV. Romanos Diogenes’in karşılaşması, Bizans ordusundaki Uz–Peçenek ve Frank paralı askerlerinin tutumu, çadırdaki esaret protokolü ve Anadolu’nun siyasi dönüşümü.',
+      '1064 Ani’den 1071 Süphan Volkanik Platosu’na (Afşin–Gülkoru–Seyran Tepe) uzanan stratejik satranç: 2020–2026 savaş alanı arkeolojisi ve CBS bulguları ışığında iki ordunun yürüyüş hatları, çadırdaki esaret protokolü ve Anadolu’nun siyasi dönüşümü.',
     hookQuestion:
       'Savaş meydanında bizzat bulunan Bizans yüksek yargıcı Mihail Attaleiates’in gözlemleriyle İslam vekâyinâmelerinin esaret anlatıları nerede örtüşüyor, nerede ayrılıyor?',
     witnessSources: [
